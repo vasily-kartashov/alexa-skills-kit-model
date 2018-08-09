@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<psalm
+    useDocblockTypes="true"
+    totallyTyped="false"
+>
+    <projectFiles>
+        <directory name="src" />
+    </projectFiles>
+    <issueHandlers>
+        <LessSpecificReturnType errorLevel="info" />
+        <DeprecatedMethod errorLevel="info" />
+        <MissingClosureReturnType errorLevel="info" />
+        <MissingReturnType errorLevel="info" />
+        <MissingPropertyType errorLevel="info" />
+        <InvalidDocblock errorLevel="info" />
+        <MisplacedRequiredParam errorLevel="info" />
+        <PropertyNotSetInConstructor errorLevel="info" />
+        <MissingClosureParamType errorLevel="suppress"/>
+        <MissingConstructor errorLevel="info" />
+        <MissingReturnType errorLevel="suppress"/>
+    </issueHandlers>
+</psalm>

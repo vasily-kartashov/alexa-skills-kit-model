@@ -1,0 +1,29 @@
+{
+  "name": "vasily-kartashov/alexa-skill-kit-model",
+  "type": "library",
+  "description": "Alexa Skill Kit Model",
+  "keywords": ["library", "alexa"],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Vasily Kartashov",
+      "email": "vasily@kartashov.com",
+      "homepage": "http://notes.kartashov.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Alexa\\Model\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "jakub-onderka/php-parallel-lint": "*",
+    "phpstan/phpstan": "*",
+    "phpunit/phpunit": "5.*",
+    "squizlabs/php_codesniffer": "*",
+    "vimeo/psalm": "*"
+  }
+}

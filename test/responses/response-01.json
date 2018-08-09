@@ -1,0 +1,27 @@
+{
+    "version": "string",
+    "sessionAttributes": {
+        "key": "value"
+    },
+    "response": {
+        "outputSpeech": {
+            "type": "PlainText",
+            "text": "Plain text string to speak"
+        },
+        "card": {
+            "type": "Standard",
+            "title": "Title of the card",
+            "text": "Text content for a standard card",
+            "image": {
+                "smallImageUrl": "https:\/\/small-image",
+                "largeImageUrl": "https:\/\/large-image"
+            }
+        },
+        "directives": [
+            {
+                "type": "Connections.SendRequest"
+            }
+        ],
+        "shouldEndSession": true
+    }
+}
