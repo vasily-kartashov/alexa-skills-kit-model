@@ -23,6 +23,9 @@ abstract class Directive implements JsonSerializable
 
     public static function fromValue(array $data)
     {
+        if (!isset($data['type'])) {
+            return null;
+        }
         switch ($data['type']) {
             case SpeakDirective::TYPE:
                 return SpeakDirective::fromValue($data);

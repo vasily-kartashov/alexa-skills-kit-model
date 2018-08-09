@@ -83,6 +83,9 @@ abstract class Request implements JsonSerializable
 
     public static function fromValue(array $data)
     {
+        if (!isset($data['type'])) {
+            return null;
+        }
         switch ($data['type']) {
             case PlaybackStoppedRequest::TYPE:
                 return PlaybackStoppedRequest::fromValue($data);

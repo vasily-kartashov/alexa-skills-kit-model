@@ -38,6 +38,9 @@ abstract class Directive implements JsonSerializable
 
     public static function fromValue(array $data)
     {
+        if (!isset($data['type'])) {
+            return null;
+        }
         switch ($data['type']) {
             case LaunchDirective::TYPE:
                 return LaunchDirective::fromValue($data);
