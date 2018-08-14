@@ -15,6 +15,7 @@ final class PermissionAcceptedRequest extends Request implements JsonSerializabl
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

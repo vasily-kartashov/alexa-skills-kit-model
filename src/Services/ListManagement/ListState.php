@@ -3,7 +3,6 @@
 namespace Alexa\Model\Services\ListManagement;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class ListState implements JsonSerializable
 {

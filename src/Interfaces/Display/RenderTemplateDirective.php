@@ -15,6 +15,7 @@ final class RenderTemplateDirective extends Directive implements JsonSerializabl
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\System;
 
-use Alexa\Model\Request;
-
 abstract class ExceptionEncounteredRequestBuilder
 {
     /** @var callable */

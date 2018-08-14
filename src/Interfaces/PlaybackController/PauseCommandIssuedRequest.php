@@ -12,6 +12,7 @@ final class PauseCommandIssuedRequest extends Request implements JsonSerializabl
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     public static function builder(): PauseCommandIssuedRequestBuilder

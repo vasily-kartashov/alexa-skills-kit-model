@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\GameEngine;
 
-use Alexa\Model\Directive;
-
 abstract class StopInputHandlerDirectiveBuilder
 {
     /** @var callable */

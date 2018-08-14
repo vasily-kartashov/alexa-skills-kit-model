@@ -3,7 +3,6 @@
 namespace Alexa\Model\Interfaces\AudioPlayer;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class ErrorType implements JsonSerializable
 {

@@ -15,6 +15,7 @@ final class StopInputHandlerDirective extends Directive implements JsonSerializa
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

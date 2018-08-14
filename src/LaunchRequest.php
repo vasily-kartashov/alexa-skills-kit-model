@@ -11,6 +11,7 @@ final class LaunchRequest extends Request implements JsonSerializable
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     public static function builder(): LaunchRequestBuilder

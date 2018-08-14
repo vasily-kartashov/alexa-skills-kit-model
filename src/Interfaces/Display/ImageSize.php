@@ -3,7 +3,6 @@
 namespace Alexa\Model\Interfaces\Display;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class ImageSize implements JsonSerializable
 {

@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\PlaybackController;
 
-use Alexa\Model\Request;
-
 abstract class PlayCommandIssuedRequestBuilder
 {
     /** @var callable */

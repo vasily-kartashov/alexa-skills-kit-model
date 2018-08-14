@@ -3,7 +3,6 @@
 namespace Alexa\Model\Services\GameEngine;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class PatternRecognizerAnchorType implements JsonSerializable
 {

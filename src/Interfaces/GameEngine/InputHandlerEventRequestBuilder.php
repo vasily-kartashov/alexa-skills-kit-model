@@ -2,7 +2,6 @@
 
 namespace Alexa\Model\Interfaces\GameEngine;
 
-use Alexa\Model\Request;
 use Alexa\Model\Services\GameEngine\InputHandlerEvent;
 
 abstract class InputHandlerEventRequestBuilder

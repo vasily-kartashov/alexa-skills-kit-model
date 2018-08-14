@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\Connections;
 
-use Alexa\Model\Directive;
-
 abstract class SendRequestDirectiveBuilder
 {
     /** @var callable */

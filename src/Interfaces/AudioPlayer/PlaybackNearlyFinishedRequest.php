@@ -18,6 +18,7 @@ final class PlaybackNearlyFinishedRequest extends Request implements JsonSeriali
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

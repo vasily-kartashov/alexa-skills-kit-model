@@ -2,7 +2,6 @@
 
 namespace Alexa\Model\Interfaces\GameEngine;
 
-use Alexa\Model\Directive;
 use Alexa\Model\Services\GameEngine\Event;
 use Alexa\Model\Services\GameEngine\Recognizer;
 

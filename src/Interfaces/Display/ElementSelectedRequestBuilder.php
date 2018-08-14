@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\Display;
 
-use Alexa\Model\Request;
-
 abstract class ElementSelectedRequestBuilder
 {
     /** @var callable */

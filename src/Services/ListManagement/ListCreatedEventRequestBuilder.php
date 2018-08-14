@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Services\ListManagement;
 
-use Alexa\Model\Request;
-
 abstract class ListCreatedEventRequestBuilder
 {
     /** @var callable */

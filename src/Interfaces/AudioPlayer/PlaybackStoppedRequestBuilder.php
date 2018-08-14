@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\AudioPlayer;
 
-use Alexa\Model\Request;
-
 abstract class PlaybackStoppedRequestBuilder
 {
     /** @var callable */

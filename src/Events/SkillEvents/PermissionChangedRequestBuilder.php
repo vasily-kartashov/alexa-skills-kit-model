@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Events\SkillEvents;
 
-use Alexa\Model\Request;
-
 abstract class PermissionChangedRequestBuilder
 {
     /** @var callable */

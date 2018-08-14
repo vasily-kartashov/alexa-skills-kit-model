@@ -18,6 +18,7 @@ final class PlaybackStoppedRequest extends Request implements JsonSerializable
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

@@ -15,6 +15,7 @@ final class ListItemsDeletedEventRequest extends Request implements JsonSerializ
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

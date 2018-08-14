@@ -3,7 +3,6 @@
 namespace Alexa\Model\Interfaces\Monetization\V1;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class PurchaseResult implements JsonSerializable
 {

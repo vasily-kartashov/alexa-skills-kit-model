@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\Connections;
 
-use Alexa\Model\Request;
-
 abstract class ConnectionsRequestBuilder
 {
     /** @var callable */

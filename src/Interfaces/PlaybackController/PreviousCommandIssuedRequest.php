@@ -12,6 +12,7 @@ final class PreviousCommandIssuedRequest extends Request implements JsonSerializ
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     public static function builder(): PreviousCommandIssuedRequestBuilder

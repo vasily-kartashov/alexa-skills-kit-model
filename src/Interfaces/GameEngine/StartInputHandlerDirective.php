@@ -26,6 +26,7 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

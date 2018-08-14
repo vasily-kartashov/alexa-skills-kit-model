@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\Display;
 
-use Alexa\Model\Directive;
-
 abstract class RenderTemplateDirectiveBuilder
 {
     /** @var callable */

@@ -14,6 +14,7 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

@@ -14,6 +14,7 @@ final class PlainTextOutputSpeech extends OutputSpeech implements JsonSerializab
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

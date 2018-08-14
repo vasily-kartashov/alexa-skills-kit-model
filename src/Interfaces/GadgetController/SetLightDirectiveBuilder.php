@@ -2,7 +2,6 @@
 
 namespace Alexa\Model\Interfaces\GadgetController;
 
-use Alexa\Model\Directive;
 use Alexa\Model\Services\GadgetController\SetLightParameters;
 
 abstract class SetLightDirectiveBuilder

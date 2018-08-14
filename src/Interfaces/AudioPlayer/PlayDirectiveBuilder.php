@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\AudioPlayer;
 
-use Alexa\Model\Directive;
-
 abstract class PlayDirectiveBuilder
 {
     /** @var callable */

@@ -3,7 +3,6 @@
 namespace Alexa\Model\Interfaces\AmazonPay\Model\V1;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class State implements JsonSerializable
 {

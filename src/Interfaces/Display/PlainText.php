@@ -14,6 +14,7 @@ final class PlainText extends TextField implements JsonSerializable
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**

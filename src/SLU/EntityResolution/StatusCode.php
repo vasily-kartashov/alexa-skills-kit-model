@@ -3,7 +3,6 @@
 namespace Alexa\Model\SLU\EntityResolution;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class StatusCode implements JsonSerializable
 {

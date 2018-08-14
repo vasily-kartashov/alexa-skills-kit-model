@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\VideoApp;
 
-use Alexa\Model\Directive;
-
 abstract class LaunchDirectiveBuilder
 {
     /** @var callable */

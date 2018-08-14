@@ -3,7 +3,6 @@
 namespace Alexa\Model;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class SessionEndedErrorType implements JsonSerializable
 {

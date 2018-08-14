@@ -3,7 +3,6 @@
 namespace Alexa\Model\Services\GadgetController;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class TriggerEventType implements JsonSerializable
 {

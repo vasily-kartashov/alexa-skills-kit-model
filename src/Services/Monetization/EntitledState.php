@@ -3,7 +3,6 @@
 namespace Alexa\Model\Services\Monetization;
 
 use \JsonSerializable;
-use \RuntimeException;
 
 final class EntitledState implements JsonSerializable
 {

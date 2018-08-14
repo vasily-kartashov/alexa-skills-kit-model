@@ -2,8 +2,6 @@
 
 namespace Alexa\Model\Interfaces\Messaging;
 
-use Alexa\Model\Request;
-
 abstract class MessageReceivedRequestBuilder
 {
     /** @var callable */

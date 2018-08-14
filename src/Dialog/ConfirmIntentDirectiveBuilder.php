@@ -2,7 +2,6 @@
 
 namespace Alexa\Model\Dialog;
 
-use Alexa\Model\Directive;
 use Alexa\Model\Intent;
 
 abstract class ConfirmIntentDirectiveBuilder

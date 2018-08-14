@@ -18,6 +18,7 @@ final class ExceptionEncounteredRequest extends Request implements JsonSerializa
     protected function __construct()
     {
         parent::__construct();
+        $this->type = self::TYPE;
     }
 
     /**
