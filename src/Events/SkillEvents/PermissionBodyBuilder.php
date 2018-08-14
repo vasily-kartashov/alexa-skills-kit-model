@@ -21,6 +21,9 @@ abstract class PermissionBodyBuilder
      */
     public function withAcceptedPermissions(array $acceptedPermissions): self
     {
+        foreach ($acceptedPermissions as $element) {
+            assert($element instanceof Permission);
+        }
         $this->acceptedPermissions = $acceptedPermissions;
         return $this;
     }

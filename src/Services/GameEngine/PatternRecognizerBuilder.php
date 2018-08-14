@@ -45,6 +45,9 @@ abstract class PatternRecognizerBuilder
      */
     public function withGadgetIds(array $gadgetIds): self
     {
+        foreach ($gadgetIds as $element) {
+            assert(is_string($element));
+        }
         $this->gadgetIds = $gadgetIds;
         return $this;
     }
@@ -55,6 +58,9 @@ abstract class PatternRecognizerBuilder
      */
     public function withActions(array $actions): self
     {
+        foreach ($actions as $element) {
+            assert(is_string($element));
+        }
         $this->actions = $actions;
         return $this;
     }
@@ -65,6 +71,9 @@ abstract class PatternRecognizerBuilder
      */
     public function withPattern(array $pattern): self
     {
+        foreach ($pattern as $element) {
+            assert($element instanceof Pattern);
+        }
         $this->pattern = $pattern;
         return $this;
     }

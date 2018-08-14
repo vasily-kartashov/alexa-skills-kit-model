@@ -57,6 +57,9 @@ abstract class AlexaListMetadataBuilder
      */
     public function withStatusMap(array $statusMap): self
     {
+        foreach ($statusMap as $element) {
+            assert($element instanceof Status);
+        }
         $this->statusMap = $statusMap;
         return $this;
     }

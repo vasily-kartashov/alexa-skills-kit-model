@@ -21,6 +21,9 @@ abstract class AskForPermissionsConsentCardBuilder
      */
     public function withPermissions(array $permissions): self
     {
+        foreach ($permissions as $element) {
+            assert(is_string($element));
+        }
         $this->permissions = $permissions;
         return $this;
     }

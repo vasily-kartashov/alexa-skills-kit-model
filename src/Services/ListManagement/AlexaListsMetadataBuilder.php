@@ -21,6 +21,9 @@ abstract class AlexaListsMetadataBuilder
      */
     public function withLists(array $lists): self
     {
+        foreach ($lists as $element) {
+            assert($element instanceof AlexaListMetadata);
+        }
         $this->lists = $lists;
         return $this;
     }

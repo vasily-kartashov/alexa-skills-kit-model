@@ -42,6 +42,9 @@ abstract class EventBuilder
      */
     public function withMeets(array $meets): self
     {
+        foreach ($meets as $element) {
+            assert(is_string($element));
+        }
         $this->meets = $meets;
         return $this;
     }
@@ -52,6 +55,9 @@ abstract class EventBuilder
      */
     public function withFails(array $fails): self
     {
+        foreach ($fails as $element) {
+            assert(is_string($element));
+        }
         $this->fails = $fails;
         return $this;
     }

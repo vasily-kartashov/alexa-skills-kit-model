@@ -39,6 +39,9 @@ abstract class StartInputHandlerDirectiveBuilder
      */
     public function withProxies(array $proxies): self
     {
+        foreach ($proxies as $element) {
+            assert(is_string($element));
+        }
         $this->proxies = $proxies;
         return $this;
     }
@@ -49,6 +52,9 @@ abstract class StartInputHandlerDirectiveBuilder
      */
     public function withRecognizers(array $recognizers): self
     {
+        foreach ($recognizers as $element) {
+            assert($element instanceof Recognizer);
+        }
         $this->recognizers = $recognizers;
         return $this;
     }
@@ -59,6 +65,9 @@ abstract class StartInputHandlerDirectiveBuilder
      */
     public function withEvents(array $events): self
     {
+        foreach ($events as $element) {
+            assert($element instanceof Event);
+        }
         $this->events = $events;
         return $this;
     }

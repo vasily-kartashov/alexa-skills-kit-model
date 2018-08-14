@@ -21,6 +21,9 @@ abstract class ResolutionsBuilder
      */
     public function withResolutionsPerAuthority(array $resolutionsPerAuthority): self
     {
+        foreach ($resolutionsPerAuthority as $element) {
+            assert($element instanceof Resolution);
+        }
         $this->resolutionsPerAuthority = $resolutionsPerAuthority;
         return $this;
     }

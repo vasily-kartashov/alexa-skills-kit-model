@@ -35,6 +35,9 @@ abstract class SetLightDirectiveBuilder
      */
     public function withTargetGadgets(array $targetGadgets): self
     {
+        foreach ($targetGadgets as $element) {
+            assert(is_string($element));
+        }
         $this->targetGadgets = $targetGadgets;
         return $this;
     }

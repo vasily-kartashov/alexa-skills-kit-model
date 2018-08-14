@@ -27,6 +27,9 @@ abstract class InSkillProductsResponseBuilder
      */
     public function withInSkillProducts(array $inSkillProducts): self
     {
+        foreach ($inSkillProducts as $element) {
+            assert($element instanceof InSkillProduct);
+        }
         $this->inSkillProducts = $inSkillProducts;
         return $this;
     }

@@ -60,6 +60,9 @@ abstract class AlexaListBuilder
      */
     public function withItems(array $items): self
     {
+        foreach ($items as $element) {
+            assert($element instanceof AlexaListItem);
+        }
         $this->items = $items;
         return $this;
     }

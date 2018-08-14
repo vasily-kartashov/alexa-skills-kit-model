@@ -55,6 +55,9 @@ abstract class ResponseBuilder
      */
     public function withDirectives(array $directives): self
     {
+        foreach ($directives as $element) {
+            assert($element instanceof Directive);
+        }
         $this->directives = $directives;
         return $this;
     }

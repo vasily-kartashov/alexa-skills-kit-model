@@ -30,6 +30,9 @@ abstract class ProviderAttributesBuilder
      */
     public function withProviderCreditList(array $providerCreditList): self
     {
+        foreach ($providerCreditList as $element) {
+            assert($element instanceof ProviderCredit);
+        }
         $this->providerCreditList = $providerCreditList;
         return $this;
     }

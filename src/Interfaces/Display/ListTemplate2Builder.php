@@ -39,6 +39,9 @@ abstract class ListTemplate2Builder
      */
     public function withListItems(array $listItems): self
     {
+        foreach ($listItems as $element) {
+            assert($element instanceof ListItem);
+        }
         $this->listItems = $listItems;
         return $this;
     }

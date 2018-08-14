@@ -30,6 +30,9 @@ abstract class ImageBuilder
      */
     public function withSources(array $sources): self
     {
+        foreach ($sources as $element) {
+            assert($element instanceof ImageInstance);
+        }
         $this->sources = $sources;
         return $this;
     }

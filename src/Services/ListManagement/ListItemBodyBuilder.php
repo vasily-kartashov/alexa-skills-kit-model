@@ -30,6 +30,9 @@ abstract class ListItemBodyBuilder
      */
     public function withListItemIds(array $listItemIds): self
     {
+        foreach ($listItemIds as $element) {
+            assert(is_string($element));
+        }
         $this->listItemIds = $listItemIds;
         return $this;
     }

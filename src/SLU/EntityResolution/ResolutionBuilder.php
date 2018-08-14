@@ -39,6 +39,9 @@ abstract class ResolutionBuilder
      */
     public function withValues(array $values): self
     {
+        foreach ($values as $element) {
+            assert($element instanceof ValueWrapper);
+        }
         $this->values = $values;
         return $this;
     }

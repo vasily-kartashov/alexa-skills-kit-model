@@ -23,6 +23,9 @@ abstract class InputHandlerEventRequestBuilder
      */
     public function withEvents(array $events): self
     {
+        foreach ($events as $element) {
+            assert($element instanceof InputHandlerEvent);
+        }
         $this->events = $events;
         return $this;
     }

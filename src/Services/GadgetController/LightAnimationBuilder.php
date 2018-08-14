@@ -33,6 +33,9 @@ abstract class LightAnimationBuilder
      */
     public function withTargetLights(array $targetLights): self
     {
+        foreach ($targetLights as $element) {
+            assert(is_string($element));
+        }
         $this->targetLights = $targetLights;
         return $this;
     }
@@ -43,6 +46,9 @@ abstract class LightAnimationBuilder
      */
     public function withSequence(array $sequence): self
     {
+        foreach ($sequence as $element) {
+            assert($element instanceof AnimationStep);
+        }
         $this->sequence = $sequence;
         return $this;
     }

@@ -95,6 +95,9 @@ abstract class AuthorizationDetailsBuilder
      */
     public function withIdList(array $idList): self
     {
+        foreach ($idList as $element) {
+            assert(is_string($element));
+        }
         $this->idList = $idList;
         return $this;
     }

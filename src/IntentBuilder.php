@@ -33,6 +33,9 @@ abstract class IntentBuilder
      */
     public function withSlots(array $slots): self
     {
+        foreach ($slots as $element) {
+            assert($element instanceof Slot);
+        }
         $this->slots = $slots;
         return $this;
     }

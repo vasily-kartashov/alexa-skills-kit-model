@@ -39,6 +39,9 @@ abstract class SetLightParametersBuilder
      */
     public function withAnimations(array $animations): self
     {
+        foreach ($animations as $element) {
+            assert($element instanceof LightAnimation);
+        }
         $this->animations = $animations;
         return $this;
     }

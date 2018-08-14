@@ -27,6 +27,9 @@ abstract class PatternBuilder
      */
     public function withGadgetIds(array $gadgetIds): self
     {
+        foreach ($gadgetIds as $element) {
+            assert(is_string($element));
+        }
         $this->gadgetIds = $gadgetIds;
         return $this;
     }
@@ -37,6 +40,9 @@ abstract class PatternBuilder
      */
     public function withColors(array $colors): self
     {
+        foreach ($colors as $element) {
+            assert(is_string($element));
+        }
         $this->colors = $colors;
         return $this;
     }
