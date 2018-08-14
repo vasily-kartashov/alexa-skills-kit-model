@@ -43,6 +43,10 @@ abstract class Template implements JsonSerializable
         return $this->backButton;
     }
 
+    /**
+     * @param array $data
+     * @return self|null
+     */
     public static function fromValue(array $data)
     {
         if (!isset($data['type'])) {

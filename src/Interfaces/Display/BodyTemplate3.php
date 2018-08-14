@@ -77,6 +77,10 @@ final class BodyTemplate3 extends Template implements JsonSerializable
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

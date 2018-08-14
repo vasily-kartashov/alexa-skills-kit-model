@@ -54,6 +54,10 @@ final class SendResponseDirective extends Directive implements JsonSerializable
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

@@ -36,6 +36,10 @@ abstract class Directive implements JsonSerializable
         return $this->type;
     }
 
+    /**
+     * @param array $data
+     * @return self|null
+     */
     public static function fromValue(array $data)
     {
         if (!isset($data['type'])) {

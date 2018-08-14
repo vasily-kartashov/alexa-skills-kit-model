@@ -81,6 +81,10 @@ abstract class Request implements JsonSerializable
         return $this->locale;
     }
 
+    /**
+     * @param array $data
+     * @return self|null
+     */
     public static function fromValue(array $data)
     {
         if (!isset($data['type'])) {

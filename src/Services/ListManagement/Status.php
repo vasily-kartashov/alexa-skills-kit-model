@@ -49,6 +49,10 @@ final class Status implements JsonSerializable
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

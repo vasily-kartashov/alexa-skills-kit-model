@@ -30,6 +30,10 @@ final class NextCommandIssuedRequest extends Request implements JsonSerializable
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

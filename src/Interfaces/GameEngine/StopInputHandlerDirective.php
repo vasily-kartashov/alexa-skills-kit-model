@@ -42,6 +42,10 @@ final class StopInputHandlerDirective extends Directive implements JsonSerializa
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

@@ -30,6 +30,10 @@ final class PreviousCommandIssuedRequest extends Request implements JsonSerializ
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

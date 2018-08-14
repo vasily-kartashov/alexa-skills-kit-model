@@ -41,6 +41,10 @@ final class PlainTextOutputSpeech extends OutputSpeech implements JsonSerializab
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

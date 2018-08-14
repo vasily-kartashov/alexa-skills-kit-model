@@ -41,6 +41,10 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

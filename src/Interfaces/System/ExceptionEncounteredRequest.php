@@ -54,6 +54,10 @@ final class ExceptionEncounteredRequest extends Request implements JsonSerializa
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();

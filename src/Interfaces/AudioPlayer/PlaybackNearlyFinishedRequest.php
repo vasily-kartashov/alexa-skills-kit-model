@@ -54,6 +54,10 @@ final class PlaybackNearlyFinishedRequest extends Request implements JsonSeriali
         };
     }
 
+    /**
+     * @param array $data
+     * @return self
+     */
     public static function fromValue(array $data)
     {
         $instance = new self();
