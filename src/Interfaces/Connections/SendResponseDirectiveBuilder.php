@@ -10,7 +10,7 @@ abstract class SendResponseDirectiveBuilder
     /** @var ConnectionsStatus|null */
     private $status = null;
 
-    /** @var null[] */
+    /** @var array */
     private $payload = [];
 
     protected function __construct(callable $constructor)
@@ -25,7 +25,7 @@ abstract class SendResponseDirectiveBuilder
     }
 
     /**
-     * @param null[] $payload
+     * @param array $payload
      * @return self
      */
     public function withPayload(array $payload): self

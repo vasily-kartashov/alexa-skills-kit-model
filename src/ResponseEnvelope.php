@@ -9,7 +9,7 @@ final class ResponseEnvelope implements JsonSerializable
     /** @var string|null */
     private $version = null;
 
-    /** @var null[] */
+    /** @var array */
     private $sessionAttributes = [];
 
     /** @var string|null */
@@ -31,7 +31,7 @@ final class ResponseEnvelope implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function sessionAttributes()
     {

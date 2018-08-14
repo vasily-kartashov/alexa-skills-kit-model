@@ -7,7 +7,7 @@ abstract class MessageReceivedRequestBuilder
     /** @var callable */
     private $constructor;
 
-    /** @var null[] */
+    /** @var array */
     private $message = [];
 
     protected function __construct(callable $constructor)
@@ -16,7 +16,7 @@ abstract class MessageReceivedRequestBuilder
     }
 
     /**
-     * @param null[] $message
+     * @param array $message
      * @return self
      */
     public function withMessage(array $message): self

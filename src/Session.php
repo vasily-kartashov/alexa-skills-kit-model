@@ -15,7 +15,7 @@ final class Session implements JsonSerializable
     /** @var User|null */
     private $user = null;
 
-    /** @var null[] */
+    /** @var array */
     private $attributes = [];
 
     /** @var Application|null */
@@ -50,7 +50,7 @@ final class Session implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function attributes()
     {

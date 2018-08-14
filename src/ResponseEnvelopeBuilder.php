@@ -10,7 +10,7 @@ abstract class ResponseEnvelopeBuilder
     /** @var string|null */
     private $version = null;
 
-    /** @var null[] */
+    /** @var array */
     private $sessionAttributes = [];
 
     /** @var string|null */
@@ -31,7 +31,7 @@ abstract class ResponseEnvelopeBuilder
     }
 
     /**
-     * @param null[] $sessionAttributes
+     * @param array $sessionAttributes
      * @return self
      */
     public function withSessionAttributes(array $sessionAttributes): self

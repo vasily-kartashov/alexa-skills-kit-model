@@ -16,7 +16,7 @@ abstract class SessionBuilder
     /** @var User|null */
     private $user = null;
 
-    /** @var null[] */
+    /** @var array */
     private $attributes = [];
 
     /** @var Application|null */
@@ -46,7 +46,7 @@ abstract class SessionBuilder
     }
 
     /**
-     * @param null[] $attributes
+     * @param array $attributes
      * @return self
      */
     public function withAttributes(array $attributes): self

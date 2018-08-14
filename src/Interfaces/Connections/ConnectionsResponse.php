@@ -15,7 +15,7 @@ final class ConnectionsResponse extends Request implements JsonSerializable
     /** @var string|null */
     private $name = null;
 
-    /** @var null[] */
+    /** @var array */
     private $payload = [];
 
     /** @var string|null */
@@ -44,7 +44,7 @@ final class ConnectionsResponse extends Request implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function payload()
     {

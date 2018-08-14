@@ -9,7 +9,7 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
 {
     const TYPE = 'Messaging.MessageReceived';
 
-    /** @var null[] */
+    /** @var array */
     private $message = [];
 
     protected function __construct()
@@ -19,7 +19,7 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function message()
     {

@@ -13,7 +13,7 @@ abstract class ConnectionsResponseBuilder
     /** @var string|null */
     private $name = null;
 
-    /** @var null[] */
+    /** @var array */
     private $payload = [];
 
     /** @var string|null */
@@ -37,7 +37,7 @@ abstract class ConnectionsResponseBuilder
     }
 
     /**
-     * @param null[] $payload
+     * @param array $payload
      * @return self
      */
     public function withPayload(array $payload): self

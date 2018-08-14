@@ -12,7 +12,7 @@ final class SendResponseDirective extends Directive implements JsonSerializable
     /** @var ConnectionsStatus|null */
     private $status = null;
 
-    /** @var null[] */
+    /** @var array */
     private $payload = [];
 
     protected function __construct()
@@ -30,7 +30,7 @@ final class SendResponseDirective extends Directive implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function payload()
     {

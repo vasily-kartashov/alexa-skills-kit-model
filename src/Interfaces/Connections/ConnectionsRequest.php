@@ -12,7 +12,7 @@ final class ConnectionsRequest extends Request implements JsonSerializable
     /** @var string|null */
     private $name = null;
 
-    /** @var null[] */
+    /** @var array */
     private $payload = [];
 
     protected function __construct()
@@ -30,7 +30,7 @@ final class ConnectionsRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @return null[]
+     * @return array
      */
     public function payload()
     {
