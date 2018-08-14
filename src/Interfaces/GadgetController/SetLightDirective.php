@@ -75,7 +75,7 @@ final class SetLightDirective extends Directive implements JsonSerializable
         $instance->targetGadgets = [];
         foreach ($data['targetGadgets'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->targetGadgets[] = $element;
             }
         }

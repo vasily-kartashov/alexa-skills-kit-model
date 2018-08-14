@@ -67,7 +67,7 @@ final class InSkillProductsResponse implements JsonSerializable
         $instance->inSkillProducts = [];
         foreach ($data['inSkillProducts'] as $item) {
             $element = isset($item) ? InSkillProduct::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->inSkillProducts[] = $element;
             }
         }

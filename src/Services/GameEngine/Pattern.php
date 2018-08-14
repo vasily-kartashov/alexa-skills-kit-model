@@ -67,14 +67,14 @@ final class Pattern implements JsonSerializable
         $instance->gadgetIds = [];
         foreach ($data['gadgetIds'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->gadgetIds[] = $element;
             }
         }
         $instance->colors = [];
         foreach ($data['colors'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->colors[] = $element;
             }
         }

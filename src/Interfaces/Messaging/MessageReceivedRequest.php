@@ -49,7 +49,7 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
         $instance->message = [];
         foreach ($data['message'] as $item) {
             $element = $item;
-            if ($element) {
+            if ($element !== null) {
                 $instance->message[] = $element;
             }
         }

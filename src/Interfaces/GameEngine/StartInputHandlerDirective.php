@@ -88,21 +88,21 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
         $instance->proxies = [];
         foreach ($data['proxies'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->proxies[] = $element;
             }
         }
         $instance->recognizers = [];
         foreach ($data['recognizers'] as $item) {
             $element = isset($item) ? Recognizer::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->recognizers[] = $element;
             }
         }
         $instance->events = [];
         foreach ($data['events'] as $item) {
             $element = isset($item) ? Event::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->events[] = $element;
             }
         }

@@ -74,7 +74,7 @@ final class SendRequestDirective extends Directive implements JsonSerializable
         $instance->payload = [];
         foreach ($data['payload'] as $item) {
             $element = $item;
-            if ($element) {
+            if ($element !== null) {
                 $instance->payload[] = $element;
             }
         }

@@ -107,7 +107,7 @@ final class AlexaList implements JsonSerializable
         $instance->items = [];
         foreach ($data['items'] as $item) {
             $element = isset($item) ? AlexaListItem::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->items[] = $element;
             }
         }

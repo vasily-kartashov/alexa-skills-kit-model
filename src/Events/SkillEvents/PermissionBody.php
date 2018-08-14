@@ -43,7 +43,7 @@ final class PermissionBody implements JsonSerializable
         $instance->acceptedPermissions = [];
         foreach ($data['acceptedPermissions'] as $item) {
             $element = isset($item) ? Permission::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->acceptedPermissions[] = $element;
             }
         }

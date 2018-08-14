@@ -194,7 +194,7 @@ final class AuthorizationDetails implements JsonSerializable
         $instance->idList = [];
         foreach ($data['idList'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->idList[] = $element;
             }
         }

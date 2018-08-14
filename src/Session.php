@@ -94,7 +94,7 @@ final class Session implements JsonSerializable
         $instance->attributes = [];
         foreach ($data['attributes'] as $item) {
             $element = $item;
-            if ($element) {
+            if ($element !== null) {
                 $instance->attributes[] = $element;
             }
         }

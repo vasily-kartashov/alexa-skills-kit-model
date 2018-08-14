@@ -80,7 +80,7 @@ final class ResponseEnvelope implements JsonSerializable
         $instance->sessionAttributes = [];
         foreach ($data['sessionAttributes'] as $item) {
             $element = $item;
-            if ($element) {
+            if ($element !== null) {
                 $instance->sessionAttributes[] = $element;
             }
         }

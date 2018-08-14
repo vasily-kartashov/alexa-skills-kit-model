@@ -68,7 +68,7 @@ final class Intent implements JsonSerializable
         $instance->slots = [];
         foreach ($data['slots'] as $item) {
             $element = isset($item) ? Slot::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->slots[] = $element;
             }
         }

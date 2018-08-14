@@ -69,7 +69,7 @@ final class Resolution implements JsonSerializable
         $instance->values = [];
         foreach ($data['values'] as $item) {
             $element = isset($item) ? ValueWrapper::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->values[] = $element;
             }
         }

@@ -56,7 +56,7 @@ final class ProviderAttributes implements JsonSerializable
         $instance->providerCreditList = [];
         foreach ($data['providerCreditList'] as $item) {
             $element = isset($item) ? ProviderCredit::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->providerCreditList[] = $element;
             }
         }

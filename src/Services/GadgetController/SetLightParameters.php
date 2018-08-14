@@ -69,7 +69,7 @@ final class SetLightParameters implements JsonSerializable
         $instance->animations = [];
         foreach ($data['animations'] as $item) {
             $element = isset($item) ? LightAnimation::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->animations[] = $element;
             }
         }

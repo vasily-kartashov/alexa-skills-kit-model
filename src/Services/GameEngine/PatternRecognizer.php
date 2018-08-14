@@ -98,21 +98,21 @@ final class PatternRecognizer extends Recognizer implements JsonSerializable
         $instance->gadgetIds = [];
         foreach ($data['gadgetIds'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->gadgetIds[] = $element;
             }
         }
         $instance->actions = [];
         foreach ($data['actions'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->actions[] = $element;
             }
         }
         $instance->pattern = [];
         foreach ($data['pattern'] as $item) {
             $element = isset($item) ? Pattern::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->pattern[] = $element;
             }
         }

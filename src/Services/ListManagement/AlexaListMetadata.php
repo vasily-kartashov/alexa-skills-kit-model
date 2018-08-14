@@ -95,7 +95,7 @@ final class AlexaListMetadata implements JsonSerializable
         $instance->statusMap = [];
         foreach ($data['statusMap'] as $item) {
             $element = isset($item) ? Status::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->statusMap[] = $element;
             }
         }

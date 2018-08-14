@@ -43,7 +43,7 @@ final class Resolutions implements JsonSerializable
         $instance->resolutionsPerAuthority = [];
         foreach ($data['resolutionsPerAuthority'] as $item) {
             $element = isset($item) ? Resolution::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->resolutionsPerAuthority[] = $element;
             }
         }

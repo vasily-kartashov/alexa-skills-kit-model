@@ -97,7 +97,7 @@ final class Response implements JsonSerializable
         $instance->directives = [];
         foreach ($data['directives'] as $item) {
             $element = isset($item) ? Directive::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->directives[] = $element;
             }
         }

@@ -68,14 +68,14 @@ final class LightAnimation implements JsonSerializable
         $instance->targetLights = [];
         foreach ($data['targetLights'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->targetLights[] = $element;
             }
         }
         $instance->sequence = [];
         foreach ($data['sequence'] as $item) {
             $element = isset($item) ? AnimationStep::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->sequence[] = $element;
             }
         }

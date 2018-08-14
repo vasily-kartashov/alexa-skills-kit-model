@@ -74,7 +74,7 @@ final class ListTemplate1 extends Template implements JsonSerializable
         $instance->listItems = [];
         foreach ($data['listItems'] as $item) {
             $element = isset($item) ? ListItem::fromValue($item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->listItems[] = $element;
             }
         }

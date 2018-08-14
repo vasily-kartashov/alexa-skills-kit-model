@@ -104,14 +104,14 @@ final class Event implements JsonSerializable
         $instance->meets = [];
         foreach ($data['meets'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->meets[] = $element;
             }
         }
         $instance->fails = [];
         foreach ($data['fails'] as $item) {
             $element = isset($item) ? ((string) $item) : null;
-            if ($element) {
+            if ($element !== null) {
                 $instance->fails[] = $element;
             }
         }
