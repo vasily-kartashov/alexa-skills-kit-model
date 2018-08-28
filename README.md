@@ -42,4 +42,4 @@ $payload = json_encode($envelope);
 Composer
 ---
 
-Use `"vasily-kartashov/alexa-skill-kit-model"`
+Use `"vasily-kartashov/alexa-skills-kit-model"`
