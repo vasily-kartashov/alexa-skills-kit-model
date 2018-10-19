@@ -24,6 +24,7 @@
     "phpstan/phpstan": "*",
     "phpunit/phpunit": "5.*",
     "squizlabs/php_codesniffer": "*",
-    "vimeo/psalm": "*"
+    "vimeo/psalm": "*",
+    "phan/phan": "*"
   }
 }
