@@ -39,54 +39,90 @@ abstract class InSkillProductBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $productId
+     * @return self
+     */
     public function withProductId(string $productId): self
     {
         $this->productId = $productId;
         return $this;
     }
 
+    /**
+     * @param mixed $referenceName
+     * @return self
+     */
     public function withReferenceName(string $referenceName): self
     {
         $this->referenceName = $referenceName;
         return $this;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $type
+     * @return self
+     */
     public function withType(ProductType $type): self
     {
         $this->type = $type;
         return $this;
     }
 
+    /**
+     * @param mixed $summary
+     * @return self
+     */
     public function withSummary(string $summary): self
     {
         $this->summary = $summary;
         return $this;
     }
 
+    /**
+     * @param mixed $purchasable
+     * @return self
+     */
     public function withPurchasable(PurchasableState $purchasable): self
     {
         $this->purchasable = $purchasable;
         return $this;
     }
 
+    /**
+     * @param mixed $entitled
+     * @return self
+     */
     public function withEntitled(EntitledState $entitled): self
     {
         $this->entitled = $entitled;
         return $this;
     }
 
+    /**
+     * @param mixed $activeEntitlementCount
+     * @return self
+     */
     public function withActiveEntitlementCount(int $activeEntitlementCount): self
     {
         $this->activeEntitlementCount = $activeEntitlementCount;
         return $this;
     }
 
+    /**
+     * @param mixed $purchaseMode
+     * @return self
+     */
     public function withPurchaseMode(PurchaseMode $purchaseMode): self
     {
         $this->purchaseMode = $purchaseMode;

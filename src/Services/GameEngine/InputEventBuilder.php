@@ -27,30 +27,50 @@ abstract class InputEventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $gadgetId
+     * @return self
+     */
     public function withGadgetId(string $gadgetId): self
     {
         $this->gadgetId = $gadgetId;
         return $this;
     }
 
+    /**
+     * @param mixed $timestamp
+     * @return self
+     */
     public function withTimestamp(string $timestamp): self
     {
         $this->timestamp = $timestamp;
         return $this;
     }
 
+    /**
+     * @param mixed $action
+     * @return self
+     */
     public function withAction(InputEventActionType $action): self
     {
         $this->action = $action;
         return $this;
     }
 
+    /**
+     * @param mixed $color
+     * @return self
+     */
     public function withColor(string $color): self
     {
         $this->color = $color;
         return $this;
     }
 
+    /**
+     * @param mixed $feature
+     * @return self
+     */
     public function withFeature(string $feature): self
     {
         $this->feature = $feature;

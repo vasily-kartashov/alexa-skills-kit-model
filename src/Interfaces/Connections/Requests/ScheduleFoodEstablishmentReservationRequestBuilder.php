@@ -23,18 +23,30 @@ abstract class ScheduleFoodEstablishmentReservationRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $startTime
+     * @return self
+     */
     public function withStartTime(string $startTime): self
     {
         $this->startTime = $startTime;
         return $this;
     }
 
+    /**
+     * @param mixed $partySize
+     * @return self
+     */
     public function withPartySize(string $partySize): self
     {
         $this->partySize = $partySize;
         return $this;
     }
 
+    /**
+     * @param mixed $restaurant
+     * @return self
+     */
     public function withRestaurant(Restaurant $restaurant): self
     {
         $this->restaurant = $restaurant;

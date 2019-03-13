@@ -18,12 +18,20 @@ abstract class DisplayInterfaceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $templateVersion
+     * @return self
+     */
     public function withTemplateVersion(string $templateVersion): self
     {
         $this->templateVersion = $templateVersion;
         return $this;
     }
 
+    /**
+     * @param mixed $markupVersion
+     * @return self
+     */
     public function withMarkupVersion(string $markupVersion): self
     {
         $this->markupVersion = $markupVersion;

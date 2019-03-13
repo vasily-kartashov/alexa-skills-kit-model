@@ -15,6 +15,10 @@ abstract class StatusBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $code
+     * @return self
+     */
     public function withCode(StatusCode $code): self
     {
         $this->code = $code;

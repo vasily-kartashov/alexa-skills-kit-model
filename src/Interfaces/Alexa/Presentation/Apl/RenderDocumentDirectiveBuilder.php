@@ -24,6 +24,10 @@ abstract class RenderDocumentDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;

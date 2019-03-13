@@ -18,12 +18,20 @@ abstract class AltitudeBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $altitudeInMeters
+     * @return self
+     */
     public function withAltitudeInMeters(float $altitudeInMeters): self
     {
         $this->altitudeInMeters = $altitudeInMeters;
         return $this;
     }
 
+    /**
+     * @param mixed $accuracyInMeters
+     * @return self
+     */
     public function withAccuracyInMeters(float $accuracyInMeters): self
     {
         $this->accuracyInMeters = $accuracyInMeters;

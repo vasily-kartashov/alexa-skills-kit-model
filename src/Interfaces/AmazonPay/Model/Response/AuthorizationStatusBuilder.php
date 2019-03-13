@@ -26,24 +26,40 @@ abstract class AuthorizationStatusBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $state
+     * @return self
+     */
     public function withState(State $state): self
     {
         $this->state = $state;
         return $this;
     }
 
+    /**
+     * @param mixed $reasonCode
+     * @return self
+     */
     public function withReasonCode(string $reasonCode): self
     {
         $this->reasonCode = $reasonCode;
         return $this;
     }
 
+    /**
+     * @param mixed $reasonDescription
+     * @return self
+     */
     public function withReasonDescription(string $reasonDescription): self
     {
         $this->reasonDescription = $reasonDescription;
         return $this;
     }
 
+    /**
+     * @param mixed $lastUpdateTimestamp
+     * @return self
+     */
     public function withLastUpdateTimestamp(DateTime $lastUpdateTimestamp): self
     {
         $this->lastUpdateTimestamp = $lastUpdateTimestamp;

@@ -10,7 +10,7 @@ abstract class BaseRequest implements JsonSerializable
     protected $type = null;
 
     /** @var string|null */
-    protected $@version = null;
+    protected $version = null;
 
     protected function __construct()
     {
@@ -27,9 +27,9 @@ abstract class BaseRequest implements JsonSerializable
     /**
      * @return string|null
      */
-    public function @version()
+    public function version()
     {
-        return $this->@version;
+        return $this->version;
     }
 
     /**
@@ -41,19 +41,27 @@ abstract class BaseRequest implements JsonSerializable
         if (!isset($data['@type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['@type']) {
-            case ScheduleFoodEstablishmentReservationRequest::@TYPE:
-                return ScheduleFoodEstablishmentReservationRequest::fromValue($data);
-            case PrintPDFRequest::@TYPE:
-                return PrintPDFRequest::fromValue($data);
-            case PrintImageRequest::@TYPE:
-                return PrintImageRequest::fromValue($data);
-            case ScheduleTaxiReservationRequest::@TYPE:
-                return ScheduleTaxiReservationRequest::fromValue($data);
-            case PrintWebPageRequest::@TYPE:
-                return PrintWebPageRequest::fromValue($data);
-            default:
-                return null;
+            case ScheduleFoodEstablishmentReservationRequest::TYPE:
+                $instance = ScheduleFoodEstablishmentReservationRequest::fromValue($data);
+                break;
+            case PrintPDFRequest::TYPE:
+                $instance = PrintPDFRequest::fromValue($data);
+                break;
+            case PrintImageRequest::TYPE:
+                $instance = PrintImageRequest::fromValue($data);
+                break;
+            case ScheduleTaxiReservationRequest::TYPE:
+                $instance = ScheduleTaxiReservationRequest::fromValue($data);
+                break;
+            case PrintWebPageRequest::TYPE:
+                $instance = PrintWebPageRequest::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->version = $data['@version'];
+        }
+        return $instance;
     }
 }

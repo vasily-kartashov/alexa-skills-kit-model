@@ -26,24 +26,40 @@ abstract class AudioItemMetadataBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
 
+    /**
+     * @param mixed $subtitle
+     * @return self
+     */
     public function withSubtitle(string $subtitle): self
     {
         $this->subtitle = $subtitle;
         return $this;
     }
 
+    /**
+     * @param mixed $art
+     * @return self
+     */
     public function withArt(Image $art): self
     {
         $this->art = $art;
         return $this;
     }
 
+    /**
+     * @param mixed $backgroundImage
+     * @return self
+     */
     public function withBackgroundImage(Image $backgroundImage): self
     {
         $this->backgroundImage = $backgroundImage;

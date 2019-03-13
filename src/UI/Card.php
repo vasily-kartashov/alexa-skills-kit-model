@@ -30,17 +30,23 @@ abstract class Card implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case LinkAccountCard::TYPE:
-                return LinkAccountCard::fromValue($data);
+                $instance = LinkAccountCard::fromValue($data);
+                break;
             case StandardCard::TYPE:
-                return StandardCard::fromValue($data);
+                $instance = StandardCard::fromValue($data);
+                break;
             case AskForPermissionsConsentCard::TYPE:
-                return AskForPermissionsConsentCard::fromValue($data);
+                $instance = AskForPermissionsConsentCard::fromValue($data);
+                break;
             case SimpleCard::TYPE:
-                return SimpleCard::fromValue($data);
-            default:
-                return null;
+                $instance = SimpleCard::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+        }
+        return $instance;
     }
 }

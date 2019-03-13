@@ -24,6 +24,10 @@ abstract class UserEventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;
@@ -40,12 +44,20 @@ abstract class UserEventBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $source
+     * @return self
+     */
     public function withSource($source): self
     {
         $this->source = $source;
         return $this;
     }
 
+    /**
+     * @param mixed $components
+     * @return self
+     */
     public function withComponents($components): self
     {
         $this->components = $components;

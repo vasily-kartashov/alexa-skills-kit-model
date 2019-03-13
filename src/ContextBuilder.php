@@ -33,30 +33,50 @@ abstract class ContextBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $system
+     * @return self
+     */
     public function withSystem(SystemState $system): self
     {
         $this->system = $system;
         return $this;
     }
 
+    /**
+     * @param mixed $audioPlayer
+     * @return self
+     */
     public function withAudioPlayer(AudioPlayerState $audioPlayer): self
     {
         $this->audioPlayer = $audioPlayer;
         return $this;
     }
 
+    /**
+     * @param mixed $display
+     * @return self
+     */
     public function withDisplay(DisplayState $display): self
     {
         $this->display = $display;
         return $this;
     }
 
+    /**
+     * @param mixed $geolocation
+     * @return self
+     */
     public function withGeolocation(GeolocationState $geolocation): self
     {
         $this->geolocation = $geolocation;
         return $this;
     }
 
+    /**
+     * @param mixed $viewport
+     * @return self
+     */
     public function withViewport(ViewportState $viewport): self
     {
         $this->viewport = $viewport;

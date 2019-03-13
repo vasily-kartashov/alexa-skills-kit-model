@@ -27,30 +27,50 @@ abstract class TriggerBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $type
+     * @return self
+     */
     public function withType(TriggerType $type): self
     {
         $this->type = $type;
         return $this;
     }
 
+    /**
+     * @param mixed $scheduledTime
+     * @return self
+     */
     public function withScheduledTime($scheduledTime): self
     {
         $this->scheduledTime = $scheduledTime;
         return $this;
     }
 
+    /**
+     * @param mixed $offsetInSeconds
+     * @return self
+     */
     public function withOffsetInSeconds(int $offsetInSeconds): self
     {
         $this->offsetInSeconds = $offsetInSeconds;
         return $this;
     }
 
+    /**
+     * @param mixed $timeZoneId
+     * @return self
+     */
     public function withTimeZoneId(string $timeZoneId): self
     {
         $this->timeZoneId = $timeZoneId;
         return $this;
     }
 
+    /**
+     * @param mixed $recurrence
+     * @return self
+     */
     public function withRecurrence(Recurrence $recurrence): self
     {
         $this->recurrence = $recurrence;

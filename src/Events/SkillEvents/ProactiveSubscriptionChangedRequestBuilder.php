@@ -15,6 +15,10 @@ abstract class ProactiveSubscriptionChangedRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $body
+     * @return self
+     */
     public function withBody(ProactiveSubscriptionChangedBody $body): self
     {
         $this->body = $body;

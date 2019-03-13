@@ -20,12 +20,20 @@ abstract class ElicitSlotDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $updatedIntent
+     * @return self
+     */
     public function withUpdatedIntent(Intent $updatedIntent): self
     {
         $this->updatedIntent = $updatedIntent;
         return $this;
     }
 
+    /**
+     * @param mixed $slotToElicit
+     * @return self
+     */
     public function withSlotToElicit(string $slotToElicit): self
     {
         $this->slotToElicit = $slotToElicit;

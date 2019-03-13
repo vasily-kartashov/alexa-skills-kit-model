@@ -15,6 +15,10 @@ abstract class ReminderDeletedEventRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $body
+     * @return self
+     */
     public function withBody(ReminderDeletedEvent $body): self
     {
         $this->body = $body;

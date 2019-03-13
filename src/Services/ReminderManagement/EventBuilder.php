@@ -18,12 +18,20 @@ abstract class EventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(Status $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $alertToken
+     * @return self
+     */
     public function withAlertToken(string $alertToken): self
     {
         $this->alertToken = $alertToken;

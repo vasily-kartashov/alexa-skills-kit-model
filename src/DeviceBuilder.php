@@ -18,12 +18,20 @@ abstract class DeviceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $deviceId
+     * @return self
+     */
     public function withDeviceId(string $deviceId): self
     {
         $this->deviceId = $deviceId;
         return $this;
     }
 
+    /**
+     * @param mixed $supportedInterfaces
+     * @return self
+     */
     public function withSupportedInterfaces(SupportedInterfaces $supportedInterfaces): self
     {
         $this->supportedInterfaces = $supportedInterfaces;

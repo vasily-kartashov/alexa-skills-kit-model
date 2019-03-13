@@ -21,18 +21,30 @@ abstract class ListItemBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;
         return $this;
     }
 
+    /**
+     * @param mixed $image
+     * @return self
+     */
     public function withImage(Image $image): self
     {
         $this->image = $image;
         return $this;
     }
 
+    /**
+     * @param mixed $textContent
+     * @return self
+     */
     public function withTextContent(TextContent $textContent): self
     {
         $this->textContent = $textContent;

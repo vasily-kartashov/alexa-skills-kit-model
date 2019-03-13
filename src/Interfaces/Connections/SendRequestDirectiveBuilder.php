@@ -21,6 +21,10 @@ abstract class SendRequestDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
@@ -37,6 +41,10 @@ abstract class SendRequestDirectiveBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;

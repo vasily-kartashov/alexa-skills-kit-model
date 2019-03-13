@@ -30,36 +30,60 @@ abstract class ReminderResponseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $alertToken
+     * @return self
+     */
     public function withAlertToken(string $alertToken): self
     {
         $this->alertToken = $alertToken;
         return $this;
     }
 
+    /**
+     * @param mixed $createdTime
+     * @return self
+     */
     public function withCreatedTime(string $createdTime): self
     {
         $this->createdTime = $createdTime;
         return $this;
     }
 
+    /**
+     * @param mixed $updatedTime
+     * @return self
+     */
     public function withUpdatedTime(string $updatedTime): self
     {
         $this->updatedTime = $updatedTime;
         return $this;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(Status $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(string $version): self
     {
         $this->version = $version;
         return $this;
     }
 
+    /**
+     * @param mixed $href
+     * @return self
+     */
     public function withHref(string $href): self
     {
         $this->href = $href;

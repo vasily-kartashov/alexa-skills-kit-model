@@ -15,6 +15,10 @@ abstract class ClearQueueDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $clearBehavior
+     * @return self
+     */
     public function withClearBehavior(ClearBehavior $clearBehavior): self
     {
         $this->clearBehavior = $clearBehavior;

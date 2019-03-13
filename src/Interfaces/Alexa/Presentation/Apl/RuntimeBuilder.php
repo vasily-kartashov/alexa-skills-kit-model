@@ -15,6 +15,10 @@ abstract class RuntimeBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $maxVersion
+     * @return self
+     */
     public function withMaxVersion(string $maxVersion): self
     {
         $this->maxVersion = $maxVersion;

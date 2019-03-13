@@ -30,11 +30,14 @@ abstract class Hint implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case PlainTextHint::TYPE:
-                return PlainTextHint::fromValue($data);
-            default:
-                return null;
+                $instance = PlainTextHint::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+        }
+        return $instance;
     }
 }

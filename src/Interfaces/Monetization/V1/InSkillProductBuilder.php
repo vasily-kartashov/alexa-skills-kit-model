@@ -15,6 +15,10 @@ abstract class InSkillProductBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $productId
+     * @return self
+     */
     public function withProductId(string $productId): self
     {
         $this->productId = $productId;

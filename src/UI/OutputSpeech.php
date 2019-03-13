@@ -41,13 +41,18 @@ abstract class OutputSpeech implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case SsmlOutputSpeech::TYPE:
-                return SsmlOutputSpeech::fromValue($data);
+                $instance = SsmlOutputSpeech::fromValue($data);
+                break;
             case PlainTextOutputSpeech::TYPE:
-                return PlainTextOutputSpeech::fromValue($data);
-            default:
-                return null;
+                $instance = PlainTextOutputSpeech::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->playBehavior = $data['playBehavior'];
+        }
+        return $instance;
     }
 }

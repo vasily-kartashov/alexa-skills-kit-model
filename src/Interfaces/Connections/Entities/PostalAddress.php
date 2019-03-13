@@ -6,7 +6,7 @@ use \JsonSerializable;
 
 final class PostalAddress extends BaseEntity implements JsonSerializable
 {
-    const @TYPE = 'PostalAddress';
+    const TYPE = 'PostalAddress';
 
     /** @var string|null */
     private $streetAddress = null;
@@ -26,7 +26,7 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -96,7 +96,7 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->streetAddress = isset($data['streetAddress']) ? ((string) $data['streetAddress']) : null;
         $instance->locality = isset($data['locality']) ? ((string) $data['locality']) : null;
         $instance->region = isset($data['region']) ? ((string) $data['region']) : null;
@@ -108,7 +108,7 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'streetAddress' => $this->streetAddress,
             'locality' => $this->locality,
             'region' => $this->region,

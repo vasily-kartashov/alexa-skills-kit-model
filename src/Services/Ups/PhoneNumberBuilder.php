@@ -18,12 +18,20 @@ abstract class PhoneNumberBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $countryCode
+     * @return self
+     */
     public function withCountryCode(string $countryCode): self
     {
         $this->countryCode = $countryCode;
         return $this;
     }
 
+    /**
+     * @param mixed $phoneNumber
+     * @return self
+     */
     public function withPhoneNumber(string $phoneNumber): self
     {
         $this->phoneNumber = $phoneNumber;

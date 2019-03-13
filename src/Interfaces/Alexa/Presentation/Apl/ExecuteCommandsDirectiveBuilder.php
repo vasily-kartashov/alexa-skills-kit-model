@@ -31,6 +31,10 @@ abstract class ExecuteCommandsDirectiveBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;

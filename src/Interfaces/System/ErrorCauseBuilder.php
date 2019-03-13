@@ -15,6 +15,10 @@ abstract class ErrorCauseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $requestId
+     * @return self
+     */
     public function withRequestId(string $requestId): self
     {
         $this->requestId = $requestId;

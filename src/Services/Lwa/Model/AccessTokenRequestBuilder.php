@@ -21,18 +21,30 @@ abstract class AccessTokenRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $client_id
+     * @return self
+     */
     public function withClient_id(string $client_id): self
     {
         $this->client_id = $client_id;
         return $this;
     }
 
+    /**
+     * @param mixed $client_secret
+     * @return self
+     */
     public function withClient_secret(string $client_secret): self
     {
         $this->client_secret = $client_secret;
         return $this;
     }
 
+    /**
+     * @param mixed $scope
+     * @return self
+     */
     public function withScope(string $scope): self
     {
         $this->scope = $scope;

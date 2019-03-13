@@ -21,18 +21,30 @@ abstract class TextContentBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $primaryText
+     * @return self
+     */
     public function withPrimaryText(TextField $primaryText): self
     {
         $this->primaryText = $primaryText;
         return $this;
     }
 
+    /**
+     * @param mixed $secondaryText
+     * @return self
+     */
     public function withSecondaryText(TextField $secondaryText): self
     {
         $this->secondaryText = $secondaryText;
         return $this;
     }
 
+    /**
+     * @param mixed $tertiaryText
+     * @return self
+     */
     public function withTertiaryText(TextField $tertiaryText): self
     {
         $this->tertiaryText = $tertiaryText;

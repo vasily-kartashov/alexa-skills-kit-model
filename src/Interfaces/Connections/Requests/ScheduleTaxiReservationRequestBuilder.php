@@ -26,24 +26,40 @@ abstract class ScheduleTaxiReservationRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $pickupTime
+     * @return self
+     */
     public function withPickupTime(string $pickupTime): self
     {
         $this->pickupTime = $pickupTime;
         return $this;
     }
 
+    /**
+     * @param mixed $partySize
+     * @return self
+     */
     public function withPartySize(string $partySize): self
     {
         $this->partySize = $partySize;
         return $this;
     }
 
+    /**
+     * @param mixed $pickupLocation
+     * @return self
+     */
     public function withPickupLocation(PostalAddress $pickupLocation): self
     {
         $this->pickupLocation = $pickupLocation;
         return $this;
     }
 
+    /**
+     * @param mixed $dropOffLocation
+     * @return self
+     */
     public function withDropOffLocation(PostalAddress $dropOffLocation): self
     {
         $this->dropOffLocation = $dropOffLocation;

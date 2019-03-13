@@ -21,18 +21,30 @@ abstract class PrintWebPageRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
 
+    /**
+     * @param mixed $url
+     * @return self
+     */
     public function withUrl(string $url): self
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * @param mixed $description
+     * @return self
+     */
     public function withDescription(string $description): self
     {
         $this->description = $description;

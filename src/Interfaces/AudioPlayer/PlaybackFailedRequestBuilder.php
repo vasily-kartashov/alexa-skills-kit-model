@@ -21,18 +21,30 @@ abstract class PlaybackFailedRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $currentPlaybackState
+     * @return self
+     */
     public function withCurrentPlaybackState(CurrentPlaybackState $currentPlaybackState): self
     {
         $this->currentPlaybackState = $currentPlaybackState;
         return $this;
     }
 
+    /**
+     * @param mixed $error
+     * @return self
+     */
     public function withError(Error $error): self
     {
         $this->error = $error;
         return $this;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;

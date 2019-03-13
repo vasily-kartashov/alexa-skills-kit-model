@@ -24,24 +24,40 @@ abstract class SellerOrderAttributesBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $sellerOrderId
+     * @return self
+     */
     public function withSellerOrderId(string $sellerOrderId): self
     {
         $this->sellerOrderId = $sellerOrderId;
         return $this;
     }
 
+    /**
+     * @param mixed $storeName
+     * @return self
+     */
     public function withStoreName(string $storeName): self
     {
         $this->storeName = $storeName;
         return $this;
     }
 
+    /**
+     * @param mixed $customInformation
+     * @return self
+     */
     public function withCustomInformation(string $customInformation): self
     {
         $this->customInformation = $customInformation;
         return $this;
     }
 
+    /**
+     * @param mixed $sellerNote
+     * @return self
+     */
     public function withSellerNote(string $sellerNote): self
     {
         $this->sellerNote = $sellerNote;

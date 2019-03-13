@@ -47,43 +47,62 @@ abstract class Directive implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case StopDirective::TYPE:
-                return StopDirective::fromValue($data);
+                $instance = StopDirective::fromValue($data);
+                break;
             case ConfirmSlotDirective::TYPE:
-                return ConfirmSlotDirective::fromValue($data);
+                $instance = ConfirmSlotDirective::fromValue($data);
+                break;
             case PlayDirective::TYPE:
-                return PlayDirective::fromValue($data);
+                $instance = PlayDirective::fromValue($data);
+                break;
             case ExecuteCommandsDirective::TYPE:
-                return ExecuteCommandsDirective::fromValue($data);
+                $instance = ExecuteCommandsDirective::fromValue($data);
+                break;
             case SendRequestDirective::TYPE:
-                return SendRequestDirective::fromValue($data);
+                $instance = SendRequestDirective::fromValue($data);
+                break;
             case RenderTemplateDirective::TYPE:
-                return RenderTemplateDirective::fromValue($data);
+                $instance = RenderTemplateDirective::fromValue($data);
+                break;
             case SetLightDirective::TYPE:
-                return SetLightDirective::fromValue($data);
+                $instance = SetLightDirective::fromValue($data);
+                break;
             case DelegateDirective::TYPE:
-                return DelegateDirective::fromValue($data);
+                $instance = DelegateDirective::fromValue($data);
+                break;
             case HintDirective::TYPE:
-                return HintDirective::fromValue($data);
+                $instance = HintDirective::fromValue($data);
+                break;
             case ConfirmIntentDirective::TYPE:
-                return ConfirmIntentDirective::fromValue($data);
+                $instance = ConfirmIntentDirective::fromValue($data);
+                break;
             case StartInputHandlerDirective::TYPE:
-                return StartInputHandlerDirective::fromValue($data);
+                $instance = StartInputHandlerDirective::fromValue($data);
+                break;
             case LaunchDirective::TYPE:
-                return LaunchDirective::fromValue($data);
+                $instance = LaunchDirective::fromValue($data);
+                break;
             case StopInputHandlerDirective::TYPE:
-                return StopInputHandlerDirective::fromValue($data);
+                $instance = StopInputHandlerDirective::fromValue($data);
+                break;
             case RenderDocumentDirective::TYPE:
-                return RenderDocumentDirective::fromValue($data);
+                $instance = RenderDocumentDirective::fromValue($data);
+                break;
             case SendResponseDirective::TYPE:
-                return SendResponseDirective::fromValue($data);
+                $instance = SendResponseDirective::fromValue($data);
+                break;
             case ElicitSlotDirective::TYPE:
-                return ElicitSlotDirective::fromValue($data);
+                $instance = ElicitSlotDirective::fromValue($data);
+                break;
             case ClearQueueDirective::TYPE:
-                return ClearQueueDirective::fromValue($data);
-            default:
-                return null;
+                $instance = ClearQueueDirective::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+        }
+        return $instance;
     }
 }

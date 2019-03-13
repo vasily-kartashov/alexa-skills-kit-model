@@ -18,12 +18,20 @@ abstract class AudioItemBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $stream
+     * @return self
+     */
     public function withStream(Stream $stream): self
     {
         $this->stream = $stream;
         return $this;
     }
 
+    /**
+     * @param mixed $metadata
+     * @return self
+     */
     public function withMetadata(AudioItemMetadata $metadata): self
     {
         $this->metadata = $metadata;

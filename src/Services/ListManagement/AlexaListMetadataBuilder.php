@@ -27,24 +27,40 @@ abstract class AlexaListMetadataBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $listId
+     * @return self
+     */
     public function withListId(string $listId): self
     {
         $this->listId = $listId;
         return $this;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $state
+     * @return self
+     */
     public function withState(ListState $state): self
     {
         $this->state = $state;
         return $this;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(int $version): self
     {
         $this->version = $version;

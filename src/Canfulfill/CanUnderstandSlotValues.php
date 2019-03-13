@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Canfulfill;
+namespace Alexa\Model\CanFulfill;
 
 use \JsonSerializable;
 

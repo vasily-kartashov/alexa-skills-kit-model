@@ -21,6 +21,10 @@ abstract class GetRemindersResponseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $totalCount
+     * @return self
+     */
     public function withTotalCount(string $totalCount): self
     {
         $this->totalCount = $totalCount;
@@ -40,6 +44,10 @@ abstract class GetRemindersResponseBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $links
+     * @return self
+     */
     public function withLinks(string $links): self
     {
         $this->links = $links;

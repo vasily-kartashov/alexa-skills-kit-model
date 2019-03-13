@@ -30,11 +30,14 @@ abstract class Directive implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case SpeakDirective::TYPE:
-                return SpeakDirective::fromValue($data);
-            default:
-                return null;
+                $instance = SpeakDirective::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+        }
+        return $instance;
     }
 }

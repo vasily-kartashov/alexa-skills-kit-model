@@ -18,12 +18,20 @@ abstract class IntentRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $dialogState
+     * @return self
+     */
     public function withDialogState(DialogState $dialogState): self
     {
         $this->dialogState = $dialogState;
         return $this;
     }
 
+    /**
+     * @param mixed $intent
+     * @return self
+     */
     public function withIntent(Intent $intent): self
     {
         $this->intent = $intent;

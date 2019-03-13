@@ -21,18 +21,30 @@ abstract class SetPageCommandBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $componentId
+     * @return self
+     */
     public function withComponentId(string $componentId): self
     {
         $this->componentId = $componentId;
         return $this;
     }
 
+    /**
+     * @param mixed $position
+     * @return self
+     */
     public function withPosition(Position $position): self
     {
         $this->position = $position;
         return $this;
     }
 
+    /**
+     * @param mixed $value
+     * @return self
+     */
     public function withValue(int $value): self
     {
         $this->value = $value;

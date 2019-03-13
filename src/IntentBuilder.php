@@ -21,6 +21,10 @@ abstract class IntentBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
@@ -40,6 +44,10 @@ abstract class IntentBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $confirmationStatus
+     * @return self
+     */
     public function withConfirmationStatus(IntentConfirmationStatus $confirmationStatus): self
     {
         $this->confirmationStatus = $confirmationStatus;

@@ -52,36 +52,60 @@ abstract class ViewportStateBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $shape
+     * @return self
+     */
     public function withShape(Shape $shape): self
     {
         $this->shape = $shape;
         return $this;
     }
 
+    /**
+     * @param mixed $pixelWidth
+     * @return self
+     */
     public function withPixelWidth($pixelWidth): self
     {
         $this->pixelWidth = $pixelWidth;
         return $this;
     }
 
+    /**
+     * @param mixed $pixelHeight
+     * @return self
+     */
     public function withPixelHeight($pixelHeight): self
     {
         $this->pixelHeight = $pixelHeight;
         return $this;
     }
 
+    /**
+     * @param mixed $dpi
+     * @return self
+     */
     public function withDpi($dpi): self
     {
         $this->dpi = $dpi;
         return $this;
     }
 
+    /**
+     * @param mixed $currentPixelWidth
+     * @return self
+     */
     public function withCurrentPixelWidth($currentPixelWidth): self
     {
         $this->currentPixelWidth = $currentPixelWidth;
         return $this;
     }
 
+    /**
+     * @param mixed $currentPixelHeight
+     * @return self
+     */
     public function withCurrentPixelHeight($currentPixelHeight): self
     {
         $this->currentPixelHeight = $currentPixelHeight;

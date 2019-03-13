@@ -15,6 +15,10 @@ abstract class ScopeBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(PermissionStatus $status): self
     {
         $this->status = $status;

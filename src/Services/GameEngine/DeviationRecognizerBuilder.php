@@ -15,6 +15,10 @@ abstract class DeviationRecognizerBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $recognizer
+     * @return self
+     */
     public function withRecognizer(string $recognizer): self
     {
         $this->recognizer = $recognizer;

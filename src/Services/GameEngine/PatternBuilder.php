@@ -50,12 +50,20 @@ abstract class PatternBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $action
+     * @return self
+     */
     public function withAction(InputEventActionType $action): self
     {
         $this->action = $action;
         return $this;
     }
 
+    /**
+     * @param mixed $repeat
+     * @return self
+     */
     public function withRepeat(int $repeat): self
     {
         $this->repeat = $repeat;

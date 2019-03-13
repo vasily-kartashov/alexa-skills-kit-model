@@ -17,6 +17,10 @@ abstract class SetupAmazonPayResultBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $billingAgreementDetails
+     * @return self
+     */
     public function withBillingAgreementDetails(BillingAgreementDetails $billingAgreementDetails): self
     {
         $this->billingAgreementDetails = $billingAgreementDetails;

@@ -21,18 +21,30 @@ abstract class StandardCardBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
 
+    /**
+     * @param mixed $text
+     * @return self
+     */
     public function withText(string $text): self
     {
         $this->text = $text;
         return $this;
     }
 
+    /**
+     * @param mixed $image
+     * @return self
+     */
     public function withImage(Image $image): self
     {
         $this->image = $image;

@@ -18,12 +18,20 @@ abstract class RestaurantBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $location
+     * @return self
+     */
     public function withLocation(PostalAddress $location): self
     {
         $this->location = $location;

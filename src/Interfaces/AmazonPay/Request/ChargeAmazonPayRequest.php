@@ -11,7 +11,7 @@ use \JsonSerializable;
 
 final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSerializable
 {
-    const @TYPE = 'ChargeAmazonPayRequest';
+    const TYPE = 'ChargeAmazonPayRequest';
 
     /** @var string|null */
     private $sellerId = null;
@@ -34,7 +34,7 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -113,7 +113,7 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->sellerId = isset($data['sellerId']) ? ((string) $data['sellerId']) : null;
         $instance->billingAgreementId = isset($data['billingAgreementId']) ? ((string) $data['billingAgreementId']) : null;
         $instance->paymentAction = isset($data['paymentAction']) ? PaymentAction::fromValue($data['paymentAction']) : null;
@@ -126,7 +126,7 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'sellerId' => $this->sellerId,
             'billingAgreementId' => $this->billingAgreementId,
             'paymentAction' => $this->paymentAction,

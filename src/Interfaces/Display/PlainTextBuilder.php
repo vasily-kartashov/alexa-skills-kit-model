@@ -15,6 +15,10 @@ abstract class PlainTextBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $text
+     * @return self
+     */
     public function withText(string $text): self
     {
         $this->text = $text;

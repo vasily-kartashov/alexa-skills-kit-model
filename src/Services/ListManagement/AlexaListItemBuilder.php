@@ -33,42 +33,70 @@ abstract class AlexaListItemBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $id
+     * @return self
+     */
     public function withId(string $id): self
     {
         $this->id = $id;
         return $this;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(int $version): self
     {
         $this->version = $version;
         return $this;
     }
 
+    /**
+     * @param mixed $value
+     * @return self
+     */
     public function withValue(string $value): self
     {
         $this->value = $value;
         return $this;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(ListItemState $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $createdTime
+     * @return self
+     */
     public function withCreatedTime(string $createdTime): self
     {
         $this->createdTime = $createdTime;
         return $this;
     }
 
+    /**
+     * @param mixed $updatedTime
+     * @return self
+     */
     public function withUpdatedTime(string $updatedTime): self
     {
         $this->updatedTime = $updatedTime;
         return $this;
     }
 
+    /**
+     * @param mixed $href
+     * @return self
+     */
     public function withHref(string $href): self
     {
         $this->href = $href;

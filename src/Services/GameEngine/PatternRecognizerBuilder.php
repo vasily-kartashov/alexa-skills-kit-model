@@ -27,12 +27,20 @@ abstract class PatternRecognizerBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $anchor
+     * @return self
+     */
     public function withAnchor(PatternRecognizerAnchorType $anchor): self
     {
         $this->anchor = $anchor;
         return $this;
     }
 
+    /**
+     * @param mixed $fuzzy
+     * @return self
+     */
     public function withFuzzy(bool $fuzzy): self
     {
         $this->fuzzy = $fuzzy;

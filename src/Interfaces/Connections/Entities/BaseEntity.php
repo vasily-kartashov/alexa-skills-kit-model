@@ -10,7 +10,7 @@ abstract class BaseEntity implements JsonSerializable
     protected $type = null;
 
     /** @var string|null */
-    protected $@version = null;
+    protected $version = null;
 
     protected function __construct()
     {
@@ -27,9 +27,9 @@ abstract class BaseEntity implements JsonSerializable
     /**
      * @return string|null
      */
-    public function @version()
+    public function version()
     {
-        return $this->@version;
+        return $this->version;
     }
 
     /**
@@ -41,13 +41,18 @@ abstract class BaseEntity implements JsonSerializable
         if (!isset($data['@type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['@type']) {
-            case Restaurant::@TYPE:
-                return Restaurant::fromValue($data);
-            case PostalAddress::@TYPE:
-                return PostalAddress::fromValue($data);
-            default:
-                return null;
+            case Restaurant::TYPE:
+                $instance = Restaurant::fromValue($data);
+                break;
+            case PostalAddress::TYPE:
+                $instance = PostalAddress::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->version = $data['@version'];
+        }
+        return $instance;
     }
 }

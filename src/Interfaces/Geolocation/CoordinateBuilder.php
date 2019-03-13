@@ -21,18 +21,30 @@ abstract class CoordinateBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $latitudeInDegrees
+     * @return self
+     */
     public function withLatitudeInDegrees(float $latitudeInDegrees): self
     {
         $this->latitudeInDegrees = $latitudeInDegrees;
         return $this;
     }
 
+    /**
+     * @param mixed $longitudeInDegrees
+     * @return self
+     */
     public function withLongitudeInDegrees(float $longitudeInDegrees): self
     {
         $this->longitudeInDegrees = $longitudeInDegrees;
         return $this;
     }
 
+    /**
+     * @param mixed $accuracyInMeters
+     * @return self
+     */
     public function withAccuracyInMeters(float $accuracyInMeters): self
     {
         $this->accuracyInMeters = $accuracyInMeters;

@@ -18,12 +18,20 @@ abstract class SessionEndedRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $reason
+     * @return self
+     */
     public function withReason(SessionEndedReason $reason): self
     {
         $this->reason = $reason;
         return $this;
     }
 
+    /**
+     * @param mixed $error
+     * @return self
+     */
     public function withError(SessionEndedError $error): self
     {
         $this->error = $error;

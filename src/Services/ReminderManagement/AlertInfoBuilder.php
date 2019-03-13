@@ -15,6 +15,10 @@ abstract class AlertInfoBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $spokenInfo
+     * @return self
+     */
     public function withSpokenInfo(AlertInfoSpokenInfo $spokenInfo): self
     {
         $this->spokenInfo = $spokenInfo;

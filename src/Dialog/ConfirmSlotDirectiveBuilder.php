@@ -20,12 +20,20 @@ abstract class ConfirmSlotDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $updatedIntent
+     * @return self
+     */
     public function withUpdatedIntent(Intent $updatedIntent): self
     {
         $this->updatedIntent = $updatedIntent;
         return $this;
     }
 
+    /**
+     * @param mixed $slotToConfirm
+     * @return self
+     */
     public function withSlotToConfirm(string $slotToConfirm): self
     {
         $this->slotToConfirm = $slotToConfirm;

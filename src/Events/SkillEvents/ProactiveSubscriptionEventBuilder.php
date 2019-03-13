@@ -15,6 +15,10 @@ abstract class ProactiveSubscriptionEventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $eventName
+     * @return self
+     */
     public function withEventName(string $eventName): self
     {
         $this->eventName = $eventName;

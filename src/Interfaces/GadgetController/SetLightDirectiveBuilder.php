@@ -23,6 +23,10 @@ abstract class SetLightDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(int $version): self
     {
         $this->version = $version;
@@ -42,6 +46,10 @@ abstract class SetLightDirectiveBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $parameters
+     * @return self
+     */
     public function withParameters(SetLightParameters $parameters): self
     {
         $this->parameters = $parameters;

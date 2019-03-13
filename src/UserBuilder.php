@@ -21,18 +21,30 @@ abstract class UserBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $userId
+     * @return self
+     */
     public function withUserId(string $userId): self
     {
         $this->userId = $userId;
         return $this;
     }
 
+    /**
+     * @param mixed $accessToken
+     * @return self
+     */
     public function withAccessToken(string $accessToken): self
     {
         $this->accessToken = $accessToken;
         return $this;
     }
 
+    /**
+     * @param mixed $permissions
+     * @return self
+     */
     public function withPermissions(Permissions $permissions): self
     {
         $this->permissions = $permissions;

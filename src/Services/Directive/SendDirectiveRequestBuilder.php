@@ -18,12 +18,20 @@ abstract class SendDirectiveRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $header
+     * @return self
+     */
     public function withHeader(Header $header): self
     {
         $this->header = $header;
         return $this;
     }
 
+    /**
+     * @param mixed $directive
+     * @return self
+     */
     public function withDirective(Directive $directive): self
     {
         $this->directive = $directive;

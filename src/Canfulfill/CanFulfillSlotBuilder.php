@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Canfulfill;
+namespace Alexa\Model\CanFulfill;
 
 abstract class CanFulfillSlotBuilder
 {
@@ -18,12 +18,20 @@ abstract class CanFulfillSlotBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $canUnderstand
+     * @return self
+     */
     public function withCanUnderstand(CanUnderstandSlotValues $canUnderstand): self
     {
         $this->canUnderstand = $canUnderstand;
         return $this;
     }
 
+    /**
+     * @param mixed $canFulfill
+     * @return self
+     */
     public function withCanFulfill(CanFulfillSlotValues $canFulfill): self
     {
         $this->canFulfill = $canFulfill;

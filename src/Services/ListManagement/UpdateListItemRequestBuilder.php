@@ -21,18 +21,30 @@ abstract class UpdateListItemRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $value
+     * @return self
+     */
     public function withValue(string $value): self
     {
         $this->value = $value;
         return $this;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(ListItemState $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(int $version): self
     {
         $this->version = $version;

@@ -18,12 +18,20 @@ abstract class AmazonPayErrorResponseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $errorCode
+     * @return self
+     */
     public function withErrorCode(string $errorCode): self
     {
         $this->errorCode = $errorCode;
         return $this;
     }
 
+    /**
+     * @param mixed $errorMessage
+     * @return self
+     */
     public function withErrorMessage(string $errorMessage): self
     {
         $this->errorMessage = $errorMessage;

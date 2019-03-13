@@ -38,42 +38,70 @@ abstract class ChargeAmazonPayBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $consentToken
+     * @return self
+     */
     public function withConsentToken(string $consentToken): self
     {
         $this->consentToken = $consentToken;
         return $this;
     }
 
+    /**
+     * @param mixed $sellerId
+     * @return self
+     */
     public function withSellerId(string $sellerId): self
     {
         $this->sellerId = $sellerId;
         return $this;
     }
 
+    /**
+     * @param mixed $billingAgreementId
+     * @return self
+     */
     public function withBillingAgreementId(string $billingAgreementId): self
     {
         $this->billingAgreementId = $billingAgreementId;
         return $this;
     }
 
+    /**
+     * @param mixed $paymentAction
+     * @return self
+     */
     public function withPaymentAction(PaymentAction $paymentAction): self
     {
         $this->paymentAction = $paymentAction;
         return $this;
     }
 
+    /**
+     * @param mixed $authorizeAttributes
+     * @return self
+     */
     public function withAuthorizeAttributes(AuthorizeAttributes $authorizeAttributes): self
     {
         $this->authorizeAttributes = $authorizeAttributes;
         return $this;
     }
 
+    /**
+     * @param mixed $sellerOrderAttributes
+     * @return self
+     */
     public function withSellerOrderAttributes(SellerOrderAttributes $sellerOrderAttributes): self
     {
         $this->sellerOrderAttributes = $sellerOrderAttributes;
         return $this;
     }
 
+    /**
+     * @param mixed $providerAttributes
+     * @return self
+     */
     public function withProviderAttributes(ProviderAttributes $providerAttributes): self
     {
         $this->providerAttributes = $providerAttributes;

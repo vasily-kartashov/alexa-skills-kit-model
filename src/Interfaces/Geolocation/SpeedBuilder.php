@@ -18,12 +18,20 @@ abstract class SpeedBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $speedInMetersPerSecond
+     * @return self
+     */
     public function withSpeedInMetersPerSecond(float $speedInMetersPerSecond): self
     {
         $this->speedInMetersPerSecond = $speedInMetersPerSecond;
         return $this;
     }
 
+    /**
+     * @param mixed $accuracyInMetersPerSecond
+     * @return self
+     */
     public function withAccuracyInMetersPerSecond(float $accuracyInMetersPerSecond): self
     {
         $this->accuracyInMetersPerSecond = $accuracyInMetersPerSecond;

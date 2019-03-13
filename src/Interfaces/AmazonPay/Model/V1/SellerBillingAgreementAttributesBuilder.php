@@ -21,18 +21,30 @@ abstract class SellerBillingAgreementAttributesBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $sellerBillingAgreementId
+     * @return self
+     */
     public function withSellerBillingAgreementId(string $sellerBillingAgreementId): self
     {
         $this->sellerBillingAgreementId = $sellerBillingAgreementId;
         return $this;
     }
 
+    /**
+     * @param mixed $storeName
+     * @return self
+     */
     public function withStoreName(string $storeName): self
     {
         $this->storeName = $storeName;
         return $this;
     }
 
+    /**
+     * @param mixed $customInformation
+     * @return self
+     */
     public function withCustomInformation(string $customInformation): self
     {
         $this->customInformation = $customInformation;

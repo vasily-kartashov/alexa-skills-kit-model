@@ -15,6 +15,10 @@ abstract class RepromptBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $outputSpeech
+     * @return self
+     */
     public function withOutputSpeech(OutputSpeech $outputSpeech): self
     {
         $this->outputSpeech = $outputSpeech;

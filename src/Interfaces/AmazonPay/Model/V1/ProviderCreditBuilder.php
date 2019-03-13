@@ -18,12 +18,20 @@ abstract class ProviderCreditBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $providerId
+     * @return self
+     */
     public function withProviderId(string $providerId): self
     {
         $this->providerId = $providerId;
         return $this;
     }
 
+    /**
+     * @param mixed $credit
+     * @return self
+     */
     public function withCredit(Price $credit): self
     {
         $this->credit = $credit;

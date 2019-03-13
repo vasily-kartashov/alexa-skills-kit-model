@@ -21,6 +21,10 @@ abstract class LightAnimationBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $repeat
+     * @return self
+     */
     public function withRepeat(int $repeat): self
     {
         $this->repeat = $repeat;

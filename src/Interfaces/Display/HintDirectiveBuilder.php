@@ -15,6 +15,10 @@ abstract class HintDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $hint
+     * @return self
+     */
     public function withHint(Hint $hint): self
     {
         $this->hint = $hint;

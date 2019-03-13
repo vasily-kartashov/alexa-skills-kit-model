@@ -15,6 +15,10 @@ abstract class AlexaPresentationAplInterfaceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $runtime
+     * @return self
+     */
     public function withRuntime(Runtime $runtime): self
     {
         $this->runtime = $runtime;

@@ -18,12 +18,20 @@ abstract class PlayDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $playBehavior
+     * @return self
+     */
     public function withPlayBehavior(PlayBehavior $playBehavior): self
     {
         $this->playBehavior = $playBehavior;
         return $this;
     }
 
+    /**
+     * @param mixed $audioItem
+     * @return self
+     */
     public function withAudioItem(AudioItem $audioItem): self
     {
         $this->audioItem = $audioItem;

@@ -18,12 +18,20 @@ abstract class VideoItemBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $source
+     * @return self
+     */
     public function withSource(string $source): self
     {
         $this->source = $source;
         return $this;
     }
 
+    /**
+     * @param mixed $metadata
+     * @return self
+     */
     public function withMetadata(Metadata $metadata): self
     {
         $this->metadata = $metadata;

@@ -24,6 +24,10 @@ abstract class ResponseEnvelopeBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(string $version): self
     {
         $this->version = $version;
@@ -40,12 +44,20 @@ abstract class ResponseEnvelopeBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $userAgent
+     * @return self
+     */
     public function withUserAgent(string $userAgent): self
     {
         $this->userAgent = $userAgent;
         return $this;
     }
 
+    /**
+     * @param mixed $response
+     * @return self
+     */
     public function withResponse(Response $response): self
     {
         $this->response = $response;

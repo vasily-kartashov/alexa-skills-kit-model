@@ -63,15 +63,23 @@ abstract class Command implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case SetPageCommand::TYPE:
-                return SetPageCommand::fromValue($data);
+                $instance = SetPageCommand::fromValue($data);
+                break;
             case SpeakItemCommand::TYPE:
-                return SpeakItemCommand::fromValue($data);
+                $instance = SpeakItemCommand::fromValue($data);
+                break;
             case AutoPageCommand::TYPE:
-                return AutoPageCommand::fromValue($data);
-            default:
-                return null;
+                $instance = AutoPageCommand::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->delay = $data['delay'];
+            $instance->description = $data['description'];
+            $instance->when = $data['when'];
+        }
+        return $instance;
     }
 }

@@ -21,6 +21,10 @@ abstract class RecurrenceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $freq
+     * @return self
+     */
     public function withFreq(RecurrenceFreq $freq): self
     {
         $this->freq = $freq;
@@ -40,6 +44,10 @@ abstract class RecurrenceBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $interval
+     * @return self
+     */
     public function withInterval(int $interval): self
     {
         $this->interval = $interval;

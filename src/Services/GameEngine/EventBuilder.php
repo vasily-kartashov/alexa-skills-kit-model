@@ -30,6 +30,10 @@ abstract class EventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $shouldEndInputHandler
+     * @return self
+     */
     public function withShouldEndInputHandler(bool $shouldEndInputHandler): self
     {
         $this->shouldEndInputHandler = $shouldEndInputHandler;
@@ -62,18 +66,30 @@ abstract class EventBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $reports
+     * @return self
+     */
     public function withReports(EventReportingType $reports): self
     {
         $this->reports = $reports;
         return $this;
     }
 
+    /**
+     * @param mixed $maximumInvocations
+     * @return self
+     */
     public function withMaximumInvocations(int $maximumInvocations): self
     {
         $this->maximumInvocations = $maximumInvocations;
         return $this;
     }
 
+    /**
+     * @param mixed $triggerTimeMilliseconds
+     * @return self
+     */
     public function withTriggerTimeMilliseconds(int $triggerTimeMilliseconds): self
     {
         $this->triggerTimeMilliseconds = $triggerTimeMilliseconds;

@@ -36,48 +36,80 @@ abstract class AddressBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $addressLine1
+     * @return self
+     */
     public function withAddressLine1(string $addressLine1): self
     {
         $this->addressLine1 = $addressLine1;
         return $this;
     }
 
+    /**
+     * @param mixed $addressLine2
+     * @return self
+     */
     public function withAddressLine2(string $addressLine2): self
     {
         $this->addressLine2 = $addressLine2;
         return $this;
     }
 
+    /**
+     * @param mixed $addressLine3
+     * @return self
+     */
     public function withAddressLine3(string $addressLine3): self
     {
         $this->addressLine3 = $addressLine3;
         return $this;
     }
 
+    /**
+     * @param mixed $countryCode
+     * @return self
+     */
     public function withCountryCode(string $countryCode): self
     {
         $this->countryCode = $countryCode;
         return $this;
     }
 
+    /**
+     * @param mixed $stateOrRegion
+     * @return self
+     */
     public function withStateOrRegion(string $stateOrRegion): self
     {
         $this->stateOrRegion = $stateOrRegion;
         return $this;
     }
 
+    /**
+     * @param mixed $city
+     * @return self
+     */
     public function withCity(string $city): self
     {
         $this->city = $city;
         return $this;
     }
 
+    /**
+     * @param mixed $districtOrCounty
+     * @return self
+     */
     public function withDistrictOrCounty(string $districtOrCounty): self
     {
         $this->districtOrCounty = $districtOrCounty;
         return $this;
     }
 
+    /**
+     * @param mixed $postalCode
+     * @return self
+     */
     public function withPostalCode(string $postalCode): self
     {
         $this->postalCode = $postalCode;

@@ -24,24 +24,40 @@ abstract class ImageInstanceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $url
+     * @return self
+     */
     public function withUrl(string $url): self
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * @param mixed $size
+     * @return self
+     */
     public function withSize(ImageSize $size): self
     {
         $this->size = $size;
         return $this;
     }
 
+    /**
+     * @param mixed $widthPixels
+     * @return self
+     */
     public function withWidthPixels(int $widthPixels): self
     {
         $this->widthPixels = $widthPixels;
         return $this;
     }
 
+    /**
+     * @param mixed $heightPixels
+     * @return self
+     */
     public function withHeightPixels(int $heightPixels): self
     {
         $this->heightPixels = $heightPixels;

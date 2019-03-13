@@ -18,6 +18,10 @@ abstract class ImageBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $contentDescription
+     * @return self
+     */
     public function withContentDescription(string $contentDescription): self
     {
         $this->contentDescription = $contentDescription;

@@ -18,12 +18,20 @@ abstract class SimpleCardBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
 
+    /**
+     * @param mixed $content
+     * @return self
+     */
     public function withContent(string $content): self
     {
         $this->content = $content;

@@ -15,6 +15,10 @@ abstract class SpeakDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $speech
+     * @return self
+     */
     public function withSpeech(string $speech): self
     {
         $this->speech = $speech;

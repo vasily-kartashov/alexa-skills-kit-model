@@ -27,30 +27,50 @@ abstract class PostalAddressBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $streetAddress
+     * @return self
+     */
     public function withStreetAddress(string $streetAddress): self
     {
         $this->streetAddress = $streetAddress;
         return $this;
     }
 
+    /**
+     * @param mixed $locality
+     * @return self
+     */
     public function withLocality(string $locality): self
     {
         $this->locality = $locality;
         return $this;
     }
 
+    /**
+     * @param mixed $region
+     * @return self
+     */
     public function withRegion(string $region): self
     {
         $this->region = $region;
         return $this;
     }
 
+    /**
+     * @param mixed $postalCode
+     * @return self
+     */
     public function withPostalCode(string $postalCode): self
     {
         $this->postalCode = $postalCode;
         return $this;
     }
 
+    /**
+     * @param mixed $country
+     * @return self
+     */
     public function withCountry(string $country): self
     {
         $this->country = $country;

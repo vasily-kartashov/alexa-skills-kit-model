@@ -34,12 +34,20 @@ abstract class InSkillProductsResponseBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $isTruncated
+     * @return self
+     */
     public function withIsTruncated(bool $isTruncated): self
     {
         $this->isTruncated = $isTruncated;
         return $this;
     }
 
+    /**
+     * @param mixed $nextToken
+     * @return self
+     */
     public function withNextToken(string $nextToken): self
     {
         $this->nextToken = $nextToken;

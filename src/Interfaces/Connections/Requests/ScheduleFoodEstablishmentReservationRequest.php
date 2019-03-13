@@ -7,7 +7,7 @@ use \JsonSerializable;
 
 final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest implements JsonSerializable
 {
-    const @TYPE = 'ScheduleFoodEstablishmentReservationRequest';
+    const TYPE = 'ScheduleFoodEstablishmentReservationRequest';
 
     /** @var string|null */
     private $startTime = null;
@@ -21,7 +21,7 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -73,7 +73,7 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->startTime = isset($data['startTime']) ? ((string) $data['startTime']) : null;
         $instance->partySize = isset($data['partySize']) ? ((string) $data['partySize']) : null;
         $instance->restaurant = isset($data['restaurant']) ? Restaurant::fromValue($data['restaurant']) : null;
@@ -83,7 +83,7 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'startTime' => $this->startTime,
             'partySize' => $this->partySize,
             'restaurant' => $this->restaurant

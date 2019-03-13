@@ -6,7 +6,7 @@ use \JsonSerializable;
 
 final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSerializable
 {
-    const @TYPE = 'AuthorizeAttributes';
+    const TYPE = 'AuthorizeAttributes';
 
     /** @var string|null */
     private $authorizationReferenceId = null;
@@ -26,7 +26,7 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -96,7 +96,7 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->authorizationReferenceId = isset($data['authorizationReferenceId']) ? ((string) $data['authorizationReferenceId']) : null;
         $instance->authorizationAmount = isset($data['authorizationAmount']) ? Price::fromValue($data['authorizationAmount']) : null;
         $instance->transactionTimeout = isset($data['transactionTimeout']) ? ((int) $data['transactionTimeout']) : null;
@@ -108,7 +108,7 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'authorizationReferenceId' => $this->authorizationReferenceId,
             'authorizationAmount' => $this->authorizationAmount,
             'transactionTimeout' => $this->transactionTimeout,

@@ -6,7 +6,7 @@ use \JsonSerializable;
 
 final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity implements JsonSerializable
 {
-    const @TYPE = 'SellerBillingAgreementAttributes';
+    const TYPE = 'SellerBillingAgreementAttributes';
 
     /** @var string|null */
     private $sellerBillingAgreementId = null;
@@ -20,7 +20,7 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -72,7 +72,7 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->sellerBillingAgreementId = isset($data['sellerBillingAgreementId']) ? ((string) $data['sellerBillingAgreementId']) : null;
         $instance->storeName = isset($data['storeName']) ? ((string) $data['storeName']) : null;
         $instance->customInformation = isset($data['customInformation']) ? ((string) $data['customInformation']) : null;
@@ -82,7 +82,7 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'sellerBillingAgreementId' => $this->sellerBillingAgreementId,
             'storeName' => $this->storeName,
             'customInformation' => $this->customInformation

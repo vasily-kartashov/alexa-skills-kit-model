@@ -18,6 +18,10 @@ abstract class SendResponseDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(ConnectionsStatus $status): self
     {
         $this->status = $status;

@@ -15,6 +15,10 @@ abstract class LaunchDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $videoItem
+     * @return self
+     */
     public function withVideoItem(VideoItem $videoItem): self
     {
         $this->videoItem = $videoItem;

@@ -15,6 +15,10 @@ abstract class ListBodyBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $listId
+     * @return self
+     */
     public function withListId(string $listId): self
     {
         $this->listId = $listId;

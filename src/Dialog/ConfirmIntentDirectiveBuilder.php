@@ -17,6 +17,10 @@ abstract class ConfirmIntentDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $updatedIntent
+     * @return self
+     */
     public function withUpdatedIntent(Intent $updatedIntent): self
     {
         $this->updatedIntent = $updatedIntent;

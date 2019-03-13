@@ -27,30 +27,50 @@ abstract class AuthorizeAttributesBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $authorizationReferenceId
+     * @return self
+     */
     public function withAuthorizationReferenceId(string $authorizationReferenceId): self
     {
         $this->authorizationReferenceId = $authorizationReferenceId;
         return $this;
     }
 
+    /**
+     * @param mixed $authorizationAmount
+     * @return self
+     */
     public function withAuthorizationAmount(Price $authorizationAmount): self
     {
         $this->authorizationAmount = $authorizationAmount;
         return $this;
     }
 
+    /**
+     * @param mixed $transactionTimeout
+     * @return self
+     */
     public function withTransactionTimeout(int $transactionTimeout): self
     {
         $this->transactionTimeout = $transactionTimeout;
         return $this;
     }
 
+    /**
+     * @param mixed $sellerAuthorizationNote
+     * @return self
+     */
     public function withSellerAuthorizationNote(string $sellerAuthorizationNote): self
     {
         $this->sellerAuthorizationNote = $sellerAuthorizationNote;
         return $this;
     }
 
+    /**
+     * @param mixed $softDescriptor
+     * @return self
+     */
     public function withSoftDescriptor(string $softDescriptor): self
     {
         $this->softDescriptor = $softDescriptor;

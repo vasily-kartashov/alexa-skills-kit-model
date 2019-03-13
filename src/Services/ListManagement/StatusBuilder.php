@@ -18,12 +18,20 @@ abstract class StatusBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $url
+     * @return self
+     */
     public function withUrl(string $url): self
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(ListItemState $status): self
     {
         $this->status = $status;

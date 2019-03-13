@@ -15,6 +15,10 @@ abstract class ValueWrapperBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $value
+     * @return self
+     */
     public function withValue(Value $value): self
     {
         $this->value = $value;

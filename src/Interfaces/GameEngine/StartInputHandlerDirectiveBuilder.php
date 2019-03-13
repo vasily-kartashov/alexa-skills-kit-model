@@ -27,6 +27,10 @@ abstract class StartInputHandlerDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $timeout
+     * @return self
+     */
     public function withTimeout(int $timeout): self
     {
         $this->timeout = $timeout;

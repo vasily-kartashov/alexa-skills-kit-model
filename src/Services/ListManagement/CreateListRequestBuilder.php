@@ -18,12 +18,20 @@ abstract class CreateListRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $state
+     * @return self
+     */
     public function withState(ListState $state): self
     {
         $this->state = $state;

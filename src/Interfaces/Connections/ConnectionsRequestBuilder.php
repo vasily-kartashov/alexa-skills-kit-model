@@ -18,6 +18,10 @@ abstract class ConnectionsRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;

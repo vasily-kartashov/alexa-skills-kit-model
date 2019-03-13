@@ -26,24 +26,40 @@ abstract class SlotBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $value
+     * @return self
+     */
     public function withValue(string $value): self
     {
         $this->value = $value;
         return $this;
     }
 
+    /**
+     * @param mixed $confirmationStatus
+     * @return self
+     */
     public function withConfirmationStatus(SlotConfirmationStatus $confirmationStatus): self
     {
         $this->confirmationStatus = $confirmationStatus;
         return $this;
     }
 
+    /**
+     * @param mixed $resolutions
+     * @return self
+     */
     public function withResolutions(Resolutions $resolutions): self
     {
         $this->resolutions = $resolutions;

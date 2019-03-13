@@ -18,12 +18,20 @@ abstract class LocationServicesBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(Status $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $access
+     * @return self
+     */
     public function withAccess(Access $access): self
     {
         $this->access = $access;

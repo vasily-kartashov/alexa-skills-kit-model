@@ -20,12 +20,20 @@ abstract class SkillEnabledRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $eventCreationTime
+     * @return self
+     */
     public function withEventCreationTime(DateTime $eventCreationTime): self
     {
         $this->eventCreationTime = $eventCreationTime;
         return $this;
     }
 
+    /**
+     * @param mixed $eventPublishingTime
+     * @return self
+     */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self
     {
         $this->eventPublishingTime = $eventPublishingTime;

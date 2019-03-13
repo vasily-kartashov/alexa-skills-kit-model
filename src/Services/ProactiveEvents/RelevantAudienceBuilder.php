@@ -18,12 +18,20 @@ abstract class RelevantAudienceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $type
+     * @return self
+     */
     public function withType(RelevantAudienceType $type): self
     {
         $this->type = $type;
         return $this;
     }
 
+    /**
+     * @param mixed $payload
+     * @return self
+     */
     public function withPayload($payload): self
     {
         $this->payload = $payload;

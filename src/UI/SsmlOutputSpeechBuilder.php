@@ -15,6 +15,10 @@ abstract class SsmlOutputSpeechBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $ssml
+     * @return self
+     */
     public function withSsml(string $ssml): self
     {
         $this->ssml = $ssml;

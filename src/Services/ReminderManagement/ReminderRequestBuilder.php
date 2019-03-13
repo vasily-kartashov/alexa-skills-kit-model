@@ -26,24 +26,40 @@ abstract class ReminderRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $requestTime
+     * @return self
+     */
     public function withRequestTime(DateTime $requestTime): self
     {
         $this->requestTime = $requestTime;
         return $this;
     }
 
+    /**
+     * @param mixed $trigger
+     * @return self
+     */
     public function withTrigger(Trigger $trigger): self
     {
         $this->trigger = $trigger;
         return $this;
     }
 
+    /**
+     * @param mixed $alertInfo
+     * @return self
+     */
     public function withAlertInfo(AlertInfo $alertInfo): self
     {
         $this->alertInfo = $alertInfo;
         return $this;
     }
 
+    /**
+     * @param mixed $pushNotification
+     * @return self
+     */
     public function withPushNotification(PushNotification $pushNotification): self
     {
         $this->pushNotification = $pushNotification;

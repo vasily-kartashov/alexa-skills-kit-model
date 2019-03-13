@@ -18,12 +18,20 @@ abstract class HeadingBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $directionInDegrees
+     * @return self
+     */
     public function withDirectionInDegrees(float $directionInDegrees): self
     {
         $this->directionInDegrees = $directionInDegrees;
         return $this;
     }
 
+    /**
+     * @param mixed $accuracyInDegrees
+     * @return self
+     */
     public function withAccuracyInDegrees(float $accuracyInDegrees): self
     {
         $this->accuracyInDegrees = $accuracyInDegrees;

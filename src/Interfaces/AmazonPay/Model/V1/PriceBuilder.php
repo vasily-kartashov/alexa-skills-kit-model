@@ -18,12 +18,20 @@ abstract class PriceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $amount
+     * @return self
+     */
     public function withAmount(string $amount): self
     {
         $this->amount = $amount;
         return $this;
     }
 
+    /**
+     * @param mixed $currencyCode
+     * @return self
+     */
     public function withCurrencyCode(string $currencyCode): self
     {
         $this->currencyCode = $currencyCode;

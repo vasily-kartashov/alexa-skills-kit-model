@@ -52,23 +52,34 @@ abstract class Template implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case ListTemplate2::TYPE:
-                return ListTemplate2::fromValue($data);
+                $instance = ListTemplate2::fromValue($data);
+                break;
             case ListTemplate1::TYPE:
-                return ListTemplate1::fromValue($data);
+                $instance = ListTemplate1::fromValue($data);
+                break;
             case BodyTemplate7::TYPE:
-                return BodyTemplate7::fromValue($data);
+                $instance = BodyTemplate7::fromValue($data);
+                break;
             case BodyTemplate6::TYPE:
-                return BodyTemplate6::fromValue($data);
+                $instance = BodyTemplate6::fromValue($data);
+                break;
             case BodyTemplate3::TYPE:
-                return BodyTemplate3::fromValue($data);
+                $instance = BodyTemplate3::fromValue($data);
+                break;
             case BodyTemplate2::TYPE:
-                return BodyTemplate2::fromValue($data);
+                $instance = BodyTemplate2::fromValue($data);
+                break;
             case BodyTemplate1::TYPE:
-                return BodyTemplate1::fromValue($data);
-            default:
-                return null;
+                $instance = BodyTemplate1::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->token = $data['token'];
+            $instance->backButton = $data['backButton'];
+        }
+        return $instance;
     }
 }

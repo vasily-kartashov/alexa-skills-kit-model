@@ -2,7 +2,7 @@
 
 namespace Alexa\Model;
 
-use Alexa\Model\Canfulfill\CanFulfillIntent;
+use Alexa\Model\CanFulfill\CanFulfillIntent;
 use Alexa\Model\UI\Card;
 use Alexa\Model\UI\OutputSpeech;
 use Alexa\Model\UI\Reprompt;
@@ -35,18 +35,30 @@ abstract class ResponseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $outputSpeech
+     * @return self
+     */
     public function withOutputSpeech(OutputSpeech $outputSpeech): self
     {
         $this->outputSpeech = $outputSpeech;
         return $this;
     }
 
+    /**
+     * @param mixed $card
+     * @return self
+     */
     public function withCard(Card $card): self
     {
         $this->card = $card;
         return $this;
     }
 
+    /**
+     * @param mixed $reprompt
+     * @return self
+     */
     public function withReprompt(Reprompt $reprompt): self
     {
         $this->reprompt = $reprompt;
@@ -66,12 +78,20 @@ abstract class ResponseBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $shouldEndSession
+     * @return self
+     */
     public function withShouldEndSession(bool $shouldEndSession): self
     {
         $this->shouldEndSession = $shouldEndSession;
         return $this;
     }
 
+    /**
+     * @param mixed $canFulfillIntent
+     * @return self
+     */
     public function withCanFulfillIntent(CanFulfillIntent $canFulfillIntent): self
     {
         $this->canFulfillIntent = $canFulfillIntent;

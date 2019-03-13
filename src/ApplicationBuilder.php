@@ -15,6 +15,10 @@ abstract class ApplicationBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $applicationId
+     * @return self
+     */
     public function withApplicationId(string $applicationId): self
     {
         $this->applicationId = $applicationId;

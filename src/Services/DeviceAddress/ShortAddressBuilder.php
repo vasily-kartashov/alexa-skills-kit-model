@@ -18,12 +18,20 @@ abstract class ShortAddressBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $countryCode
+     * @return self
+     */
     public function withCountryCode(string $countryCode): self
     {
         $this->countryCode = $countryCode;
         return $this;
     }
 
+    /**
+     * @param mixed $postalCode
+     * @return self
+     */
     public function withPostalCode(string $postalCode): self
     {
         $this->postalCode = $postalCode;

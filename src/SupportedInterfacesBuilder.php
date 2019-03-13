@@ -14,7 +14,7 @@ abstract class SupportedInterfacesBuilder
     private $constructor;
 
     /** @var AlexaPresentationAplInterface|null */
-    private $alexa.Presentation.APL = null;
+    private $alexaPresentationAPL = null;
 
     /** @var AudioPlayerInterface|null */
     private $audioPlayer = null;
@@ -33,30 +33,50 @@ abstract class SupportedInterfacesBuilder
         $this->constructor = $constructor;
     }
 
-    public function withAlexa.Presentation.APL(AlexaPresentationAplInterface $alexa.Presentation.APL): self
+    /**
+     * @param mixed $alexaPresentationAPL
+     * @return self
+     */
+    public function withAlexaPresentationAPL(AlexaPresentationAplInterface $alexaPresentationAPL): self
     {
-        $this->alexa.Presentation.APL = $alexa.Presentation.APL;
+        $this->alexaPresentationAPL = $alexaPresentationAPL;
         return $this;
     }
 
+    /**
+     * @param mixed $audioPlayer
+     * @return self
+     */
     public function withAudioPlayer(AudioPlayerInterface $audioPlayer): self
     {
         $this->audioPlayer = $audioPlayer;
         return $this;
     }
 
+    /**
+     * @param mixed $display
+     * @return self
+     */
     public function withDisplay(DisplayInterface $display): self
     {
         $this->display = $display;
         return $this;
     }
 
+    /**
+     * @param mixed $videoApp
+     * @return self
+     */
     public function withVideoApp(VideoAppInterface $videoApp): self
     {
         $this->videoApp = $videoApp;
         return $this;
     }
 
+    /**
+     * @param mixed $geolocation
+     * @return self
+     */
     public function withGeolocation(GeolocationInterface $geolocation): self
     {
         $this->geolocation = $geolocation;
@@ -66,7 +86,7 @@ abstract class SupportedInterfacesBuilder
     public function build(): SupportedInterfaces
     {
         return ($this->constructor)(
-            $this->alexa.Presentation.APL,
+            $this->alexaPresentationAPL,
             $this->audioPlayer,
             $this->display,
             $this->videoApp,

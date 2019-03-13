@@ -15,6 +15,10 @@ abstract class AccountLinkedBodyBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $accessToken
+     * @return self
+     */
     public function withAccessToken(string $accessToken): self
     {
         $this->accessToken = $accessToken;

@@ -8,7 +8,7 @@ use \JsonSerializable;
 
 final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSerializable
 {
-    const @TYPE = 'SetupAmazonPayRequest';
+    const TYPE = 'SetupAmazonPayRequest';
 
     /** @var string|null */
     private $sellerId = null;
@@ -37,7 +37,7 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -134,7 +134,7 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->sellerId = isset($data['sellerId']) ? ((string) $data['sellerId']) : null;
         $instance->countryOfEstablishment = isset($data['countryOfEstablishment']) ? ((string) $data['countryOfEstablishment']) : null;
         $instance->ledgerCurrency = isset($data['ledgerCurrency']) ? ((string) $data['ledgerCurrency']) : null;
@@ -149,7 +149,7 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'sellerId' => $this->sellerId,
             'countryOfEstablishment' => $this->countryOfEstablishment,
             'ledgerCurrency' => $this->ledgerCurrency,

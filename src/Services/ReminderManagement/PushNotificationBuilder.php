@@ -15,6 +15,10 @@ abstract class PushNotificationBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(PushNotificationStatus $status): self
     {
         $this->status = $status;

@@ -24,24 +24,40 @@ abstract class ExperienceBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $arcMinuteWidth
+     * @return self
+     */
     public function withArcMinuteWidth($arcMinuteWidth): self
     {
         $this->arcMinuteWidth = $arcMinuteWidth;
         return $this;
     }
 
+    /**
+     * @param mixed $arcMinuteHeight
+     * @return self
+     */
     public function withArcMinuteHeight($arcMinuteHeight): self
     {
         $this->arcMinuteHeight = $arcMinuteHeight;
         return $this;
     }
 
+    /**
+     * @param mixed $canRotate
+     * @return self
+     */
     public function withCanRotate(bool $canRotate): self
     {
         $this->canRotate = $canRotate;
         return $this;
     }
 
+    /**
+     * @param mixed $canResize
+     * @return self
+     */
     public function withCanResize(bool $canResize): self
     {
         $this->canResize = $canResize;

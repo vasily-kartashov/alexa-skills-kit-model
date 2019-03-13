@@ -18,12 +18,20 @@ abstract class MetadataBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
 
+    /**
+     * @param mixed $subtitle
+     * @return self
+     */
     public function withSubtitle(string $subtitle): self
     {
         $this->subtitle = $subtitle;

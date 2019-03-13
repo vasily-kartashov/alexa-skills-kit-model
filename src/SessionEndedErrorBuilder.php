@@ -18,12 +18,20 @@ abstract class SessionEndedErrorBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $type
+     * @return self
+     */
     public function withType(SessionEndedErrorType $type): self
     {
         $this->type = $type;
         return $this;
     }
 
+    /**
+     * @param mixed $message
+     * @return self
+     */
     public function withMessage(string $message): self
     {
         $this->message = $message;

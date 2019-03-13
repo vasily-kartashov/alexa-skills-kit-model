@@ -23,18 +23,30 @@ abstract class ListDeletedEventRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $body
+     * @return self
+     */
     public function withBody(ListBody $body): self
     {
         $this->body = $body;
         return $this;
     }
 
+    /**
+     * @param mixed $eventCreationTime
+     * @return self
+     */
     public function withEventCreationTime(DateTime $eventCreationTime): self
     {
         $this->eventCreationTime = $eventCreationTime;
         return $this;
     }
 
+    /**
+     * @param mixed $eventPublishingTime
+     * @return self
+     */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self
     {
         $this->eventPublishingTime = $eventPublishingTime;

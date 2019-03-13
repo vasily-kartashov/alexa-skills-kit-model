@@ -15,6 +15,10 @@ abstract class LinksBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $next
+     * @return self
+     */
     public function withNext(string $next): self
     {
         $this->next = $next;

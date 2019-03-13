@@ -12,7 +12,7 @@ use \JsonSerializable;
 final class SupportedInterfaces implements JsonSerializable
 {
     /** @var AlexaPresentationAplInterface|null */
-    private $alexa.Presentation.APL = null;
+    private $alexaPresentationAPL = null;
 
     /** @var AudioPlayerInterface|null */
     private $audioPlayer = null;
@@ -33,9 +33,9 @@ final class SupportedInterfaces implements JsonSerializable
     /**
      * @return AlexaPresentationAplInterface|null
      */
-    public function alexa.Presentation.APL()
+    public function alexaPresentationAPL()
     {
-        return $this->alexa.Presentation.APL;
+        return $this->alexaPresentationAPL;
     }
 
     /**
@@ -73,8 +73,8 @@ final class SupportedInterfaces implements JsonSerializable
     public static function builder(): SupportedInterfacesBuilder
     {
         $instance = new self();
-        $constructor = function ($alexa.Presentation.APL, $audioPlayer, $display, $videoApp, $geolocation) use ($instance): SupportedInterfaces {
-            $instance->alexa.Presentation.APL = $alexa.Presentation.APL;
+        $constructor = function ($alexaPresentationAPL, $audioPlayer, $display, $videoApp, $geolocation) use ($instance): SupportedInterfaces {
+            $instance->alexaPresentationAPL = $alexaPresentationAPL;
             $instance->audioPlayer = $audioPlayer;
             $instance->display = $display;
             $instance->videoApp = $videoApp;
@@ -97,7 +97,7 @@ final class SupportedInterfaces implements JsonSerializable
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->alexa.Presentation.APL = isset($data['Alexa.Presentation.APL']) ? AlexaPresentationAplInterface::fromValue($data['Alexa.Presentation.APL']) : null;
+        $instance->alexaPresentationAPL = isset($data['Alexa.Presentation.APL']) ? AlexaPresentationAplInterface::fromValue($data['Alexa.Presentation.APL']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerInterface::fromValue($data['AudioPlayer']) : null;
         $instance->display = isset($data['Display']) ? DisplayInterface::fromValue($data['Display']) : null;
         $instance->videoApp = isset($data['VideoApp']) ? VideoAppInterface::fromValue($data['VideoApp']) : null;
@@ -108,7 +108,7 @@ final class SupportedInterfaces implements JsonSerializable
     public function jsonSerialize(): array
     {
         return array_filter([
-            'Alexa.Presentation.APL' => $this->alexa.Presentation.APL,
+            'Alexa.Presentation.APL' => $this->alexaPresentationAPL,
             'AudioPlayer' => $this->audioPlayer,
             'Display' => $this->display,
             'VideoApp' => $this->videoApp,

@@ -24,24 +24,40 @@ abstract class RequestEnvelopeBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(string $version): self
     {
         $this->version = $version;
         return $this;
     }
 
+    /**
+     * @param mixed $session
+     * @return self
+     */
     public function withSession(Session $session): self
     {
         $this->session = $session;
         return $this;
     }
 
+    /**
+     * @param mixed $context
+     * @return self
+     */
     public function withContext(Context $context): self
     {
         $this->context = $context;
         return $this;
     }
 
+    /**
+     * @param mixed $request
+     * @return self
+     */
     public function withRequest(Request $request): self
     {
         $this->request = $request;

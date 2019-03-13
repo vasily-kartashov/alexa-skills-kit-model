@@ -30,24 +30,40 @@ abstract class AlexaListBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $listId
+     * @return self
+     */
     public function withListId(string $listId): self
     {
         $this->listId = $listId;
         return $this;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $state
+     * @return self
+     */
     public function withState(ListState $state): self
     {
         $this->state = $state;
         return $this;
     }
 
+    /**
+     * @param mixed $version
+     * @return self
+     */
     public function withVersion(int $version): self
     {
         $this->version = $version;
@@ -67,6 +83,10 @@ abstract class AlexaListBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $links
+     * @return self
+     */
     public function withLinks(Links $links): self
     {
         $this->links = $links;

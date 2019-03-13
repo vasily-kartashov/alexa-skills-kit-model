@@ -15,6 +15,10 @@ abstract class PermissionBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $scope
+     * @return self
+     */
     public function withScope(string $scope): self
     {
         $this->scope = $scope;

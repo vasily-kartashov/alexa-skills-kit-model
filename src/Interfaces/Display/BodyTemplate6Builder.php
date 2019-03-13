@@ -21,18 +21,30 @@ abstract class BodyTemplate6Builder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $backgroundImage
+     * @return self
+     */
     public function withBackgroundImage(Image $backgroundImage): self
     {
         $this->backgroundImage = $backgroundImage;
         return $this;
     }
 
+    /**
+     * @param mixed $textContent
+     * @return self
+     */
     public function withTextContent(TextContent $textContent): self
     {
         $this->textContent = $textContent;
         return $this;
     }
 
+    /**
+     * @param mixed $image
+     * @return self
+     */
     public function withImage(Image $image): self
     {
         $this->image = $image;

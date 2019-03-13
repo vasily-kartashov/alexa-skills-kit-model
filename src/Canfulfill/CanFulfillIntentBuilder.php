@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Canfulfill;
+namespace Alexa\Model\CanFulfill;
 
 abstract class CanFulfillIntentBuilder
 {
@@ -18,6 +18,10 @@ abstract class CanFulfillIntentBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $canFulfill
+     * @return self
+     */
     public function withCanFulfill(CanFulfillIntentValues $canFulfill): self
     {
         $this->canFulfill = $canFulfill;

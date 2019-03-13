@@ -32,24 +32,40 @@ abstract class CreateProactiveEventRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $timestamp
+     * @return self
+     */
     public function withTimestamp(DateTime $timestamp): self
     {
         $this->timestamp = $timestamp;
         return $this;
     }
 
+    /**
+     * @param mixed $referenceId
+     * @return self
+     */
     public function withReferenceId(string $referenceId): self
     {
         $this->referenceId = $referenceId;
         return $this;
     }
 
+    /**
+     * @param mixed $expiryTime
+     * @return self
+     */
     public function withExpiryTime(DateTime $expiryTime): self
     {
         $this->expiryTime = $expiryTime;
         return $this;
     }
 
+    /**
+     * @param mixed $event
+     * @return self
+     */
     public function withEvent(Event $event): self
     {
         $this->event = $event;
@@ -66,6 +82,10 @@ abstract class CreateProactiveEventRequestBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $relevantAudience
+     * @return self
+     */
     public function withRelevantAudience(RelevantAudience $relevantAudience): self
     {
         $this->relevantAudience = $relevantAudience;

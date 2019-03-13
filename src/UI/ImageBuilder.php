@@ -18,12 +18,20 @@ abstract class ImageBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $smallImageUrl
+     * @return self
+     */
     public function withSmallImageUrl(string $smallImageUrl): self
     {
         $this->smallImageUrl = $smallImageUrl;
         return $this;
     }
 
+    /**
+     * @param mixed $largeImageUrl
+     * @return self
+     */
     public function withLargeImageUrl(string $largeImageUrl): self
     {
         $this->largeImageUrl = $largeImageUrl;

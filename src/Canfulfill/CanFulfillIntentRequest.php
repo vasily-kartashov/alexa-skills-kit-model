@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Canfulfill;
+namespace Alexa\Model\CanFulfill;
 
 use Alexa\Model\DialogState;
 use Alexa\Model\Intent;

@@ -12,7 +12,7 @@ abstract class BaseAmazonPayEntity implements JsonSerializable
     protected $type = null;
 
     /** @var string|null */
-    protected $@version = null;
+    protected $version = null;
 
     protected function __construct()
     {
@@ -29,9 +29,9 @@ abstract class BaseAmazonPayEntity implements JsonSerializable
     /**
      * @return string|null
      */
-    public function @version()
+    public function version()
     {
-        return $this->@version;
+        return $this->version;
     }
 
     /**
@@ -43,27 +43,39 @@ abstract class BaseAmazonPayEntity implements JsonSerializable
         if (!isset($data['@type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['@type']) {
-            case AuthorizeAttributes::@TYPE:
-                return AuthorizeAttributes::fromValue($data);
-            case SellerBillingAgreementAttributes::@TYPE:
-                return SellerBillingAgreementAttributes::fromValue($data);
-            case SetupAmazonPayRequest::@TYPE:
-                return SetupAmazonPayRequest::fromValue($data);
-            case ProviderCredit::@TYPE:
-                return ProviderCredit::fromValue($data);
-            case Price::@TYPE:
-                return Price::fromValue($data);
-            case ChargeAmazonPayRequest::@TYPE:
-                return ChargeAmazonPayRequest::fromValue($data);
-            case BillingAgreementAttributes::@TYPE:
-                return BillingAgreementAttributes::fromValue($data);
-            case SellerOrderAttributes::@TYPE:
-                return SellerOrderAttributes::fromValue($data);
-            case ProviderAttributes::@TYPE:
-                return ProviderAttributes::fromValue($data);
-            default:
-                return null;
+            case AuthorizeAttributes::TYPE:
+                $instance = AuthorizeAttributes::fromValue($data);
+                break;
+            case SellerBillingAgreementAttributes::TYPE:
+                $instance = SellerBillingAgreementAttributes::fromValue($data);
+                break;
+            case SetupAmazonPayRequest::TYPE:
+                $instance = SetupAmazonPayRequest::fromValue($data);
+                break;
+            case ProviderCredit::TYPE:
+                $instance = ProviderCredit::fromValue($data);
+                break;
+            case Price::TYPE:
+                $instance = Price::fromValue($data);
+                break;
+            case ChargeAmazonPayRequest::TYPE:
+                $instance = ChargeAmazonPayRequest::fromValue($data);
+                break;
+            case BillingAgreementAttributes::TYPE:
+                $instance = BillingAgreementAttributes::fromValue($data);
+                break;
+            case SellerOrderAttributes::TYPE:
+                $instance = SellerOrderAttributes::fromValue($data);
+                break;
+            case ProviderAttributes::TYPE:
+                $instance = ProviderAttributes::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+            $instance->version = $data['@version'];
+        }
+        return $instance;
     }
 }

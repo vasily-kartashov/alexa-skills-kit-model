@@ -24,12 +24,20 @@ abstract class ConnectionsResponseBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(ConnectionsStatus $status): self
     {
         $this->status = $status;
         return $this;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
@@ -46,6 +54,10 @@ abstract class ConnectionsResponseBuilder
         return $this;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;

@@ -32,36 +32,60 @@ abstract class BillingAgreementDetailsBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $billingAgreementId
+     * @return self
+     */
     public function withBillingAgreementId(string $billingAgreementId): self
     {
         $this->billingAgreementId = $billingAgreementId;
         return $this;
     }
 
+    /**
+     * @param mixed $creationTimestamp
+     * @return self
+     */
     public function withCreationTimestamp(DateTime $creationTimestamp): self
     {
         $this->creationTimestamp = $creationTimestamp;
         return $this;
     }
 
+    /**
+     * @param mixed $destination
+     * @return self
+     */
     public function withDestination(Destination $destination): self
     {
         $this->destination = $destination;
         return $this;
     }
 
+    /**
+     * @param mixed $checkoutLanguage
+     * @return self
+     */
     public function withCheckoutLanguage(string $checkoutLanguage): self
     {
         $this->checkoutLanguage = $checkoutLanguage;
         return $this;
     }
 
+    /**
+     * @param mixed $releaseEnvironment
+     * @return self
+     */
     public function withReleaseEnvironment(ReleaseEnvironment $releaseEnvironment): self
     {
         $this->releaseEnvironment = $releaseEnvironment;
         return $this;
     }
 
+    /**
+     * @param mixed $billingAgreementStatus
+     * @return self
+     */
     public function withBillingAgreementStatus(BillingAgreementStatus $billingAgreementStatus): self
     {
         $this->billingAgreementStatus = $billingAgreementStatus;

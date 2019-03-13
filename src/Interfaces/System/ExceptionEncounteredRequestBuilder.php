@@ -18,12 +18,20 @@ abstract class ExceptionEncounteredRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $error
+     * @return self
+     */
     public function withError(Error $error): self
     {
         $this->error = $error;
         return $this;
     }
 
+    /**
+     * @param mixed $cause
+     * @return self
+     */
     public function withCause(ErrorCause $cause): self
     {
         $this->cause = $cause;

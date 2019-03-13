@@ -18,6 +18,10 @@ abstract class ProviderAttributesBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $providerId
+     * @return self
+     */
     public function withProviderId(string $providerId): self
     {
         $this->providerId = $providerId;

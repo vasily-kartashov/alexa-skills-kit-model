@@ -2,7 +2,7 @@
 
 namespace Alexa\Model;
 
-use Alexa\Model\Canfulfill\CanFulfillIntent;
+use Alexa\Model\CanFulfill\CanFulfillIntent;
 use Alexa\Model\UI\Card;
 use Alexa\Model\UI\OutputSpeech;
 use Alexa\Model\UI\Reprompt;

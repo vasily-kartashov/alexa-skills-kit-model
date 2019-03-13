@@ -18,12 +18,20 @@ abstract class ErrorBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $code
+     * @return self
+     */
     public function withCode(int $code): self
     {
         $this->code = $code;
         return $this;
     }
 
+    /**
+     * @param mixed $message
+     * @return self
+     */
     public function withMessage(string $message): self
     {
         $this->message = $message;

@@ -21,12 +21,20 @@ abstract class ListTemplate2Builder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $backgroundImage
+     * @return self
+     */
     public function withBackgroundImage(Image $backgroundImage): self
     {
         $this->backgroundImage = $backgroundImage;
         return $this;
     }
 
+    /**
+     * @param mixed $title
+     * @return self
+     */
     public function withTitle(string $title): self
     {
         $this->title = $title;

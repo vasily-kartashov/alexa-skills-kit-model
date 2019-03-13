@@ -30,13 +30,17 @@ abstract class TextField implements JsonSerializable
         if (!isset($data['type'])) {
             return null;
         }
+        $instance = null;
         switch ($data['type']) {
             case RichText::TYPE:
-                return RichText::fromValue($data);
+                $instance = RichText::fromValue($data);
+                break;
             case PlainText::TYPE:
-                return PlainText::fromValue($data);
-            default:
-                return null;
+                $instance = PlainText::fromValue($data);
+                break;
         }
+        if ($instance !== null) {
+        }
+        return $instance;
     }
 }

@@ -18,12 +18,20 @@ abstract class EventBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $payload
+     * @return self
+     */
     public function withPayload($payload): self
     {
         $this->payload = $payload;

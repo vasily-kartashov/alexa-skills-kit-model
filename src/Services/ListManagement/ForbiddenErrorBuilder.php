@@ -15,6 +15,10 @@ abstract class ForbiddenErrorBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $message
+     * @return self
+     */
     public function withMessage(string $message): self
     {
         $this->message = $message;

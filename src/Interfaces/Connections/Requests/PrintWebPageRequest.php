@@ -6,7 +6,7 @@ use \JsonSerializable;
 
 final class PrintWebPageRequest extends BaseRequest implements JsonSerializable
 {
-    const @TYPE = 'PrintWebPageRequest';
+    const TYPE = 'PrintWebPageRequest';
 
     /** @var string|null */
     private $title = null;
@@ -20,7 +20,7 @@ final class PrintWebPageRequest extends BaseRequest implements JsonSerializable
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -72,7 +72,7 @@ final class PrintWebPageRequest extends BaseRequest implements JsonSerializable
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;
         $instance->description = isset($data['description']) ? ((string) $data['description']) : null;
@@ -82,7 +82,7 @@ final class PrintWebPageRequest extends BaseRequest implements JsonSerializable
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'title' => $this->title,
             'url' => $this->url,
             'description' => $this->description

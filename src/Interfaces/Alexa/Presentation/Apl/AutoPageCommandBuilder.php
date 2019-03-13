@@ -21,18 +21,30 @@ abstract class AutoPageCommandBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $componentId
+     * @return self
+     */
     public function withComponentId(string $componentId): self
     {
         $this->componentId = $componentId;
         return $this;
     }
 
+    /**
+     * @param mixed $count
+     * @return self
+     */
     public function withCount(int $count): self
     {
         $this->count = $count;
         return $this;
     }
 
+    /**
+     * @param mixed $duration
+     * @return self
+     */
     public function withDuration(int $duration): self
     {
         $this->duration = $duration;

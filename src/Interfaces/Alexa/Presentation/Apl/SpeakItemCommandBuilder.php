@@ -24,24 +24,40 @@ abstract class SpeakItemCommandBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $align
+     * @return self
+     */
     public function withAlign(Align $align): self
     {
         $this->align = $align;
         return $this;
     }
 
+    /**
+     * @param mixed $componentId
+     * @return self
+     */
     public function withComponentId(string $componentId): self
     {
         $this->componentId = $componentId;
         return $this;
     }
 
+    /**
+     * @param mixed $highlightMode
+     * @return self
+     */
     public function withHighlightMode(HighlightMode $highlightMode): self
     {
         $this->highlightMode = $highlightMode;
         return $this;
     }
 
+    /**
+     * @param mixed $minimumDwellTime
+     * @return self
+     */
     public function withMinimumDwellTime(int $minimumDwellTime): self
     {
         $this->minimumDwellTime = $minimumDwellTime;

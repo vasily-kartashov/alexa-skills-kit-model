@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Canfulfill;
+namespace Alexa\Model\CanFulfill;
 
 use Alexa\Model\DialogState;
 use Alexa\Model\Intent;
@@ -21,12 +21,20 @@ abstract class CanFulfillIntentRequestBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $dialogState
+     * @return self
+     */
     public function withDialogState(DialogState $dialogState): self
     {
         $this->dialogState = $dialogState;
         return $this;
     }
 
+    /**
+     * @param mixed $intent
+     * @return self
+     */
     public function withIntent(Intent $intent): self
     {
         $this->intent = $intent;

@@ -21,12 +21,20 @@ abstract class ResolutionBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $authority
+     * @return self
+     */
     public function withAuthority(string $authority): self
     {
         $this->authority = $authority;
         return $this;
     }
 
+    /**
+     * @param mixed $status
+     * @return self
+     */
     public function withStatus(Status $status): self
     {
         $this->status = $status;

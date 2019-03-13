@@ -18,12 +18,20 @@ abstract class ProgressRecognizerBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $recognizer
+     * @return self
+     */
     public function withRecognizer(string $recognizer): self
     {
         $this->recognizer = $recognizer;
         return $this;
     }
 
+    /**
+     * @param mixed $completion
+     * @return self
+     */
     public function withCompletion(float $completion): self
     {
         $this->completion = $completion;

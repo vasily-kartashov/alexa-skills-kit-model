@@ -20,12 +20,20 @@ abstract class ChargeAmazonPayResultBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $amazonOrderReferenceId
+     * @return self
+     */
     public function withAmazonOrderReferenceId(string $amazonOrderReferenceId): self
     {
         $this->amazonOrderReferenceId = $amazonOrderReferenceId;
         return $this;
     }
 
+    /**
+     * @param mixed $authorizationDetails
+     * @return self
+     */
     public function withAuthorizationDetails(AuthorizationDetails $authorizationDetails): self
     {
         $this->authorizationDetails = $authorizationDetails;

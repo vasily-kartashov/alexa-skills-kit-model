@@ -15,6 +15,10 @@ abstract class RenderTemplateDirectiveBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $template
+     * @return self
+     */
     public function withTemplate(Template $template): self
     {
         $this->template = $template;

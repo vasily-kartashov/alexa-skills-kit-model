@@ -18,6 +18,10 @@ abstract class PermissionsBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $consentToken
+     * @return self
+     */
     public function withConsentToken(string $consentToken): self
     {
         $this->consentToken = $consentToken;

@@ -6,7 +6,7 @@ use \JsonSerializable;
 
 final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerializable
 {
-    const @TYPE = 'ProviderAttributes';
+    const TYPE = 'ProviderAttributes';
 
     /** @var string|null */
     private $providerId = null;
@@ -17,7 +17,7 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
     protected function __construct()
     {
         parent::__construct();
-        $this->@type = self::@TYPE;
+        $this->type = self::TYPE;
     }
 
     /**
@@ -60,7 +60,7 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
     public static function fromValue(array $data)
     {
         $instance = new self();
-        $instance->@type = self::@TYPE;
+        $instance->type = self::TYPE;
         $instance->providerId = isset($data['providerId']) ? ((string) $data['providerId']) : null;
         $instance->providerCreditList = [];
         foreach ($data['providerCreditList'] as $item) {
@@ -75,7 +75,7 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
     public function jsonSerialize(): array
     {
         return array_filter([
-            '@type' => self::@TYPE,
+            'type' => self::TYPE,
             'providerId' => $this->providerId,
             'providerCreditList' => $this->providerCreditList
         ]);

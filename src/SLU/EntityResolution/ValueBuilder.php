@@ -18,12 +18,20 @@ abstract class ValueBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $name
+     * @return self
+     */
     public function withName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * @param mixed $id
+     * @return self
+     */
     public function withId(string $id): self
     {
         $this->id = $id;

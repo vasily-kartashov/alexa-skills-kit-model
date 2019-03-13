@@ -24,24 +24,40 @@ abstract class StreamBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $expectedPreviousToken
+     * @return self
+     */
     public function withExpectedPreviousToken(string $expectedPreviousToken): self
     {
         $this->expectedPreviousToken = $expectedPreviousToken;
         return $this;
     }
 
+    /**
+     * @param mixed $token
+     * @return self
+     */
     public function withToken(string $token): self
     {
         $this->token = $token;
         return $this;
     }
 
+    /**
+     * @param mixed $url
+     * @return self
+     */
     public function withUrl(string $url): self
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * @param mixed $offsetInMilliseconds
+     * @return self
+     */
     public function withOffsetInMilliseconds(int $offsetInMilliseconds): self
     {
         $this->offsetInMilliseconds = $offsetInMilliseconds;

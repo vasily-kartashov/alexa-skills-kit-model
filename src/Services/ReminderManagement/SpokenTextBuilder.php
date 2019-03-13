@@ -21,18 +21,30 @@ abstract class SpokenTextBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $locale
+     * @return self
+     */
     public function withLocale(string $locale): self
     {
         $this->locale = $locale;
         return $this;
     }
 
+    /**
+     * @param mixed $ssml
+     * @return self
+     */
     public function withSsml(string $ssml): self
     {
         $this->ssml = $ssml;
         return $this;
     }
 
+    /**
+     * @param mixed $text
+     * @return self
+     */
     public function withText(string $text): self
     {
         $this->text = $text;

@@ -21,12 +21,20 @@ abstract class SetLightParametersBuilder
         $this->constructor = $constructor;
     }
 
+    /**
+     * @param mixed $triggerEvent
+     * @return self
+     */
     public function withTriggerEvent(TriggerEventType $triggerEvent): self
     {
         $this->triggerEvent = $triggerEvent;
         return $this;
     }
 
+    /**
+     * @param mixed $triggerEventTimeMs
+     * @return self
+     */
     public function withTriggerEventTimeMs(int $triggerEventTimeMs): self
     {
         $this->triggerEventTimeMs = $triggerEventTimeMs;
