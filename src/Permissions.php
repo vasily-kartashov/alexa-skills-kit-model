@@ -9,6 +9,9 @@ final class Permissions implements JsonSerializable
     /** @var string|null */
     private $consentToken = null;
 
+    /** @var Scope[] */
+    private $scopes = [];
+
     protected function __construct()
     {
     }
@@ -21,11 +24,20 @@ final class Permissions implements JsonSerializable
         return $this->consentToken;
     }
 
+    /**
+     * @return Scope[]
+     */
+    public function scopes()
+    {
+        return $this->scopes;
+    }
+
     public static function builder(): PermissionsBuilder
     {
         $instance = new self();
-        $constructor = function ($consentToken) use ($instance): Permissions {
+        $constructor = function ($consentToken, $scopes) use ($instance): Permissions {
             $instance->consentToken = $consentToken;
+            $instance->scopes = $scopes;
             return $instance;
         };
         return new class($constructor) extends PermissionsBuilder
@@ -45,13 +57,21 @@ final class Permissions implements JsonSerializable
     {
         $instance = new self();
         $instance->consentToken = isset($data['consentToken']) ? ((string) $data['consentToken']) : null;
+        $instance->scopes = [];
+        foreach ($data['scopes'] as $item) {
+            $element = isset($item) ? Scope::fromValue($item) : null;
+            if ($element !== null) {
+                $instance->scopes[] = $element;
+            }
+        }
         return $instance;
     }
 
     public function jsonSerialize(): array
     {
         return array_filter([
-            'consentToken' => $this->consentToken
+            'consentToken' => $this->consentToken,
+            'scopes' => $this->scopes
         ]);
     }
 }

@@ -16,6 +16,9 @@ abstract class PatternBuilder
     /** @var InputEventActionType|null */
     private $action = null;
 
+    /** @var int|null */
+    private $repeat = null;
+
     protected function __construct(callable $constructor)
     {
         $this->constructor = $constructor;
@@ -53,12 +56,19 @@ abstract class PatternBuilder
         return $this;
     }
 
+    public function withRepeat(int $repeat): self
+    {
+        $this->repeat = $repeat;
+        return $this;
+    }
+
     public function build(): Pattern
     {
         return ($this->constructor)(
             $this->gadgetIds,
             $this->colors,
-            $this->action
+            $this->action,
+            $this->repeat
         );
     }
 }

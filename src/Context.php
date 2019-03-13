@@ -4,7 +4,9 @@ namespace Alexa\Model;
 
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerState;
 use Alexa\Model\Interfaces\Display\DisplayState;
+use Alexa\Model\Interfaces\Geolocation\GeolocationState;
 use Alexa\Model\Interfaces\System\SystemState;
+use Alexa\Model\Interfaces\Viewport\ViewportState;
 use \JsonSerializable;
 
 final class Context implements JsonSerializable
@@ -17,6 +19,12 @@ final class Context implements JsonSerializable
 
     /** @var DisplayState|null */
     private $display = null;
+
+    /** @var GeolocationState|null */
+    private $geolocation = null;
+
+    /** @var ViewportState|null */
+    private $viewport = null;
 
     protected function __construct()
     {
@@ -46,13 +54,31 @@ final class Context implements JsonSerializable
         return $this->display;
     }
 
+    /**
+     * @return GeolocationState|null
+     */
+    public function geolocation()
+    {
+        return $this->geolocation;
+    }
+
+    /**
+     * @return ViewportState|null
+     */
+    public function viewport()
+    {
+        return $this->viewport;
+    }
+
     public static function builder(): ContextBuilder
     {
         $instance = new self();
-        $constructor = function ($system, $audioPlayer, $display) use ($instance): Context {
+        $constructor = function ($system, $audioPlayer, $display, $geolocation, $viewport) use ($instance): Context {
             $instance->system = $system;
             $instance->audioPlayer = $audioPlayer;
             $instance->display = $display;
+            $instance->geolocation = $geolocation;
+            $instance->viewport = $viewport;
             return $instance;
         };
         return new class($constructor) extends ContextBuilder
@@ -74,6 +100,8 @@ final class Context implements JsonSerializable
         $instance->system = isset($data['System']) ? SystemState::fromValue($data['System']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerState::fromValue($data['AudioPlayer']) : null;
         $instance->display = isset($data['Display']) ? DisplayState::fromValue($data['Display']) : null;
+        $instance->geolocation = isset($data['Geolocation']) ? GeolocationState::fromValue($data['Geolocation']) : null;
+        $instance->viewport = isset($data['Viewport']) ? ViewportState::fromValue($data['Viewport']) : null;
         return $instance;
     }
 
@@ -82,7 +110,9 @@ final class Context implements JsonSerializable
         return array_filter([
             'System' => $this->system,
             'AudioPlayer' => $this->audioPlayer,
-            'Display' => $this->display
+            'Display' => $this->display,
+            'Geolocation' => $this->geolocation,
+            'Viewport' => $this->viewport
         ]);
     }
 }

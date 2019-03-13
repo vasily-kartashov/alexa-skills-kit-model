@@ -2,6 +2,7 @@
 
 namespace Alexa\Model;
 
+use Alexa\Model\Canfulfill\CanFulfillIntent;
 use Alexa\Model\UI\Card;
 use Alexa\Model\UI\OutputSpeech;
 use Alexa\Model\UI\Reprompt;
@@ -25,6 +26,9 @@ abstract class ResponseBuilder
 
     /** @var bool|null */
     private $shouldEndSession = null;
+
+    /** @var CanFulfillIntent|null */
+    private $canFulfillIntent = null;
 
     protected function __construct(callable $constructor)
     {
@@ -68,6 +72,12 @@ abstract class ResponseBuilder
         return $this;
     }
 
+    public function withCanFulfillIntent(CanFulfillIntent $canFulfillIntent): self
+    {
+        $this->canFulfillIntent = $canFulfillIntent;
+        return $this;
+    }
+
     public function build(): Response
     {
         return ($this->constructor)(
@@ -75,7 +85,8 @@ abstract class ResponseBuilder
             $this->card,
             $this->reprompt,
             $this->directives,
-            $this->shouldEndSession
+            $this->shouldEndSession,
+            $this->canFulfillIntent
         );
     }
 }

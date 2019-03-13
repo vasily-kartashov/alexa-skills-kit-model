@@ -15,7 +15,8 @@ final class ProductType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'SUBSCRIPTION' => new static('SUBSCRIPTION'),
-                'ENTITLEMENT' => new static('ENTITLEMENT')
+                'ENTITLEMENT' => new static('ENTITLEMENT'),
+                'CONSUMABLE' => new static('CONSUMABLE')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class ProductType implements JsonSerializable
     public static function ENTITLEMENT(): self
     {
         return static::instances()['ENTITLEMENT'];
+    }
+
+    public static function CONSUMABLE(): self
+    {
+        return static::instances()['CONSUMABLE'];
     }
 
     /**

@@ -15,6 +15,9 @@ final class Pattern implements JsonSerializable
     /** @var InputEventActionType|null */
     private $action = null;
 
+    /** @var int|null */
+    private $repeat = null;
+
     protected function __construct()
     {
     }
@@ -43,13 +46,22 @@ final class Pattern implements JsonSerializable
         return $this->action;
     }
 
+    /**
+     * @return int|null
+     */
+    public function repeat()
+    {
+        return $this->repeat;
+    }
+
     public static function builder(): PatternBuilder
     {
         $instance = new self();
-        $constructor = function ($gadgetIds, $colors, $action) use ($instance): Pattern {
+        $constructor = function ($gadgetIds, $colors, $action, $repeat) use ($instance): Pattern {
             $instance->gadgetIds = $gadgetIds;
             $instance->colors = $colors;
             $instance->action = $action;
+            $instance->repeat = $repeat;
             return $instance;
         };
         return new class($constructor) extends PatternBuilder
@@ -83,6 +95,7 @@ final class Pattern implements JsonSerializable
             }
         }
         $instance->action = isset($data['action']) ? InputEventActionType::fromValue($data['action']) : null;
+        $instance->repeat = isset($data['repeat']) ? ((int) $data['repeat']) : null;
         return $instance;
     }
 
@@ -91,7 +104,8 @@ final class Pattern implements JsonSerializable
         return array_filter([
             'gadgetIds' => $this->gadgetIds,
             'colors' => $this->colors,
-            'action' => $this->action
+            'action' => $this->action,
+            'repeat' => $this->repeat
         ]);
     }
 }

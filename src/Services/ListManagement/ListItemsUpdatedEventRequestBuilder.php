@@ -2,6 +2,8 @@
 
 namespace Alexa\Model\Services\ListManagement;
 
+use \DateTime;
+
 abstract class ListItemsUpdatedEventRequestBuilder
 {
     /** @var callable */
@@ -9,6 +11,12 @@ abstract class ListItemsUpdatedEventRequestBuilder
 
     /** @var ListItemBody|null */
     private $body = null;
+
+    /** @var DateTime|null */
+    private $eventCreationTime = null;
+
+    /** @var DateTime|null */
+    private $eventPublishingTime = null;
 
     protected function __construct(callable $constructor)
     {
@@ -21,10 +29,24 @@ abstract class ListItemsUpdatedEventRequestBuilder
         return $this;
     }
 
+    public function withEventCreationTime(DateTime $eventCreationTime): self
+    {
+        $this->eventCreationTime = $eventCreationTime;
+        return $this;
+    }
+
+    public function withEventPublishingTime(DateTime $eventPublishingTime): self
+    {
+        $this->eventPublishingTime = $eventPublishingTime;
+        return $this;
+    }
+
     public function build(): ListItemsUpdatedEventRequest
     {
         return ($this->constructor)(
-            $this->body
+            $this->body,
+            $this->eventCreationTime,
+            $this->eventPublishingTime
         );
     }
 }

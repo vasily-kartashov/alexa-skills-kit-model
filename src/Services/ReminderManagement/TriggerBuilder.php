@@ -1,0 +1,70 @@
+<?php
+
+namespace Alexa\Model\Services\ReminderManagement;
+
+abstract class TriggerBuilder
+{
+    /** @var callable */
+    private $constructor;
+
+    /** @var TriggerType|null */
+    private $type = null;
+
+    /** @var mixed|null */
+    private $scheduledTime = null;
+
+    /** @var int|null */
+    private $offsetInSeconds = null;
+
+    /** @var string|null */
+    private $timeZoneId = null;
+
+    /** @var Recurrence|null */
+    private $recurrence = null;
+
+    protected function __construct(callable $constructor)
+    {
+        $this->constructor = $constructor;
+    }
+
+    public function withType(TriggerType $type): self
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    public function withScheduledTime($scheduledTime): self
+    {
+        $this->scheduledTime = $scheduledTime;
+        return $this;
+    }
+
+    public function withOffsetInSeconds(int $offsetInSeconds): self
+    {
+        $this->offsetInSeconds = $offsetInSeconds;
+        return $this;
+    }
+
+    public function withTimeZoneId(string $timeZoneId): self
+    {
+        $this->timeZoneId = $timeZoneId;
+        return $this;
+    }
+
+    public function withRecurrence(Recurrence $recurrence): self
+    {
+        $this->recurrence = $recurrence;
+        return $this;
+    }
+
+    public function build(): Trigger
+    {
+        return ($this->constructor)(
+            $this->type,
+            $this->scheduledTime,
+            $this->offsetInSeconds,
+            $this->timeZoneId,
+            $this->recurrence
+        );
+    }
+}

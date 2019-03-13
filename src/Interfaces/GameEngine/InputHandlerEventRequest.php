@@ -10,6 +10,9 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
 {
     const TYPE = 'GameEngine.InputHandlerEvent';
 
+    /** @var string|null */
+    private $originatingRequestId = null;
+
     /** @var InputHandlerEvent[] */
     private $events = [];
 
@@ -17,6 +20,14 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
     {
         parent::__construct();
         $this->type = self::TYPE;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function originatingRequestId()
+    {
+        return $this->originatingRequestId;
     }
 
     /**
@@ -30,7 +41,8 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
     public static function builder(): InputHandlerEventRequestBuilder
     {
         $instance = new self();
-        $constructor = function ($events) use ($instance): InputHandlerEventRequest {
+        $constructor = function ($originatingRequestId, $events) use ($instance): InputHandlerEventRequest {
+            $instance->originatingRequestId = $originatingRequestId;
             $instance->events = $events;
             return $instance;
         };
@@ -51,6 +63,7 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
     {
         $instance = new self();
         $instance->type = self::TYPE;
+        $instance->originatingRequestId = isset($data['originatingRequestId']) ? ((string) $data['originatingRequestId']) : null;
         $instance->events = [];
         foreach ($data['events'] as $item) {
             $element = isset($item) ? InputHandlerEvent::fromValue($item) : null;
@@ -65,6 +78,7 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
     {
         return array_filter([
             'type' => self::TYPE,
+            'originatingRequestId' => $this->originatingRequestId,
             'events' => $this->events
         ]);
     }

@@ -1,0 +1,91 @@
+<?php
+
+namespace Alexa\Model\Interfaces\Alexa\Presentation\Apl;
+
+use \JsonSerializable;
+
+final class AutoPageCommand extends Command implements JsonSerializable
+{
+    const TYPE = 'AutoPage';
+
+    /** @var string|null */
+    private $componentId = null;
+
+    /** @var int|null */
+    private $count = null;
+
+    /** @var int|null */
+    private $duration = null;
+
+    protected function __construct()
+    {
+        parent::__construct();
+        $this->type = self::TYPE;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function componentId()
+    {
+        return $this->componentId;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function count()
+    {
+        return $this->count;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function duration()
+    {
+        return $this->duration;
+    }
+
+    public static function builder(): AutoPageCommandBuilder
+    {
+        $instance = new self();
+        $constructor = function ($componentId, $count, $duration) use ($instance): AutoPageCommand {
+            $instance->componentId = $componentId;
+            $instance->count = $count;
+            $instance->duration = $duration;
+            return $instance;
+        };
+        return new class($constructor) extends AutoPageCommandBuilder
+        {
+            public function __construct(callable $constructor)
+            {
+                parent::__construct($constructor);
+            }
+        };
+    }
+
+    /**
+     * @param array $data
+     * @return self
+     */
+    public static function fromValue(array $data)
+    {
+        $instance = new self();
+        $instance->type = self::TYPE;
+        $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
+        $instance->count = isset($data['count']) ? ((int) $data['count']) : null;
+        $instance->duration = isset($data['duration']) ? ((int) $data['duration']) : null;
+        return $instance;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return array_filter([
+            'type' => self::TYPE,
+            'componentId' => $this->componentId,
+            'count' => $this->count,
+            'duration' => $this->duration
+        ]);
+    }
+}

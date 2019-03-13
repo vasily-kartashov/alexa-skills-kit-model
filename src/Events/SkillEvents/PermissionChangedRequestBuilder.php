@@ -2,6 +2,8 @@
 
 namespace Alexa\Model\Events\SkillEvents;
 
+use \DateTime;
+
 abstract class PermissionChangedRequestBuilder
 {
     /** @var callable */
@@ -9,6 +11,12 @@ abstract class PermissionChangedRequestBuilder
 
     /** @var PermissionBody|null */
     private $body = null;
+
+    /** @var DateTime|null */
+    private $eventCreationTime = null;
+
+    /** @var DateTime|null */
+    private $eventPublishingTime = null;
 
     protected function __construct(callable $constructor)
     {
@@ -21,10 +29,24 @@ abstract class PermissionChangedRequestBuilder
         return $this;
     }
 
+    public function withEventCreationTime(DateTime $eventCreationTime): self
+    {
+        $this->eventCreationTime = $eventCreationTime;
+        return $this;
+    }
+
+    public function withEventPublishingTime(DateTime $eventPublishingTime): self
+    {
+        $this->eventPublishingTime = $eventPublishingTime;
+        return $this;
+    }
+
     public function build(): PermissionChangedRequest
     {
         return ($this->constructor)(
-            $this->body
+            $this->body,
+            $this->eventCreationTime,
+            $this->eventPublishingTime
         );
     }
 }

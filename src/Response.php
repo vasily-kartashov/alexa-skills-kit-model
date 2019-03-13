@@ -2,6 +2,7 @@
 
 namespace Alexa\Model;
 
+use Alexa\Model\Canfulfill\CanFulfillIntent;
 use Alexa\Model\UI\Card;
 use Alexa\Model\UI\OutputSpeech;
 use Alexa\Model\UI\Reprompt;
@@ -23,6 +24,9 @@ final class Response implements JsonSerializable
 
     /** @var bool|null */
     private $shouldEndSession = null;
+
+    /** @var CanFulfillIntent|null */
+    private $canFulfillIntent = null;
 
     protected function __construct()
     {
@@ -68,15 +72,24 @@ final class Response implements JsonSerializable
         return $this->shouldEndSession;
     }
 
+    /**
+     * @return CanFulfillIntent|null
+     */
+    public function canFulfillIntent()
+    {
+        return $this->canFulfillIntent;
+    }
+
     public static function builder(): ResponseBuilder
     {
         $instance = new self();
-        $constructor = function ($outputSpeech, $card, $reprompt, $directives, $shouldEndSession) use ($instance): Response {
+        $constructor = function ($outputSpeech, $card, $reprompt, $directives, $shouldEndSession, $canFulfillIntent) use ($instance): Response {
             $instance->outputSpeech = $outputSpeech;
             $instance->card = $card;
             $instance->reprompt = $reprompt;
             $instance->directives = $directives;
             $instance->shouldEndSession = $shouldEndSession;
+            $instance->canFulfillIntent = $canFulfillIntent;
             return $instance;
         };
         return new class($constructor) extends ResponseBuilder
@@ -106,6 +119,7 @@ final class Response implements JsonSerializable
             }
         }
         $instance->shouldEndSession = isset($data['shouldEndSession']) ? ((bool) $data['shouldEndSession']) : null;
+        $instance->canFulfillIntent = isset($data['canFulfillIntent']) ? CanFulfillIntent::fromValue($data['canFulfillIntent']) : null;
         return $instance;
     }
 
@@ -116,7 +130,8 @@ final class Response implements JsonSerializable
             'card' => $this->card,
             'reprompt' => $this->reprompt,
             'directives' => $this->directives,
-            'shouldEndSession' => $this->shouldEndSession
+            'shouldEndSession' => $this->shouldEndSession,
+            'canFulfillIntent' => $this->canFulfillIntent
         ]);
     }
 }

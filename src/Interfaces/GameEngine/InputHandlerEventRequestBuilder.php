@@ -9,12 +9,21 @@ abstract class InputHandlerEventRequestBuilder
     /** @var callable */
     private $constructor;
 
+    /** @var string|null */
+    private $originatingRequestId = null;
+
     /** @var InputHandlerEvent[] */
     private $events = [];
 
     protected function __construct(callable $constructor)
     {
         $this->constructor = $constructor;
+    }
+
+    public function withOriginatingRequestId(string $originatingRequestId): self
+    {
+        $this->originatingRequestId = $originatingRequestId;
+        return $this;
     }
 
     /**
@@ -33,6 +42,7 @@ abstract class InputHandlerEventRequestBuilder
     public function build(): InputHandlerEventRequest
     {
         return ($this->constructor)(
+            $this->originatingRequestId,
             $this->events
         );
     }

@@ -9,6 +9,9 @@ abstract class OutputSpeech implements JsonSerializable
     /** @var string|null */
     protected $type = null;
 
+    /** @var PlayBehavior|null */
+    protected $playBehavior = null;
+
     protected function __construct()
     {
     }
@@ -22,6 +25,14 @@ abstract class OutputSpeech implements JsonSerializable
     }
 
     /**
+     * @return PlayBehavior|null
+     */
+    public function playBehavior()
+    {
+        return $this->playBehavior;
+    }
+
+    /**
      * @param array $data
      * @return self|null
      */
@@ -31,10 +42,10 @@ abstract class OutputSpeech implements JsonSerializable
             return null;
         }
         switch ($data['type']) {
-            case PlainTextOutputSpeech::TYPE:
-                return PlainTextOutputSpeech::fromValue($data);
             case SsmlOutputSpeech::TYPE:
                 return SsmlOutputSpeech::fromValue($data);
+            case PlainTextOutputSpeech::TYPE:
+                return PlainTextOutputSpeech::fromValue($data);
             default:
                 return null;
         }

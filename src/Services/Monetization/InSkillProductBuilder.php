@@ -28,6 +28,12 @@ abstract class InSkillProductBuilder
     /** @var EntitledState|null */
     private $entitled = null;
 
+    /** @var int|null */
+    private $activeEntitlementCount = null;
+
+    /** @var PurchaseMode|null */
+    private $purchaseMode = null;
+
     protected function __construct(callable $constructor)
     {
         $this->constructor = $constructor;
@@ -75,6 +81,18 @@ abstract class InSkillProductBuilder
         return $this;
     }
 
+    public function withActiveEntitlementCount(int $activeEntitlementCount): self
+    {
+        $this->activeEntitlementCount = $activeEntitlementCount;
+        return $this;
+    }
+
+    public function withPurchaseMode(PurchaseMode $purchaseMode): self
+    {
+        $this->purchaseMode = $purchaseMode;
+        return $this;
+    }
+
     public function build(): InSkillProduct
     {
         return ($this->constructor)(
@@ -84,7 +102,9 @@ abstract class InSkillProductBuilder
             $this->type,
             $this->summary,
             $this->purchasable,
-            $this->entitled
+            $this->entitled,
+            $this->activeEntitlementCount,
+            $this->purchaseMode
         );
     }
 }
