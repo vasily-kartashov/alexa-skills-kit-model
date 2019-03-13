@@ -106,17 +106,21 @@ final class Event implements JsonSerializable
         $instance = new self();
         $instance->shouldEndInputHandler = isset($data['shouldEndInputHandler']) ? ((bool) $data['shouldEndInputHandler']) : null;
         $instance->meets = [];
-        foreach ($data['meets'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->meets[] = $element;
+        if (isset($data['meets'])) {
+            foreach ($data['meets'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->meets[] = $element;
+                }
             }
         }
         $instance->fails = [];
-        foreach ($data['fails'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->fails[] = $element;
+        if (isset($data['fails'])) {
+            foreach ($data['fails'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->fails[] = $element;
+                }
             }
         }
         $instance->reports = isset($data['reports']) ? EventReportingType::fromValue($data['reports']) : null;

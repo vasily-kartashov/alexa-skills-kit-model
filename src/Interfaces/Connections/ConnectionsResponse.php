@@ -89,10 +89,12 @@ final class ConnectionsResponse extends Request implements JsonSerializable
         $instance->status = isset($data['status']) ? ConnectionsStatus::fromValue($data['status']) : null;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->payload = [];
-        foreach ($data['payload'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->payload[] = $element;
+        if (isset($data['payload'])) {
+            foreach ($data['payload'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->payload[] = $element;
+                }
             }
         }
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;

@@ -70,10 +70,12 @@ final class GetRemindersResponse implements JsonSerializable
         $instance = new self();
         $instance->totalCount = isset($data['totalCount']) ? ((string) $data['totalCount']) : null;
         $instance->alerts = [];
-        foreach ($data['alerts'] as $item) {
-            $element = isset($item) ? Reminder::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->alerts[] = $element;
+        if (isset($data['alerts'])) {
+            foreach ($data['alerts'] as $item) {
+                $element = isset($item) ? Reminder::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->alerts[] = $element;
+                }
             }
         }
         $instance->links = isset($data['links']) ? ((string) $data['links']) : null;

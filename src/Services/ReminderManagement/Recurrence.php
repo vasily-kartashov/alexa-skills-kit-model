@@ -70,10 +70,12 @@ final class Recurrence implements JsonSerializable
         $instance = new self();
         $instance->freq = isset($data['freq']) ? RecurrenceFreq::fromValue($data['freq']) : null;
         $instance->byDay = [];
-        foreach ($data['byDay'] as $item) {
-            $element = isset($item) ? RecurrenceDay::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->byDay[] = $element;
+        if (isset($data['byDay'])) {
+            foreach ($data['byDay'] as $item) {
+                $element = isset($item) ? RecurrenceDay::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->byDay[] = $element;
+                }
             }
         }
         $instance->interval = isset($data['interval']) ? ((int) $data['interval']) : null;

@@ -58,10 +58,12 @@ final class CanFulfillIntent implements JsonSerializable
         $instance = new self();
         $instance->canFulfill = isset($data['canFulfill']) ? CanFulfillIntentValues::fromValue($data['canFulfill']) : null;
         $instance->slots = [];
-        foreach ($data['slots'] as $item) {
-            $element = isset($item) ? CanFulfillSlot::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->slots[] = $element;
+        if (isset($data['slots'])) {
+            foreach ($data['slots'] as $item) {
+                $element = isset($item) ? CanFulfillSlot::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->slots[] = $element;
+                }
             }
         }
         return $instance;

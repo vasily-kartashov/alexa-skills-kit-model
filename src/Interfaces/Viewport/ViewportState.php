@@ -141,10 +141,12 @@ final class ViewportState implements JsonSerializable
     {
         $instance = new self();
         $instance->experiences = [];
-        foreach ($data['experiences'] as $item) {
-            $element = isset($item) ? Experience::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->experiences[] = $element;
+        if (isset($data['experiences'])) {
+            foreach ($data['experiences'] as $item) {
+                $element = isset($item) ? Experience::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->experiences[] = $element;
+                }
             }
         }
         $instance->shape = isset($data['shape']) ? Shape::fromValue($data['shape']) : null;
@@ -154,17 +156,21 @@ final class ViewportState implements JsonSerializable
         $instance->currentPixelWidth = $data['currentPixelWidth'];
         $instance->currentPixelHeight = $data['currentPixelHeight'];
         $instance->touch = [];
-        foreach ($data['touch'] as $item) {
-            $element = isset($item) ? Touch::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->touch[] = $element;
+        if (isset($data['touch'])) {
+            foreach ($data['touch'] as $item) {
+                $element = isset($item) ? Touch::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->touch[] = $element;
+                }
             }
         }
         $instance->keyboard = [];
-        foreach ($data['keyboard'] as $item) {
-            $element = isset($item) ? Keyboard::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->keyboard[] = $element;
+        if (isset($data['keyboard'])) {
+            foreach ($data['keyboard'] as $item) {
+                $element = isset($item) ? Keyboard::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->keyboard[] = $element;
+                }
             }
         }
         return $instance;

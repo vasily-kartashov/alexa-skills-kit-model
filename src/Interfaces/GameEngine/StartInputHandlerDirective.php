@@ -90,24 +90,30 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
         $instance->type = self::TYPE;
         $instance->timeout = isset($data['timeout']) ? ((int) $data['timeout']) : null;
         $instance->proxies = [];
-        foreach ($data['proxies'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->proxies[] = $element;
+        if (isset($data['proxies'])) {
+            foreach ($data['proxies'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->proxies[] = $element;
+                }
             }
         }
         $instance->recognizers = [];
-        foreach ($data['recognizers'] as $item) {
-            $element = isset($item) ? Recognizer::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->recognizers[] = $element;
+        if (isset($data['recognizers'])) {
+            foreach ($data['recognizers'] as $item) {
+                $element = isset($item) ? Recognizer::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->recognizers[] = $element;
+                }
             }
         }
         $instance->events = [];
-        foreach ($data['events'] as $item) {
-            $element = isset($item) ? Event::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->events[] = $element;
+        if (isset($data['events'])) {
+            foreach ($data['events'] as $item) {
+                $element = isset($item) ? Event::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->events[] = $element;
+                }
             }
         }
         return $instance;

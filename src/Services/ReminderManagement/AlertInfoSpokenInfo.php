@@ -45,10 +45,12 @@ final class AlertInfoSpokenInfo implements JsonSerializable
     {
         $instance = new self();
         $instance->content = [];
-        foreach ($data['content'] as $item) {
-            $element = isset($item) ? SpokenText::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->content[] = $element;
+        if (isset($data['content'])) {
+            foreach ($data['content'] as $item) {
+                $element = isset($item) ? SpokenText::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->content[] = $element;
+                }
             }
         }
         return $instance;

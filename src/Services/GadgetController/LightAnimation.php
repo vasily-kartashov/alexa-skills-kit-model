@@ -70,17 +70,21 @@ final class LightAnimation implements JsonSerializable
         $instance = new self();
         $instance->repeat = isset($data['repeat']) ? ((int) $data['repeat']) : null;
         $instance->targetLights = [];
-        foreach ($data['targetLights'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->targetLights[] = $element;
+        if (isset($data['targetLights'])) {
+            foreach ($data['targetLights'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->targetLights[] = $element;
+                }
             }
         }
         $instance->sequence = [];
-        foreach ($data['sequence'] as $item) {
-            $element = isset($item) ? AnimationStep::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->sequence[] = $element;
+        if (isset($data['sequence'])) {
+            foreach ($data['sequence'] as $item) {
+                $element = isset($item) ? AnimationStep::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->sequence[] = $element;
+                }
             }
         }
         return $instance;

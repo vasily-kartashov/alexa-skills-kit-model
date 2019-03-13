@@ -71,10 +71,12 @@ final class Resolution implements JsonSerializable
         $instance->authority = isset($data['authority']) ? ((string) $data['authority']) : null;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;
         $instance->values = [];
-        foreach ($data['values'] as $item) {
-            $element = isset($item) ? ValueWrapper::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->values[] = $element;
+        if (isset($data['values'])) {
+            foreach ($data['values'] as $item) {
+                $element = isset($item) ? ValueWrapper::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->values[] = $element;
+                }
             }
         }
         return $instance;

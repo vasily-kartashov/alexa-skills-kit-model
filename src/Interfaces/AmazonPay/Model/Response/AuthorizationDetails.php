@@ -208,10 +208,12 @@ final class AuthorizationDetails implements JsonSerializable
         $instance->capturedAmount = isset($data['capturedAmount']) ? Price::fromValue($data['capturedAmount']) : null;
         $instance->authorizationFee = isset($data['authorizationFee']) ? Price::fromValue($data['authorizationFee']) : null;
         $instance->idList = [];
-        foreach ($data['idList'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->idList[] = $element;
+        if (isset($data['idList'])) {
+            foreach ($data['idList'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->idList[] = $element;
+                }
             }
         }
         $instance->creationTimestamp = isset($data['creationTimestamp']) ? new DateTime($data['creationTimestamp']) : null;

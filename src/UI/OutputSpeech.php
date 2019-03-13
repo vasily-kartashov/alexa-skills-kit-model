@@ -51,7 +51,9 @@ abstract class OutputSpeech implements JsonSerializable
                 break;
         }
         if ($instance !== null) {
-            $instance->playBehavior = $data['playBehavior'];
+            if (isset($data['playBehavior'])) {
+                $instance->playBehavior = $data['playBehavior'];
+            }
         }
         return $instance;
     }

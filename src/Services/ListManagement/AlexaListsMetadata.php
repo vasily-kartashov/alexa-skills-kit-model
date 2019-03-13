@@ -45,10 +45,12 @@ final class AlexaListsMetadata implements JsonSerializable
     {
         $instance = new self();
         $instance->lists = [];
-        foreach ($data['lists'] as $item) {
-            $element = isset($item) ? AlexaListMetadata::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->lists[] = $element;
+        if (isset($data['lists'])) {
+            foreach ($data['lists'] as $item) {
+                $element = isset($item) ? AlexaListMetadata::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->lists[] = $element;
+                }
             }
         }
         return $instance;

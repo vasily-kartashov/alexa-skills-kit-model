@@ -112,10 +112,12 @@ final class Response implements JsonSerializable
         $instance->card = isset($data['card']) ? Card::fromValue($data['card']) : null;
         $instance->reprompt = isset($data['reprompt']) ? Reprompt::fromValue($data['reprompt']) : null;
         $instance->directives = [];
-        foreach ($data['directives'] as $item) {
-            $element = isset($item) ? Directive::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->directives[] = $element;
+        if (isset($data['directives'])) {
+            foreach ($data['directives'] as $item) {
+                $element = isset($item) ? Directive::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->directives[] = $element;
+                }
             }
         }
         $instance->shouldEndSession = isset($data['shouldEndSession']) ? ((bool) $data['shouldEndSession']) : null;

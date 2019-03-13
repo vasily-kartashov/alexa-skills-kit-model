@@ -69,10 +69,12 @@ final class InSkillProductsResponse implements JsonSerializable
     {
         $instance = new self();
         $instance->inSkillProducts = [];
-        foreach ($data['inSkillProducts'] as $item) {
-            $element = isset($item) ? InSkillProduct::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->inSkillProducts[] = $element;
+        if (isset($data['inSkillProducts'])) {
+            foreach ($data['inSkillProducts'] as $item) {
+                $element = isset($item) ? InSkillProduct::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->inSkillProducts[] = $element;
+                }
             }
         }
         $instance->isTruncated = isset($data['isTruncated']) ? ((bool) $data['isTruncated']) : null;

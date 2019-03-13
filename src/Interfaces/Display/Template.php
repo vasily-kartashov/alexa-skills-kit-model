@@ -77,8 +77,12 @@ abstract class Template implements JsonSerializable
                 break;
         }
         if ($instance !== null) {
-            $instance->token = $data['token'];
-            $instance->backButton = $data['backButton'];
+            if (isset($data['token'])) {
+                $instance->token = $data['token'];
+            }
+            if (isset($data['backButton'])) {
+                $instance->backButton = $data['backButton'];
+            }
         }
         return $instance;
     }

@@ -100,24 +100,30 @@ final class PatternRecognizer extends Recognizer implements JsonSerializable
         $instance->anchor = isset($data['anchor']) ? PatternRecognizerAnchorType::fromValue($data['anchor']) : null;
         $instance->fuzzy = isset($data['fuzzy']) ? ((bool) $data['fuzzy']) : null;
         $instance->gadgetIds = [];
-        foreach ($data['gadgetIds'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->gadgetIds[] = $element;
+        if (isset($data['gadgetIds'])) {
+            foreach ($data['gadgetIds'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->gadgetIds[] = $element;
+                }
             }
         }
         $instance->actions = [];
-        foreach ($data['actions'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->actions[] = $element;
+        if (isset($data['actions'])) {
+            foreach ($data['actions'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->actions[] = $element;
+                }
             }
         }
         $instance->pattern = [];
-        foreach ($data['pattern'] as $item) {
-            $element = isset($item) ? Pattern::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->pattern[] = $element;
+        if (isset($data['pattern'])) {
+            foreach ($data['pattern'] as $item) {
+                $element = isset($item) ? Pattern::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->pattern[] = $element;
+                }
             }
         }
         return $instance;

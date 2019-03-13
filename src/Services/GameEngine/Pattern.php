@@ -81,17 +81,21 @@ final class Pattern implements JsonSerializable
     {
         $instance = new self();
         $instance->gadgetIds = [];
-        foreach ($data['gadgetIds'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->gadgetIds[] = $element;
+        if (isset($data['gadgetIds'])) {
+            foreach ($data['gadgetIds'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->gadgetIds[] = $element;
+                }
             }
         }
         $instance->colors = [];
-        foreach ($data['colors'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->colors[] = $element;
+        if (isset($data['colors'])) {
+            foreach ($data['colors'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->colors[] = $element;
+                }
             }
         }
         $instance->action = isset($data['action']) ? InputEventActionType::fromValue($data['action']) : null;

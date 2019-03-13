@@ -63,10 +63,12 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
         $instance->type = self::TYPE;
         $instance->providerId = isset($data['providerId']) ? ((string) $data['providerId']) : null;
         $instance->providerCreditList = [];
-        foreach ($data['providerCreditList'] as $item) {
-            $element = isset($item) ? ProviderCredit::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->providerCreditList[] = $element;
+        if (isset($data['providerCreditList'])) {
+            foreach ($data['providerCreditList'] as $item) {
+                $element = isset($item) ? ProviderCredit::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->providerCreditList[] = $element;
+                }
             }
         }
         return $instance;

@@ -76,10 +76,12 @@ final class ListTemplate1 extends Template implements JsonSerializable
         $instance->backgroundImage = isset($data['backgroundImage']) ? Image::fromValue($data['backgroundImage']) : null;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->listItems = [];
-        foreach ($data['listItems'] as $item) {
-            $element = isset($item) ? ListItem::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->listItems[] = $element;
+        if (isset($data['listItems'])) {
+            foreach ($data['listItems'] as $item) {
+                $element = isset($item) ? ListItem::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->listItems[] = $element;
+                }
             }
         }
         return $instance;

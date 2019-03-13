@@ -96,10 +96,12 @@ final class Session implements JsonSerializable
         $instance->sessionId = isset($data['sessionId']) ? ((string) $data['sessionId']) : null;
         $instance->user = isset($data['user']) ? User::fromValue($data['user']) : null;
         $instance->attributes = [];
-        foreach ($data['attributes'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->attributes[] = $element;
+        if (isset($data['attributes'])) {
+            foreach ($data['attributes'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->attributes[] = $element;
+                }
             }
         }
         $instance->application = isset($data['application']) ? Application::fromValue($data['application']) : null;

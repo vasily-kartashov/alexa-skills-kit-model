@@ -76,9 +76,15 @@ abstract class Command implements JsonSerializable
                 break;
         }
         if ($instance !== null) {
-            $instance->delay = $data['delay'];
-            $instance->description = $data['description'];
-            $instance->when = $data['when'];
+            if (isset($data['delay'])) {
+                $instance->delay = $data['delay'];
+            }
+            if (isset($data['description'])) {
+                $instance->description = $data['description'];
+            }
+            if (isset($data['when'])) {
+                $instance->when = $data['when'];
+            }
         }
         return $instance;
     }

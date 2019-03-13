@@ -51,10 +51,12 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
         $instance = new self();
         $instance->type = self::TYPE;
         $instance->message = [];
-        foreach ($data['message'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->message[] = $element;
+        if (isset($data['message'])) {
+            foreach ($data['message'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->message[] = $element;
+                }
             }
         }
         return $instance;

@@ -65,10 +65,12 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
         $instance->type = self::TYPE;
         $instance->originatingRequestId = isset($data['originatingRequestId']) ? ((string) $data['originatingRequestId']) : null;
         $instance->events = [];
-        foreach ($data['events'] as $item) {
-            $element = isset($item) ? InputHandlerEvent::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->events[] = $element;
+        if (isset($data['events'])) {
+            foreach ($data['events'] as $item) {
+                $element = isset($item) ? InputHandlerEvent::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->events[] = $element;
+                }
             }
         }
         return $instance;

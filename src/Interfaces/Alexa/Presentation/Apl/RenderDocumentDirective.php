@@ -88,24 +88,30 @@ final class RenderDocumentDirective extends Directive implements JsonSerializabl
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->document = [];
-        foreach ($data['document'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->document[] = $element;
+        if (isset($data['document'])) {
+            foreach ($data['document'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->document[] = $element;
+                }
             }
         }
         $instance->datasources = [];
-        foreach ($data['datasources'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->datasources[] = $element;
+        if (isset($data['datasources'])) {
+            foreach ($data['datasources'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->datasources[] = $element;
+                }
             }
         }
         $instance->packages = [];
-        foreach ($data['packages'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->packages[] = $element;
+        if (isset($data['packages'])) {
+            foreach ($data['packages'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->packages[] = $element;
+                }
             }
         }
         return $instance;

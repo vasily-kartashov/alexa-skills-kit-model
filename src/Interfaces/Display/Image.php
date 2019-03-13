@@ -58,10 +58,12 @@ final class Image implements JsonSerializable
         $instance = new self();
         $instance->contentDescription = isset($data['contentDescription']) ? ((string) $data['contentDescription']) : null;
         $instance->sources = [];
-        foreach ($data['sources'] as $item) {
-            $element = isset($item) ? ImageInstance::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->sources[] = $element;
+        if (isset($data['sources'])) {
+            foreach ($data['sources'] as $item) {
+                $element = isset($item) ? ImageInstance::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->sources[] = $element;
+                }
             }
         }
         return $instance;

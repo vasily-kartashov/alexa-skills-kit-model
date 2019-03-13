@@ -77,10 +77,12 @@ final class SetLightDirective extends Directive implements JsonSerializable
         $instance->type = self::TYPE;
         $instance->version = isset($data['version']) ? ((int) $data['version']) : null;
         $instance->targetGadgets = [];
-        foreach ($data['targetGadgets'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->targetGadgets[] = $element;
+        if (isset($data['targetGadgets'])) {
+            foreach ($data['targetGadgets'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->targetGadgets[] = $element;
+                }
             }
         }
         $instance->parameters = isset($data['parameters']) ? SetLightParameters::fromValue($data['parameters']) : null;

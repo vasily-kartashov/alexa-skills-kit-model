@@ -82,10 +82,12 @@ final class ResponseEnvelope implements JsonSerializable
         $instance = new self();
         $instance->version = isset($data['version']) ? ((string) $data['version']) : null;
         $instance->sessionAttributes = [];
-        foreach ($data['sessionAttributes'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->sessionAttributes[] = $element;
+        if (isset($data['sessionAttributes'])) {
+            foreach ($data['sessionAttributes'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->sessionAttributes[] = $element;
+                }
             }
         }
         $instance->userAgent = isset($data['userAgent']) ? ((string) $data['userAgent']) : null;

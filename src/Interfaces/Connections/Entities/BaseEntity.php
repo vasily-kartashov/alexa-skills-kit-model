@@ -51,7 +51,9 @@ abstract class BaseEntity implements JsonSerializable
                 break;
         }
         if ($instance !== null) {
-            $instance->version = $data['@version'];
+            if (isset($data['@version'])) {
+                $instance->version = $data['@version'];
+            }
         }
         return $instance;
     }

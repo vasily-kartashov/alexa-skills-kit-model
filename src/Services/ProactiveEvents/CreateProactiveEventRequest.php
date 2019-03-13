@@ -110,10 +110,12 @@ final class CreateProactiveEventRequest implements JsonSerializable
         $instance->expiryTime = isset($data['expiryTime']) ? new DateTime($data['expiryTime']) : null;
         $instance->event = isset($data['event']) ? Event::fromValue($data['event']) : null;
         $instance->localizedAttributes = [];
-        foreach ($data['localizedAttributes'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->localizedAttributes[] = $element;
+        if (isset($data['localizedAttributes'])) {
+            foreach ($data['localizedAttributes'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->localizedAttributes[] = $element;
+                }
             }
         }
         $instance->relevantAudience = isset($data['relevantAudience']) ? RelevantAudience::fromValue($data['relevantAudience']) : null;

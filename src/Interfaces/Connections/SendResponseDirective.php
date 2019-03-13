@@ -64,10 +64,12 @@ final class SendResponseDirective extends Directive implements JsonSerializable
         $instance->type = self::TYPE;
         $instance->status = isset($data['status']) ? ConnectionsStatus::fromValue($data['status']) : null;
         $instance->payload = [];
-        foreach ($data['payload'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->payload[] = $element;
+        if (isset($data['payload'])) {
+            foreach ($data['payload'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->payload[] = $element;
+                }
             }
         }
         return $instance;

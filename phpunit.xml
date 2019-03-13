@@ -1,6 +1,6 @@
 <phpunit bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite>
+        <testsuite name="alexa-skills-kit-model">
             <directory>test</directory>
         </testsuite>
     </testsuites>

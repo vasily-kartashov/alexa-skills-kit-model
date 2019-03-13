@@ -70,10 +70,12 @@ final class Intent implements JsonSerializable
         $instance = new self();
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->slots = [];
-        foreach ($data['slots'] as $item) {
-            $element = isset($item) ? Slot::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->slots[] = $element;
+        if (isset($data['slots'])) {
+            foreach ($data['slots'] as $item) {
+                $element = isset($item) ? Slot::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->slots[] = $element;
+                }
             }
         }
         $instance->confirmationStatus = isset($data['confirmationStatus']) ? IntentConfirmationStatus::fromValue($data['confirmationStatus']) : null;

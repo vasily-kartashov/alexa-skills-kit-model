@@ -64,10 +64,12 @@ final class ConnectionsRequest extends Request implements JsonSerializable
         $instance->type = self::TYPE;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->payload = [];
-        foreach ($data['payload'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->payload[] = $element;
+        if (isset($data['payload'])) {
+            foreach ($data['payload'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->payload[] = $element;
+                }
             }
         }
         return $instance;

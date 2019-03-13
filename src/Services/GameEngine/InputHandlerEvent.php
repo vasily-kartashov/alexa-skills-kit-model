@@ -58,10 +58,12 @@ final class InputHandlerEvent implements JsonSerializable
         $instance = new self();
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->inputEvents = [];
-        foreach ($data['inputEvents'] as $item) {
-            $element = isset($item) ? InputEvent::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->inputEvents[] = $element;
+        if (isset($data['inputEvents'])) {
+            foreach ($data['inputEvents'] as $item) {
+                $element = isset($item) ? InputEvent::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->inputEvents[] = $element;
+                }
             }
         }
         return $instance;

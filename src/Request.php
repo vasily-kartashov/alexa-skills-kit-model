@@ -213,9 +213,15 @@ abstract class Request implements JsonSerializable
                 break;
         }
         if ($instance !== null) {
-            $instance->requestId = $data['requestId'];
-            $instance->timestamp = $data['timestamp'];
-            $instance->locale = $data['locale'];
+            if (isset($data['requestId'])) {
+                $instance->requestId = $data['requestId'];
+            }
+            if (isset($data['timestamp'])) {
+                $instance->timestamp = $data['timestamp'];
+            }
+            if (isset($data['locale'])) {
+                $instance->locale = $data['locale'];
+            }
         }
         return $instance;
     }

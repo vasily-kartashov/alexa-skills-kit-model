@@ -45,10 +45,12 @@ final class ProactiveSubscriptionChangedBody implements JsonSerializable
     {
         $instance = new self();
         $instance->subscriptions = [];
-        foreach ($data['subscriptions'] as $item) {
-            $element = isset($item) ? ProactiveSubscriptionEvent::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->subscriptions[] = $element;
+        if (isset($data['subscriptions'])) {
+            foreach ($data['subscriptions'] as $item) {
+                $element = isset($item) ? ProactiveSubscriptionEvent::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->subscriptions[] = $element;
+                }
             }
         }
         return $instance;

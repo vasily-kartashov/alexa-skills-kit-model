@@ -58,10 +58,12 @@ final class ListItemBody implements JsonSerializable
         $instance = new self();
         $instance->listId = isset($data['listId']) ? ((string) $data['listId']) : null;
         $instance->listItemIds = [];
-        foreach ($data['listItemIds'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->listItemIds[] = $element;
+        if (isset($data['listItemIds'])) {
+            foreach ($data['listItemIds'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->listItemIds[] = $element;
+                }
             }
         }
         return $instance;

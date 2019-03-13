@@ -88,10 +88,12 @@ final class UserEvent extends Request implements JsonSerializable
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->arguments = [];
-        foreach ($data['arguments'] as $item) {
-            $element = $item;
-            if ($element !== null) {
-                $instance->arguments[] = $element;
+        if (isset($data['arguments'])) {
+            foreach ($data['arguments'] as $item) {
+                $element = $item;
+                if ($element !== null) {
+                    $instance->arguments[] = $element;
+                }
             }
         }
         $instance->source = $data['source'];

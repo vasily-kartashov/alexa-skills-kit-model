@@ -63,10 +63,12 @@ final class ExecuteCommandsDirective extends Directive implements JsonSerializab
         $instance = new self();
         $instance->type = self::TYPE;
         $instance->commands = [];
-        foreach ($data['commands'] as $item) {
-            $element = isset($item) ? Command::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->commands[] = $element;
+        if (isset($data['commands'])) {
+            foreach ($data['commands'] as $item) {
+                $element = isset($item) ? Command::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->commands[] = $element;
+                }
             }
         }
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;

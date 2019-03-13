@@ -71,10 +71,12 @@ final class SetLightParameters implements JsonSerializable
         $instance->triggerEvent = isset($data['triggerEvent']) ? TriggerEventType::fromValue($data['triggerEvent']) : null;
         $instance->triggerEventTimeMs = isset($data['triggerEventTimeMs']) ? ((int) $data['triggerEventTimeMs']) : null;
         $instance->animations = [];
-        foreach ($data['animations'] as $item) {
-            $element = isset($item) ? LightAnimation::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->animations[] = $element;
+        if (isset($data['animations'])) {
+            foreach ($data['animations'] as $item) {
+                $element = isset($item) ? LightAnimation::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->animations[] = $element;
+                }
             }
         }
         return $instance;

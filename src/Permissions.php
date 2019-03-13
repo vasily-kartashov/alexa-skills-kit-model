@@ -58,10 +58,12 @@ final class Permissions implements JsonSerializable
         $instance = new self();
         $instance->consentToken = isset($data['consentToken']) ? ((string) $data['consentToken']) : null;
         $instance->scopes = [];
-        foreach ($data['scopes'] as $item) {
-            $element = isset($item) ? Scope::fromValue($item) : null;
-            if ($element !== null) {
-                $instance->scopes[] = $element;
+        if (isset($data['scopes'])) {
+            foreach ($data['scopes'] as $item) {
+                $element = isset($item) ? Scope::fromValue($item) : null;
+                if ($element !== null) {
+                    $instance->scopes[] = $element;
+                }
             }
         }
         return $instance;

@@ -50,10 +50,12 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
         $instance = new self();
         $instance->type = self::TYPE;
         $instance->permissions = [];
-        foreach ($data['permissions'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->permissions[] = $element;
+        if (isset($data['permissions'])) {
+            foreach ($data['permissions'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->permissions[] = $element;
+                }
             }
         }
         return $instance;

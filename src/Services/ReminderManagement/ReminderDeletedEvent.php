@@ -45,10 +45,12 @@ final class ReminderDeletedEvent implements JsonSerializable
     {
         $instance = new self();
         $instance->alertTokens = [];
-        foreach ($data['alertTokens'] as $item) {
-            $element = isset($item) ? ((string) $item) : null;
-            if ($element !== null) {
-                $instance->alertTokens[] = $element;
+        if (isset($data['alertTokens'])) {
+            foreach ($data['alertTokens'] as $item) {
+                $element = isset($item) ? ((string) $item) : null;
+                if ($element !== null) {
+                    $instance->alertTokens[] = $element;
+                }
             }
         }
         return $instance;
