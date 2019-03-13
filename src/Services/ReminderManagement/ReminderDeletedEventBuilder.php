@@ -16,7 +16,7 @@ abstract class ReminderDeletedEventBuilder
     }
 
     /**
-     * @param string[] $alertTokens
+     * @param array $alertTokens
      * @return self
      */
     public function withAlertTokens(array $alertTokens): self

@@ -19,7 +19,7 @@ abstract class SessionEndedErrorBuilder
     }
 
     /**
-     * @param mixed $type
+     * @param SessionEndedErrorType $type
      * @return self
      */
     public function withType(SessionEndedErrorType $type): self
@@ -29,7 +29,7 @@ abstract class SessionEndedErrorBuilder
     }
 
     /**
-     * @param mixed $message
+     * @param string $message
      * @return self
      */
     public function withMessage(string $message): self

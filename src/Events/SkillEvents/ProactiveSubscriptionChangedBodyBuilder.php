@@ -16,7 +16,7 @@ abstract class ProactiveSubscriptionChangedBodyBuilder
     }
 
     /**
-     * @param ProactiveSubscriptionEvent[] $subscriptions
+     * @param array $subscriptions
      * @return self
      */
     public function withSubscriptions(array $subscriptions): self

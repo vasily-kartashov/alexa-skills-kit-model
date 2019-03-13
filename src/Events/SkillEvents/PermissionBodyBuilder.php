@@ -16,7 +16,7 @@ abstract class PermissionBodyBuilder
     }
 
     /**
-     * @param Permission[] $acceptedPermissions
+     * @param array $acceptedPermissions
      * @return self
      */
     public function withAcceptedPermissions(array $acceptedPermissions): self

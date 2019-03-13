@@ -19,7 +19,7 @@ abstract class SessionEndedRequestBuilder
     }
 
     /**
-     * @param mixed $reason
+     * @param SessionEndedReason $reason
      * @return self
      */
     public function withReason(SessionEndedReason $reason): self
@@ -29,7 +29,7 @@ abstract class SessionEndedRequestBuilder
     }
 
     /**
-     * @param mixed $error
+     * @param SessionEndedError $error
      * @return self
      */
     public function withError(SessionEndedError $error): self

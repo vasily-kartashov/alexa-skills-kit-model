@@ -25,7 +25,7 @@ abstract class StreamBuilder
     }
 
     /**
-     * @param mixed $expectedPreviousToken
+     * @param string $expectedPreviousToken
      * @return self
      */
     public function withExpectedPreviousToken(string $expectedPreviousToken): self
@@ -35,7 +35,7 @@ abstract class StreamBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self
@@ -45,7 +45,7 @@ abstract class StreamBuilder
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return self
      */
     public function withUrl(string $url): self
@@ -55,7 +55,7 @@ abstract class StreamBuilder
     }
 
     /**
-     * @param mixed $offsetInMilliseconds
+     * @param int $offsetInMilliseconds
      * @return self
      */
     public function withOffsetInMilliseconds(int $offsetInMilliseconds): self

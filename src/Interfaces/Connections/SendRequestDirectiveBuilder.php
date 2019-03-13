@@ -22,7 +22,7 @@ abstract class SendRequestDirectiveBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -42,7 +42,7 @@ abstract class SendRequestDirectiveBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

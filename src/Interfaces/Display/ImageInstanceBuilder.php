@@ -25,7 +25,7 @@ abstract class ImageInstanceBuilder
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return self
      */
     public function withUrl(string $url): self
@@ -35,7 +35,7 @@ abstract class ImageInstanceBuilder
     }
 
     /**
-     * @param mixed $size
+     * @param ImageSize $size
      * @return self
      */
     public function withSize(ImageSize $size): self
@@ -45,7 +45,7 @@ abstract class ImageInstanceBuilder
     }
 
     /**
-     * @param mixed $widthPixels
+     * @param int $widthPixels
      * @return self
      */
     public function withWidthPixels(int $widthPixels): self
@@ -55,7 +55,7 @@ abstract class ImageInstanceBuilder
     }
 
     /**
-     * @param mixed $heightPixels
+     * @param int $heightPixels
      * @return self
      */
     public function withHeightPixels(int $heightPixels): self

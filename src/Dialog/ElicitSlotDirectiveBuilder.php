@@ -21,7 +21,7 @@ abstract class ElicitSlotDirectiveBuilder
     }
 
     /**
-     * @param mixed $updatedIntent
+     * @param Intent $updatedIntent
      * @return self
      */
     public function withUpdatedIntent(Intent $updatedIntent): self
@@ -31,7 +31,7 @@ abstract class ElicitSlotDirectiveBuilder
     }
 
     /**
-     * @param mixed $slotToElicit
+     * @param string $slotToElicit
      * @return self
      */
     public function withSlotToElicit(string $slotToElicit): self

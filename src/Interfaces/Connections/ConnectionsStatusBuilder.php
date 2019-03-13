@@ -19,7 +19,7 @@ abstract class ConnectionsStatusBuilder
     }
 
     /**
-     * @param mixed $code
+     * @param string $code
      * @return self
      */
     public function withCode(string $code): self
@@ -29,7 +29,7 @@ abstract class ConnectionsStatusBuilder
     }
 
     /**
-     * @param mixed $message
+     * @param string $message
      * @return self
      */
     public function withMessage(string $message): self

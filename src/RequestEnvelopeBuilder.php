@@ -25,7 +25,7 @@ abstract class RequestEnvelopeBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param string $version
      * @return self
      */
     public function withVersion(string $version): self
@@ -35,7 +35,7 @@ abstract class RequestEnvelopeBuilder
     }
 
     /**
-     * @param mixed $session
+     * @param Session $session
      * @return self
      */
     public function withSession(Session $session): self
@@ -45,7 +45,7 @@ abstract class RequestEnvelopeBuilder
     }
 
     /**
-     * @param mixed $context
+     * @param Context $context
      * @return self
      */
     public function withContext(Context $context): self
@@ -55,7 +55,7 @@ abstract class RequestEnvelopeBuilder
     }
 
     /**
-     * @param mixed $request
+     * @param Request $request
      * @return self
      */
     public function withRequest(Request $request): self

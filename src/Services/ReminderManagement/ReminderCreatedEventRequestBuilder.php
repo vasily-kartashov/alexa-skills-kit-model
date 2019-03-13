@@ -16,7 +16,7 @@ abstract class ReminderCreatedEventRequestBuilder
     }
 
     /**
-     * @param mixed $body
+     * @param Event $body
      * @return self
      */
     public function withBody(Event $body): self

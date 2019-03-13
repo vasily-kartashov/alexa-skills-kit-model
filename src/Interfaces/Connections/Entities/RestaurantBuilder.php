@@ -19,7 +19,7 @@ abstract class RestaurantBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -29,7 +29,7 @@ abstract class RestaurantBuilder
     }
 
     /**
-     * @param mixed $location
+     * @param PostalAddress $location
      * @return self
      */
     public function withLocation(PostalAddress $location): self

@@ -19,7 +19,7 @@ abstract class DisplayInterfaceBuilder
     }
 
     /**
-     * @param mixed $templateVersion
+     * @param string $templateVersion
      * @return self
      */
     public function withTemplateVersion(string $templateVersion): self
@@ -29,7 +29,7 @@ abstract class DisplayInterfaceBuilder
     }
 
     /**
-     * @param mixed $markupVersion
+     * @param string $markupVersion
      * @return self
      */
     public function withMarkupVersion(string $markupVersion): self

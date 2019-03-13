@@ -19,7 +19,7 @@ abstract class ErrorBuilder
     }
 
     /**
-     * @param mixed $message
+     * @param string $message
      * @return self
      */
     public function withMessage(string $message): self
@@ -29,7 +29,7 @@ abstract class ErrorBuilder
     }
 
     /**
-     * @param mixed $type
+     * @param ErrorType $type
      * @return self
      */
     public function withType(ErrorType $type): self

@@ -19,7 +19,7 @@ abstract class ConnectionsRequestBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self

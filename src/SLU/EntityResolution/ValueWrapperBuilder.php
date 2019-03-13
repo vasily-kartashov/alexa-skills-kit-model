@@ -16,7 +16,7 @@ abstract class ValueWrapperBuilder
     }
 
     /**
-     * @param mixed $value
+     * @param Value $value
      * @return self
      */
     public function withValue(Value $value): self

@@ -22,7 +22,7 @@ abstract class InSkillProductsResponseBuilder
     }
 
     /**
-     * @param InSkillProduct[] $inSkillProducts
+     * @param array $inSkillProducts
      * @return self
      */
     public function withInSkillProducts(array $inSkillProducts): self
@@ -35,7 +35,7 @@ abstract class InSkillProductsResponseBuilder
     }
 
     /**
-     * @param mixed $isTruncated
+     * @param bool $isTruncated
      * @return self
      */
     public function withIsTruncated(bool $isTruncated): self
@@ -45,7 +45,7 @@ abstract class InSkillProductsResponseBuilder
     }
 
     /**
-     * @param mixed $nextToken
+     * @param string $nextToken
      * @return self
      */
     public function withNextToken(string $nextToken): self

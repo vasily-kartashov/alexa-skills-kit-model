@@ -16,7 +16,7 @@ abstract class AskForPermissionsConsentCardBuilder
     }
 
     /**
-     * @param string[] $permissions
+     * @param array $permissions
      * @return self
      */
     public function withPermissions(array $permissions): self

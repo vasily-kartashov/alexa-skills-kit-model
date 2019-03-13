@@ -19,7 +19,7 @@ abstract class AmazonPayErrorResponseBuilder
     }
 
     /**
-     * @param mixed $errorCode
+     * @param string $errorCode
      * @return self
      */
     public function withErrorCode(string $errorCode): self
@@ -29,7 +29,7 @@ abstract class AmazonPayErrorResponseBuilder
     }
 
     /**
-     * @param mixed $errorMessage
+     * @param string $errorMessage
      * @return self
      */
     public function withErrorMessage(string $errorMessage): self

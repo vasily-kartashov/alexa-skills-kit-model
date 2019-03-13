@@ -19,7 +19,7 @@ abstract class ImageBuilder
     }
 
     /**
-     * @param mixed $contentDescription
+     * @param string $contentDescription
      * @return self
      */
     public function withContentDescription(string $contentDescription): self
@@ -29,7 +29,7 @@ abstract class ImageBuilder
     }
 
     /**
-     * @param ImageInstance[] $sources
+     * @param array $sources
      * @return self
      */
     public function withSources(array $sources): self

@@ -16,7 +16,7 @@ abstract class StopInputHandlerDirectiveBuilder
     }
 
     /**
-     * @param mixed $originatingRequestId
+     * @param string $originatingRequestId
      * @return self
      */
     public function withOriginatingRequestId(string $originatingRequestId): self

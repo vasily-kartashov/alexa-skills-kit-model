@@ -16,7 +16,7 @@ abstract class ReminderDeletedEventRequestBuilder
     }
 
     /**
-     * @param mixed $body
+     * @param ReminderDeletedEvent $body
      * @return self
      */
     public function withBody(ReminderDeletedEvent $body): self

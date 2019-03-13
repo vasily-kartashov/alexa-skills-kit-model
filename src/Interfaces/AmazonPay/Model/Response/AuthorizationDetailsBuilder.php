@@ -57,7 +57,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $amazonAuthorizationId
+     * @param string $amazonAuthorizationId
      * @return self
      */
     public function withAmazonAuthorizationId(string $amazonAuthorizationId): self
@@ -67,7 +67,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $authorizationReferenceId
+     * @param string $authorizationReferenceId
      * @return self
      */
     public function withAuthorizationReferenceId(string $authorizationReferenceId): self
@@ -77,7 +77,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $sellerAuthorizationNote
+     * @param string $sellerAuthorizationNote
      * @return self
      */
     public function withSellerAuthorizationNote(string $sellerAuthorizationNote): self
@@ -87,7 +87,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $authorizationAmount
+     * @param Price $authorizationAmount
      * @return self
      */
     public function withAuthorizationAmount(Price $authorizationAmount): self
@@ -97,7 +97,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $capturedAmount
+     * @param Price $capturedAmount
      * @return self
      */
     public function withCapturedAmount(Price $capturedAmount): self
@@ -107,7 +107,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $authorizationFee
+     * @param Price $authorizationFee
      * @return self
      */
     public function withAuthorizationFee(Price $authorizationFee): self
@@ -117,7 +117,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param string[] $idList
+     * @param array $idList
      * @return self
      */
     public function withIdList(array $idList): self
@@ -130,7 +130,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $creationTimestamp
+     * @param DateTime $creationTimestamp
      * @return self
      */
     public function withCreationTimestamp(DateTime $creationTimestamp): self
@@ -140,7 +140,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $expirationTimestamp
+     * @param DateTime $expirationTimestamp
      * @return self
      */
     public function withExpirationTimestamp(DateTime $expirationTimestamp): self
@@ -150,7 +150,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $authorizationStatus
+     * @param AuthorizationStatus $authorizationStatus
      * @return self
      */
     public function withAuthorizationStatus(AuthorizationStatus $authorizationStatus): self
@@ -160,7 +160,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $softDecline
+     * @param bool $softDecline
      * @return self
      */
     public function withSoftDecline(bool $softDecline): self
@@ -170,7 +170,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $captureNow
+     * @param bool $captureNow
      * @return self
      */
     public function withCaptureNow(bool $captureNow): self
@@ -180,7 +180,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $softDescriptor
+     * @param string $softDescriptor
      * @return self
      */
     public function withSoftDescriptor(string $softDescriptor): self
@@ -190,7 +190,7 @@ abstract class AuthorizationDetailsBuilder
     }
 
     /**
-     * @param mixed $authorizationBillingAddress
+     * @param Destination $authorizationBillingAddress
      * @return self
      */
     public function withAuthorizationBillingAddress(Destination $authorizationBillingAddress): self

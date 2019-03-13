@@ -21,7 +21,7 @@ abstract class SkillEnabledRequestBuilder
     }
 
     /**
-     * @param mixed $eventCreationTime
+     * @param DateTime $eventCreationTime
      * @return self
      */
     public function withEventCreationTime(DateTime $eventCreationTime): self
@@ -31,7 +31,7 @@ abstract class SkillEnabledRequestBuilder
     }
 
     /**
-     * @param mixed $eventPublishingTime
+     * @param DateTime $eventPublishingTime
      * @return self
      */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self

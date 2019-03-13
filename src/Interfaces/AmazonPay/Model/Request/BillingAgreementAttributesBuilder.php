@@ -22,7 +22,7 @@ abstract class BillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $platformId
+     * @param string $platformId
      * @return self
      */
     public function withPlatformId(string $platformId): self
@@ -32,7 +32,7 @@ abstract class BillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerNote
+     * @param string $sellerNote
      * @return self
      */
     public function withSellerNote(string $sellerNote): self
@@ -42,7 +42,7 @@ abstract class BillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerBillingAgreementAttributes
+     * @param SellerBillingAgreementAttributes $sellerBillingAgreementAttributes
      * @return self
      */
     public function withSellerBillingAgreementAttributes(SellerBillingAgreementAttributes $sellerBillingAgreementAttributes): self

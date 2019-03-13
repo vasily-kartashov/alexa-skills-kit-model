@@ -31,7 +31,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $alertToken
+     * @param string $alertToken
      * @return self
      */
     public function withAlertToken(string $alertToken): self
@@ -41,7 +41,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $createdTime
+     * @param string $createdTime
      * @return self
      */
     public function withCreatedTime(string $createdTime): self
@@ -51,7 +51,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $updatedTime
+     * @param string $updatedTime
      * @return self
      */
     public function withUpdatedTime(string $updatedTime): self
@@ -61,7 +61,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param Status $status
      * @return self
      */
     public function withStatus(Status $status): self
@@ -71,7 +71,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param string $version
      * @return self
      */
     public function withVersion(string $version): self
@@ -81,7 +81,7 @@ abstract class ReminderResponseBuilder
     }
 
     /**
-     * @param mixed $href
+     * @param string $href
      * @return self
      */
     public function withHref(string $href): self

@@ -16,7 +16,7 @@ abstract class AccountLinkedBodyBuilder
     }
 
     /**
-     * @param mixed $accessToken
+     * @param string $accessToken
      * @return self
      */
     public function withAccessToken(string $accessToken): self

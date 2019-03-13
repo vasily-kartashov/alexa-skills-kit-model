@@ -40,7 +40,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $productId
+     * @param string $productId
      * @return self
      */
     public function withProductId(string $productId): self
@@ -50,7 +50,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $referenceName
+     * @param string $referenceName
      * @return self
      */
     public function withReferenceName(string $referenceName): self
@@ -60,7 +60,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -70,7 +70,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $type
+     * @param ProductType $type
      * @return self
      */
     public function withType(ProductType $type): self
@@ -80,7 +80,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $summary
+     * @param string $summary
      * @return self
      */
     public function withSummary(string $summary): self
@@ -90,7 +90,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $purchasable
+     * @param PurchasableState $purchasable
      * @return self
      */
     public function withPurchasable(PurchasableState $purchasable): self
@@ -100,7 +100,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $entitled
+     * @param EntitledState $entitled
      * @return self
      */
     public function withEntitled(EntitledState $entitled): self
@@ -110,7 +110,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $activeEntitlementCount
+     * @param int $activeEntitlementCount
      * @return self
      */
     public function withActiveEntitlementCount(int $activeEntitlementCount): self
@@ -120,7 +120,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $purchaseMode
+     * @param PurchaseMode $purchaseMode
      * @return self
      */
     public function withPurchaseMode(PurchaseMode $purchaseMode): self

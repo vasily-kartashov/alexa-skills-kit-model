@@ -42,7 +42,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $consentToken
+     * @param string $consentToken
      * @return self
      */
     public function withConsentToken(string $consentToken): self
@@ -52,7 +52,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $sellerId
+     * @param string $sellerId
      * @return self
      */
     public function withSellerId(string $sellerId): self
@@ -62,7 +62,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $countryOfEstablishment
+     * @param string $countryOfEstablishment
      * @return self
      */
     public function withCountryOfEstablishment(string $countryOfEstablishment): self
@@ -72,7 +72,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $ledgerCurrency
+     * @param string $ledgerCurrency
      * @return self
      */
     public function withLedgerCurrency(string $ledgerCurrency): self
@@ -82,7 +82,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $checkoutLanguage
+     * @param string $checkoutLanguage
      * @return self
      */
     public function withCheckoutLanguage(string $checkoutLanguage): self
@@ -92,7 +92,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $billingAgreementAttributes
+     * @param BillingAgreementAttributes $billingAgreementAttributes
      * @return self
      */
     public function withBillingAgreementAttributes(BillingAgreementAttributes $billingAgreementAttributes): self
@@ -102,7 +102,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $needAmazonShippingAddress
+     * @param bool $needAmazonShippingAddress
      * @return self
      */
     public function withNeedAmazonShippingAddress(bool $needAmazonShippingAddress): self
@@ -112,7 +112,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $sandboxMode
+     * @param bool $sandboxMode
      * @return self
      */
     public function withSandboxMode(bool $sandboxMode): self
@@ -122,7 +122,7 @@ abstract class SetupAmazonPayBuilder
     }
 
     /**
-     * @param mixed $sandboxCustomerEmailId
+     * @param string $sandboxCustomerEmailId
      * @return self
      */
     public function withSandboxCustomerEmailId(string $sandboxCustomerEmailId): self

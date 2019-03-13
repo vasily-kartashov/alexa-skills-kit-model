@@ -24,7 +24,7 @@ abstract class ScheduleFoodEstablishmentReservationRequestBuilder
     }
 
     /**
-     * @param mixed $startTime
+     * @param string $startTime
      * @return self
      */
     public function withStartTime(string $startTime): self
@@ -34,7 +34,7 @@ abstract class ScheduleFoodEstablishmentReservationRequestBuilder
     }
 
     /**
-     * @param mixed $partySize
+     * @param string $partySize
      * @return self
      */
     public function withPartySize(string $partySize): self
@@ -44,7 +44,7 @@ abstract class ScheduleFoodEstablishmentReservationRequestBuilder
     }
 
     /**
-     * @param mixed $restaurant
+     * @param Restaurant $restaurant
      * @return self
      */
     public function withRestaurant(Restaurant $restaurant): self

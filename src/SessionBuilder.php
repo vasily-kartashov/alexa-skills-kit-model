@@ -28,7 +28,7 @@ abstract class SessionBuilder
     }
 
     /**
-     * @param mixed $new
+     * @param bool $new
      * @return self
      */
     public function withNew(bool $new): self
@@ -38,7 +38,7 @@ abstract class SessionBuilder
     }
 
     /**
-     * @param mixed $sessionId
+     * @param string $sessionId
      * @return self
      */
     public function withSessionId(string $sessionId): self
@@ -48,7 +48,7 @@ abstract class SessionBuilder
     }
 
     /**
-     * @param mixed $user
+     * @param User $user
      * @return self
      */
     public function withUser(User $user): self
@@ -68,7 +68,7 @@ abstract class SessionBuilder
     }
 
     /**
-     * @param mixed $application
+     * @param Application $application
      * @return self
      */
     public function withApplication(Application $application): self

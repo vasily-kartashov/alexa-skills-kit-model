@@ -16,7 +16,7 @@ abstract class AlertInfoBuilder
     }
 
     /**
-     * @param mixed $spokenInfo
+     * @param AlertInfoSpokenInfo $spokenInfo
      * @return self
      */
     public function withSpokenInfo(AlertInfoSpokenInfo $spokenInfo): self

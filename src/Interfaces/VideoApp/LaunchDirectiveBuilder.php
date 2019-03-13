@@ -16,7 +16,7 @@ abstract class LaunchDirectiveBuilder
     }
 
     /**
-     * @param mixed $videoItem
+     * @param VideoItem $videoItem
      * @return self
      */
     public function withVideoItem(VideoItem $videoItem): self

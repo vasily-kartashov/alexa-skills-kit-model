@@ -22,7 +22,7 @@ abstract class UpdateListItemRequestBuilder
     }
 
     /**
-     * @param mixed $value
+     * @param string $value
      * @return self
      */
     public function withValue(string $value): self
@@ -32,7 +32,7 @@ abstract class UpdateListItemRequestBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param ListItemState $status
      * @return self
      */
     public function withStatus(ListItemState $status): self
@@ -42,7 +42,7 @@ abstract class UpdateListItemRequestBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param int $version
      * @return self
      */
     public function withVersion(int $version): self

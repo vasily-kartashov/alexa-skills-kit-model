@@ -16,7 +16,7 @@ abstract class StatusBuilder
     }
 
     /**
-     * @param mixed $code
+     * @param StatusCode $code
      * @return self
      */
     public function withCode(StatusCode $code): self

@@ -28,7 +28,7 @@ abstract class TriggerBuilder
     }
 
     /**
-     * @param mixed $type
+     * @param TriggerType $type
      * @return self
      */
     public function withType(TriggerType $type): self
@@ -48,7 +48,7 @@ abstract class TriggerBuilder
     }
 
     /**
-     * @param mixed $offsetInSeconds
+     * @param int $offsetInSeconds
      * @return self
      */
     public function withOffsetInSeconds(int $offsetInSeconds): self
@@ -58,7 +58,7 @@ abstract class TriggerBuilder
     }
 
     /**
-     * @param mixed $timeZoneId
+     * @param string $timeZoneId
      * @return self
      */
     public function withTimeZoneId(string $timeZoneId): self
@@ -68,7 +68,7 @@ abstract class TriggerBuilder
     }
 
     /**
-     * @param mixed $recurrence
+     * @param Recurrence $recurrence
      * @return self
      */
     public function withRecurrence(Recurrence $recurrence): self

@@ -19,7 +19,7 @@ abstract class SendResponseDirectiveBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param ConnectionsStatus $status
      * @return self
      */
     public function withStatus(ConnectionsStatus $status): self

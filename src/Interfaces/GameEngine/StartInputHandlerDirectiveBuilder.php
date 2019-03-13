@@ -28,7 +28,7 @@ abstract class StartInputHandlerDirectiveBuilder
     }
 
     /**
-     * @param mixed $timeout
+     * @param int $timeout
      * @return self
      */
     public function withTimeout(int $timeout): self
@@ -38,7 +38,7 @@ abstract class StartInputHandlerDirectiveBuilder
     }
 
     /**
-     * @param string[] $proxies
+     * @param array $proxies
      * @return self
      */
     public function withProxies(array $proxies): self
@@ -51,7 +51,7 @@ abstract class StartInputHandlerDirectiveBuilder
     }
 
     /**
-     * @param Recognizer[] $recognizers
+     * @param array $recognizers
      * @return self
      */
     public function withRecognizers(array $recognizers): self
@@ -64,7 +64,7 @@ abstract class StartInputHandlerDirectiveBuilder
     }
 
     /**
-     * @param Event[] $events
+     * @param array $events
      * @return self
      */
     public function withEvents(array $events): self

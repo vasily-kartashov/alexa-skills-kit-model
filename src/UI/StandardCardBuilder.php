@@ -22,7 +22,7 @@ abstract class StandardCardBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -32,7 +32,7 @@ abstract class StandardCardBuilder
     }
 
     /**
-     * @param mixed $text
+     * @param string $text
      * @return self
      */
     public function withText(string $text): self
@@ -42,7 +42,7 @@ abstract class StandardCardBuilder
     }
 
     /**
-     * @param mixed $image
+     * @param Image $image
      * @return self
      */
     public function withImage(Image $image): self

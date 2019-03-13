@@ -25,7 +25,7 @@ abstract class BodyTemplate2Builder
     }
 
     /**
-     * @param mixed $backgroundImage
+     * @param Image $backgroundImage
      * @return self
      */
     public function withBackgroundImage(Image $backgroundImage): self
@@ -35,7 +35,7 @@ abstract class BodyTemplate2Builder
     }
 
     /**
-     * @param mixed $image
+     * @param Image $image
      * @return self
      */
     public function withImage(Image $image): self
@@ -45,7 +45,7 @@ abstract class BodyTemplate2Builder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -55,7 +55,7 @@ abstract class BodyTemplate2Builder
     }
 
     /**
-     * @param mixed $textContent
+     * @param TextContent $textContent
      * @return self
      */
     public function withTextContent(TextContent $textContent): self

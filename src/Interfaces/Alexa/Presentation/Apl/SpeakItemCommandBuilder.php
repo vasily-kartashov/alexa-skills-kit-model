@@ -25,7 +25,7 @@ abstract class SpeakItemCommandBuilder
     }
 
     /**
-     * @param mixed $align
+     * @param Align $align
      * @return self
      */
     public function withAlign(Align $align): self
@@ -35,7 +35,7 @@ abstract class SpeakItemCommandBuilder
     }
 
     /**
-     * @param mixed $componentId
+     * @param string $componentId
      * @return self
      */
     public function withComponentId(string $componentId): self
@@ -45,7 +45,7 @@ abstract class SpeakItemCommandBuilder
     }
 
     /**
-     * @param mixed $highlightMode
+     * @param HighlightMode $highlightMode
      * @return self
      */
     public function withHighlightMode(HighlightMode $highlightMode): self
@@ -55,7 +55,7 @@ abstract class SpeakItemCommandBuilder
     }
 
     /**
-     * @param mixed $minimumDwellTime
+     * @param int $minimumDwellTime
      * @return self
      */
     public function withMinimumDwellTime(int $minimumDwellTime): self

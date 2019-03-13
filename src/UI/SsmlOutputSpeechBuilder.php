@@ -16,7 +16,7 @@ abstract class SsmlOutputSpeechBuilder
     }
 
     /**
-     * @param mixed $ssml
+     * @param string $ssml
      * @return self
      */
     public function withSsml(string $ssml): self

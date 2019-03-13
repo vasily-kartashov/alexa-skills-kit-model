@@ -19,7 +19,7 @@ abstract class CanFulfillSlotBuilder
     }
 
     /**
-     * @param mixed $canUnderstand
+     * @param CanUnderstandSlotValues $canUnderstand
      * @return self
      */
     public function withCanUnderstand(CanUnderstandSlotValues $canUnderstand): self
@@ -29,7 +29,7 @@ abstract class CanFulfillSlotBuilder
     }
 
     /**
-     * @param mixed $canFulfill
+     * @param CanFulfillSlotValues $canFulfill
      * @return self
      */
     public function withCanFulfill(CanFulfillSlotValues $canFulfill): self

@@ -22,7 +22,7 @@ abstract class SellerBillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerBillingAgreementId
+     * @param string $sellerBillingAgreementId
      * @return self
      */
     public function withSellerBillingAgreementId(string $sellerBillingAgreementId): self
@@ -32,7 +32,7 @@ abstract class SellerBillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $storeName
+     * @param string $storeName
      * @return self
      */
     public function withStoreName(string $storeName): self
@@ -42,7 +42,7 @@ abstract class SellerBillingAgreementAttributesBuilder
     }
 
     /**
-     * @param mixed $customInformation
+     * @param string $customInformation
      * @return self
      */
     public function withCustomInformation(string $customInformation): self

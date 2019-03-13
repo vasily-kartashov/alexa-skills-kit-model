@@ -19,7 +19,7 @@ abstract class VideoItemBuilder
     }
 
     /**
-     * @param mixed $source
+     * @param string $source
      * @return self
      */
     public function withSource(string $source): self
@@ -29,7 +29,7 @@ abstract class VideoItemBuilder
     }
 
     /**
-     * @param mixed $metadata
+     * @param Metadata $metadata
      * @return self
      */
     public function withMetadata(Metadata $metadata): self

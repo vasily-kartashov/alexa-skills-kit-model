@@ -19,7 +19,7 @@ abstract class PriceBuilder
     }
 
     /**
-     * @param mixed $amount
+     * @param string $amount
      * @return self
      */
     public function withAmount(string $amount): self
@@ -29,7 +29,7 @@ abstract class PriceBuilder
     }
 
     /**
-     * @param mixed $currencyCode
+     * @param string $currencyCode
      * @return self
      */
     public function withCurrencyCode(string $currencyCode): self

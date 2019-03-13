@@ -31,7 +31,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $timestamp
+     * @param string $timestamp
      * @return self
      */
     public function withTimestamp(string $timestamp): self
@@ -41,7 +41,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $coordinate
+     * @param Coordinate $coordinate
      * @return self
      */
     public function withCoordinate(Coordinate $coordinate): self
@@ -51,7 +51,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $altitude
+     * @param Altitude $altitude
      * @return self
      */
     public function withAltitude(Altitude $altitude): self
@@ -61,7 +61,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $heading
+     * @param Heading $heading
      * @return self
      */
     public function withHeading(Heading $heading): self
@@ -71,7 +71,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $speed
+     * @param Speed $speed
      * @return self
      */
     public function withSpeed(Speed $speed): self
@@ -81,7 +81,7 @@ abstract class GeolocationStateBuilder
     }
 
     /**
-     * @param mixed $locationServices
+     * @param LocationServices $locationServices
      * @return self
      */
     public function withLocationServices(LocationServices $locationServices): self

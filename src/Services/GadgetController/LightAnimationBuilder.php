@@ -22,7 +22,7 @@ abstract class LightAnimationBuilder
     }
 
     /**
-     * @param mixed $repeat
+     * @param int $repeat
      * @return self
      */
     public function withRepeat(int $repeat): self
@@ -32,7 +32,7 @@ abstract class LightAnimationBuilder
     }
 
     /**
-     * @param string[] $targetLights
+     * @param array $targetLights
      * @return self
      */
     public function withTargetLights(array $targetLights): self
@@ -45,7 +45,7 @@ abstract class LightAnimationBuilder
     }
 
     /**
-     * @param AnimationStep[] $sequence
+     * @param array $sequence
      * @return self
      */
     public function withSequence(array $sequence): self

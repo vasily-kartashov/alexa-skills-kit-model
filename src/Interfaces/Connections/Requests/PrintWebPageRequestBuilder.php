@@ -22,7 +22,7 @@ abstract class PrintWebPageRequestBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -32,7 +32,7 @@ abstract class PrintWebPageRequestBuilder
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return self
      */
     public function withUrl(string $url): self
@@ -42,7 +42,7 @@ abstract class PrintWebPageRequestBuilder
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      * @return self
      */
     public function withDescription(string $description): self

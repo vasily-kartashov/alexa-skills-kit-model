@@ -22,7 +22,7 @@ abstract class ListTemplate2Builder
     }
 
     /**
-     * @param mixed $backgroundImage
+     * @param Image $backgroundImage
      * @return self
      */
     public function withBackgroundImage(Image $backgroundImage): self
@@ -32,7 +32,7 @@ abstract class ListTemplate2Builder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -42,7 +42,7 @@ abstract class ListTemplate2Builder
     }
 
     /**
-     * @param ListItem[] $listItems
+     * @param array $listItems
      * @return self
      */
     public function withListItems(array $listItems): self

@@ -16,7 +16,7 @@ abstract class ProactiveSubscriptionEventBuilder
     }
 
     /**
-     * @param mixed $eventName
+     * @param string $eventName
      * @return self
      */
     public function withEventName(string $eventName): self

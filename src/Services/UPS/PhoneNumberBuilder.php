@@ -19,7 +19,7 @@ abstract class PhoneNumberBuilder
     }
 
     /**
-     * @param mixed $countryCode
+     * @param string $countryCode
      * @return self
      */
     public function withCountryCode(string $countryCode): self
@@ -29,7 +29,7 @@ abstract class PhoneNumberBuilder
     }
 
     /**
-     * @param mixed $phoneNumber
+     * @param string $phoneNumber
      * @return self
      */
     public function withPhoneNumber(string $phoneNumber): self

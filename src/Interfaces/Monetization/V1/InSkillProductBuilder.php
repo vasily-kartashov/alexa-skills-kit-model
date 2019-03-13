@@ -16,7 +16,7 @@ abstract class InSkillProductBuilder
     }
 
     /**
-     * @param mixed $productId
+     * @param string $productId
      * @return self
      */
     public function withProductId(string $productId): self

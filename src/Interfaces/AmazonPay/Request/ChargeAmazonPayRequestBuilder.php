@@ -36,7 +36,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $sellerId
+     * @param string $sellerId
      * @return self
      */
     public function withSellerId(string $sellerId): self
@@ -46,7 +46,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $billingAgreementId
+     * @param string $billingAgreementId
      * @return self
      */
     public function withBillingAgreementId(string $billingAgreementId): self
@@ -56,7 +56,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $paymentAction
+     * @param PaymentAction $paymentAction
      * @return self
      */
     public function withPaymentAction(PaymentAction $paymentAction): self
@@ -66,7 +66,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $authorizeAttributes
+     * @param AuthorizeAttributes $authorizeAttributes
      * @return self
      */
     public function withAuthorizeAttributes(AuthorizeAttributes $authorizeAttributes): self
@@ -76,7 +76,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $sellerOrderAttributes
+     * @param SellerOrderAttributes $sellerOrderAttributes
      * @return self
      */
     public function withSellerOrderAttributes(SellerOrderAttributes $sellerOrderAttributes): self
@@ -86,7 +86,7 @@ abstract class ChargeAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $providerAttributes
+     * @param ProviderAttributes $providerAttributes
      * @return self
      */
     public function withProviderAttributes(ProviderAttributes $providerAttributes): self

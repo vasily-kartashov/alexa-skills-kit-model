@@ -27,7 +27,7 @@ abstract class ReminderRequestBuilder
     }
 
     /**
-     * @param mixed $requestTime
+     * @param DateTime $requestTime
      * @return self
      */
     public function withRequestTime(DateTime $requestTime): self
@@ -37,7 +37,7 @@ abstract class ReminderRequestBuilder
     }
 
     /**
-     * @param mixed $trigger
+     * @param Trigger $trigger
      * @return self
      */
     public function withTrigger(Trigger $trigger): self
@@ -47,7 +47,7 @@ abstract class ReminderRequestBuilder
     }
 
     /**
-     * @param mixed $alertInfo
+     * @param AlertInfo $alertInfo
      * @return self
      */
     public function withAlertInfo(AlertInfo $alertInfo): self
@@ -57,7 +57,7 @@ abstract class ReminderRequestBuilder
     }
 
     /**
-     * @param mixed $pushNotification
+     * @param PushNotification $pushNotification
      * @return self
      */
     public function withPushNotification(PushNotification $pushNotification): self

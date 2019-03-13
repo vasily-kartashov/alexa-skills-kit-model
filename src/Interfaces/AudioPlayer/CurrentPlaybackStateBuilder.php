@@ -22,7 +22,7 @@ abstract class CurrentPlaybackStateBuilder
     }
 
     /**
-     * @param mixed $offsetInMilliseconds
+     * @param int $offsetInMilliseconds
      * @return self
      */
     public function withOffsetInMilliseconds(int $offsetInMilliseconds): self
@@ -32,7 +32,7 @@ abstract class CurrentPlaybackStateBuilder
     }
 
     /**
-     * @param mixed $playerActivity
+     * @param PlayerActivity $playerActivity
      * @return self
      */
     public function withPlayerActivity(PlayerActivity $playerActivity): self
@@ -42,7 +42,7 @@ abstract class CurrentPlaybackStateBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

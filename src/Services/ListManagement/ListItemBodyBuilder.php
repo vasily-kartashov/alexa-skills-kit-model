@@ -19,7 +19,7 @@ abstract class ListItemBodyBuilder
     }
 
     /**
-     * @param mixed $listId
+     * @param string $listId
      * @return self
      */
     public function withListId(string $listId): self
@@ -29,7 +29,7 @@ abstract class ListItemBodyBuilder
     }
 
     /**
-     * @param string[] $listItemIds
+     * @param array $listItemIds
      * @return self
      */
     public function withListItemIds(array $listItemIds): self

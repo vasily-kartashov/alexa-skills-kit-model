@@ -22,7 +22,7 @@ abstract class SpokenTextBuilder
     }
 
     /**
-     * @param mixed $locale
+     * @param string $locale
      * @return self
      */
     public function withLocale(string $locale): self
@@ -32,7 +32,7 @@ abstract class SpokenTextBuilder
     }
 
     /**
-     * @param mixed $ssml
+     * @param string $ssml
      * @return self
      */
     public function withSsml(string $ssml): self
@@ -42,7 +42,7 @@ abstract class SpokenTextBuilder
     }
 
     /**
-     * @param mixed $text
+     * @param string $text
      * @return self
      */
     public function withText(string $text): self

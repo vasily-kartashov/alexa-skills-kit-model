@@ -19,7 +19,7 @@ abstract class AudioItemBuilder
     }
 
     /**
-     * @param mixed $stream
+     * @param Stream $stream
      * @return self
      */
     public function withStream(Stream $stream): self
@@ -29,7 +29,7 @@ abstract class AudioItemBuilder
     }
 
     /**
-     * @param mixed $metadata
+     * @param AudioItemMetadata $metadata
      * @return self
      */
     public function withMetadata(AudioItemMetadata $metadata): self

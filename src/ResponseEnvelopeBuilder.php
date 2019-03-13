@@ -25,7 +25,7 @@ abstract class ResponseEnvelopeBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param string $version
      * @return self
      */
     public function withVersion(string $version): self
@@ -45,7 +45,7 @@ abstract class ResponseEnvelopeBuilder
     }
 
     /**
-     * @param mixed $userAgent
+     * @param string $userAgent
      * @return self
      */
     public function withUserAgent(string $userAgent): self
@@ -55,7 +55,7 @@ abstract class ResponseEnvelopeBuilder
     }
 
     /**
-     * @param mixed $response
+     * @param Response $response
      * @return self
      */
     public function withResponse(Response $response): self

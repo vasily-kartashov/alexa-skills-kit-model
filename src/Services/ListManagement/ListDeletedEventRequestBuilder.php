@@ -24,7 +24,7 @@ abstract class ListDeletedEventRequestBuilder
     }
 
     /**
-     * @param mixed $body
+     * @param ListBody $body
      * @return self
      */
     public function withBody(ListBody $body): self
@@ -34,7 +34,7 @@ abstract class ListDeletedEventRequestBuilder
     }
 
     /**
-     * @param mixed $eventCreationTime
+     * @param DateTime $eventCreationTime
      * @return self
      */
     public function withEventCreationTime(DateTime $eventCreationTime): self
@@ -44,7 +44,7 @@ abstract class ListDeletedEventRequestBuilder
     }
 
     /**
-     * @param mixed $eventPublishingTime
+     * @param DateTime $eventPublishingTime
      * @return self
      */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self

@@ -19,7 +19,7 @@ abstract class StatusBuilder
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return self
      */
     public function withUrl(string $url): self
@@ -29,7 +29,7 @@ abstract class StatusBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param ListItemState $status
      * @return self
      */
     public function withStatus(ListItemState $status): self

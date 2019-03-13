@@ -19,7 +19,7 @@ abstract class InputHandlerEventBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -29,7 +29,7 @@ abstract class InputHandlerEventBuilder
     }
 
     /**
-     * @param InputEvent[] $inputEvents
+     * @param array $inputEvents
      * @return self
      */
     public function withInputEvents(array $inputEvents): self

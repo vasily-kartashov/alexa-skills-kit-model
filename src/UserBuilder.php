@@ -22,7 +22,7 @@ abstract class UserBuilder
     }
 
     /**
-     * @param mixed $userId
+     * @param string $userId
      * @return self
      */
     public function withUserId(string $userId): self
@@ -32,7 +32,7 @@ abstract class UserBuilder
     }
 
     /**
-     * @param mixed $accessToken
+     * @param string $accessToken
      * @return self
      */
     public function withAccessToken(string $accessToken): self
@@ -42,7 +42,7 @@ abstract class UserBuilder
     }
 
     /**
-     * @param mixed $permissions
+     * @param Permissions $permissions
      * @return self
      */
     public function withPermissions(Permissions $permissions): self

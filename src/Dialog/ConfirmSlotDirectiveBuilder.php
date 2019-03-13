@@ -21,7 +21,7 @@ abstract class ConfirmSlotDirectiveBuilder
     }
 
     /**
-     * @param mixed $updatedIntent
+     * @param Intent $updatedIntent
      * @return self
      */
     public function withUpdatedIntent(Intent $updatedIntent): self
@@ -31,7 +31,7 @@ abstract class ConfirmSlotDirectiveBuilder
     }
 
     /**
-     * @param mixed $slotToConfirm
+     * @param string $slotToConfirm
      * @return self
      */
     public function withSlotToConfirm(string $slotToConfirm): self

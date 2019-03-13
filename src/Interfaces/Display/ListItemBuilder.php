@@ -22,7 +22,7 @@ abstract class ListItemBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self
@@ -32,7 +32,7 @@ abstract class ListItemBuilder
     }
 
     /**
-     * @param mixed $image
+     * @param Image $image
      * @return self
      */
     public function withImage(Image $image): self
@@ -42,7 +42,7 @@ abstract class ListItemBuilder
     }
 
     /**
-     * @param mixed $textContent
+     * @param TextContent $textContent
      * @return self
      */
     public function withTextContent(TextContent $textContent): self

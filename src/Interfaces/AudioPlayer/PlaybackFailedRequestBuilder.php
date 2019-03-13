@@ -22,7 +22,7 @@ abstract class PlaybackFailedRequestBuilder
     }
 
     /**
-     * @param mixed $currentPlaybackState
+     * @param CurrentPlaybackState $currentPlaybackState
      * @return self
      */
     public function withCurrentPlaybackState(CurrentPlaybackState $currentPlaybackState): self
@@ -32,7 +32,7 @@ abstract class PlaybackFailedRequestBuilder
     }
 
     /**
-     * @param mixed $error
+     * @param Error $error
      * @return self
      */
     public function withError(Error $error): self
@@ -42,7 +42,7 @@ abstract class PlaybackFailedRequestBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

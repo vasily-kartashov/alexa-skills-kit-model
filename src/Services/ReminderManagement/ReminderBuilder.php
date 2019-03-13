@@ -39,7 +39,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $alertToken
+     * @param string $alertToken
      * @return self
      */
     public function withAlertToken(string $alertToken): self
@@ -49,7 +49,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $createdTime
+     * @param DateTime $createdTime
      * @return self
      */
     public function withCreatedTime(DateTime $createdTime): self
@@ -59,7 +59,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $updatedTime
+     * @param DateTime $updatedTime
      * @return self
      */
     public function withUpdatedTime(DateTime $updatedTime): self
@@ -69,7 +69,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param Status $status
      * @return self
      */
     public function withStatus(Status $status): self
@@ -79,7 +79,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $trigger
+     * @param Trigger $trigger
      * @return self
      */
     public function withTrigger(Trigger $trigger): self
@@ -89,7 +89,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $alertInfo
+     * @param AlertInfo $alertInfo
      * @return self
      */
     public function withAlertInfo(AlertInfo $alertInfo): self
@@ -99,7 +99,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $pushNotification
+     * @param PushNotification $pushNotification
      * @return self
      */
     public function withPushNotification(PushNotification $pushNotification): self
@@ -109,7 +109,7 @@ abstract class ReminderBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param string $version
      * @return self
      */
     public function withVersion(string $version): self

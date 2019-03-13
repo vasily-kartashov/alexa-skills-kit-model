@@ -27,7 +27,7 @@ abstract class SlotBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -37,7 +37,7 @@ abstract class SlotBuilder
     }
 
     /**
-     * @param mixed $value
+     * @param string $value
      * @return self
      */
     public function withValue(string $value): self
@@ -47,7 +47,7 @@ abstract class SlotBuilder
     }
 
     /**
-     * @param mixed $confirmationStatus
+     * @param SlotConfirmationStatus $confirmationStatus
      * @return self
      */
     public function withConfirmationStatus(SlotConfirmationStatus $confirmationStatus): self
@@ -57,7 +57,7 @@ abstract class SlotBuilder
     }
 
     /**
-     * @param mixed $resolutions
+     * @param Resolutions $resolutions
      * @return self
      */
     public function withResolutions(Resolutions $resolutions): self

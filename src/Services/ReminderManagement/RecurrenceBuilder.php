@@ -22,7 +22,7 @@ abstract class RecurrenceBuilder
     }
 
     /**
-     * @param mixed $freq
+     * @param RecurrenceFreq $freq
      * @return self
      */
     public function withFreq(RecurrenceFreq $freq): self
@@ -32,7 +32,7 @@ abstract class RecurrenceBuilder
     }
 
     /**
-     * @param RecurrenceDay[] $byDay
+     * @param array $byDay
      * @return self
      */
     public function withByDay(array $byDay): self
@@ -45,7 +45,7 @@ abstract class RecurrenceBuilder
     }
 
     /**
-     * @param mixed $interval
+     * @param int $interval
      * @return self
      */
     public function withInterval(int $interval): self

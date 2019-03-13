@@ -40,7 +40,7 @@ abstract class ViewportStateBuilder
     }
 
     /**
-     * @param Experience[] $experiences
+     * @param array $experiences
      * @return self
      */
     public function withExperiences(array $experiences): self
@@ -53,7 +53,7 @@ abstract class ViewportStateBuilder
     }
 
     /**
-     * @param mixed $shape
+     * @param Shape $shape
      * @return self
      */
     public function withShape(Shape $shape): self
@@ -113,7 +113,7 @@ abstract class ViewportStateBuilder
     }
 
     /**
-     * @param Touch[] $touch
+     * @param array $touch
      * @return self
      */
     public function withTouch(array $touch): self
@@ -126,7 +126,7 @@ abstract class ViewportStateBuilder
     }
 
     /**
-     * @param Keyboard[] $keyboard
+     * @param array $keyboard
      * @return self
      */
     public function withKeyboard(array $keyboard): self

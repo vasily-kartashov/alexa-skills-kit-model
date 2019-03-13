@@ -16,7 +16,7 @@ abstract class RepromptBuilder
     }
 
     /**
-     * @param mixed $outputSpeech
+     * @param OutputSpeech $outputSpeech
      * @return self
      */
     public function withOutputSpeech(OutputSpeech $outputSpeech): self

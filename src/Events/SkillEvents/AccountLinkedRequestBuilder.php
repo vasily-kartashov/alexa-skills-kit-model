@@ -24,7 +24,7 @@ abstract class AccountLinkedRequestBuilder
     }
 
     /**
-     * @param mixed $body
+     * @param AccountLinkedBody $body
      * @return self
      */
     public function withBody(AccountLinkedBody $body): self
@@ -34,7 +34,7 @@ abstract class AccountLinkedRequestBuilder
     }
 
     /**
-     * @param mixed $eventCreationTime
+     * @param DateTime $eventCreationTime
      * @return self
      */
     public function withEventCreationTime(DateTime $eventCreationTime): self
@@ -44,7 +44,7 @@ abstract class AccountLinkedRequestBuilder
     }
 
     /**
-     * @param mixed $eventPublishingTime
+     * @param DateTime $eventPublishingTime
      * @return self
      */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self

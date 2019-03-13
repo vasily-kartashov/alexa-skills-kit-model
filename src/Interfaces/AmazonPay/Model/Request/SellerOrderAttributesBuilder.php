@@ -25,7 +25,7 @@ abstract class SellerOrderAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerOrderId
+     * @param string $sellerOrderId
      * @return self
      */
     public function withSellerOrderId(string $sellerOrderId): self
@@ -35,7 +35,7 @@ abstract class SellerOrderAttributesBuilder
     }
 
     /**
-     * @param mixed $storeName
+     * @param string $storeName
      * @return self
      */
     public function withStoreName(string $storeName): self
@@ -45,7 +45,7 @@ abstract class SellerOrderAttributesBuilder
     }
 
     /**
-     * @param mixed $customInformation
+     * @param string $customInformation
      * @return self
      */
     public function withCustomInformation(string $customInformation): self
@@ -55,7 +55,7 @@ abstract class SellerOrderAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerNote
+     * @param string $sellerNote
      * @return self
      */
     public function withSellerNote(string $sellerNote): self

@@ -19,7 +19,7 @@ abstract class HeadingBuilder
     }
 
     /**
-     * @param mixed $directionInDegrees
+     * @param float $directionInDegrees
      * @return self
      */
     public function withDirectionInDegrees(float $directionInDegrees): self
@@ -29,7 +29,7 @@ abstract class HeadingBuilder
     }
 
     /**
-     * @param mixed $accuracyInDegrees
+     * @param float $accuracyInDegrees
      * @return self
      */
     public function withAccuracyInDegrees(float $accuracyInDegrees): self

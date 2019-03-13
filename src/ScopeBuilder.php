@@ -16,7 +16,7 @@ abstract class ScopeBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param PermissionStatus $status
      * @return self
      */
     public function withStatus(PermissionStatus $status): self

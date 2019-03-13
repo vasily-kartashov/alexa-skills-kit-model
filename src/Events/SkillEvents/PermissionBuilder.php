@@ -16,7 +16,7 @@ abstract class PermissionBuilder
     }
 
     /**
-     * @param mixed $scope
+     * @param string $scope
      * @return self
      */
     public function withScope(string $scope): self

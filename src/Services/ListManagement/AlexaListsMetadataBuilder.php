@@ -16,7 +16,7 @@ abstract class AlexaListsMetadataBuilder
     }
 
     /**
-     * @param AlexaListMetadata[] $lists
+     * @param array $lists
      * @return self
      */
     public function withLists(array $lists): self

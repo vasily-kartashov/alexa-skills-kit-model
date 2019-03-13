@@ -16,7 +16,7 @@ abstract class ClearQueueDirectiveBuilder
     }
 
     /**
-     * @param mixed $clearBehavior
+     * @param ClearBehavior $clearBehavior
      * @return self
      */
     public function withClearBehavior(ClearBehavior $clearBehavior): self

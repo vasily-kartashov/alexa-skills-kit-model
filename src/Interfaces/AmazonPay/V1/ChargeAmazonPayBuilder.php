@@ -39,7 +39,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $consentToken
+     * @param string $consentToken
      * @return self
      */
     public function withConsentToken(string $consentToken): self
@@ -49,7 +49,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $sellerId
+     * @param string $sellerId
      * @return self
      */
     public function withSellerId(string $sellerId): self
@@ -59,7 +59,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $billingAgreementId
+     * @param string $billingAgreementId
      * @return self
      */
     public function withBillingAgreementId(string $billingAgreementId): self
@@ -69,7 +69,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $paymentAction
+     * @param PaymentAction $paymentAction
      * @return self
      */
     public function withPaymentAction(PaymentAction $paymentAction): self
@@ -79,7 +79,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $authorizeAttributes
+     * @param AuthorizeAttributes $authorizeAttributes
      * @return self
      */
     public function withAuthorizeAttributes(AuthorizeAttributes $authorizeAttributes): self
@@ -89,7 +89,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $sellerOrderAttributes
+     * @param SellerOrderAttributes $sellerOrderAttributes
      * @return self
      */
     public function withSellerOrderAttributes(SellerOrderAttributes $sellerOrderAttributes): self
@@ -99,7 +99,7 @@ abstract class ChargeAmazonPayBuilder
     }
 
     /**
-     * @param mixed $providerAttributes
+     * @param ProviderAttributes $providerAttributes
      * @return self
      */
     public function withProviderAttributes(ProviderAttributes $providerAttributes): self

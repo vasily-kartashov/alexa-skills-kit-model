@@ -16,7 +16,7 @@ abstract class ElementSelectedRequestBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

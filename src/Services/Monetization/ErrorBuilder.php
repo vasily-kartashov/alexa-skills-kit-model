@@ -16,7 +16,7 @@ abstract class ErrorBuilder
     }
 
     /**
-     * @param mixed $message
+     * @param string $message
      * @return self
      */
     public function withMessage(string $message): self

@@ -28,7 +28,7 @@ abstract class InputEventBuilder
     }
 
     /**
-     * @param mixed $gadgetId
+     * @param string $gadgetId
      * @return self
      */
     public function withGadgetId(string $gadgetId): self
@@ -38,7 +38,7 @@ abstract class InputEventBuilder
     }
 
     /**
-     * @param mixed $timestamp
+     * @param string $timestamp
      * @return self
      */
     public function withTimestamp(string $timestamp): self
@@ -48,7 +48,7 @@ abstract class InputEventBuilder
     }
 
     /**
-     * @param mixed $action
+     * @param InputEventActionType $action
      * @return self
      */
     public function withAction(InputEventActionType $action): self
@@ -58,7 +58,7 @@ abstract class InputEventBuilder
     }
 
     /**
-     * @param mixed $color
+     * @param string $color
      * @return self
      */
     public function withColor(string $color): self
@@ -68,7 +68,7 @@ abstract class InputEventBuilder
     }
 
     /**
-     * @param mixed $feature
+     * @param string $feature
      * @return self
      */
     public function withFeature(string $feature): self

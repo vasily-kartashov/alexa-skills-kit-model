@@ -33,7 +33,7 @@ abstract class CreateProactiveEventRequestBuilder
     }
 
     /**
-     * @param mixed $timestamp
+     * @param DateTime $timestamp
      * @return self
      */
     public function withTimestamp(DateTime $timestamp): self
@@ -43,7 +43,7 @@ abstract class CreateProactiveEventRequestBuilder
     }
 
     /**
-     * @param mixed $referenceId
+     * @param string $referenceId
      * @return self
      */
     public function withReferenceId(string $referenceId): self
@@ -53,7 +53,7 @@ abstract class CreateProactiveEventRequestBuilder
     }
 
     /**
-     * @param mixed $expiryTime
+     * @param DateTime $expiryTime
      * @return self
      */
     public function withExpiryTime(DateTime $expiryTime): self
@@ -63,7 +63,7 @@ abstract class CreateProactiveEventRequestBuilder
     }
 
     /**
-     * @param mixed $event
+     * @param Event $event
      * @return self
      */
     public function withEvent(Event $event): self
@@ -83,7 +83,7 @@ abstract class CreateProactiveEventRequestBuilder
     }
 
     /**
-     * @param mixed $relevantAudience
+     * @param RelevantAudience $relevantAudience
      * @return self
      */
     public function withRelevantAudience(RelevantAudience $relevantAudience): self

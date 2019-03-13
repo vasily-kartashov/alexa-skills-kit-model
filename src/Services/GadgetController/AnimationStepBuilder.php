@@ -22,7 +22,7 @@ abstract class AnimationStepBuilder
     }
 
     /**
-     * @param mixed $durationMs
+     * @param int $durationMs
      * @return self
      */
     public function withDurationMs(int $durationMs): self
@@ -32,7 +32,7 @@ abstract class AnimationStepBuilder
     }
 
     /**
-     * @param mixed $color
+     * @param string $color
      * @return self
      */
     public function withColor(string $color): self
@@ -42,7 +42,7 @@ abstract class AnimationStepBuilder
     }
 
     /**
-     * @param mixed $blend
+     * @param bool $blend
      * @return self
      */
     public function withBlend(bool $blend): self

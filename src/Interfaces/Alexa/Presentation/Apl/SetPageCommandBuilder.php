@@ -22,7 +22,7 @@ abstract class SetPageCommandBuilder
     }
 
     /**
-     * @param mixed $componentId
+     * @param string $componentId
      * @return self
      */
     public function withComponentId(string $componentId): self
@@ -32,7 +32,7 @@ abstract class SetPageCommandBuilder
     }
 
     /**
-     * @param mixed $position
+     * @param Position $position
      * @return self
      */
     public function withPosition(Position $position): self
@@ -42,7 +42,7 @@ abstract class SetPageCommandBuilder
     }
 
     /**
-     * @param mixed $value
+     * @param int $value
      * @return self
      */
     public function withValue(int $value): self

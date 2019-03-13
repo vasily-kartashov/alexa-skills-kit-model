@@ -16,7 +16,7 @@ abstract class ErrorCauseBuilder
     }
 
     /**
-     * @param mixed $requestId
+     * @param string $requestId
      * @return self
      */
     public function withRequestId(string $requestId): self

@@ -19,7 +19,7 @@ abstract class AltitudeBuilder
     }
 
     /**
-     * @param mixed $altitudeInMeters
+     * @param float $altitudeInMeters
      * @return self
      */
     public function withAltitudeInMeters(float $altitudeInMeters): self
@@ -29,7 +29,7 @@ abstract class AltitudeBuilder
     }
 
     /**
-     * @param mixed $accuracyInMeters
+     * @param float $accuracyInMeters
      * @return self
      */
     public function withAccuracyInMeters(float $accuracyInMeters): self

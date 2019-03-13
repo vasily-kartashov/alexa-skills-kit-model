@@ -19,7 +19,7 @@ abstract class ProviderAttributesBuilder
     }
 
     /**
-     * @param mixed $providerId
+     * @param string $providerId
      * @return self
      */
     public function withProviderId(string $providerId): self
@@ -29,7 +29,7 @@ abstract class ProviderAttributesBuilder
     }
 
     /**
-     * @param ProviderCredit[] $providerCreditList
+     * @param array $providerCreditList
      * @return self
      */
     public function withProviderCreditList(array $providerCreditList): self

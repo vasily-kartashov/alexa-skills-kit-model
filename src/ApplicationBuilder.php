@@ -16,7 +16,7 @@ abstract class ApplicationBuilder
     }
 
     /**
-     * @param mixed $applicationId
+     * @param string $applicationId
      * @return self
      */
     public function withApplicationId(string $applicationId): self

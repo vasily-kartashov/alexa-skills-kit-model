@@ -16,7 +16,7 @@ abstract class LinksBuilder
     }
 
     /**
-     * @param mixed $next
+     * @param string $next
      * @return self
      */
     public function withNext(string $next): self

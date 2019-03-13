@@ -31,7 +31,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $shouldEndInputHandler
+     * @param bool $shouldEndInputHandler
      * @return self
      */
     public function withShouldEndInputHandler(bool $shouldEndInputHandler): self
@@ -41,7 +41,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param string[] $meets
+     * @param array $meets
      * @return self
      */
     public function withMeets(array $meets): self
@@ -54,7 +54,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param string[] $fails
+     * @param array $fails
      * @return self
      */
     public function withFails(array $fails): self
@@ -67,7 +67,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $reports
+     * @param EventReportingType $reports
      * @return self
      */
     public function withReports(EventReportingType $reports): self
@@ -77,7 +77,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $maximumInvocations
+     * @param int $maximumInvocations
      * @return self
      */
     public function withMaximumInvocations(int $maximumInvocations): self
@@ -87,7 +87,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $triggerTimeMilliseconds
+     * @param int $triggerTimeMilliseconds
      * @return self
      */
     public function withTriggerTimeMilliseconds(int $triggerTimeMilliseconds): self

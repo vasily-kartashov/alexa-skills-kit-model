@@ -18,7 +18,7 @@ abstract class ConfirmIntentDirectiveBuilder
     }
 
     /**
-     * @param mixed $updatedIntent
+     * @param Intent $updatedIntent
      * @return self
      */
     public function withUpdatedIntent(Intent $updatedIntent): self

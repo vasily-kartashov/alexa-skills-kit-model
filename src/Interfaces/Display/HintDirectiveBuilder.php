@@ -16,7 +16,7 @@ abstract class HintDirectiveBuilder
     }
 
     /**
-     * @param mixed $hint
+     * @param Hint $hint
      * @return self
      */
     public function withHint(Hint $hint): self

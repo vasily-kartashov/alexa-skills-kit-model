@@ -27,7 +27,7 @@ abstract class AudioItemMetadataBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -37,7 +37,7 @@ abstract class AudioItemMetadataBuilder
     }
 
     /**
-     * @param mixed $subtitle
+     * @param string $subtitle
      * @return self
      */
     public function withSubtitle(string $subtitle): self
@@ -47,7 +47,7 @@ abstract class AudioItemMetadataBuilder
     }
 
     /**
-     * @param mixed $art
+     * @param Image $art
      * @return self
      */
     public function withArt(Image $art): self
@@ -57,7 +57,7 @@ abstract class AudioItemMetadataBuilder
     }
 
     /**
-     * @param mixed $backgroundImage
+     * @param Image $backgroundImage
      * @return self
      */
     public function withBackgroundImage(Image $backgroundImage): self

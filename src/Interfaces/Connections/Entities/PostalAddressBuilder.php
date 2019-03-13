@@ -28,7 +28,7 @@ abstract class PostalAddressBuilder
     }
 
     /**
-     * @param mixed $streetAddress
+     * @param string $streetAddress
      * @return self
      */
     public function withStreetAddress(string $streetAddress): self
@@ -38,7 +38,7 @@ abstract class PostalAddressBuilder
     }
 
     /**
-     * @param mixed $locality
+     * @param string $locality
      * @return self
      */
     public function withLocality(string $locality): self
@@ -48,7 +48,7 @@ abstract class PostalAddressBuilder
     }
 
     /**
-     * @param mixed $region
+     * @param string $region
      * @return self
      */
     public function withRegion(string $region): self
@@ -58,7 +58,7 @@ abstract class PostalAddressBuilder
     }
 
     /**
-     * @param mixed $postalCode
+     * @param string $postalCode
      * @return self
      */
     public function withPostalCode(string $postalCode): self
@@ -68,7 +68,7 @@ abstract class PostalAddressBuilder
     }
 
     /**
-     * @param mixed $country
+     * @param string $country
      * @return self
      */
     public function withCountry(string $country): self

@@ -19,7 +19,7 @@ abstract class PermissionsBuilder
     }
 
     /**
-     * @param mixed $consentToken
+     * @param string $consentToken
      * @return self
      */
     public function withConsentToken(string $consentToken): self
@@ -29,7 +29,7 @@ abstract class PermissionsBuilder
     }
 
     /**
-     * @param Scope[] $scopes
+     * @param array $scopes
      * @return self
      */
     public function withScopes(array $scopes): self

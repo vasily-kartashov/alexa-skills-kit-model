@@ -22,7 +22,7 @@ abstract class UpdateListRequestBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -32,7 +32,7 @@ abstract class UpdateListRequestBuilder
     }
 
     /**
-     * @param mixed $state
+     * @param ListState $state
      * @return self
      */
     public function withState(ListState $state): self
@@ -42,7 +42,7 @@ abstract class UpdateListRequestBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param int $version
      * @return self
      */
     public function withVersion(int $version): self

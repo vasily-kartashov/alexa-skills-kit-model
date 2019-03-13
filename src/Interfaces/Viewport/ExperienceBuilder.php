@@ -45,7 +45,7 @@ abstract class ExperienceBuilder
     }
 
     /**
-     * @param mixed $canRotate
+     * @param bool $canRotate
      * @return self
      */
     public function withCanRotate(bool $canRotate): self
@@ -55,7 +55,7 @@ abstract class ExperienceBuilder
     }
 
     /**
-     * @param mixed $canResize
+     * @param bool $canResize
      * @return self
      */
     public function withCanResize(bool $canResize): self

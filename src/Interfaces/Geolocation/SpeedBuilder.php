@@ -19,7 +19,7 @@ abstract class SpeedBuilder
     }
 
     /**
-     * @param mixed $speedInMetersPerSecond
+     * @param float $speedInMetersPerSecond
      * @return self
      */
     public function withSpeedInMetersPerSecond(float $speedInMetersPerSecond): self
@@ -29,7 +29,7 @@ abstract class SpeedBuilder
     }
 
     /**
-     * @param mixed $accuracyInMetersPerSecond
+     * @param float $accuracyInMetersPerSecond
      * @return self
      */
     public function withAccuracyInMetersPerSecond(float $accuracyInMetersPerSecond): self

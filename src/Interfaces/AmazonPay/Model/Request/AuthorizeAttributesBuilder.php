@@ -28,7 +28,7 @@ abstract class AuthorizeAttributesBuilder
     }
 
     /**
-     * @param mixed $authorizationReferenceId
+     * @param string $authorizationReferenceId
      * @return self
      */
     public function withAuthorizationReferenceId(string $authorizationReferenceId): self
@@ -38,7 +38,7 @@ abstract class AuthorizeAttributesBuilder
     }
 
     /**
-     * @param mixed $authorizationAmount
+     * @param Price $authorizationAmount
      * @return self
      */
     public function withAuthorizationAmount(Price $authorizationAmount): self
@@ -48,7 +48,7 @@ abstract class AuthorizeAttributesBuilder
     }
 
     /**
-     * @param mixed $transactionTimeout
+     * @param int $transactionTimeout
      * @return self
      */
     public function withTransactionTimeout(int $transactionTimeout): self
@@ -58,7 +58,7 @@ abstract class AuthorizeAttributesBuilder
     }
 
     /**
-     * @param mixed $sellerAuthorizationNote
+     * @param string $sellerAuthorizationNote
      * @return self
      */
     public function withSellerAuthorizationNote(string $sellerAuthorizationNote): self
@@ -68,7 +68,7 @@ abstract class AuthorizeAttributesBuilder
     }
 
     /**
-     * @param mixed $softDescriptor
+     * @param string $softDescriptor
      * @return self
      */
     public function withSoftDescriptor(string $softDescriptor): self

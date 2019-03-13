@@ -19,7 +19,7 @@ abstract class MetadataBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -29,7 +29,7 @@ abstract class MetadataBuilder
     }
 
     /**
-     * @param mixed $subtitle
+     * @param string $subtitle
      * @return self
      */
     public function withSubtitle(string $subtitle): self

@@ -27,7 +27,7 @@ abstract class ScheduleTaxiReservationRequestBuilder
     }
 
     /**
-     * @param mixed $pickupTime
+     * @param string $pickupTime
      * @return self
      */
     public function withPickupTime(string $pickupTime): self
@@ -37,7 +37,7 @@ abstract class ScheduleTaxiReservationRequestBuilder
     }
 
     /**
-     * @param mixed $partySize
+     * @param string $partySize
      * @return self
      */
     public function withPartySize(string $partySize): self
@@ -47,7 +47,7 @@ abstract class ScheduleTaxiReservationRequestBuilder
     }
 
     /**
-     * @param mixed $pickupLocation
+     * @param PostalAddress $pickupLocation
      * @return self
      */
     public function withPickupLocation(PostalAddress $pickupLocation): self
@@ -57,7 +57,7 @@ abstract class ScheduleTaxiReservationRequestBuilder
     }
 
     /**
-     * @param mixed $dropOffLocation
+     * @param PostalAddress $dropOffLocation
      * @return self
      */
     public function withDropOffLocation(PostalAddress $dropOffLocation): self

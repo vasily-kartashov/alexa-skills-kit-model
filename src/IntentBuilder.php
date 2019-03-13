@@ -22,7 +22,7 @@ abstract class IntentBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -32,7 +32,7 @@ abstract class IntentBuilder
     }
 
     /**
-     * @param Slot[] $slots
+     * @param array $slots
      * @return self
      */
     public function withSlots(array $slots): self
@@ -45,7 +45,7 @@ abstract class IntentBuilder
     }
 
     /**
-     * @param mixed $confirmationStatus
+     * @param IntentConfirmationStatus $confirmationStatus
      * @return self
      */
     public function withConfirmationStatus(IntentConfirmationStatus $confirmationStatus): self

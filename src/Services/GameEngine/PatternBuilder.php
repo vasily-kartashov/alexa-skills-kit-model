@@ -25,7 +25,7 @@ abstract class PatternBuilder
     }
 
     /**
-     * @param string[] $gadgetIds
+     * @param array $gadgetIds
      * @return self
      */
     public function withGadgetIds(array $gadgetIds): self
@@ -38,7 +38,7 @@ abstract class PatternBuilder
     }
 
     /**
-     * @param string[] $colors
+     * @param array $colors
      * @return self
      */
     public function withColors(array $colors): self
@@ -51,7 +51,7 @@ abstract class PatternBuilder
     }
 
     /**
-     * @param mixed $action
+     * @param InputEventActionType $action
      * @return self
      */
     public function withAction(InputEventActionType $action): self
@@ -61,7 +61,7 @@ abstract class PatternBuilder
     }
 
     /**
-     * @param mixed $repeat
+     * @param int $repeat
      * @return self
      */
     public function withRepeat(int $repeat): self

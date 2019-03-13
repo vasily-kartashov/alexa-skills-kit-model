@@ -19,7 +19,7 @@ abstract class SimpleCardBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -29,7 +29,7 @@ abstract class SimpleCardBuilder
     }
 
     /**
-     * @param mixed $content
+     * @param string $content
      * @return self
      */
     public function withContent(string $content): self

@@ -46,7 +46,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -56,7 +56,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $companyName
+     * @param string $companyName
      * @return self
      */
     public function withCompanyName(string $companyName): self
@@ -66,7 +66,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $addressLine1
+     * @param string $addressLine1
      * @return self
      */
     public function withAddressLine1(string $addressLine1): self
@@ -76,7 +76,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $addressLine2
+     * @param string $addressLine2
      * @return self
      */
     public function withAddressLine2(string $addressLine2): self
@@ -86,7 +86,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $addressLine3
+     * @param string $addressLine3
      * @return self
      */
     public function withAddressLine3(string $addressLine3): self
@@ -96,7 +96,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $city
+     * @param string $city
      * @return self
      */
     public function withCity(string $city): self
@@ -106,7 +106,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $districtOrCounty
+     * @param string $districtOrCounty
      * @return self
      */
     public function withDistrictOrCounty(string $districtOrCounty): self
@@ -116,7 +116,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $stateOrRegion
+     * @param string $stateOrRegion
      * @return self
      */
     public function withStateOrRegion(string $stateOrRegion): self
@@ -126,7 +126,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $postalCode
+     * @param string $postalCode
      * @return self
      */
     public function withPostalCode(string $postalCode): self
@@ -136,7 +136,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $countryCode
+     * @param string $countryCode
      * @return self
      */
     public function withCountryCode(string $countryCode): self
@@ -146,7 +146,7 @@ abstract class DestinationBuilder
     }
 
     /**
-     * @param mixed $phone
+     * @param string $phone
      * @return self
      */
     public function withPhone(string $phone): self

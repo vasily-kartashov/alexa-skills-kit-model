@@ -24,7 +24,7 @@ abstract class PermissionChangedRequestBuilder
     }
 
     /**
-     * @param mixed $body
+     * @param PermissionBody $body
      * @return self
      */
     public function withBody(PermissionBody $body): self
@@ -34,7 +34,7 @@ abstract class PermissionChangedRequestBuilder
     }
 
     /**
-     * @param mixed $eventCreationTime
+     * @param DateTime $eventCreationTime
      * @return self
      */
     public function withEventCreationTime(DateTime $eventCreationTime): self
@@ -44,7 +44,7 @@ abstract class PermissionChangedRequestBuilder
     }
 
     /**
-     * @param mixed $eventPublishingTime
+     * @param DateTime $eventPublishingTime
      * @return self
      */
     public function withEventPublishingTime(DateTime $eventPublishingTime): self

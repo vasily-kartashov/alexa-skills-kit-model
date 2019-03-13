@@ -18,7 +18,7 @@ abstract class SetupAmazonPayResultBuilder
     }
 
     /**
-     * @param mixed $billingAgreementDetails
+     * @param BillingAgreementDetails $billingAgreementDetails
      * @return self
      */
     public function withBillingAgreementDetails(BillingAgreementDetails $billingAgreementDetails): self

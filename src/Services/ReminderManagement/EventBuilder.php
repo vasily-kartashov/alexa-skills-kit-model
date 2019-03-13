@@ -19,7 +19,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param Status $status
      * @return self
      */
     public function withStatus(Status $status): self
@@ -29,7 +29,7 @@ abstract class EventBuilder
     }
 
     /**
-     * @param mixed $alertToken
+     * @param string $alertToken
      * @return self
      */
     public function withAlertToken(string $alertToken): self

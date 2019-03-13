@@ -25,7 +25,7 @@ abstract class PrintImageRequestBuilder
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      * @return self
      */
     public function withTitle(string $title): self
@@ -35,7 +35,7 @@ abstract class PrintImageRequestBuilder
     }
 
     /**
-     * @param mixed $url
+     * @param string $url
      * @return self
      */
     public function withUrl(string $url): self
@@ -45,7 +45,7 @@ abstract class PrintImageRequestBuilder
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      * @return self
      */
     public function withDescription(string $description): self
@@ -55,7 +55,7 @@ abstract class PrintImageRequestBuilder
     }
 
     /**
-     * @param mixed $imageType
+     * @param string $imageType
      * @return self
      */
     public function withImageType(string $imageType): self

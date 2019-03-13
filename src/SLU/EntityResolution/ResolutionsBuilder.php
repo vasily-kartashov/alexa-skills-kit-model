@@ -16,7 +16,7 @@ abstract class ResolutionsBuilder
     }
 
     /**
-     * @param Resolution[] $resolutionsPerAuthority
+     * @param array $resolutionsPerAuthority
      * @return self
      */
     public function withResolutionsPerAuthority(array $resolutionsPerAuthority): self

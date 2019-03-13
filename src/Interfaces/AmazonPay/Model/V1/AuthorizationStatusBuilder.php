@@ -27,7 +27,7 @@ abstract class AuthorizationStatusBuilder
     }
 
     /**
-     * @param mixed $state
+     * @param State $state
      * @return self
      */
     public function withState(State $state): self
@@ -37,7 +37,7 @@ abstract class AuthorizationStatusBuilder
     }
 
     /**
-     * @param mixed $reasonCode
+     * @param string $reasonCode
      * @return self
      */
     public function withReasonCode(string $reasonCode): self
@@ -47,7 +47,7 @@ abstract class AuthorizationStatusBuilder
     }
 
     /**
-     * @param mixed $reasonDescription
+     * @param string $reasonDescription
      * @return self
      */
     public function withReasonDescription(string $reasonDescription): self
@@ -57,7 +57,7 @@ abstract class AuthorizationStatusBuilder
     }
 
     /**
-     * @param mixed $lastUpdateTimestamp
+     * @param DateTime $lastUpdateTimestamp
      * @return self
      */
     public function withLastUpdateTimestamp(DateTime $lastUpdateTimestamp): self

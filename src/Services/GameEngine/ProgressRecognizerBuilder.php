@@ -19,7 +19,7 @@ abstract class ProgressRecognizerBuilder
     }
 
     /**
-     * @param mixed $recognizer
+     * @param string $recognizer
      * @return self
      */
     public function withRecognizer(string $recognizer): self
@@ -29,7 +29,7 @@ abstract class ProgressRecognizerBuilder
     }
 
     /**
-     * @param mixed $completion
+     * @param float $completion
      * @return self
      */
     public function withCompletion(float $completion): self

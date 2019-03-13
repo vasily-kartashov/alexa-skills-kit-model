@@ -16,7 +16,7 @@ abstract class PlainTextOutputSpeechBuilder
     }
 
     /**
-     * @param mixed $text
+     * @param string $text
      * @return self
      */
     public function withText(string $text): self

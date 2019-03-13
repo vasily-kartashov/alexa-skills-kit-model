@@ -19,7 +19,7 @@ abstract class DeviceBuilder
     }
 
     /**
-     * @param mixed $deviceId
+     * @param string $deviceId
      * @return self
      */
     public function withDeviceId(string $deviceId): self
@@ -29,7 +29,7 @@ abstract class DeviceBuilder
     }
 
     /**
-     * @param mixed $supportedInterfaces
+     * @param SupportedInterfaces $supportedInterfaces
      * @return self
      */
     public function withSupportedInterfaces(SupportedInterfaces $supportedInterfaces): self

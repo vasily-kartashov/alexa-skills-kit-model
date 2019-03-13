@@ -16,7 +16,7 @@ abstract class AlexaPresentationAplInterfaceBuilder
     }
 
     /**
-     * @param mixed $runtime
+     * @param Runtime $runtime
      * @return self
      */
     public function withRuntime(Runtime $runtime): self

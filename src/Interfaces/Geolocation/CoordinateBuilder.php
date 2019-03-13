@@ -22,7 +22,7 @@ abstract class CoordinateBuilder
     }
 
     /**
-     * @param mixed $latitudeInDegrees
+     * @param float $latitudeInDegrees
      * @return self
      */
     public function withLatitudeInDegrees(float $latitudeInDegrees): self
@@ -32,7 +32,7 @@ abstract class CoordinateBuilder
     }
 
     /**
-     * @param mixed $longitudeInDegrees
+     * @param float $longitudeInDegrees
      * @return self
      */
     public function withLongitudeInDegrees(float $longitudeInDegrees): self
@@ -42,7 +42,7 @@ abstract class CoordinateBuilder
     }
 
     /**
-     * @param mixed $accuracyInMeters
+     * @param float $accuracyInMeters
      * @return self
      */
     public function withAccuracyInMeters(float $accuracyInMeters): self

@@ -19,7 +19,7 @@ abstract class RelevantAudienceBuilder
     }
 
     /**
-     * @param mixed $type
+     * @param RelevantAudienceType $type
      * @return self
      */
     public function withType(RelevantAudienceType $type): self

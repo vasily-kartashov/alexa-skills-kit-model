@@ -22,7 +22,7 @@ abstract class AccessTokenRequestBuilder
     }
 
     /**
-     * @param mixed $client_id
+     * @param string $client_id
      * @return self
      */
     public function withClient_id(string $client_id): self
@@ -32,7 +32,7 @@ abstract class AccessTokenRequestBuilder
     }
 
     /**
-     * @param mixed $client_secret
+     * @param string $client_secret
      * @return self
      */
     public function withClient_secret(string $client_secret): self
@@ -42,7 +42,7 @@ abstract class AccessTokenRequestBuilder
     }
 
     /**
-     * @param mixed $scope
+     * @param string $scope
      * @return self
      */
     public function withScope(string $scope): self

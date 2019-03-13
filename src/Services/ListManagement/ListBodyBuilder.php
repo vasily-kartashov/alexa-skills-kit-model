@@ -16,7 +16,7 @@ abstract class ListBodyBuilder
     }
 
     /**
-     * @param mixed $listId
+     * @param string $listId
      * @return self
      */
     public function withListId(string $listId): self

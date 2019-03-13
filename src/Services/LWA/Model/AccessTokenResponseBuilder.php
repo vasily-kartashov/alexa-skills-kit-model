@@ -25,7 +25,7 @@ abstract class AccessTokenResponseBuilder
     }
 
     /**
-     * @param mixed $access_token
+     * @param string $access_token
      * @return self
      */
     public function withAccess_token(string $access_token): self
@@ -35,7 +35,7 @@ abstract class AccessTokenResponseBuilder
     }
 
     /**
-     * @param mixed $expires_in
+     * @param int $expires_in
      * @return self
      */
     public function withExpires_in(int $expires_in): self
@@ -45,7 +45,7 @@ abstract class AccessTokenResponseBuilder
     }
 
     /**
-     * @param mixed $scope
+     * @param string $scope
      * @return self
      */
     public function withScope(string $scope): self
@@ -55,7 +55,7 @@ abstract class AccessTokenResponseBuilder
     }
 
     /**
-     * @param mixed $token_type
+     * @param string $token_type
      * @return self
      */
     public function withToken_type(string $token_type): self

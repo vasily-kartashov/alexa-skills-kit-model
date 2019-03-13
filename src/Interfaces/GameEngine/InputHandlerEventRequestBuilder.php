@@ -21,7 +21,7 @@ abstract class InputHandlerEventRequestBuilder
     }
 
     /**
-     * @param mixed $originatingRequestId
+     * @param string $originatingRequestId
      * @return self
      */
     public function withOriginatingRequestId(string $originatingRequestId): self
@@ -31,7 +31,7 @@ abstract class InputHandlerEventRequestBuilder
     }
 
     /**
-     * @param InputHandlerEvent[] $events
+     * @param array $events
      * @return self
      */
     public function withEvents(array $events): self

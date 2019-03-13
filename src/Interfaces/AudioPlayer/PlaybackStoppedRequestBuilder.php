@@ -19,7 +19,7 @@ abstract class PlaybackStoppedRequestBuilder
     }
 
     /**
-     * @param mixed $offsetInMilliseconds
+     * @param int $offsetInMilliseconds
      * @return self
      */
     public function withOffsetInMilliseconds(int $offsetInMilliseconds): self
@@ -29,7 +29,7 @@ abstract class PlaybackStoppedRequestBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

@@ -22,7 +22,7 @@ abstract class ResolutionBuilder
     }
 
     /**
-     * @param mixed $authority
+     * @param string $authority
      * @return self
      */
     public function withAuthority(string $authority): self
@@ -32,7 +32,7 @@ abstract class ResolutionBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param Status $status
      * @return self
      */
     public function withStatus(Status $status): self
@@ -42,7 +42,7 @@ abstract class ResolutionBuilder
     }
 
     /**
-     * @param ValueWrapper[] $values
+     * @param array $values
      * @return self
      */
     public function withValues(array $values): self

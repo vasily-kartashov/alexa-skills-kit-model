@@ -28,7 +28,7 @@ abstract class PatternRecognizerBuilder
     }
 
     /**
-     * @param mixed $anchor
+     * @param PatternRecognizerAnchorType $anchor
      * @return self
      */
     public function withAnchor(PatternRecognizerAnchorType $anchor): self
@@ -38,7 +38,7 @@ abstract class PatternRecognizerBuilder
     }
 
     /**
-     * @param mixed $fuzzy
+     * @param bool $fuzzy
      * @return self
      */
     public function withFuzzy(bool $fuzzy): self
@@ -48,7 +48,7 @@ abstract class PatternRecognizerBuilder
     }
 
     /**
-     * @param string[] $gadgetIds
+     * @param array $gadgetIds
      * @return self
      */
     public function withGadgetIds(array $gadgetIds): self
@@ -61,7 +61,7 @@ abstract class PatternRecognizerBuilder
     }
 
     /**
-     * @param string[] $actions
+     * @param array $actions
      * @return self
      */
     public function withActions(array $actions): self
@@ -74,7 +74,7 @@ abstract class PatternRecognizerBuilder
     }
 
     /**
-     * @param Pattern[] $pattern
+     * @param array $pattern
      * @return self
      */
     public function withPattern(array $pattern): self

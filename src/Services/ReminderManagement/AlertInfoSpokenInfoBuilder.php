@@ -16,7 +16,7 @@ abstract class AlertInfoSpokenInfoBuilder
     }
 
     /**
-     * @param SpokenText[] $content
+     * @param array $content
      * @return self
      */
     public function withContent(array $content): self

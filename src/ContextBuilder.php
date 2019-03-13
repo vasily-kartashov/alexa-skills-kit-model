@@ -34,7 +34,7 @@ abstract class ContextBuilder
     }
 
     /**
-     * @param mixed $system
+     * @param SystemState $system
      * @return self
      */
     public function withSystem(SystemState $system): self
@@ -44,7 +44,7 @@ abstract class ContextBuilder
     }
 
     /**
-     * @param mixed $audioPlayer
+     * @param AudioPlayerState $audioPlayer
      * @return self
      */
     public function withAudioPlayer(AudioPlayerState $audioPlayer): self
@@ -54,7 +54,7 @@ abstract class ContextBuilder
     }
 
     /**
-     * @param mixed $display
+     * @param DisplayState $display
      * @return self
      */
     public function withDisplay(DisplayState $display): self
@@ -64,7 +64,7 @@ abstract class ContextBuilder
     }
 
     /**
-     * @param mixed $geolocation
+     * @param GeolocationState $geolocation
      * @return self
      */
     public function withGeolocation(GeolocationState $geolocation): self
@@ -74,7 +74,7 @@ abstract class ContextBuilder
     }
 
     /**
-     * @param mixed $viewport
+     * @param ViewportState $viewport
      * @return self
      */
     public function withViewport(ViewportState $viewport): self

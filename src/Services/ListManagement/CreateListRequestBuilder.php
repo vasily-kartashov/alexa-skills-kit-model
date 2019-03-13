@@ -19,7 +19,7 @@ abstract class CreateListRequestBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -29,7 +29,7 @@ abstract class CreateListRequestBuilder
     }
 
     /**
-     * @param mixed $state
+     * @param ListState $state
      * @return self
      */
     public function withState(ListState $state): self

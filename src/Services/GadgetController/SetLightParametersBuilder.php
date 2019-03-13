@@ -22,7 +22,7 @@ abstract class SetLightParametersBuilder
     }
 
     /**
-     * @param mixed $triggerEvent
+     * @param TriggerEventType $triggerEvent
      * @return self
      */
     public function withTriggerEvent(TriggerEventType $triggerEvent): self
@@ -32,7 +32,7 @@ abstract class SetLightParametersBuilder
     }
 
     /**
-     * @param mixed $triggerEventTimeMs
+     * @param int $triggerEventTimeMs
      * @return self
      */
     public function withTriggerEventTimeMs(int $triggerEventTimeMs): self
@@ -42,7 +42,7 @@ abstract class SetLightParametersBuilder
     }
 
     /**
-     * @param LightAnimation[] $animations
+     * @param array $animations
      * @return self
      */
     public function withAnimations(array $animations): self

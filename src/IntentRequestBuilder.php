@@ -19,7 +19,7 @@ abstract class IntentRequestBuilder
     }
 
     /**
-     * @param mixed $dialogState
+     * @param DialogState $dialogState
      * @return self
      */
     public function withDialogState(DialogState $dialogState): self
@@ -29,7 +29,7 @@ abstract class IntentRequestBuilder
     }
 
     /**
-     * @param mixed $intent
+     * @param Intent $intent
      * @return self
      */
     public function withIntent(Intent $intent): self

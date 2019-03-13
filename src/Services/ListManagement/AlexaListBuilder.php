@@ -31,7 +31,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param mixed $listId
+     * @param string $listId
      * @return self
      */
     public function withListId(string $listId): self
@@ -41,7 +41,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -51,7 +51,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param mixed $state
+     * @param ListState $state
      * @return self
      */
     public function withState(ListState $state): self
@@ -61,7 +61,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param int $version
      * @return self
      */
     public function withVersion(int $version): self
@@ -71,7 +71,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param AlexaListItem[] $items
+     * @param array $items
      * @return self
      */
     public function withItems(array $items): self
@@ -84,7 +84,7 @@ abstract class AlexaListBuilder
     }
 
     /**
-     * @param mixed $links
+     * @param Links $links
      * @return self
      */
     public function withLinks(Links $links): self

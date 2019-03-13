@@ -19,7 +19,7 @@ abstract class ExceptionEncounteredRequestBuilder
     }
 
     /**
-     * @param mixed $error
+     * @param Error $error
      * @return self
      */
     public function withError(Error $error): self
@@ -29,7 +29,7 @@ abstract class ExceptionEncounteredRequestBuilder
     }
 
     /**
-     * @param mixed $cause
+     * @param ErrorCause $cause
      * @return self
      */
     public function withCause(ErrorCause $cause): self

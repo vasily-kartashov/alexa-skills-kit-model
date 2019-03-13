@@ -19,7 +19,7 @@ abstract class PlayDirectiveBuilder
     }
 
     /**
-     * @param mixed $playBehavior
+     * @param PlayBehavior $playBehavior
      * @return self
      */
     public function withPlayBehavior(PlayBehavior $playBehavior): self
@@ -29,7 +29,7 @@ abstract class PlayDirectiveBuilder
     }
 
     /**
-     * @param mixed $audioItem
+     * @param AudioItem $audioItem
      * @return self
      */
     public function withAudioItem(AudioItem $audioItem): self

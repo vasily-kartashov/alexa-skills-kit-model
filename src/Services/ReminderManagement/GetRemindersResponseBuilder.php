@@ -22,7 +22,7 @@ abstract class GetRemindersResponseBuilder
     }
 
     /**
-     * @param mixed $totalCount
+     * @param string $totalCount
      * @return self
      */
     public function withTotalCount(string $totalCount): self
@@ -32,7 +32,7 @@ abstract class GetRemindersResponseBuilder
     }
 
     /**
-     * @param Reminder[] $alerts
+     * @param array $alerts
      * @return self
      */
     public function withAlerts(array $alerts): self
@@ -45,7 +45,7 @@ abstract class GetRemindersResponseBuilder
     }
 
     /**
-     * @param mixed $links
+     * @param string $links
      * @return self
      */
     public function withLinks(string $links): self

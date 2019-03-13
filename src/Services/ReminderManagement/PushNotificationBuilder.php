@@ -16,7 +16,7 @@ abstract class PushNotificationBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param PushNotificationStatus $status
      * @return self
      */
     public function withStatus(PushNotificationStatus $status): self

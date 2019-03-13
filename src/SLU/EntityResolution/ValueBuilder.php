@@ -19,7 +19,7 @@ abstract class ValueBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -29,7 +29,7 @@ abstract class ValueBuilder
     }
 
     /**
-     * @param mixed $id
+     * @param string $id
      * @return self
      */
     public function withId(string $id): self

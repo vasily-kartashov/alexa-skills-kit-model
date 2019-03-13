@@ -22,7 +22,7 @@ abstract class TextContentBuilder
     }
 
     /**
-     * @param mixed $primaryText
+     * @param TextField $primaryText
      * @return self
      */
     public function withPrimaryText(TextField $primaryText): self
@@ -32,7 +32,7 @@ abstract class TextContentBuilder
     }
 
     /**
-     * @param mixed $secondaryText
+     * @param TextField $secondaryText
      * @return self
      */
     public function withSecondaryText(TextField $secondaryText): self
@@ -42,7 +42,7 @@ abstract class TextContentBuilder
     }
 
     /**
-     * @param mixed $tertiaryText
+     * @param TextField $tertiaryText
      * @return self
      */
     public function withTertiaryText(TextField $tertiaryText): self

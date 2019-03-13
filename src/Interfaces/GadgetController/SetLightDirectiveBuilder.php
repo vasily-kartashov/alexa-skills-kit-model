@@ -24,7 +24,7 @@ abstract class SetLightDirectiveBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param int $version
      * @return self
      */
     public function withVersion(int $version): self
@@ -34,7 +34,7 @@ abstract class SetLightDirectiveBuilder
     }
 
     /**
-     * @param string[] $targetGadgets
+     * @param array $targetGadgets
      * @return self
      */
     public function withTargetGadgets(array $targetGadgets): self
@@ -47,7 +47,7 @@ abstract class SetLightDirectiveBuilder
     }
 
     /**
-     * @param mixed $parameters
+     * @param SetLightParameters $parameters
      * @return self
      */
     public function withParameters(SetLightParameters $parameters): self

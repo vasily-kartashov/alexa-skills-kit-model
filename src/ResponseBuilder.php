@@ -36,7 +36,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param mixed $outputSpeech
+     * @param OutputSpeech $outputSpeech
      * @return self
      */
     public function withOutputSpeech(OutputSpeech $outputSpeech): self
@@ -46,7 +46,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param mixed $card
+     * @param Card $card
      * @return self
      */
     public function withCard(Card $card): self
@@ -56,7 +56,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param mixed $reprompt
+     * @param Reprompt $reprompt
      * @return self
      */
     public function withReprompt(Reprompt $reprompt): self
@@ -66,7 +66,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param Directive[] $directives
+     * @param array $directives
      * @return self
      */
     public function withDirectives(array $directives): self
@@ -79,7 +79,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param mixed $shouldEndSession
+     * @param bool $shouldEndSession
      * @return self
      */
     public function withShouldEndSession(bool $shouldEndSession): self
@@ -89,7 +89,7 @@ abstract class ResponseBuilder
     }
 
     /**
-     * @param mixed $canFulfillIntent
+     * @param CanFulfillIntent $canFulfillIntent
      * @return self
      */
     public function withCanFulfillIntent(CanFulfillIntent $canFulfillIntent): self

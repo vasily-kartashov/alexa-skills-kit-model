@@ -32,7 +32,7 @@ abstract class SystemStateBuilder
     }
 
     /**
-     * @param mixed $application
+     * @param Application $application
      * @return self
      */
     public function withApplication(Application $application): self
@@ -42,7 +42,7 @@ abstract class SystemStateBuilder
     }
 
     /**
-     * @param mixed $user
+     * @param User $user
      * @return self
      */
     public function withUser(User $user): self
@@ -52,7 +52,7 @@ abstract class SystemStateBuilder
     }
 
     /**
-     * @param mixed $device
+     * @param Device $device
      * @return self
      */
     public function withDevice(Device $device): self
@@ -62,7 +62,7 @@ abstract class SystemStateBuilder
     }
 
     /**
-     * @param mixed $apiEndpoint
+     * @param string $apiEndpoint
      * @return self
      */
     public function withApiEndpoint(string $apiEndpoint): self
@@ -72,7 +72,7 @@ abstract class SystemStateBuilder
     }
 
     /**
-     * @param mixed $apiAccessToken
+     * @param string $apiAccessToken
      * @return self
      */
     public function withApiAccessToken(string $apiAccessToken): self

@@ -39,7 +39,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $sellerId
+     * @param string $sellerId
      * @return self
      */
     public function withSellerId(string $sellerId): self
@@ -49,7 +49,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $countryOfEstablishment
+     * @param string $countryOfEstablishment
      * @return self
      */
     public function withCountryOfEstablishment(string $countryOfEstablishment): self
@@ -59,7 +59,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $ledgerCurrency
+     * @param string $ledgerCurrency
      * @return self
      */
     public function withLedgerCurrency(string $ledgerCurrency): self
@@ -69,7 +69,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $checkoutLanguage
+     * @param string $checkoutLanguage
      * @return self
      */
     public function withCheckoutLanguage(string $checkoutLanguage): self
@@ -79,7 +79,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $billingAgreementAttributes
+     * @param BillingAgreementAttributes $billingAgreementAttributes
      * @return self
      */
     public function withBillingAgreementAttributes(BillingAgreementAttributes $billingAgreementAttributes): self
@@ -89,7 +89,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $needAmazonShippingAddress
+     * @param bool $needAmazonShippingAddress
      * @return self
      */
     public function withNeedAmazonShippingAddress(bool $needAmazonShippingAddress): self
@@ -99,7 +99,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $sandboxMode
+     * @param bool $sandboxMode
      * @return self
      */
     public function withSandboxMode(bool $sandboxMode): self
@@ -109,7 +109,7 @@ abstract class SetupAmazonPayRequestBuilder
     }
 
     /**
-     * @param mixed $sandboxCustomerEmailId
+     * @param string $sandboxCustomerEmailId
      * @return self
      */
     public function withSandboxCustomerEmailId(string $sandboxCustomerEmailId): self

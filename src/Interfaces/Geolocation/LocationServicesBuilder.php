@@ -19,7 +19,7 @@ abstract class LocationServicesBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param Status $status
      * @return self
      */
     public function withStatus(Status $status): self
@@ -29,7 +29,7 @@ abstract class LocationServicesBuilder
     }
 
     /**
-     * @param mixed $access
+     * @param Access $access
      * @return self
      */
     public function withAccess(Access $access): self

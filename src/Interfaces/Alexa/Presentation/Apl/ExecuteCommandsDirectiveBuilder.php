@@ -19,7 +19,7 @@ abstract class ExecuteCommandsDirectiveBuilder
     }
 
     /**
-     * @param Command[] $commands
+     * @param array $commands
      * @return self
      */
     public function withCommands(array $commands): self
@@ -32,7 +32,7 @@ abstract class ExecuteCommandsDirectiveBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

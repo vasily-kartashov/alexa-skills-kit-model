@@ -19,7 +19,7 @@ abstract class ShortAddressBuilder
     }
 
     /**
-     * @param mixed $countryCode
+     * @param string $countryCode
      * @return self
      */
     public function withCountryCode(string $countryCode): self
@@ -29,7 +29,7 @@ abstract class ShortAddressBuilder
     }
 
     /**
-     * @param mixed $postalCode
+     * @param string $postalCode
      * @return self
      */
     public function withPostalCode(string $postalCode): self

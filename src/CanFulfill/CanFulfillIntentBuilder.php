@@ -19,7 +19,7 @@ abstract class CanFulfillIntentBuilder
     }
 
     /**
-     * @param mixed $canFulfill
+     * @param CanFulfillIntentValues $canFulfill
      * @return self
      */
     public function withCanFulfill(CanFulfillIntentValues $canFulfill): self
@@ -29,7 +29,7 @@ abstract class CanFulfillIntentBuilder
     }
 
     /**
-     * @param CanFulfillSlot[] $slots
+     * @param array $slots
      * @return self
      */
     public function withSlots(array $slots): self

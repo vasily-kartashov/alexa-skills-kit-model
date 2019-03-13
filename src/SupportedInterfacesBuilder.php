@@ -34,7 +34,7 @@ abstract class SupportedInterfacesBuilder
     }
 
     /**
-     * @param mixed $alexaPresentationAPL
+     * @param AlexaPresentationAplInterface $alexaPresentationAPL
      * @return self
      */
     public function withAlexaPresentationAPL(AlexaPresentationAplInterface $alexaPresentationAPL): self
@@ -44,7 +44,7 @@ abstract class SupportedInterfacesBuilder
     }
 
     /**
-     * @param mixed $audioPlayer
+     * @param AudioPlayerInterface $audioPlayer
      * @return self
      */
     public function withAudioPlayer(AudioPlayerInterface $audioPlayer): self
@@ -54,7 +54,7 @@ abstract class SupportedInterfacesBuilder
     }
 
     /**
-     * @param mixed $display
+     * @param DisplayInterface $display
      * @return self
      */
     public function withDisplay(DisplayInterface $display): self
@@ -64,7 +64,7 @@ abstract class SupportedInterfacesBuilder
     }
 
     /**
-     * @param mixed $videoApp
+     * @param VideoAppInterface $videoApp
      * @return self
      */
     public function withVideoApp(VideoAppInterface $videoApp): self
@@ -74,7 +74,7 @@ abstract class SupportedInterfacesBuilder
     }
 
     /**
-     * @param mixed $geolocation
+     * @param GeolocationInterface $geolocation
      * @return self
      */
     public function withGeolocation(GeolocationInterface $geolocation): self

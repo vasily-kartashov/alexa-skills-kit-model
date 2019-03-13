@@ -34,7 +34,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $id
+     * @param string $id
      * @return self
      */
     public function withId(string $id): self
@@ -44,7 +44,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $version
+     * @param int $version
      * @return self
      */
     public function withVersion(int $version): self
@@ -54,7 +54,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $value
+     * @param string $value
      * @return self
      */
     public function withValue(string $value): self
@@ -64,7 +64,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param ListItemState $status
      * @return self
      */
     public function withStatus(ListItemState $status): self
@@ -74,7 +74,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $createdTime
+     * @param string $createdTime
      * @return self
      */
     public function withCreatedTime(string $createdTime): self
@@ -84,7 +84,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $updatedTime
+     * @param string $updatedTime
      * @return self
      */
     public function withUpdatedTime(string $updatedTime): self
@@ -94,7 +94,7 @@ abstract class AlexaListItemBuilder
     }
 
     /**
-     * @param mixed $href
+     * @param string $href
      * @return self
      */
     public function withHref(string $href): self

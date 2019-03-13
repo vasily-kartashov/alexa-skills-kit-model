@@ -16,7 +16,7 @@ abstract class RuntimeBuilder
     }
 
     /**
-     * @param mixed $maxVersion
+     * @param string $maxVersion
      * @return self
      */
     public function withMaxVersion(string $maxVersion): self

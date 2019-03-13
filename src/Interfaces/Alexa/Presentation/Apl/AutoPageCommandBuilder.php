@@ -22,7 +22,7 @@ abstract class AutoPageCommandBuilder
     }
 
     /**
-     * @param mixed $componentId
+     * @param string $componentId
      * @return self
      */
     public function withComponentId(string $componentId): self
@@ -32,7 +32,7 @@ abstract class AutoPageCommandBuilder
     }
 
     /**
-     * @param mixed $count
+     * @param int $count
      * @return self
      */
     public function withCount(int $count): self
@@ -42,7 +42,7 @@ abstract class AutoPageCommandBuilder
     }
 
     /**
-     * @param mixed $duration
+     * @param int $duration
      * @return self
      */
     public function withDuration(int $duration): self

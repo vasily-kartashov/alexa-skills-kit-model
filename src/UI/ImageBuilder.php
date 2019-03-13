@@ -19,7 +19,7 @@ abstract class ImageBuilder
     }
 
     /**
-     * @param mixed $smallImageUrl
+     * @param string $smallImageUrl
      * @return self
      */
     public function withSmallImageUrl(string $smallImageUrl): self
@@ -29,7 +29,7 @@ abstract class ImageBuilder
     }
 
     /**
-     * @param mixed $largeImageUrl
+     * @param string $largeImageUrl
      * @return self
      */
     public function withLargeImageUrl(string $largeImageUrl): self

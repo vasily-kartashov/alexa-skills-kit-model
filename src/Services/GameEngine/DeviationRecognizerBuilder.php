@@ -16,7 +16,7 @@ abstract class DeviationRecognizerBuilder
     }
 
     /**
-     * @param mixed $recognizer
+     * @param string $recognizer
      * @return self
      */
     public function withRecognizer(string $recognizer): self

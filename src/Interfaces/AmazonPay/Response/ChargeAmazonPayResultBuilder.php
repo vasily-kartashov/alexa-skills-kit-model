@@ -21,7 +21,7 @@ abstract class ChargeAmazonPayResultBuilder
     }
 
     /**
-     * @param mixed $amazonOrderReferenceId
+     * @param string $amazonOrderReferenceId
      * @return self
      */
     public function withAmazonOrderReferenceId(string $amazonOrderReferenceId): self
@@ -31,7 +31,7 @@ abstract class ChargeAmazonPayResultBuilder
     }
 
     /**
-     * @param mixed $authorizationDetails
+     * @param AuthorizationDetails $authorizationDetails
      * @return self
      */
     public function withAuthorizationDetails(AuthorizationDetails $authorizationDetails): self

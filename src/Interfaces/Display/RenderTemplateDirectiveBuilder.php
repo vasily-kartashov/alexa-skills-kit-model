@@ -16,7 +16,7 @@ abstract class RenderTemplateDirectiveBuilder
     }
 
     /**
-     * @param mixed $template
+     * @param Template $template
      * @return self
      */
     public function withTemplate(Template $template): self

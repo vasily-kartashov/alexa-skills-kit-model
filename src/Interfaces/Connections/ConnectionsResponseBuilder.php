@@ -25,7 +25,7 @@ abstract class ConnectionsResponseBuilder
     }
 
     /**
-     * @param mixed $status
+     * @param ConnectionsStatus $status
      * @return self
      */
     public function withStatus(ConnectionsStatus $status): self
@@ -35,7 +35,7 @@ abstract class ConnectionsResponseBuilder
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return self
      */
     public function withName(string $name): self
@@ -55,7 +55,7 @@ abstract class ConnectionsResponseBuilder
     }
 
     /**
-     * @param mixed $token
+     * @param string $token
      * @return self
      */
     public function withToken(string $token): self

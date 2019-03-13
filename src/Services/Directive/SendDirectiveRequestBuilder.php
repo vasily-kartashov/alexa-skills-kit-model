@@ -19,7 +19,7 @@ abstract class SendDirectiveRequestBuilder
     }
 
     /**
-     * @param mixed $header
+     * @param Header $header
      * @return self
      */
     public function withHeader(Header $header): self
@@ -29,7 +29,7 @@ abstract class SendDirectiveRequestBuilder
     }
 
     /**
-     * @param mixed $directive
+     * @param Directive $directive
      * @return self
      */
     public function withDirective(Directive $directive): self

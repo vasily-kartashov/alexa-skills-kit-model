@@ -33,7 +33,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $billingAgreementId
+     * @param string $billingAgreementId
      * @return self
      */
     public function withBillingAgreementId(string $billingAgreementId): self
@@ -43,7 +43,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $creationTimestamp
+     * @param DateTime $creationTimestamp
      * @return self
      */
     public function withCreationTimestamp(DateTime $creationTimestamp): self
@@ -53,7 +53,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $destination
+     * @param Destination $destination
      * @return self
      */
     public function withDestination(Destination $destination): self
@@ -63,7 +63,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $checkoutLanguage
+     * @param string $checkoutLanguage
      * @return self
      */
     public function withCheckoutLanguage(string $checkoutLanguage): self
@@ -73,7 +73,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $releaseEnvironment
+     * @param ReleaseEnvironment $releaseEnvironment
      * @return self
      */
     public function withReleaseEnvironment(ReleaseEnvironment $releaseEnvironment): self
@@ -83,7 +83,7 @@ abstract class BillingAgreementDetailsBuilder
     }
 
     /**
-     * @param mixed $billingAgreementStatus
+     * @param BillingAgreementStatus $billingAgreementStatus
      * @return self
      */
     public function withBillingAgreementStatus(BillingAgreementStatus $billingAgreementStatus): self
