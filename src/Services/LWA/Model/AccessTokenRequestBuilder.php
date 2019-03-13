@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Services\Lwa\Model;
+namespace Alexa\Model\Services\LWA\Model;
 
 abstract class AccessTokenRequestBuilder
 {

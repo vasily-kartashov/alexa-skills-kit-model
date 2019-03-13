@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexa\Model\Services\Ups;
+namespace Alexa\Model\Services\UPS;
 
 abstract class ErrorBuilder
 {
