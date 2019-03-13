@@ -1,7 +1,7 @@
 Alexa Skill Kit Model
 ===
 
-[![Build Status](https://travis-ci.org/vasily-kartashov/alexa-skill-kit-model.svg)](https://travis-ci.org/vasily-kartashov/alexa-skill-kit-model)
+[![Build Status](https://travis-ci.org/vasily-kartashov/alexa-skills-kit-model.svg?branch=master)](https://travis-ci.org/vasily-kartashov/alexa-skill-kit-model)
 
 This is a mapping between Alexa's request and response envelopes and PHP classes. 
 There model library doesn't do any processing and is solely responsible for mapping only.
