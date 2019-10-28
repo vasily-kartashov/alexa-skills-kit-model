@@ -133,8 +133,6 @@ abstract class Directive implements JsonSerializable
                 $instance = ClearQueueDirective::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

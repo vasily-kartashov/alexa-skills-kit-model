@@ -45,8 +45,6 @@ abstract class Card implements JsonSerializable
                 $instance = SimpleCard::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

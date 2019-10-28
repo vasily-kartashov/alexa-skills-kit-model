@@ -36,8 +36,6 @@ abstract class Directive implements JsonSerializable
                 $instance = SpeakDirective::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

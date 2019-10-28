@@ -39,8 +39,6 @@ abstract class ViewportSize implements JsonSerializable
                 $instance = DiscreteViewportSize::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

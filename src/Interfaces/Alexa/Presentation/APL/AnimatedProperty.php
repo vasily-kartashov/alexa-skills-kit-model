@@ -39,8 +39,6 @@ abstract class AnimatedProperty implements JsonSerializable
                 $instance = AnimatedTransformProperty::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

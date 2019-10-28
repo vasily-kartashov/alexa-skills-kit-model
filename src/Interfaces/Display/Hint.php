@@ -36,8 +36,6 @@ abstract class Hint implements JsonSerializable
                 $instance = PlainTextHint::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

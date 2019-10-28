@@ -36,8 +36,6 @@ abstract class Cause implements JsonSerializable
                 $instance = ConnectionCompleted::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

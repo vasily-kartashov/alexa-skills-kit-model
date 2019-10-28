@@ -39,8 +39,6 @@ abstract class TextField implements JsonSerializable
                 $instance = PlainText::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }

@@ -42,8 +42,6 @@ abstract class Recognizer implements JsonSerializable
                 $instance = ProgressRecognizer::fromValue($data);
                 break;
         }
-        if ($instance !== null) {
-        }
         return $instance;
     }
 }
