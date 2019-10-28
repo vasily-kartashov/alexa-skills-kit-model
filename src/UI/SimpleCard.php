@@ -38,7 +38,7 @@ final class SimpleCard extends Card implements JsonSerializable
 
     public static function builder(): SimpleCardBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($title, $content) use ($instance): SimpleCard {
             $instance->title = $title;
             $instance->content = $content;
@@ -59,7 +59,7 @@ final class SimpleCard extends Card implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->content = isset($data['content']) ? ((string) $data['content']) : null;

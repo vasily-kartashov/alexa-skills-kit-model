@@ -40,7 +40,7 @@ final class ElicitSlotDirective extends Directive implements JsonSerializable
 
     public static function builder(): ElicitSlotDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($updatedIntent, $slotToElicit) use ($instance): ElicitSlotDirective {
             $instance->updatedIntent = $updatedIntent;
             $instance->slotToElicit = $slotToElicit;
@@ -61,7 +61,7 @@ final class ElicitSlotDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->updatedIntent = isset($data['updatedIntent']) ? Intent::fromValue($data['updatedIntent']) : null;
         $instance->slotToElicit = isset($data['slotToElicit']) ? ((string) $data['slotToElicit']) : null;

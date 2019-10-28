@@ -84,7 +84,7 @@ final class SupportedInterfaces implements JsonSerializable
 
     public static function builder(): SupportedInterfacesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($alexaPresentationAPL, $alexaPresentationAPLT, $audioPlayer, $display, $videoApp, $geolocation) use ($instance): SupportedInterfaces {
             $instance->alexaPresentationAPL = $alexaPresentationAPL;
             $instance->alexaPresentationAPLT = $alexaPresentationAPLT;
@@ -109,7 +109,7 @@ final class SupportedInterfaces implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->alexaPresentationAPL = isset($data['Alexa.Presentation.APL']) ? AlexaPresentationAplInterface::fromValue($data['Alexa.Presentation.APL']) : null;
         $instance->alexaPresentationAPLT = isset($data['Alexa.Presentation.APLT']) ? AlexaPresentationApltInterface::fromValue($data['Alexa.Presentation.APLT']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerInterface::fromValue($data['AudioPlayer']) : null;

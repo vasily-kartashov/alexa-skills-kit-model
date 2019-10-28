@@ -34,7 +34,7 @@ final class Image implements JsonSerializable
 
     public static function builder(): ImageBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($contentDescription, $sources) use ($instance): Image {
             $instance->contentDescription = $contentDescription;
             $instance->sources = $sources;
@@ -55,7 +55,7 @@ final class Image implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->contentDescription = isset($data['contentDescription']) ? ((string) $data['contentDescription']) : null;
         $instance->sources = [];
         if (isset($data['sources'])) {

@@ -67,7 +67,7 @@ final class Session implements JsonSerializable
 
     public static function builder(): SessionBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($new, $sessionId, $user, $attributes, $application) use ($instance): Session {
             $instance->new = $new;
             $instance->sessionId = $sessionId;
@@ -91,7 +91,7 @@ final class Session implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->new = isset($data['new']) ? ((bool) $data['new']) : null;
         $instance->sessionId = isset($data['sessionId']) ? ((string) $data['sessionId']) : null;
         $instance->user = isset($data['user']) ? User::fromValue($data['user']) : null;

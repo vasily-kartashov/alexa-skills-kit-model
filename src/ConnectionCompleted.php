@@ -49,7 +49,7 @@ final class ConnectionCompleted extends Cause implements JsonSerializable
 
     public static function builder(): ConnectionCompletedBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $status, $result) use ($instance): ConnectionCompleted {
             $instance->token = $token;
             $instance->status = $status;
@@ -71,7 +71,7 @@ final class ConnectionCompleted extends Cause implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;

@@ -23,7 +23,7 @@ final class Application implements JsonSerializable
 
     public static function builder(): ApplicationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($applicationId) use ($instance): Application {
             $instance->applicationId = $applicationId;
             return $instance;
@@ -43,7 +43,7 @@ final class Application implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->applicationId = isset($data['applicationId']) ? ((string) $data['applicationId']) : null;
         return $instance;
     }

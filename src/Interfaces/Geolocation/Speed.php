@@ -34,7 +34,7 @@ final class Speed implements JsonSerializable
 
     public static function builder(): SpeedBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($speedInMetersPerSecond, $accuracyInMetersPerSecond) use ($instance): Speed {
             $instance->speedInMetersPerSecond = $speedInMetersPerSecond;
             $instance->accuracyInMetersPerSecond = $accuracyInMetersPerSecond;
@@ -55,7 +55,7 @@ final class Speed implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->speedInMetersPerSecond = isset($data['speedInMetersPerSecond']) ? ((float) $data['speedInMetersPerSecond']) : null;
         $instance->accuracyInMetersPerSecond = isset($data['accuracyInMetersPerSecond']) ? ((float) $data['accuracyInMetersPerSecond']) : null;
         return $instance;

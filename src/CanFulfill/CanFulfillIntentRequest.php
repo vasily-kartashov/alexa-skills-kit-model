@@ -41,7 +41,7 @@ final class CanFulfillIntentRequest extends Request implements JsonSerializable
 
     public static function builder(): CanFulfillIntentRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($dialogState, $intent) use ($instance): CanFulfillIntentRequest {
             $instance->dialogState = $dialogState;
             $instance->intent = $intent;
@@ -62,7 +62,7 @@ final class CanFulfillIntentRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->dialogState = isset($data['dialogState']) ? DialogState::fromValue($data['dialogState']) : null;
         $instance->intent = isset($data['intent']) ? Intent::fromValue($data['intent']) : null;

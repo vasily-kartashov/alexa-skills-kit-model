@@ -61,7 +61,7 @@ final class RenderDocumentDirective extends Directive implements JsonSerializabl
 
     public static function builder(): RenderDocumentDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $targetProfile, $document, $datasources) use ($instance): RenderDocumentDirective {
             $instance->token = $token;
             $instance->targetProfile = $targetProfile;
@@ -84,7 +84,7 @@ final class RenderDocumentDirective extends Directive implements JsonSerializabl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->targetProfile = isset($data['targetProfile']) ? TargetProfile::fromValue($data['targetProfile']) : null;

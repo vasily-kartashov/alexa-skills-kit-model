@@ -34,7 +34,7 @@ final class SkewTransformProperty extends TransformProperty implements JsonSeria
 
     public static function builder(): SkewTransformPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($skewX, $skewY) use ($instance): SkewTransformProperty {
             $instance->skewX = $skewX;
             $instance->skewY = $skewY;
@@ -55,7 +55,7 @@ final class SkewTransformProperty extends TransformProperty implements JsonSeria
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->skewX = isset($data['skewX']) ? ((string) $data['skewX']) : null;
         $instance->skewY = isset($data['skewY']) ? ((string) $data['skewY']) : null;
         return $instance;

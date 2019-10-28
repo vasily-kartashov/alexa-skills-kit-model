@@ -39,7 +39,7 @@ final class EventsReceivedRequest extends Request implements JsonSerializable
 
     public static function builder(): EventsReceivedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $events) use ($instance): EventsReceivedRequest {
             $instance->token = $token;
             $instance->events = $events;
@@ -60,7 +60,7 @@ final class EventsReceivedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->events = [];

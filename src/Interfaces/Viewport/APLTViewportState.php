@@ -74,7 +74,7 @@ final class APLTViewportState extends TypedViewportState implements JsonSerializ
 
     public static function builder(): APLTViewportStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($supportedProfiles, $lineLength, $lineCount, $characterFormat, $interSegments) use ($instance): APLTViewportState {
             $instance->supportedProfiles = $supportedProfiles;
             $instance->lineLength = $lineLength;
@@ -98,7 +98,7 @@ final class APLTViewportState extends TypedViewportState implements JsonSerializ
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->supportedProfiles = [];
         if (isset($data['supportedProfiles'])) {

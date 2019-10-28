@@ -41,7 +41,7 @@ final class DynamicEntitiesDirective extends Directive implements JsonSerializab
 
     public static function builder(): DynamicEntitiesDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($updateBehavior, $types) use ($instance): DynamicEntitiesDirective {
             $instance->updateBehavior = $updateBehavior;
             $instance->types = $types;
@@ -62,7 +62,7 @@ final class DynamicEntitiesDirective extends Directive implements JsonSerializab
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->updateBehavior = isset($data['updateBehavior']) ? UpdateBehavior::fromValue($data['updateBehavior']) : null;
         $instance->types = [];

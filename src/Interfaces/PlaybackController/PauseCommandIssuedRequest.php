@@ -15,19 +15,9 @@ final class PauseCommandIssuedRequest extends Request implements JsonSerializabl
         $this->type = self::TYPE;
     }
 
-    public static function builder(): PauseCommandIssuedRequestBuilder
+    public static function empty(): PauseCommandIssuedRequest
     {
-        $instance = new self();
-        $constructor = function () use ($instance): PauseCommandIssuedRequest {
-            return $instance;
-        };
-        return new class($constructor) extends PauseCommandIssuedRequestBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -36,7 +26,7 @@ final class PauseCommandIssuedRequest extends Request implements JsonSerializabl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

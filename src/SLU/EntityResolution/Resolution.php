@@ -45,7 +45,7 @@ final class Resolution implements JsonSerializable
 
     public static function builder(): ResolutionBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($authority, $status, $values) use ($instance): Resolution {
             $instance->authority = $authority;
             $instance->status = $status;
@@ -67,7 +67,7 @@ final class Resolution implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->authority = isset($data['authority']) ? ((string) $data['authority']) : null;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;
         $instance->values = [];

@@ -23,7 +23,7 @@ final class PushNotification implements JsonSerializable
 
     public static function builder(): PushNotificationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status) use ($instance): PushNotification {
             $instance->status = $status;
             return $instance;
@@ -43,7 +43,7 @@ final class PushNotification implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->status = isset($data['status']) ? PushNotificationStatus::fromValue($data['status']) : null;
         return $instance;
     }

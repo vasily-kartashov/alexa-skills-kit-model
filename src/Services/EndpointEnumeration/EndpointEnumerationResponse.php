@@ -23,7 +23,7 @@ final class EndpointEnumerationResponse implements JsonSerializable
 
     public static function builder(): EndpointEnumerationResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($endpoints) use ($instance): EndpointEnumerationResponse {
             $instance->endpoints = $endpoints;
             return $instance;
@@ -43,7 +43,7 @@ final class EndpointEnumerationResponse implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->endpoints = [];
         if (isset($data['endpoints'])) {
             foreach ($data['endpoints'] as $item) {

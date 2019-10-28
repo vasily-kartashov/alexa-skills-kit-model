@@ -61,7 +61,7 @@ final class AplRenderDocumentDirective extends Directive implements JsonSerializ
 
     public static function builder(): AplRenderDocumentDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $document, $datasources, $packages) use ($instance): AplRenderDocumentDirective {
             $instance->token = $token;
             $instance->document = $document;
@@ -84,7 +84,7 @@ final class AplRenderDocumentDirective extends Directive implements JsonSerializ
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->document = [];

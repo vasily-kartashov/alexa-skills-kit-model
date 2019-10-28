@@ -28,7 +28,7 @@ final class ReminderStartedEventRequest extends Request implements JsonSerializa
 
     public static function builder(): ReminderStartedEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body) use ($instance): ReminderStartedEventRequest {
             $instance->body = $body;
             return $instance;
@@ -48,7 +48,7 @@ final class ReminderStartedEventRequest extends Request implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? Event::fromValue($data['body']) : null;
         return $instance;

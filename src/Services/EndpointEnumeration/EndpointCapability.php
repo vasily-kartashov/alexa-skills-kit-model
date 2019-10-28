@@ -45,7 +45,7 @@ final class EndpointCapability implements JsonSerializable
 
     public static function builder(): EndpointCapabilityBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($interface, $type, $version) use ($instance): EndpointCapability {
             $instance->interface = $interface;
             $instance->type = $type;
@@ -67,7 +67,7 @@ final class EndpointCapability implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->interface = isset($data['interface']) ? ((string) $data['interface']) : null;
         $instance->type = isset($data['type']) ? ((string) $data['type']) : null;
         $instance->version = isset($data['version']) ? ((string) $data['version']) : null;

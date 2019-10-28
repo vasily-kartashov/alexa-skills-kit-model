@@ -60,7 +60,7 @@ final class SellerOrderAttributes extends BaseAmazonPayEntity implements JsonSer
 
     public static function builder(): SellerOrderAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($sellerOrderId, $storeName, $customInformation, $sellerNote) use ($instance): SellerOrderAttributes {
             $instance->sellerOrderId = $sellerOrderId;
             $instance->storeName = $storeName;
@@ -83,7 +83,7 @@ final class SellerOrderAttributes extends BaseAmazonPayEntity implements JsonSer
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->sellerOrderId = isset($data['sellerOrderId']) ? ((string) $data['sellerOrderId']) : null;
         $instance->storeName = isset($data['storeName']) ? ((string) $data['storeName']) : null;

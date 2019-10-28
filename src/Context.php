@@ -96,7 +96,7 @@ final class Context implements JsonSerializable
 
     public static function builder(): ContextBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($system, $audioPlayer, $automotive, $display, $geolocation, $viewport, $viewports) use ($instance): Context {
             $instance->system = $system;
             $instance->audioPlayer = $audioPlayer;
@@ -122,7 +122,7 @@ final class Context implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->system = isset($data['System']) ? SystemState::fromValue($data['System']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerState::fromValue($data['AudioPlayer']) : null;
         $instance->automotive = isset($data['Automotive']) ? AutomotiveState::fromValue($data['Automotive']) : null;

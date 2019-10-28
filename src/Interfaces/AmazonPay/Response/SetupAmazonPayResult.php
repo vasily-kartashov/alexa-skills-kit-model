@@ -24,7 +24,7 @@ final class SetupAmazonPayResult implements JsonSerializable
 
     public static function builder(): SetupAmazonPayResultBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($billingAgreementDetails) use ($instance): SetupAmazonPayResult {
             $instance->billingAgreementDetails = $billingAgreementDetails;
             return $instance;
@@ -44,7 +44,7 @@ final class SetupAmazonPayResult implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->billingAgreementDetails = isset($data['billingAgreementDetails']) ? BillingAgreementDetails::fromValue($data['billingAgreementDetails']) : null;
         return $instance;
     }

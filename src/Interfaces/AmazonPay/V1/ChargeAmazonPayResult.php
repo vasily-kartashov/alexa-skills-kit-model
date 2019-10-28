@@ -35,7 +35,7 @@ final class ChargeAmazonPayResult implements JsonSerializable
 
     public static function builder(): ChargeAmazonPayResultBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($amazonOrderReferenceId, $authorizationDetails) use ($instance): ChargeAmazonPayResult {
             $instance->amazonOrderReferenceId = $amazonOrderReferenceId;
             $instance->authorizationDetails = $authorizationDetails;
@@ -56,7 +56,7 @@ final class ChargeAmazonPayResult implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->amazonOrderReferenceId = isset($data['amazonOrderReferenceId']) ? ((string) $data['amazonOrderReferenceId']) : null;
         $instance->authorizationDetails = isset($data['authorizationDetails']) ? AuthorizationDetails::fromValue($data['authorizationDetails']) : null;
         return $instance;

@@ -28,7 +28,7 @@ final class RenderTemplateDirective extends Directive implements JsonSerializabl
 
     public static function builder(): RenderTemplateDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($template) use ($instance): RenderTemplateDirective {
             $instance->template = $template;
             return $instance;
@@ -48,7 +48,7 @@ final class RenderTemplateDirective extends Directive implements JsonSerializabl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->template = isset($data['template']) ? Template::fromValue($data['template']) : null;
         return $instance;

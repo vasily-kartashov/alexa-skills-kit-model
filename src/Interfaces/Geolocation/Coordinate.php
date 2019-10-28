@@ -45,7 +45,7 @@ final class Coordinate implements JsonSerializable
 
     public static function builder(): CoordinateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($latitudeInDegrees, $longitudeInDegrees, $accuracyInMeters) use ($instance): Coordinate {
             $instance->latitudeInDegrees = $latitudeInDegrees;
             $instance->longitudeInDegrees = $longitudeInDegrees;
@@ -67,7 +67,7 @@ final class Coordinate implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->latitudeInDegrees = isset($data['latitudeInDegrees']) ? ((float) $data['latitudeInDegrees']) : null;
         $instance->longitudeInDegrees = isset($data['longitudeInDegrees']) ? ((float) $data['longitudeInDegrees']) : null;
         $instance->accuracyInMeters = isset($data['accuracyInMeters']) ? ((float) $data['accuracyInMeters']) : null;

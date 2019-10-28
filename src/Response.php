@@ -82,7 +82,7 @@ final class Response implements JsonSerializable
 
     public static function builder(): ResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($outputSpeech, $card, $reprompt, $directives, $shouldEndSession, $canFulfillIntent) use ($instance): Response {
             $instance->outputSpeech = $outputSpeech;
             $instance->card = $card;
@@ -107,7 +107,7 @@ final class Response implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->outputSpeech = isset($data['outputSpeech']) ? OutputSpeech::fromValue($data['outputSpeech']) : null;
         $instance->card = isset($data['card']) ? Card::fromValue($data['card']) : null;
         $instance->reprompt = isset($data['reprompt']) ? Reprompt::fromValue($data['reprompt']) : null;

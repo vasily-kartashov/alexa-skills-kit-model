@@ -45,7 +45,7 @@ final class Intent implements JsonSerializable
 
     public static function builder(): IntentBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $slots, $confirmationStatus) use ($instance): Intent {
             $instance->name = $name;
             $instance->slots = $slots;
@@ -67,7 +67,7 @@ final class Intent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->slots = [];
         if (isset($data['slots'])) {

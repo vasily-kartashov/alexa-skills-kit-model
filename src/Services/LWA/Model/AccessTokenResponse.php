@@ -56,7 +56,7 @@ final class AccessTokenResponse implements JsonSerializable
 
     public static function builder(): AccessTokenResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($access_token, $expires_in, $scope, $token_type) use ($instance): AccessTokenResponse {
             $instance->access_token = $access_token;
             $instance->expires_in = $expires_in;
@@ -79,7 +79,7 @@ final class AccessTokenResponse implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->access_token = isset($data['access_token']) ? ((string) $data['access_token']) : null;
         $instance->expires_in = isset($data['expires_in']) ? ((int) $data['expires_in']) : null;
         $instance->scope = isset($data['scope']) ? ((string) $data['scope']) : null;

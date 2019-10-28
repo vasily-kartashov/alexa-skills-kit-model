@@ -38,7 +38,7 @@ final class Restaurant extends BaseEntity implements JsonSerializable
 
     public static function builder(): RestaurantBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $location) use ($instance): Restaurant {
             $instance->name = $name;
             $instance->location = $location;
@@ -59,7 +59,7 @@ final class Restaurant extends BaseEntity implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->location = isset($data['location']) ? PostalAddress::fromValue($data['location']) : null;

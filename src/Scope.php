@@ -23,7 +23,7 @@ final class Scope implements JsonSerializable
 
     public static function builder(): ScopeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status) use ($instance): Scope {
             $instance->status = $status;
             return $instance;
@@ -43,7 +43,7 @@ final class Scope implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->status = isset($data['status']) ? PermissionStatus::fromValue($data['status']) : null;
         return $instance;
     }

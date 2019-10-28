@@ -45,7 +45,7 @@ final class SetLightParameters implements JsonSerializable
 
     public static function builder(): SetLightParametersBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($triggerEvent, $triggerEventTimeMs, $animations) use ($instance): SetLightParameters {
             $instance->triggerEvent = $triggerEvent;
             $instance->triggerEventTimeMs = $triggerEventTimeMs;
@@ -67,7 +67,7 @@ final class SetLightParameters implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->triggerEvent = isset($data['triggerEvent']) ? TriggerEventType::fromValue($data['triggerEvent']) : null;
         $instance->triggerEventTimeMs = isset($data['triggerEventTimeMs']) ? ((int) $data['triggerEventTimeMs']) : null;
         $instance->animations = [];

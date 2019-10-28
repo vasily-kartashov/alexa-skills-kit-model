@@ -38,7 +38,7 @@ final class SessionEndedRequest extends Request implements JsonSerializable
 
     public static function builder(): SessionEndedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($reason, $error) use ($instance): SessionEndedRequest {
             $instance->reason = $reason;
             $instance->error = $error;
@@ -59,7 +59,7 @@ final class SessionEndedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->reason = isset($data['reason']) ? SessionEndedReason::fromValue($data['reason']) : null;
         $instance->error = isset($data['error']) ? SessionEndedError::fromValue($data['error']) : null;

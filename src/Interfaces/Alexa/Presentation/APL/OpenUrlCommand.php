@@ -38,7 +38,7 @@ final class OpenUrlCommand extends Command implements JsonSerializable
 
     public static function builder(): OpenUrlCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($source, $onFail) use ($instance): OpenUrlCommand {
             $instance->source = $source;
             $instance->onFail = $onFail;
@@ -59,7 +59,7 @@ final class OpenUrlCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->source = isset($data['source']) ? ((string) $data['source']) : null;
         $instance->onFail = [];

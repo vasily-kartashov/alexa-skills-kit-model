@@ -45,7 +45,7 @@ final class Task implements JsonSerializable
 
     public static function builder(): TaskBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $version, $input) use ($instance): Task {
             $instance->name = $name;
             $instance->version = $version;
@@ -67,7 +67,7 @@ final class Task implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->version = isset($data['version']) ? ((string) $data['version']) : null;
         $instance->input = $data['input'];

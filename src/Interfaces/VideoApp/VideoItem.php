@@ -34,7 +34,7 @@ final class VideoItem implements JsonSerializable
 
     public static function builder(): VideoItemBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($source, $metadata) use ($instance): VideoItem {
             $instance->source = $source;
             $instance->metadata = $metadata;
@@ -55,7 +55,7 @@ final class VideoItem implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->source = isset($data['source']) ? ((string) $data['source']) : null;
         $instance->metadata = isset($data['metadata']) ? Metadata::fromValue($data['metadata']) : null;
         return $instance;

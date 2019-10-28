@@ -34,7 +34,7 @@ final class SessionEndedError implements JsonSerializable
 
     public static function builder(): SessionEndedErrorBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($type, $message) use ($instance): SessionEndedError {
             $instance->type = $type;
             $instance->message = $message;
@@ -55,7 +55,7 @@ final class SessionEndedError implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = isset($data['type']) ? SessionEndedErrorType::fromValue($data['type']) : null;
         $instance->message = isset($data['message']) ? ((string) $data['message']) : null;
         return $instance;

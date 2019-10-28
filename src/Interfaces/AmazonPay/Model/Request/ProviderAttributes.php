@@ -38,7 +38,7 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
 
     public static function builder(): ProviderAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($providerId, $providerCreditList) use ($instance): ProviderAttributes {
             $instance->providerId = $providerId;
             $instance->providerCreditList = $providerCreditList;
@@ -59,7 +59,7 @@ final class ProviderAttributes extends BaseAmazonPayEntity implements JsonSerial
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->providerId = isset($data['providerId']) ? ((string) $data['providerId']) : null;
         $instance->providerCreditList = [];

@@ -27,7 +27,7 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
 
     public static function builder(): AskForPermissionsConsentCardBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($permissions) use ($instance): AskForPermissionsConsentCard {
             $instance->permissions = $permissions;
             return $instance;
@@ -47,7 +47,7 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->permissions = [];
         if (isset($data['permissions'])) {

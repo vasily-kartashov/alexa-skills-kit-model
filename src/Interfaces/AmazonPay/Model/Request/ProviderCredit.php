@@ -38,7 +38,7 @@ final class ProviderCredit extends BaseAmazonPayEntity implements JsonSerializab
 
     public static function builder(): ProviderCreditBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($providerId, $credit) use ($instance): ProviderCredit {
             $instance->providerId = $providerId;
             $instance->credit = $credit;
@@ -59,7 +59,7 @@ final class ProviderCredit extends BaseAmazonPayEntity implements JsonSerializab
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->providerId = isset($data['providerId']) ? ((string) $data['providerId']) : null;
         $instance->credit = isset($data['credit']) ? Price::fromValue($data['credit']) : null;

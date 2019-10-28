@@ -27,7 +27,7 @@ final class SessionResumedRequest extends Request implements JsonSerializable
 
     public static function builder(): SessionResumedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($cause) use ($instance): SessionResumedRequest {
             $instance->cause = $cause;
             return $instance;
@@ -47,7 +47,7 @@ final class SessionResumedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->cause = isset($data['cause']) ? Cause::fromValue($data['cause']) : null;
         return $instance;

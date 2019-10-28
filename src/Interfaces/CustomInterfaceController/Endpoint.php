@@ -23,7 +23,7 @@ final class Endpoint implements JsonSerializable
 
     public static function builder(): EndpointBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($endpointId) use ($instance): Endpoint {
             $instance->endpointId = $endpointId;
             return $instance;
@@ -43,7 +43,7 @@ final class Endpoint implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->endpointId = isset($data['endpointId']) ? ((string) $data['endpointId']) : null;
         return $instance;
     }

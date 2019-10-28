@@ -92,7 +92,7 @@ final class BillingAgreementDetails implements JsonSerializable
 
     public static function builder(): BillingAgreementDetailsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($billingAgreementId, $creationTimestamp, $destination, $checkoutLanguage, $releaseEnvironment, $billingAgreementStatus, $billingAddress) use ($instance): BillingAgreementDetails {
             $instance->billingAgreementId = $billingAgreementId;
             $instance->creationTimestamp = $creationTimestamp;
@@ -118,7 +118,7 @@ final class BillingAgreementDetails implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->billingAgreementId = isset($data['billingAgreementId']) ? ((string) $data['billingAgreementId']) : null;
         $instance->creationTimestamp = isset($data['creationTimestamp']) ? new DateTime($data['creationTimestamp']) : null;
         $instance->destination = isset($data['destination']) ? Destination::fromValue($data['destination']) : null;

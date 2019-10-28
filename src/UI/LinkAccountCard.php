@@ -14,19 +14,9 @@ final class LinkAccountCard extends Card implements JsonSerializable
         $this->type = self::TYPE;
     }
 
-    public static function builder(): LinkAccountCardBuilder
+    public static function empty(): LinkAccountCard
     {
-        $instance = new self();
-        $constructor = function () use ($instance): LinkAccountCard {
-            return $instance;
-        };
-        return new class($constructor) extends LinkAccountCardBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -35,7 +25,7 @@ final class LinkAccountCard extends Card implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

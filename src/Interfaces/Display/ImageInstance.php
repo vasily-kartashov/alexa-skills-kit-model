@@ -56,7 +56,7 @@ final class ImageInstance implements JsonSerializable
 
     public static function builder(): ImageInstanceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($url, $size, $widthPixels, $heightPixels) use ($instance): ImageInstance {
             $instance->url = $url;
             $instance->size = $size;
@@ -79,7 +79,7 @@ final class ImageInstance implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;
         $instance->size = isset($data['size']) ? ImageSize::fromValue($data['size']) : null;
         $instance->widthPixels = isset($data['widthPixels']) ? ((int) $data['widthPixels']) : null;

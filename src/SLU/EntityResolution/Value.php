@@ -34,7 +34,7 @@ final class Value implements JsonSerializable
 
     public static function builder(): ValueBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $id) use ($instance): Value {
             $instance->name = $name;
             $instance->id = $id;
@@ -55,7 +55,7 @@ final class Value implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->id = isset($data['id']) ? ((string) $data['id']) : null;
         return $instance;

@@ -56,7 +56,7 @@ final class Experience implements JsonSerializable
 
     public static function builder(): ExperienceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($arcMinuteWidth, $arcMinuteHeight, $canRotate, $canResize) use ($instance): Experience {
             $instance->arcMinuteWidth = $arcMinuteWidth;
             $instance->arcMinuteHeight = $arcMinuteHeight;
@@ -79,7 +79,7 @@ final class Experience implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->arcMinuteWidth = $data['arcMinuteWidth'];
         $instance->arcMinuteHeight = $data['arcMinuteHeight'];
         $instance->canRotate = isset($data['canRotate']) ? ((bool) $data['canRotate']) : null;

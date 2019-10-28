@@ -50,7 +50,7 @@ final class SendDirectiveDirective extends Directive implements JsonSerializable
 
     public static function builder(): SendDirectiveDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($header, $payload, $endpoint) use ($instance): SendDirectiveDirective {
             $instance->header = $header;
             $instance->payload = $payload;
@@ -72,7 +72,7 @@ final class SendDirectiveDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->header = isset($data['header']) ? Header::fromValue($data['header']) : null;
         $instance->payload = $data['payload'];

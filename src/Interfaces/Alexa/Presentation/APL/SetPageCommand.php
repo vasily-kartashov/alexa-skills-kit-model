@@ -49,7 +49,7 @@ final class SetPageCommand extends Command implements JsonSerializable
 
     public static function builder(): SetPageCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($componentId, $position, $value) use ($instance): SetPageCommand {
             $instance->componentId = $componentId;
             $instance->position = $position;
@@ -71,7 +71,7 @@ final class SetPageCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
         $instance->position = isset($data['position']) ? Position::fromValue($data['position']) : null;

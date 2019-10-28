@@ -23,7 +23,7 @@ final class ListBody implements JsonSerializable
 
     public static function builder(): ListBodyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($listId) use ($instance): ListBody {
             $instance->listId = $listId;
             return $instance;
@@ -43,7 +43,7 @@ final class ListBody implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->listId = isset($data['listId']) ? ((string) $data['listId']) : null;
         return $instance;
     }

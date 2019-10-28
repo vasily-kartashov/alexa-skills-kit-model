@@ -34,7 +34,7 @@ final class ProviderCredit implements JsonSerializable
 
     public static function builder(): ProviderCreditBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($providerId, $credit) use ($instance): ProviderCredit {
             $instance->providerId = $providerId;
             $instance->credit = $credit;
@@ -55,7 +55,7 @@ final class ProviderCredit implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->providerId = isset($data['providerId']) ? ((string) $data['providerId']) : null;
         $instance->credit = isset($data['credit']) ? Price::fromValue($data['credit']) : null;
         return $instance;

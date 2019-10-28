@@ -45,7 +45,7 @@ final class Recurrence implements JsonSerializable
 
     public static function builder(): RecurrenceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($freq, $byDay, $interval) use ($instance): Recurrence {
             $instance->freq = $freq;
             $instance->byDay = $byDay;
@@ -67,7 +67,7 @@ final class Recurrence implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->freq = isset($data['freq']) ? RecurrenceFreq::fromValue($data['freq']) : null;
         $instance->byDay = [];
         if (isset($data['byDay'])) {

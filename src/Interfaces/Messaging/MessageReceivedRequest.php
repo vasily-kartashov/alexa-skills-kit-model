@@ -28,7 +28,7 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
 
     public static function builder(): MessageReceivedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($message) use ($instance): MessageReceivedRequest {
             $instance->message = $message;
             return $instance;
@@ -48,7 +48,7 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->message = [];
         if (isset($data['message'])) {

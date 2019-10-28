@@ -34,7 +34,7 @@ final class InputHandlerEvent implements JsonSerializable
 
     public static function builder(): InputHandlerEventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $inputEvents) use ($instance): InputHandlerEvent {
             $instance->name = $name;
             $instance->inputEvents = $inputEvents;
@@ -55,7 +55,7 @@ final class InputHandlerEvent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->inputEvents = [];
         if (isset($data['inputEvents'])) {

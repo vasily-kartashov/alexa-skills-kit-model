@@ -27,7 +27,7 @@ final class LaunchRequest extends Request implements JsonSerializable
 
     public static function builder(): LaunchRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($task) use ($instance): LaunchRequest {
             $instance->task = $task;
             return $instance;
@@ -47,7 +47,7 @@ final class LaunchRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->task = isset($data['task']) ? Task::fromValue($data['task']) : null;
         return $instance;

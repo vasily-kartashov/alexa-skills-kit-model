@@ -61,7 +61,7 @@ final class ConnectionsResponse extends Request implements JsonSerializable
 
     public static function builder(): ConnectionsResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status, $name, $payload, $token) use ($instance): ConnectionsResponse {
             $instance->status = $status;
             $instance->name = $name;
@@ -84,7 +84,7 @@ final class ConnectionsResponse extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->status = isset($data['status']) ? ConnectionsStatus::fromValue($data['status']) : null;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;

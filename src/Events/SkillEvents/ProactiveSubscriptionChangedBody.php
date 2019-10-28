@@ -23,7 +23,7 @@ final class ProactiveSubscriptionChangedBody implements JsonSerializable
 
     public static function builder(): ProactiveSubscriptionChangedBodyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($subscriptions) use ($instance): ProactiveSubscriptionChangedBody {
             $instance->subscriptions = $subscriptions;
             return $instance;
@@ -43,7 +43,7 @@ final class ProactiveSubscriptionChangedBody implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->subscriptions = [];
         if (isset($data['subscriptions'])) {
             foreach ($data['subscriptions'] as $item) {

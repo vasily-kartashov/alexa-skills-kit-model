@@ -61,7 +61,7 @@ final class ScheduleTaxiReservationRequest extends BaseRequest implements JsonSe
 
     public static function builder(): ScheduleTaxiReservationRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($pickupTime, $partySize, $pickupLocation, $dropOffLocation) use ($instance): ScheduleTaxiReservationRequest {
             $instance->pickupTime = $pickupTime;
             $instance->partySize = $partySize;
@@ -84,7 +84,7 @@ final class ScheduleTaxiReservationRequest extends BaseRequest implements JsonSe
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->pickupTime = isset($data['pickupTime']) ? ((string) $data['pickupTime']) : null;
         $instance->partySize = isset($data['partySize']) ? ((string) $data['partySize']) : null;

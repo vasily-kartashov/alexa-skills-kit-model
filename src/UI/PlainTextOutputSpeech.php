@@ -27,7 +27,7 @@ final class PlainTextOutputSpeech extends OutputSpeech implements JsonSerializab
 
     public static function builder(): PlainTextOutputSpeechBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($text) use ($instance): PlainTextOutputSpeech {
             $instance->text = $text;
             return $instance;
@@ -47,7 +47,7 @@ final class PlainTextOutputSpeech extends OutputSpeech implements JsonSerializab
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->text = isset($data['text']) ? ((string) $data['text']) : null;
         return $instance;

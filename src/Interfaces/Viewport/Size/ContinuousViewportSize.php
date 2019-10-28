@@ -60,7 +60,7 @@ final class ContinuousViewportSize extends ViewportSize implements JsonSerializa
 
     public static function builder(): ContinuousViewportSizeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($minPixelWidth, $minPixelHeight, $maxPixelWidth, $maxPixelHeight) use ($instance): ContinuousViewportSize {
             $instance->minPixelWidth = $minPixelWidth;
             $instance->minPixelHeight = $minPixelHeight;
@@ -83,7 +83,7 @@ final class ContinuousViewportSize extends ViewportSize implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->minPixelWidth = isset($data['minPixelWidth']) ? ((int) $data['minPixelWidth']) : null;
         $instance->minPixelHeight = isset($data['minPixelHeight']) ? ((int) $data['minPixelHeight']) : null;

@@ -23,7 +23,7 @@ final class Links implements JsonSerializable
 
     public static function builder(): LinksBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($next) use ($instance): Links {
             $instance->next = $next;
             return $instance;
@@ -43,7 +43,7 @@ final class Links implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->next = isset($data['next']) ? ((string) $data['next']) : null;
         return $instance;
     }

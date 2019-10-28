@@ -23,7 +23,7 @@ final class Reprompt implements JsonSerializable
 
     public static function builder(): RepromptBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($outputSpeech) use ($instance): Reprompt {
             $instance->outputSpeech = $outputSpeech;
             return $instance;
@@ -43,7 +43,7 @@ final class Reprompt implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->outputSpeech = isset($data['outputSpeech']) ? OutputSpeech::fromValue($data['outputSpeech']) : null;
         return $instance;
     }

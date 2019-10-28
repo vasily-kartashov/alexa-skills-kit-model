@@ -34,7 +34,7 @@ final class LocationServices implements JsonSerializable
 
     public static function builder(): LocationServicesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status, $access) use ($instance): LocationServices {
             $instance->status = $status;
             $instance->access = $access;
@@ -55,7 +55,7 @@ final class LocationServices implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;
         $instance->access = isset($data['access']) ? Access::fromValue($data['access']) : null;
         return $instance;

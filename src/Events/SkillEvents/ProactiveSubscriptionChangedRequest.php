@@ -28,7 +28,7 @@ final class ProactiveSubscriptionChangedRequest extends Request implements JsonS
 
     public static function builder(): ProactiveSubscriptionChangedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body) use ($instance): ProactiveSubscriptionChangedRequest {
             $instance->body = $body;
             return $instance;
@@ -48,7 +48,7 @@ final class ProactiveSubscriptionChangedRequest extends Request implements JsonS
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? ProactiveSubscriptionChangedBody::fromValue($data['body']) : null;
         return $instance;

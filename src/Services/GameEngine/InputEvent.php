@@ -67,7 +67,7 @@ final class InputEvent implements JsonSerializable
 
     public static function builder(): InputEventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($gadgetId, $timestamp, $action, $color, $feature) use ($instance): InputEvent {
             $instance->gadgetId = $gadgetId;
             $instance->timestamp = $timestamp;
@@ -91,7 +91,7 @@ final class InputEvent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->gadgetId = isset($data['gadgetId']) ? ((string) $data['gadgetId']) : null;
         $instance->timestamp = isset($data['timestamp']) ? ((string) $data['timestamp']) : null;
         $instance->action = isset($data['action']) ? InputEventActionType::fromValue($data['action']) : null;

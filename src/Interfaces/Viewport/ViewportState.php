@@ -133,7 +133,7 @@ final class ViewportState implements JsonSerializable
 
     public static function builder(): ViewportStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($experiences, $mode, $shape, $pixelWidth, $pixelHeight, $dpi, $currentPixelWidth, $currentPixelHeight, $touch, $keyboard, $video) use ($instance): ViewportState {
             $instance->experiences = $experiences;
             $instance->mode = $mode;
@@ -163,7 +163,7 @@ final class ViewportState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->experiences = [];
         if (isset($data['experiences'])) {
             foreach ($data['experiences'] as $item) {

@@ -23,7 +23,7 @@ final class ValueWrapper implements JsonSerializable
 
     public static function builder(): ValueWrapperBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($value) use ($instance): ValueWrapper {
             $instance->value = $value;
             return $instance;
@@ -43,7 +43,7 @@ final class ValueWrapper implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->value = isset($data['value']) ? Value::fromValue($data['value']) : null;
         return $instance;
     }

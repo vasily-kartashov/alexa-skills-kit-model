@@ -23,7 +23,7 @@ final class Permission implements JsonSerializable
 
     public static function builder(): PermissionBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($scope) use ($instance): Permission {
             $instance->scope = $scope;
             return $instance;
@@ -43,7 +43,7 @@ final class Permission implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->scope = isset($data['scope']) ? ((string) $data['scope']) : null;
         return $instance;
     }

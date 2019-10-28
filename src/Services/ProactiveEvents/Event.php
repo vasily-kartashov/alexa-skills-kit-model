@@ -34,7 +34,7 @@ final class Event implements JsonSerializable
 
     public static function builder(): EventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $payload) use ($instance): Event {
             $instance->name = $name;
             $instance->payload = $payload;
@@ -55,7 +55,7 @@ final class Event implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->payload = $data['payload'];
         return $instance;

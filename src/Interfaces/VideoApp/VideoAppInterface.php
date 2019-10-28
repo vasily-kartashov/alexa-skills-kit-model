@@ -10,19 +10,9 @@ final class VideoAppInterface implements JsonSerializable
     {
     }
 
-    public static function builder(): VideoAppInterfaceBuilder
+    public static function empty(): VideoAppInterface
     {
-        $instance = new self();
-        $constructor = function () use ($instance): VideoAppInterface {
-            return $instance;
-        };
-        return new class($constructor) extends VideoAppInterfaceBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -31,7 +21,7 @@ final class VideoAppInterface implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         return $instance;
     }
 

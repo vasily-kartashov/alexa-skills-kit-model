@@ -67,7 +67,7 @@ final class AlexaListMetadata implements JsonSerializable
 
     public static function builder(): AlexaListMetadataBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($listId, $name, $state, $version, $statusMap) use ($instance): AlexaListMetadata {
             $instance->listId = $listId;
             $instance->name = $name;
@@ -91,7 +91,7 @@ final class AlexaListMetadata implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->listId = isset($data['listId']) ? ((string) $data['listId']) : null;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->state = isset($data['state']) ? ListState::fromValue($data['state']) : null;

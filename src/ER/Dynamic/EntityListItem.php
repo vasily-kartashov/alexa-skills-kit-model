@@ -34,7 +34,7 @@ final class EntityListItem implements JsonSerializable
 
     public static function builder(): EntityListItemBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $values) use ($instance): EntityListItem {
             $instance->name = $name;
             $instance->values = $values;
@@ -55,7 +55,7 @@ final class EntityListItem implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->values = [];
         if (isset($data['values'])) {

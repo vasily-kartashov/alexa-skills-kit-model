@@ -23,7 +23,7 @@ final class ViewportConfiguration implements JsonSerializable
 
     public static function builder(): ViewportConfigurationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($current) use ($instance): ViewportConfiguration {
             $instance->current = $current;
             return $instance;
@@ -43,7 +43,7 @@ final class ViewportConfiguration implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->current = isset($data['current']) ? CurrentConfiguration::fromValue($data['current']) : null;
         return $instance;
     }

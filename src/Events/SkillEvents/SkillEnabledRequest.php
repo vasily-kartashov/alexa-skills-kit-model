@@ -40,7 +40,7 @@ final class SkillEnabledRequest extends Request implements JsonSerializable
 
     public static function builder(): SkillEnabledRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($eventCreationTime, $eventPublishingTime) use ($instance): SkillEnabledRequest {
             $instance->eventCreationTime = $eventCreationTime;
             $instance->eventPublishingTime = $eventPublishingTime;
@@ -61,7 +61,7 @@ final class SkillEnabledRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->eventCreationTime = isset($data['eventCreationTime']) ? new DateTime($data['eventCreationTime']) : null;
         $instance->eventPublishingTime = isset($data['eventPublishingTime']) ? new DateTime($data['eventPublishingTime']) : null;

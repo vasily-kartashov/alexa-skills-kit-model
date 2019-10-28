@@ -45,7 +45,7 @@ final class InterSegment implements JsonSerializable
 
     public static function builder(): InterSegmentBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($x, $y, $characters) use ($instance): InterSegment {
             $instance->x = $x;
             $instance->y = $y;
@@ -67,7 +67,7 @@ final class InterSegment implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->x = isset($data['x']) ? ((int) $data['x']) : null;
         $instance->y = isset($data['y']) ? ((int) $data['y']) : null;
         $instance->characters = isset($data['characters']) ? ((string) $data['characters']) : null;

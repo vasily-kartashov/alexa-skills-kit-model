@@ -34,7 +34,7 @@ final class CanFulfillSlot implements JsonSerializable
 
     public static function builder(): CanFulfillSlotBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($canUnderstand, $canFulfill) use ($instance): CanFulfillSlot {
             $instance->canUnderstand = $canUnderstand;
             $instance->canFulfill = $canFulfill;
@@ -55,7 +55,7 @@ final class CanFulfillSlot implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->canUnderstand = isset($data['canUnderstand']) ? CanUnderstandSlotValues::fromValue($data['canUnderstand']) : null;
         $instance->canFulfill = isset($data['canFulfill']) ? CanFulfillSlotValues::fromValue($data['canFulfill']) : null;
         return $instance;

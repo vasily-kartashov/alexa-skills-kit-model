@@ -106,7 +106,7 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
 
     public static function builder(): SetupAmazonPayRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($sellerId, $countryOfEstablishment, $ledgerCurrency, $checkoutLanguage, $billingAgreementAttributes, $needAmazonShippingAddress, $sandboxMode, $sandboxCustomerEmailId) use ($instance): SetupAmazonPayRequest {
             $instance->sellerId = $sellerId;
             $instance->countryOfEstablishment = $countryOfEstablishment;
@@ -133,7 +133,7 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->sellerId = isset($data['sellerId']) ? ((string) $data['sellerId']) : null;
         $instance->countryOfEstablishment = isset($data['countryOfEstablishment']) ? ((string) $data['countryOfEstablishment']) : null;

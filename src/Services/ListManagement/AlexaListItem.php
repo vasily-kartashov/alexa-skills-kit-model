@@ -89,7 +89,7 @@ final class AlexaListItem implements JsonSerializable
 
     public static function builder(): AlexaListItemBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($id, $version, $value, $status, $createdTime, $updatedTime, $href) use ($instance): AlexaListItem {
             $instance->id = $id;
             $instance->version = $version;
@@ -115,7 +115,7 @@ final class AlexaListItem implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->id = isset($data['id']) ? ((string) $data['id']) : null;
         $instance->version = isset($data['version']) ? ((int) $data['version']) : null;
         $instance->value = isset($data['value']) ? ((string) $data['value']) : null;

@@ -56,7 +56,7 @@ final class Pattern implements JsonSerializable
 
     public static function builder(): PatternBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($gadgetIds, $colors, $action, $repeat) use ($instance): Pattern {
             $instance->gadgetIds = $gadgetIds;
             $instance->colors = $colors;
@@ -79,7 +79,7 @@ final class Pattern implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->gadgetIds = [];
         if (isset($data['gadgetIds'])) {
             foreach ($data['gadgetIds'] as $item) {

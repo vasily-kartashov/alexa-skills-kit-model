@@ -34,7 +34,7 @@ final class Metadata implements JsonSerializable
 
     public static function builder(): MetadataBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($title, $subtitle) use ($instance): Metadata {
             $instance->title = $title;
             $instance->subtitle = $subtitle;
@@ -55,7 +55,7 @@ final class Metadata implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->subtitle = isset($data['subtitle']) ? ((string) $data['subtitle']) : null;
         return $instance;

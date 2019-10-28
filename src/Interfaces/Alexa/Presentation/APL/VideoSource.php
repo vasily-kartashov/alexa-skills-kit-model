@@ -67,7 +67,7 @@ final class VideoSource implements JsonSerializable
 
     public static function builder(): VideoSourceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($description, $duration, $url, $repeatCount, $offset) use ($instance): VideoSource {
             $instance->description = $description;
             $instance->duration = $duration;
@@ -91,7 +91,7 @@ final class VideoSource implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->description = isset($data['description']) ? ((string) $data['description']) : null;
         $instance->duration = isset($data['duration']) ? ((string) $data['duration']) : null;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;

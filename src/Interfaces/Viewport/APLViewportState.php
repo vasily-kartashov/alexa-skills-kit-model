@@ -72,7 +72,7 @@ final class APLViewportState extends TypedViewportState implements JsonSerializa
 
     public static function builder(): APLViewportStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($shape, $dpi, $presentationType, $canRotate, $configuration) use ($instance): APLViewportState {
             $instance->shape = $shape;
             $instance->dpi = $dpi;
@@ -96,7 +96,7 @@ final class APLViewportState extends TypedViewportState implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->shape = isset($data['shape']) ? Shape::fromValue($data['shape']) : null;
         $instance->dpi = $data['dpi'];

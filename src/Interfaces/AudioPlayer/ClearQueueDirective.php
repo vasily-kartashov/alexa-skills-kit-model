@@ -28,7 +28,7 @@ final class ClearQueueDirective extends Directive implements JsonSerializable
 
     public static function builder(): ClearQueueDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($clearBehavior) use ($instance): ClearQueueDirective {
             $instance->clearBehavior = $clearBehavior;
             return $instance;
@@ -48,7 +48,7 @@ final class ClearQueueDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->clearBehavior = isset($data['clearBehavior']) ? ClearBehavior::fromValue($data['clearBehavior']) : null;
         return $instance;

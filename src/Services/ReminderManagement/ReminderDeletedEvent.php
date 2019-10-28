@@ -23,7 +23,7 @@ final class ReminderDeletedEvent implements JsonSerializable
 
     public static function builder(): ReminderDeletedEventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($alertTokens) use ($instance): ReminderDeletedEvent {
             $instance->alertTokens = $alertTokens;
             return $instance;
@@ -43,7 +43,7 @@ final class ReminderDeletedEvent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->alertTokens = [];
         if (isset($data['alertTokens'])) {
             foreach ($data['alertTokens'] as $item) {

@@ -51,7 +51,7 @@ final class ListUpdatedEventRequest extends Request implements JsonSerializable
 
     public static function builder(): ListUpdatedEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body, $eventCreationTime, $eventPublishingTime) use ($instance): ListUpdatedEventRequest {
             $instance->body = $body;
             $instance->eventCreationTime = $eventCreationTime;
@@ -73,7 +73,7 @@ final class ListUpdatedEventRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? ListBody::fromValue($data['body']) : null;
         $instance->eventCreationTime = isset($data['eventCreationTime']) ? new DateTime($data['eventCreationTime']) : null;

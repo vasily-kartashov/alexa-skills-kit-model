@@ -50,7 +50,7 @@ final class PlaybackFailedRequest extends Request implements JsonSerializable
 
     public static function builder(): PlaybackFailedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($currentPlaybackState, $error, $token) use ($instance): PlaybackFailedRequest {
             $instance->currentPlaybackState = $currentPlaybackState;
             $instance->error = $error;
@@ -72,7 +72,7 @@ final class PlaybackFailedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->currentPlaybackState = isset($data['currentPlaybackState']) ? CurrentPlaybackState::fromValue($data['currentPlaybackState']) : null;
         $instance->error = isset($data['error']) ? Error::fromValue($data['error']) : null;

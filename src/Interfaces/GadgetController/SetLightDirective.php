@@ -51,7 +51,7 @@ final class SetLightDirective extends Directive implements JsonSerializable
 
     public static function builder(): SetLightDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($version, $targetGadgets, $parameters) use ($instance): SetLightDirective {
             $instance->version = $version;
             $instance->targetGadgets = $targetGadgets;
@@ -73,7 +73,7 @@ final class SetLightDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->version = isset($data['version']) ? ((int) $data['version']) : null;
         $instance->targetGadgets = [];

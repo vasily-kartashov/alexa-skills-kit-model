@@ -23,7 +23,7 @@ final class Header implements JsonSerializable
 
     public static function builder(): HeaderBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($requestId) use ($instance): Header {
             $instance->requestId = $requestId;
             return $instance;
@@ -43,7 +43,7 @@ final class Header implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->requestId = isset($data['requestId']) ? ((string) $data['requestId']) : null;
         return $instance;
     }

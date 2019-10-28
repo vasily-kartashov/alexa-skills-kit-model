@@ -34,7 +34,7 @@ final class Device implements JsonSerializable
 
     public static function builder(): DeviceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($deviceId, $supportedInterfaces) use ($instance): Device {
             $instance->deviceId = $deviceId;
             $instance->supportedInterfaces = $supportedInterfaces;
@@ -55,7 +55,7 @@ final class Device implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->deviceId = isset($data['deviceId']) ? ((string) $data['deviceId']) : null;
         $instance->supportedInterfaces = isset($data['supportedInterfaces']) ? SupportedInterfaces::fromValue($data['supportedInterfaces']) : null;
         return $instance;

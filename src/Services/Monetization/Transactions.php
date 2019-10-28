@@ -57,7 +57,7 @@ final class Transactions implements JsonSerializable
 
     public static function builder(): TransactionsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status, $productId, $createdTime, $lastModifiedTime) use ($instance): Transactions {
             $instance->status = $status;
             $instance->productId = $productId;
@@ -80,7 +80,7 @@ final class Transactions implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;
         $instance->productId = isset($data['productId']) ? ((string) $data['productId']) : null;
         $instance->createdTime = isset($data['createdTime']) ? new DateTime($data['createdTime']) : null;

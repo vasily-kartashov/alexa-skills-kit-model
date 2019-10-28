@@ -45,7 +45,7 @@ final class CurrentPlaybackState implements JsonSerializable
 
     public static function builder(): CurrentPlaybackStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($offsetInMilliseconds, $playerActivity, $token) use ($instance): CurrentPlaybackState {
             $instance->offsetInMilliseconds = $offsetInMilliseconds;
             $instance->playerActivity = $playerActivity;
@@ -67,7 +67,7 @@ final class CurrentPlaybackState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->offsetInMilliseconds = isset($data['offsetInMilliseconds']) ? ((int) $data['offsetInMilliseconds']) : null;
         $instance->playerActivity = isset($data['playerActivity']) ? PlayerActivity::fromValue($data['playerActivity']) : null;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;

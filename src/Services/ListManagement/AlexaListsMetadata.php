@@ -23,7 +23,7 @@ final class AlexaListsMetadata implements JsonSerializable
 
     public static function builder(): AlexaListsMetadataBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($lists) use ($instance): AlexaListsMetadata {
             $instance->lists = $lists;
             return $instance;
@@ -43,7 +43,7 @@ final class AlexaListsMetadata implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->lists = [];
         if (isset($data['lists'])) {
             foreach ($data['lists'] as $item) {

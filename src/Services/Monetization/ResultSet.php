@@ -23,7 +23,7 @@ final class ResultSet implements JsonSerializable
 
     public static function builder(): ResultSetBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($nextToken) use ($instance): ResultSet {
             $instance->nextToken = $nextToken;
             return $instance;
@@ -43,7 +43,7 @@ final class ResultSet implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->nextToken = isset($data['nextToken']) ? ((string) $data['nextToken']) : null;
         return $instance;
     }

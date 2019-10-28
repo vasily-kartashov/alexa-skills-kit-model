@@ -38,7 +38,7 @@ final class AnimatedTransformProperty extends AnimatedProperty implements JsonSe
 
     public static function builder(): AnimatedTransformPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($from, $to) use ($instance): AnimatedTransformProperty {
             $instance->from = $from;
             $instance->to = $to;

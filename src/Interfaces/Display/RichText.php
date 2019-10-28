@@ -27,7 +27,7 @@ final class RichText extends TextField implements JsonSerializable
 
     public static function builder(): RichTextBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($text) use ($instance): RichText {
             $instance->text = $text;
             return $instance;
@@ -47,7 +47,7 @@ final class RichText extends TextField implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->text = isset($data['text']) ? ((string) $data['text']) : null;
         return $instance;

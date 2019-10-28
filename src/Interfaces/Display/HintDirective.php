@@ -28,7 +28,7 @@ final class HintDirective extends Directive implements JsonSerializable
 
     public static function builder(): HintDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($hint) use ($instance): HintDirective {
             $instance->hint = $hint;
             return $instance;
@@ -48,7 +48,7 @@ final class HintDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->hint = isset($data['hint']) ? Hint::fromValue($data['hint']) : null;
         return $instance;

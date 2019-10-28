@@ -49,7 +49,7 @@ final class StandardCard extends Card implements JsonSerializable
 
     public static function builder(): StandardCardBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($title, $text, $image) use ($instance): StandardCard {
             $instance->title = $title;
             $instance->text = $text;
@@ -71,7 +71,7 @@ final class StandardCard extends Card implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->text = isset($data['text']) ? ((string) $data['text']) : null;

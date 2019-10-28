@@ -39,7 +39,7 @@ final class ConnectionsRequest extends Request implements JsonSerializable
 
     public static function builder(): ConnectionsRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $payload) use ($instance): ConnectionsRequest {
             $instance->name = $name;
             $instance->payload = $payload;
@@ -60,7 +60,7 @@ final class ConnectionsRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->payload = [];

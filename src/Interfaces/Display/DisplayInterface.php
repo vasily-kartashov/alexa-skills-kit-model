@@ -34,7 +34,7 @@ final class DisplayInterface implements JsonSerializable
 
     public static function builder(): DisplayInterfaceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($templateVersion, $markupVersion) use ($instance): DisplayInterface {
             $instance->templateVersion = $templateVersion;
             $instance->markupVersion = $markupVersion;
@@ -55,7 +55,7 @@ final class DisplayInterface implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->templateVersion = isset($data['templateVersion']) ? ((string) $data['templateVersion']) : null;
         $instance->markupVersion = isset($data['markupVersion']) ? ((string) $data['markupVersion']) : null;
         return $instance;

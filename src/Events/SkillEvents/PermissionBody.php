@@ -23,7 +23,7 @@ final class PermissionBody implements JsonSerializable
 
     public static function builder(): PermissionBodyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($acceptedPermissions) use ($instance): PermissionBody {
             $instance->acceptedPermissions = $acceptedPermissions;
             return $instance;
@@ -43,7 +43,7 @@ final class PermissionBody implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->acceptedPermissions = [];
         if (isset($data['acceptedPermissions'])) {
             foreach ($data['acceptedPermissions'] as $item) {

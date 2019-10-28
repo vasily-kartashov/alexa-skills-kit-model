@@ -34,7 +34,7 @@ final class Permissions implements JsonSerializable
 
     public static function builder(): PermissionsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($consentToken, $scopes) use ($instance): Permissions {
             $instance->consentToken = $consentToken;
             $instance->scopes = $scopes;
@@ -55,7 +55,7 @@ final class Permissions implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->consentToken = isset($data['consentToken']) ? ((string) $data['consentToken']) : null;
         $instance->scopes = [];
         if (isset($data['scopes'])) {

@@ -34,7 +34,7 @@ final class Error implements JsonSerializable
 
     public static function builder(): ErrorBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($message, $type) use ($instance): Error {
             $instance->message = $message;
             $instance->type = $type;
@@ -55,7 +55,7 @@ final class Error implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->message = isset($data['message']) ? ((string) $data['message']) : null;
         $instance->type = isset($data['type']) ? ErrorType::fromValue($data['type']) : null;
         return $instance;

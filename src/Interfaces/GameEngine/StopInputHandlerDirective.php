@@ -28,7 +28,7 @@ final class StopInputHandlerDirective extends Directive implements JsonSerializa
 
     public static function builder(): StopInputHandlerDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($originatingRequestId) use ($instance): StopInputHandlerDirective {
             $instance->originatingRequestId = $originatingRequestId;
             return $instance;
@@ -48,7 +48,7 @@ final class StopInputHandlerDirective extends Directive implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->originatingRequestId = isset($data['originatingRequestId']) ? ((string) $data['originatingRequestId']) : null;
         return $instance;

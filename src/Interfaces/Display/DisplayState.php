@@ -23,7 +23,7 @@ final class DisplayState implements JsonSerializable
 
     public static function builder(): DisplayStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token) use ($instance): DisplayState {
             $instance->token = $token;
             return $instance;
@@ -43,7 +43,7 @@ final class DisplayState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         return $instance;
     }

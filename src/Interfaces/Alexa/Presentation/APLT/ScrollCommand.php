@@ -38,7 +38,7 @@ final class ScrollCommand extends Command implements JsonSerializable
 
     public static function builder(): ScrollCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($distance, $componentId) use ($instance): ScrollCommand {
             $instance->distance = $distance;
             $instance->componentId = $componentId;
@@ -59,7 +59,7 @@ final class ScrollCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->distance = isset($data['distance']) ? ((string) $data['distance']) : null;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;

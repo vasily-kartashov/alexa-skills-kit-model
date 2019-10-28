@@ -45,7 +45,7 @@ final class AnimationStep implements JsonSerializable
 
     public static function builder(): AnimationStepBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($durationMs, $color, $blend) use ($instance): AnimationStep {
             $instance->durationMs = $durationMs;
             $instance->color = $color;
@@ -67,7 +67,7 @@ final class AnimationStep implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->durationMs = isset($data['durationMs']) ? ((int) $data['durationMs']) : null;
         $instance->color = isset($data['color']) ? ((string) $data['color']) : null;
         $instance->blend = isset($data['blend']) ? ((bool) $data['blend']) : null;

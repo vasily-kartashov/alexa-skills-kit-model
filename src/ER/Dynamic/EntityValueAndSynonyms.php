@@ -34,7 +34,7 @@ final class EntityValueAndSynonyms implements JsonSerializable
 
     public static function builder(): EntityValueAndSynonymsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($value, $synonyms) use ($instance): EntityValueAndSynonyms {
             $instance->value = $value;
             $instance->synonyms = $synonyms;
@@ -55,7 +55,7 @@ final class EntityValueAndSynonyms implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->value = isset($data['value']) ? ((string) $data['value']) : null;
         $instance->synonyms = [];
         if (isset($data['synonyms'])) {

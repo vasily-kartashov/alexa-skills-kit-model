@@ -38,7 +38,7 @@ final class AnimatedOpacityProperty extends AnimatedProperty implements JsonSeri
 
     public static function builder(): AnimatedOpacityPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($from, $to) use ($instance): AnimatedOpacityProperty {
             $instance->from = $from;
             $instance->to = $to;
@@ -59,7 +59,7 @@ final class AnimatedOpacityProperty extends AnimatedProperty implements JsonSeri
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->property = self::PROPERTY;
         $instance->from = isset($data['from']) ? ((string) $data['from']) : null;
         $instance->to = isset($data['to']) ? ((string) $data['to']) : null;

@@ -61,7 +61,7 @@ final class AplUserEvent extends Request implements JsonSerializable
 
     public static function builder(): AplUserEventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $arguments, $source, $components) use ($instance): AplUserEvent {
             $instance->token = $token;
             $instance->arguments = $arguments;
@@ -84,7 +84,7 @@ final class AplUserEvent extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->arguments = [];

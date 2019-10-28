@@ -71,7 +71,7 @@ final class PatternRecognizer extends Recognizer implements JsonSerializable
 
     public static function builder(): PatternRecognizerBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($anchor, $fuzzy, $gadgetIds, $actions, $pattern) use ($instance): PatternRecognizer {
             $instance->anchor = $anchor;
             $instance->fuzzy = $fuzzy;
@@ -95,7 +95,7 @@ final class PatternRecognizer extends Recognizer implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->anchor = isset($data['anchor']) ? PatternRecognizerAnchorType::fromValue($data['anchor']) : null;
         $instance->fuzzy = isset($data['fuzzy']) ? ((bool) $data['fuzzy']) : null;

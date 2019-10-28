@@ -28,7 +28,7 @@ final class StopEventHandlerDirective extends Directive implements JsonSerializa
 
     public static function builder(): StopEventHandlerDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token) use ($instance): StopEventHandlerDirective {
             $instance->token = $token;
             return $instance;
@@ -48,7 +48,7 @@ final class StopEventHandlerDirective extends Directive implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         return $instance;

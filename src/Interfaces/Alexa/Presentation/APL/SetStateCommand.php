@@ -49,7 +49,7 @@ final class SetStateCommand extends Command implements JsonSerializable
 
     public static function builder(): SetStateCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($componentId, $state, $value) use ($instance): SetStateCommand {
             $instance->componentId = $componentId;
             $instance->state = $state;
@@ -71,7 +71,7 @@ final class SetStateCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
         $instance->state = isset($data['state']) ? ComponentState::fromValue($data['state']) : null;

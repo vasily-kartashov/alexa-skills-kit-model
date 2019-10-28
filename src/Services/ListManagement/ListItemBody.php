@@ -34,7 +34,7 @@ final class ListItemBody implements JsonSerializable
 
     public static function builder(): ListItemBodyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($listId, $listItemIds) use ($instance): ListItemBody {
             $instance->listId = $listId;
             $instance->listItemIds = $listItemIds;
@@ -55,7 +55,7 @@ final class ListItemBody implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->listId = isset($data['listId']) ? ((string) $data['listId']) : null;
         $instance->listItemIds = [];
         if (isset($data['listItemIds'])) {

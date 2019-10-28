@@ -48,7 +48,7 @@ final class CurrentConfiguration implements JsonSerializable
 
     public static function builder(): CurrentConfigurationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($mode, $video, $size) use ($instance): CurrentConfiguration {
             $instance->mode = $mode;
             $instance->video = $video;
@@ -70,7 +70,7 @@ final class CurrentConfiguration implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->mode = isset($data['mode']) ? Mode::fromValue($data['mode']) : null;
         $instance->video = isset($data['video']) ? ViewportVideo::fromValue($data['video']) : null;
         $instance->size = isset($data['size']) ? ViewportSize::fromValue($data['size']) : null;

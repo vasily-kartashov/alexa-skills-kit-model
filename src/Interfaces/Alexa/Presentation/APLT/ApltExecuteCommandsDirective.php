@@ -39,7 +39,7 @@ final class ApltExecuteCommandsDirective extends Directive implements JsonSerial
 
     public static function builder(): ApltExecuteCommandsDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($commands, $token) use ($instance): ApltExecuteCommandsDirective {
             $instance->commands = $commands;
             $instance->token = $token;
@@ -60,7 +60,7 @@ final class ApltExecuteCommandsDirective extends Directive implements JsonSerial
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->commands = [];
         if (isset($data['commands'])) {

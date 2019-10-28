@@ -23,7 +23,7 @@ final class ProactiveSubscriptionEvent implements JsonSerializable
 
     public static function builder(): ProactiveSubscriptionEventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($eventName) use ($instance): ProactiveSubscriptionEvent {
             $instance->eventName = $eventName;
             return $instance;
@@ -43,7 +43,7 @@ final class ProactiveSubscriptionEvent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->eventName = isset($data['eventName']) ? ((string) $data['eventName']) : null;
         return $instance;
     }

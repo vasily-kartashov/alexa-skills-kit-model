@@ -71,7 +71,7 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
 
     public static function builder(): PostalAddressBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($streetAddress, $locality, $region, $postalCode, $country) use ($instance): PostalAddress {
             $instance->streetAddress = $streetAddress;
             $instance->locality = $locality;
@@ -95,7 +95,7 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->streetAddress = isset($data['streetAddress']) ? ((string) $data['streetAddress']) : null;
         $instance->locality = isset($data['locality']) ? ((string) $data['locality']) : null;

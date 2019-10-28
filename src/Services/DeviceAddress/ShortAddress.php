@@ -34,7 +34,7 @@ final class ShortAddress implements JsonSerializable
 
     public static function builder(): ShortAddressBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($countryCode, $postalCode) use ($instance): ShortAddress {
             $instance->countryCode = $countryCode;
             $instance->postalCode = $postalCode;
@@ -55,7 +55,7 @@ final class ShortAddress implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->countryCode = isset($data['countryCode']) ? ((string) $data['countryCode']) : null;
         $instance->postalCode = isset($data['postalCode']) ? ((string) $data['postalCode']) : null;
         return $instance;

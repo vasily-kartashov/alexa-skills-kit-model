@@ -49,7 +49,7 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
 
     public static function builder(): SellerBillingAgreementAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($sellerBillingAgreementId, $storeName, $customInformation) use ($instance): SellerBillingAgreementAttributes {
             $instance->sellerBillingAgreementId = $sellerBillingAgreementId;
             $instance->storeName = $storeName;
@@ -71,7 +71,7 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->sellerBillingAgreementId = isset($data['sellerBillingAgreementId']) ? ((string) $data['sellerBillingAgreementId']) : null;
         $instance->storeName = isset($data['storeName']) ? ((string) $data['storeName']) : null;

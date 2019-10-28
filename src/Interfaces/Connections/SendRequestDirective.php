@@ -50,7 +50,7 @@ final class SendRequestDirective extends Directive implements JsonSerializable
 
     public static function builder(): SendRequestDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $payload, $token) use ($instance): SendRequestDirective {
             $instance->name = $name;
             $instance->payload = $payload;
@@ -72,7 +72,7 @@ final class SendRequestDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->payload = [];

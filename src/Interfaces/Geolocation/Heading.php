@@ -34,7 +34,7 @@ final class Heading implements JsonSerializable
 
     public static function builder(): HeadingBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($directionInDegrees, $accuracyInDegrees) use ($instance): Heading {
             $instance->directionInDegrees = $directionInDegrees;
             $instance->accuracyInDegrees = $accuracyInDegrees;
@@ -55,7 +55,7 @@ final class Heading implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->directionInDegrees = isset($data['directionInDegrees']) ? ((float) $data['directionInDegrees']) : null;
         $instance->accuracyInDegrees = isset($data['accuracyInDegrees']) ? ((float) $data['accuracyInDegrees']) : null;
         return $instance;

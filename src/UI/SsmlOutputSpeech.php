@@ -27,7 +27,7 @@ final class SsmlOutputSpeech extends OutputSpeech implements JsonSerializable
 
     public static function builder(): SsmlOutputSpeechBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($ssml) use ($instance): SsmlOutputSpeech {
             $instance->ssml = $ssml;
             return $instance;
@@ -47,7 +47,7 @@ final class SsmlOutputSpeech extends OutputSpeech implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->ssml = isset($data['ssml']) ? ((string) $data['ssml']) : null;
         return $instance;

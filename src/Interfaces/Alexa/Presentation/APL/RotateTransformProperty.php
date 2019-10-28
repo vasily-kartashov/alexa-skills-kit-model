@@ -23,7 +23,7 @@ final class RotateTransformProperty extends TransformProperty implements JsonSer
 
     public static function builder(): RotateTransformPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($rotate) use ($instance): RotateTransformProperty {
             $instance->rotate = $rotate;
             return $instance;
@@ -43,7 +43,7 @@ final class RotateTransformProperty extends TransformProperty implements JsonSer
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->rotate = isset($data['rotate']) ? ((string) $data['rotate']) : null;
         return $instance;
     }

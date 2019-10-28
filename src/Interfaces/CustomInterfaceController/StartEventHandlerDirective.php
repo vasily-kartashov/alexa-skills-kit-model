@@ -50,7 +50,7 @@ final class StartEventHandlerDirective extends Directive implements JsonSerializ
 
     public static function builder(): StartEventHandlerDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $eventFilter, $expiration) use ($instance): StartEventHandlerDirective {
             $instance->token = $token;
             $instance->eventFilter = $eventFilter;
@@ -72,7 +72,7 @@ final class StartEventHandlerDirective extends Directive implements JsonSerializ
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->eventFilter = isset($data['eventFilter']) ? EventFilter::fromValue($data['eventFilter']) : null;

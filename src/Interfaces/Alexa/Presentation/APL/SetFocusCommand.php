@@ -27,7 +27,7 @@ final class SetFocusCommand extends Command implements JsonSerializable
 
     public static function builder(): SetFocusCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($componentId) use ($instance): SetFocusCommand {
             $instance->componentId = $componentId;
             return $instance;
@@ -47,7 +47,7 @@ final class SetFocusCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
         return $instance;

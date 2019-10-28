@@ -49,7 +49,7 @@ final class AutoPageCommand extends Command implements JsonSerializable
 
     public static function builder(): AutoPageCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($componentId, $count, $duration) use ($instance): AutoPageCommand {
             $instance->componentId = $componentId;
             $instance->count = $count;
@@ -71,7 +71,7 @@ final class AutoPageCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
         $instance->count = isset($data['count']) ? ((string) $data['count']) : null;

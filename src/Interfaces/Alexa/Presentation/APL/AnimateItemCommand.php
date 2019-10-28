@@ -82,7 +82,7 @@ final class AnimateItemCommand extends Command implements JsonSerializable
 
     public static function builder(): AnimateItemCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($componentId, $duration, $easing, $repeatCount, $repeatMode, $value) use ($instance): AnimateItemCommand {
             $instance->componentId = $componentId;
             $instance->duration = $duration;
@@ -107,7 +107,7 @@ final class AnimateItemCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;
         $instance->duration = isset($data['duration']) ? ((string) $data['duration']) : null;

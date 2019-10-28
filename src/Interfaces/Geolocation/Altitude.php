@@ -34,7 +34,7 @@ final class Altitude implements JsonSerializable
 
     public static function builder(): AltitudeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($altitudeInMeters, $accuracyInMeters) use ($instance): Altitude {
             $instance->altitudeInMeters = $altitudeInMeters;
             $instance->accuracyInMeters = $accuracyInMeters;
@@ -55,7 +55,7 @@ final class Altitude implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->altitudeInMeters = isset($data['altitudeInMeters']) ? ((float) $data['altitudeInMeters']) : null;
         $instance->accuracyInMeters = isset($data['accuracyInMeters']) ? ((float) $data['accuracyInMeters']) : null;
         return $instance;

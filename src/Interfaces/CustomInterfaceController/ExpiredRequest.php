@@ -39,7 +39,7 @@ final class ExpiredRequest extends Request implements JsonSerializable
 
     public static function builder(): ExpiredRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $expirationPayload) use ($instance): ExpiredRequest {
             $instance->token = $token;
             $instance->expirationPayload = $expirationPayload;
@@ -60,7 +60,7 @@ final class ExpiredRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->expirationPayload = $data['expirationPayload'];

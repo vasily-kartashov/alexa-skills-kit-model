@@ -39,7 +39,7 @@ final class PlaybackNearlyFinishedRequest extends Request implements JsonSeriali
 
     public static function builder(): PlaybackNearlyFinishedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($offsetInMilliseconds, $token) use ($instance): PlaybackNearlyFinishedRequest {
             $instance->offsetInMilliseconds = $offsetInMilliseconds;
             $instance->token = $token;
@@ -60,7 +60,7 @@ final class PlaybackNearlyFinishedRequest extends Request implements JsonSeriali
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->offsetInMilliseconds = isset($data['offsetInMilliseconds']) ? ((int) $data['offsetInMilliseconds']) : null;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;

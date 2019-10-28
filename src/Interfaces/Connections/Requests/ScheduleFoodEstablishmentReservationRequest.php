@@ -50,7 +50,7 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
 
     public static function builder(): ScheduleFoodEstablishmentReservationRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($startTime, $partySize, $restaurant) use ($instance): ScheduleFoodEstablishmentReservationRequest {
             $instance->startTime = $startTime;
             $instance->partySize = $partySize;
@@ -72,7 +72,7 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->startTime = isset($data['startTime']) ? ((string) $data['startTime']) : null;
         $instance->partySize = isset($data['partySize']) ? ((string) $data['partySize']) : null;

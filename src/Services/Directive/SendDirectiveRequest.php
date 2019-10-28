@@ -34,7 +34,7 @@ final class SendDirectiveRequest implements JsonSerializable
 
     public static function builder(): SendDirectiveRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($header, $directive) use ($instance): SendDirectiveRequest {
             $instance->header = $header;
             $instance->directive = $directive;
@@ -55,7 +55,7 @@ final class SendDirectiveRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->header = isset($data['header']) ? Header::fromValue($data['header']) : null;
         $instance->directive = isset($data['directive']) ? Directive::fromValue($data['directive']) : null;
         return $instance;

@@ -49,7 +49,7 @@ final class ListTemplate2 extends Template implements JsonSerializable
 
     public static function builder(): ListTemplate2Builder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($backgroundImage, $title, $listItems) use ($instance): ListTemplate2 {
             $instance->backgroundImage = $backgroundImage;
             $instance->title = $title;
@@ -71,7 +71,7 @@ final class ListTemplate2 extends Template implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->backgroundImage = isset($data['backgroundImage']) ? Image::fromValue($data['backgroundImage']) : null;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;

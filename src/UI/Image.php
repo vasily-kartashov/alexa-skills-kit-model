@@ -34,7 +34,7 @@ final class Image implements JsonSerializable
 
     public static function builder(): ImageBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($smallImageUrl, $largeImageUrl) use ($instance): Image {
             $instance->smallImageUrl = $smallImageUrl;
             $instance->largeImageUrl = $largeImageUrl;
@@ -55,7 +55,7 @@ final class Image implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->smallImageUrl = isset($data['smallImageUrl']) ? ((string) $data['smallImageUrl']) : null;
         $instance->largeImageUrl = isset($data['largeImageUrl']) ? ((string) $data['largeImageUrl']) : null;
         return $instance;

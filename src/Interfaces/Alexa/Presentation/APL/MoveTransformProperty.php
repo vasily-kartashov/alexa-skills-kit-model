@@ -34,7 +34,7 @@ final class MoveTransformProperty extends TransformProperty implements JsonSeria
 
     public static function builder(): MoveTransformPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($translateX, $translateY) use ($instance): MoveTransformProperty {
             $instance->translateX = $translateX;
             $instance->translateY = $translateY;
@@ -55,7 +55,7 @@ final class MoveTransformProperty extends TransformProperty implements JsonSeria
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->translateX = isset($data['translateX']) ? ((string) $data['translateX']) : null;
         $instance->translateY = isset($data['translateY']) ? ((string) $data['translateY']) : null;
         return $instance;

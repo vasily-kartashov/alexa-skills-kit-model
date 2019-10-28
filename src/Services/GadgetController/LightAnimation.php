@@ -45,7 +45,7 @@ final class LightAnimation implements JsonSerializable
 
     public static function builder(): LightAnimationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($repeat, $targetLights, $sequence) use ($instance): LightAnimation {
             $instance->repeat = $repeat;
             $instance->targetLights = $targetLights;
@@ -67,7 +67,7 @@ final class LightAnimation implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->repeat = isset($data['repeat']) ? ((int) $data['repeat']) : null;
         $instance->targetLights = [];
         if (isset($data['targetLights'])) {

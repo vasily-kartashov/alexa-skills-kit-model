@@ -38,7 +38,7 @@ final class IntentRequest extends Request implements JsonSerializable
 
     public static function builder(): IntentRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($dialogState, $intent) use ($instance): IntentRequest {
             $instance->dialogState = $dialogState;
             $instance->intent = $intent;
@@ -59,7 +59,7 @@ final class IntentRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->dialogState = isset($data['dialogState']) ? DialogState::fromValue($data['dialogState']) : null;
         $instance->intent = isset($data['intent']) ? Intent::fromValue($data['intent']) : null;

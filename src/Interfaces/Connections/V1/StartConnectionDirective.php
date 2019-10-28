@@ -50,7 +50,7 @@ final class StartConnectionDirective extends Directive implements JsonSerializab
 
     public static function builder(): StartConnectionDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($uri, $input, $token) use ($instance): StartConnectionDirective {
             $instance->uri = $uri;
             $instance->input = $input;
@@ -72,7 +72,7 @@ final class StartConnectionDirective extends Directive implements JsonSerializab
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->uri = isset($data['uri']) ? ((string) $data['uri']) : null;
         $instance->input = [];

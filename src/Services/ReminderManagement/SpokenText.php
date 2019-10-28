@@ -45,7 +45,7 @@ final class SpokenText implements JsonSerializable
 
     public static function builder(): SpokenTextBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($locale, $ssml, $text) use ($instance): SpokenText {
             $instance->locale = $locale;
             $instance->ssml = $ssml;
@@ -67,7 +67,7 @@ final class SpokenText implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->locale = isset($data['locale']) ? ((string) $data['locale']) : null;
         $instance->ssml = isset($data['ssml']) ? ((string) $data['ssml']) : null;
         $instance->text = isset($data['text']) ? ((string) $data['text']) : null;

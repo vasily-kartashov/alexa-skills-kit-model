@@ -71,7 +71,7 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
 
     public static function builder(): AuthorizeAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($authorizationReferenceId, $authorizationAmount, $transactionTimeout, $sellerAuthorizationNote, $softDescriptor) use ($instance): AuthorizeAttributes {
             $instance->authorizationReferenceId = $authorizationReferenceId;
             $instance->authorizationAmount = $authorizationAmount;
@@ -95,7 +95,7 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->authorizationReferenceId = isset($data['authorizationReferenceId']) ? ((string) $data['authorizationReferenceId']) : null;
         $instance->authorizationAmount = isset($data['authorizationAmount']) ? Price::fromValue($data['authorizationAmount']) : null;

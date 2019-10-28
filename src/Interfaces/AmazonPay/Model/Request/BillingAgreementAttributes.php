@@ -71,7 +71,7 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
 
     public static function builder(): BillingAgreementAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($platformId, $sellerNote, $sellerBillingAgreementAttributes, $billingAgreementType, $subscriptionAmount) use ($instance): BillingAgreementAttributes {
             $instance->platformId = $platformId;
             $instance->sellerNote = $sellerNote;
@@ -95,7 +95,7 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->platformId = isset($data['platformId']) ? ((string) $data['platformId']) : null;
         $instance->sellerNote = isset($data['sellerNote']) ? ((string) $data['sellerNote']) : null;

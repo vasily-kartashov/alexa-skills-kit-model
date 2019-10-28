@@ -34,7 +34,7 @@ final class SendSkillMessagingRequest implements JsonSerializable
 
     public static function builder(): SendSkillMessagingRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($data, $expiresAfterSeconds) use ($instance): SendSkillMessagingRequest {
             $instance->data = $data;
             $instance->expiresAfterSeconds = $expiresAfterSeconds;
@@ -55,7 +55,7 @@ final class SendSkillMessagingRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->data = $data['data'];
         $instance->expiresAfterSeconds = isset($data['expiresAfterSeconds']) ? ((int) $data['expiresAfterSeconds']) : null;
         return $instance;

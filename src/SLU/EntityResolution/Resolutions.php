@@ -23,7 +23,7 @@ final class Resolutions implements JsonSerializable
 
     public static function builder(): ResolutionsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($resolutionsPerAuthority) use ($instance): Resolutions {
             $instance->resolutionsPerAuthority = $resolutionsPerAuthority;
             return $instance;
@@ -43,7 +43,7 @@ final class Resolutions implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->resolutionsPerAuthority = [];
         if (isset($data['resolutionsPerAuthority'])) {
             foreach ($data['resolutionsPerAuthority'] as $item) {

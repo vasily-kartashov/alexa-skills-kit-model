@@ -60,7 +60,7 @@ final class SpeakItemCommand extends Command implements JsonSerializable
 
     public static function builder(): SpeakItemCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($align, $componentId, $highlightMode, $minimumDwellTime) use ($instance): SpeakItemCommand {
             $instance->align = $align;
             $instance->componentId = $componentId;
@@ -83,7 +83,7 @@ final class SpeakItemCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->align = isset($data['align']) ? Align::fromValue($data['align']) : null;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;

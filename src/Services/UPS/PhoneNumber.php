@@ -34,7 +34,7 @@ final class PhoneNumber implements JsonSerializable
 
     public static function builder(): PhoneNumberBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($countryCode, $phoneNumber) use ($instance): PhoneNumber {
             $instance->countryCode = $countryCode;
             $instance->phoneNumber = $phoneNumber;
@@ -55,7 +55,7 @@ final class PhoneNumber implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->countryCode = isset($data['countryCode']) ? ((string) $data['countryCode']) : null;
         $instance->phoneNumber = isset($data['phoneNumber']) ? ((string) $data['phoneNumber']) : null;
         return $instance;

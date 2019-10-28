@@ -23,7 +23,7 @@ final class AlertInfo implements JsonSerializable
 
     public static function builder(): AlertInfoBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($spokenInfo) use ($instance): AlertInfo {
             $instance->spokenInfo = $spokenInfo;
             return $instance;
@@ -43,7 +43,7 @@ final class AlertInfo implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->spokenInfo = isset($data['spokenInfo']) ? AlertInfoSpokenInfo::fromValue($data['spokenInfo']) : null;
         return $instance;
     }

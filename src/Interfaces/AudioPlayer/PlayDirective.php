@@ -39,7 +39,7 @@ final class PlayDirective extends Directive implements JsonSerializable
 
     public static function builder(): PlayDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($playBehavior, $audioItem) use ($instance): PlayDirective {
             $instance->playBehavior = $playBehavior;
             $instance->audioItem = $audioItem;
@@ -60,7 +60,7 @@ final class PlayDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->playBehavior = isset($data['playBehavior']) ? PlayBehavior::fromValue($data['playBehavior']) : null;
         $instance->audioItem = isset($data['audioItem']) ? AudioItem::fromValue($data['audioItem']) : null;

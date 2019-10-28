@@ -60,7 +60,7 @@ final class SequentialCommand extends Command implements JsonSerializable
 
     public static function builder(): SequentialCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($catch, $commands, $finally, $repeatCount) use ($instance): SequentialCommand {
             $instance->catch = $catch;
             $instance->commands = $commands;
@@ -83,7 +83,7 @@ final class SequentialCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->catch = [];
         if (isset($data['catch'])) {

@@ -87,7 +87,7 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
 
     public static function builder(): ChargeAmazonPayRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($sellerId, $billingAgreementId, $paymentAction, $authorizeAttributes, $sellerOrderAttributes, $providerAttributes) use ($instance): ChargeAmazonPayRequest {
             $instance->sellerId = $sellerId;
             $instance->billingAgreementId = $billingAgreementId;
@@ -112,7 +112,7 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->sellerId = isset($data['sellerId']) ? ((string) $data['sellerId']) : null;
         $instance->billingAgreementId = isset($data['billingAgreementId']) ? ((string) $data['billingAgreementId']) : null;

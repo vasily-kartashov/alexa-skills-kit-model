@@ -133,7 +133,7 @@ final class Destination implements JsonSerializable
 
     public static function builder(): DestinationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $companyName, $addressLine1, $addressLine2, $addressLine3, $city, $districtOrCounty, $stateOrRegion, $postalCode, $countryCode, $phone) use ($instance): Destination {
             $instance->name = $name;
             $instance->companyName = $companyName;
@@ -163,7 +163,7 @@ final class Destination implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->companyName = isset($data['companyName']) ? ((string) $data['companyName']) : null;
         $instance->addressLine1 = isset($data['addressLine1']) ? ((string) $data['addressLine1']) : null;

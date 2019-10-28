@@ -78,7 +78,7 @@ final class GeolocationState implements JsonSerializable
 
     public static function builder(): GeolocationStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($timestamp, $coordinate, $altitude, $heading, $speed, $locationServices) use ($instance): GeolocationState {
             $instance->timestamp = $timestamp;
             $instance->coordinate = $coordinate;
@@ -103,7 +103,7 @@ final class GeolocationState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->timestamp = isset($data['timestamp']) ? ((string) $data['timestamp']) : null;
         $instance->coordinate = isset($data['coordinate']) ? Coordinate::fromValue($data['coordinate']) : null;
         $instance->altitude = isset($data['altitude']) ? Altitude::fromValue($data['altitude']) : null;

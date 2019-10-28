@@ -38,7 +38,7 @@ final class DiscreteViewportSize extends ViewportSize implements JsonSerializabl
 
     public static function builder(): DiscreteViewportSizeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($pixelWidth, $pixelHeight) use ($instance): DiscreteViewportSize {
             $instance->pixelWidth = $pixelWidth;
             $instance->pixelHeight = $pixelHeight;
@@ -59,7 +59,7 @@ final class DiscreteViewportSize extends ViewportSize implements JsonSerializabl
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->pixelWidth = isset($data['pixelWidth']) ? ((int) $data['pixelWidth']) : null;
         $instance->pixelHeight = isset($data['pixelHeight']) ? ((int) $data['pixelHeight']) : null;

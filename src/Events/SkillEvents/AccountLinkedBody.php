@@ -23,7 +23,7 @@ final class AccountLinkedBody implements JsonSerializable
 
     public static function builder(): AccountLinkedBodyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($accessToken) use ($instance): AccountLinkedBody {
             $instance->accessToken = $accessToken;
             return $instance;
@@ -43,7 +43,7 @@ final class AccountLinkedBody implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->accessToken = isset($data['accessToken']) ? ((string) $data['accessToken']) : null;
         return $instance;
     }

@@ -28,7 +28,7 @@ final class ReminderStatusChangedEventRequest extends Request implements JsonSer
 
     public static function builder(): ReminderStatusChangedEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body) use ($instance): ReminderStatusChangedEventRequest {
             $instance->body = $body;
             return $instance;
@@ -48,7 +48,7 @@ final class ReminderStatusChangedEventRequest extends Request implements JsonSer
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? Event::fromValue($data['body']) : null;
         return $instance;

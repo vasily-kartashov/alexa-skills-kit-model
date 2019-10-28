@@ -57,7 +57,7 @@ final class ReminderRequest implements JsonSerializable
 
     public static function builder(): ReminderRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($requestTime, $trigger, $alertInfo, $pushNotification) use ($instance): ReminderRequest {
             $instance->requestTime = $requestTime;
             $instance->trigger = $trigger;
@@ -80,7 +80,7 @@ final class ReminderRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->requestTime = isset($data['requestTime']) ? new DateTime($data['requestTime']) : null;
         $instance->trigger = isset($data['trigger']) ? Trigger::fromValue($data['trigger']) : null;
         $instance->alertInfo = isset($data['alertInfo']) ? AlertInfo::fromValue($data['alertInfo']) : null;

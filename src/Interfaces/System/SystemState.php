@@ -70,7 +70,7 @@ final class SystemState implements JsonSerializable
 
     public static function builder(): SystemStateBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($application, $user, $device, $apiEndpoint, $apiAccessToken) use ($instance): SystemState {
             $instance->application = $application;
             $instance->user = $user;
@@ -94,7 +94,7 @@ final class SystemState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->application = isset($data['application']) ? Application::fromValue($data['application']) : null;
         $instance->user = isset($data['user']) ? User::fromValue($data['user']) : null;
         $instance->device = isset($data['device']) ? Device::fromValue($data['device']) : null;

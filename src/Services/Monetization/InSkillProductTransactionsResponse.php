@@ -34,7 +34,7 @@ final class InSkillProductTransactionsResponse implements JsonSerializable
 
     public static function builder(): InSkillProductTransactionsResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($results, $metadata) use ($instance): InSkillProductTransactionsResponse {
             $instance->results = $results;
             $instance->metadata = $metadata;
@@ -55,7 +55,7 @@ final class InSkillProductTransactionsResponse implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->results = [];
         if (isset($data['results'])) {
             foreach ($data['results'] as $item) {

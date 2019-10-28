@@ -34,7 +34,7 @@ final class Header implements JsonSerializable
 
     public static function builder(): HeaderBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($namespace, $name) use ($instance): Header {
             $instance->namespace = $namespace;
             $instance->name = $name;
@@ -55,7 +55,7 @@ final class Header implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->namespace = isset($data['namespace']) ? ((string) $data['namespace']) : null;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         return $instance;

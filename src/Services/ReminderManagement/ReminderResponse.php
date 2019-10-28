@@ -78,7 +78,7 @@ final class ReminderResponse implements JsonSerializable
 
     public static function builder(): ReminderResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($alertToken, $createdTime, $updatedTime, $status, $version, $href) use ($instance): ReminderResponse {
             $instance->alertToken = $alertToken;
             $instance->createdTime = $createdTime;
@@ -103,7 +103,7 @@ final class ReminderResponse implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->alertToken = isset($data['alertToken']) ? ((string) $data['alertToken']) : null;
         $instance->createdTime = isset($data['createdTime']) ? ((string) $data['createdTime']) : null;
         $instance->updatedTime = isset($data['updatedTime']) ? ((string) $data['updatedTime']) : null;

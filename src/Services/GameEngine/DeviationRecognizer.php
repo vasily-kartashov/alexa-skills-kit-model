@@ -27,7 +27,7 @@ final class DeviationRecognizer extends Recognizer implements JsonSerializable
 
     public static function builder(): DeviationRecognizerBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($recognizer) use ($instance): DeviationRecognizer {
             $instance->recognizer = $recognizer;
             return $instance;
@@ -47,7 +47,7 @@ final class DeviationRecognizer extends Recognizer implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->recognizer = isset($data['recognizer']) ? ((string) $data['recognizer']) : null;
         return $instance;

@@ -29,7 +29,7 @@ final class DelegateDirective extends Directive implements JsonSerializable
 
     public static function builder(): DelegateDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($updatedIntent) use ($instance): DelegateDirective {
             $instance->updatedIntent = $updatedIntent;
             return $instance;
@@ -49,7 +49,7 @@ final class DelegateDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->updatedIntent = isset($data['updatedIntent']) ? Intent::fromValue($data['updatedIntent']) : null;
         return $instance;

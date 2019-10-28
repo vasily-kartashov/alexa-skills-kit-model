@@ -63,7 +63,7 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
 
     public static function builder(): StartInputHandlerDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($timeout, $proxies, $recognizers, $events) use ($instance): StartInputHandlerDirective {
             $instance->timeout = $timeout;
             $instance->proxies = $proxies;
@@ -86,7 +86,7 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->timeout = isset($data['timeout']) ? ((int) $data['timeout']) : null;
         $instance->proxies = [];

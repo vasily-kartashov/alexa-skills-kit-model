@@ -56,7 +56,7 @@ final class ResponseEnvelope implements JsonSerializable
 
     public static function builder(): ResponseEnvelopeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($version, $sessionAttributes, $userAgent, $response) use ($instance): ResponseEnvelope {
             $instance->version = $version;
             $instance->sessionAttributes = $sessionAttributes;
@@ -79,7 +79,7 @@ final class ResponseEnvelope implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->version = isset($data['version']) ? ((string) $data['version']) : null;
         $instance->sessionAttributes = [];
         if (isset($data['sessionAttributes'])) {

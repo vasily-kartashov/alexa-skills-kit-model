@@ -122,7 +122,7 @@ final class InSkillProduct implements JsonSerializable
 
     public static function builder(): InSkillProductBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($productId, $referenceName, $name, $type, $summary, $purchasable, $entitled, $entitlementReason, $activeEntitlementCount, $purchaseMode) use ($instance): InSkillProduct {
             $instance->productId = $productId;
             $instance->referenceName = $referenceName;
@@ -151,7 +151,7 @@ final class InSkillProduct implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->productId = isset($data['productId']) ? ((string) $data['productId']) : null;
         $instance->referenceName = isset($data['referenceName']) ? ((string) $data['referenceName']) : null;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;

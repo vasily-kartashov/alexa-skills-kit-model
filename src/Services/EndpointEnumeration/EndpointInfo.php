@@ -45,7 +45,7 @@ final class EndpointInfo implements JsonSerializable
 
     public static function builder(): EndpointInfoBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($endpointId, $friendlyName, $capabilities) use ($instance): EndpointInfo {
             $instance->endpointId = $endpointId;
             $instance->friendlyName = $friendlyName;
@@ -67,7 +67,7 @@ final class EndpointInfo implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->endpointId = isset($data['endpointId']) ? ((string) $data['endpointId']) : null;
         $instance->friendlyName = isset($data['friendlyName']) ? ((string) $data['friendlyName']) : null;
         $instance->capabilities = [];

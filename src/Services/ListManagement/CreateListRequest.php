@@ -34,7 +34,7 @@ final class CreateListRequest implements JsonSerializable
 
     public static function builder(): CreateListRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $state) use ($instance): CreateListRequest {
             $instance->name = $name;
             $instance->state = $state;
@@ -55,7 +55,7 @@ final class CreateListRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->state = isset($data['state']) ? ListState::fromValue($data['state']) : null;
         return $instance;

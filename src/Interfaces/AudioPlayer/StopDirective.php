@@ -15,19 +15,9 @@ final class StopDirective extends Directive implements JsonSerializable
         $this->type = self::TYPE;
     }
 
-    public static function builder(): StopDirectiveBuilder
+    public static function empty(): StopDirective
     {
-        $instance = new self();
-        $constructor = function () use ($instance): StopDirective {
-            return $instance;
-        };
-        return new class($constructor) extends StopDirectiveBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -36,7 +26,7 @@ final class StopDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

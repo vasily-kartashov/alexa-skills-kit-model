@@ -57,7 +57,7 @@ final class Slot implements JsonSerializable
 
     public static function builder(): SlotBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($name, $value, $confirmationStatus, $resolutions) use ($instance): Slot {
             $instance->name = $name;
             $instance->value = $value;
@@ -80,7 +80,7 @@ final class Slot implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->name = isset($data['name']) ? ((string) $data['name']) : null;
         $instance->value = isset($data['value']) ? ((string) $data['value']) : null;
         $instance->confirmationStatus = isset($data['confirmationStatus']) ? SlotConfirmationStatus::fromValue($data['confirmationStatus']) : null;

@@ -23,7 +23,7 @@ final class AlexaPresentationAplInterface implements JsonSerializable
 
     public static function builder(): AlexaPresentationAplInterfaceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($runtime) use ($instance): AlexaPresentationAplInterface {
             $instance->runtime = $runtime;
             return $instance;
@@ -43,7 +43,7 @@ final class AlexaPresentationAplInterface implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->runtime = isset($data['runtime']) ? Runtime::fromValue($data['runtime']) : null;
         return $instance;
     }

@@ -67,7 +67,7 @@ final class Trigger implements JsonSerializable
 
     public static function builder(): TriggerBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($type, $scheduledTime, $offsetInSeconds, $timeZoneId, $recurrence) use ($instance): Trigger {
             $instance->type = $type;
             $instance->scheduledTime = $scheduledTime;
@@ -91,7 +91,7 @@ final class Trigger implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = isset($data['type']) ? TriggerType::fromValue($data['type']) : null;
         $instance->scheduledTime = $data['scheduledTime'];
         $instance->offsetInSeconds = isset($data['offsetInSeconds']) ? ((int) $data['offsetInSeconds']) : null;

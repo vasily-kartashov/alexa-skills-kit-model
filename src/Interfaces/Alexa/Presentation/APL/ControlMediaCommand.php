@@ -49,7 +49,7 @@ final class ControlMediaCommand extends Command implements JsonSerializable
 
     public static function builder(): ControlMediaCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($command, $componentId, $value) use ($instance): ControlMediaCommand {
             $instance->command = $command;
             $instance->componentId = $componentId;
@@ -71,7 +71,7 @@ final class ControlMediaCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->command = isset($data['command']) ? MediaCommandType::fromValue($data['command']) : null;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;

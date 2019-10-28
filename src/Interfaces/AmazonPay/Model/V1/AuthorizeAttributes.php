@@ -67,7 +67,7 @@ final class AuthorizeAttributes implements JsonSerializable
 
     public static function builder(): AuthorizeAttributesBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($authorizationReferenceId, $authorizationAmount, $transactionTimeout, $sellerAuthorizationNote, $softDescriptor) use ($instance): AuthorizeAttributes {
             $instance->authorizationReferenceId = $authorizationReferenceId;
             $instance->authorizationAmount = $authorizationAmount;
@@ -91,7 +91,7 @@ final class AuthorizeAttributes implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->authorizationReferenceId = isset($data['authorizationReferenceId']) ? ((string) $data['authorizationReferenceId']) : null;
         $instance->authorizationAmount = isset($data['authorizationAmount']) ? Price::fromValue($data['authorizationAmount']) : null;
         $instance->transactionTimeout = isset($data['transactionTimeout']) ? ((int) $data['transactionTimeout']) : null;

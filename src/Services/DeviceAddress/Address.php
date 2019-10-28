@@ -100,7 +100,7 @@ final class Address implements JsonSerializable
 
     public static function builder(): AddressBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($addressLine1, $addressLine2, $addressLine3, $countryCode, $stateOrRegion, $city, $districtOrCounty, $postalCode) use ($instance): Address {
             $instance->addressLine1 = $addressLine1;
             $instance->addressLine2 = $addressLine2;
@@ -127,7 +127,7 @@ final class Address implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->addressLine1 = isset($data['addressLine1']) ? ((string) $data['addressLine1']) : null;
         $instance->addressLine2 = isset($data['addressLine2']) ? ((string) $data['addressLine2']) : null;
         $instance->addressLine3 = isset($data['addressLine3']) ? ((string) $data['addressLine3']) : null;

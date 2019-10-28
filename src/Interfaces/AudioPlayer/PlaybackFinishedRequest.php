@@ -39,7 +39,7 @@ final class PlaybackFinishedRequest extends Request implements JsonSerializable
 
     public static function builder(): PlaybackFinishedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($offsetInMilliseconds, $token) use ($instance): PlaybackFinishedRequest {
             $instance->offsetInMilliseconds = $offsetInMilliseconds;
             $instance->token = $token;
@@ -60,7 +60,7 @@ final class PlaybackFinishedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->offsetInMilliseconds = isset($data['offsetInMilliseconds']) ? ((int) $data['offsetInMilliseconds']) : null;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;

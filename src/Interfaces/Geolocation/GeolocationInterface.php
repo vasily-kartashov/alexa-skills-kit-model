@@ -10,19 +10,9 @@ final class GeolocationInterface implements JsonSerializable
     {
     }
 
-    public static function builder(): GeolocationInterfaceBuilder
+    public static function empty(): GeolocationInterface
     {
-        $instance = new self();
-        $constructor = function () use ($instance): GeolocationInterface {
-            return $instance;
-        };
-        return new class($constructor) extends GeolocationInterfaceBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -31,7 +21,7 @@ final class GeolocationInterface implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         return $instance;
     }
 

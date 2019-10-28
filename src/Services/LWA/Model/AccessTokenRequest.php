@@ -45,7 +45,7 @@ final class AccessTokenRequest implements JsonSerializable
 
     public static function builder(): AccessTokenRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($client_id, $client_secret, $scope) use ($instance): AccessTokenRequest {
             $instance->client_id = $client_id;
             $instance->client_secret = $client_secret;
@@ -67,7 +67,7 @@ final class AccessTokenRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->client_id = isset($data['client_id']) ? ((string) $data['client_id']) : null;
         $instance->client_secret = isset($data['client_secret']) ? ((string) $data['client_secret']) : null;
         $instance->scope = isset($data['scope']) ? ((string) $data['scope']) : null;

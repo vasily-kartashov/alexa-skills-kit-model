@@ -34,7 +34,7 @@ final class Status implements JsonSerializable
 
     public static function builder(): StatusBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($url, $status) use ($instance): Status {
             $instance->url = $url;
             $instance->status = $status;
@@ -55,7 +55,7 @@ final class Status implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;
         $instance->status = isset($data['status']) ? ListItemState::fromValue($data['status']) : null;
         return $instance;

@@ -23,7 +23,7 @@ final class Status implements JsonSerializable
 
     public static function builder(): StatusBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($code) use ($instance): Status {
             $instance->code = $code;
             return $instance;
@@ -43,7 +43,7 @@ final class Status implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->code = isset($data['code']) ? StatusCode::fromValue($data['code']) : null;
         return $instance;
     }

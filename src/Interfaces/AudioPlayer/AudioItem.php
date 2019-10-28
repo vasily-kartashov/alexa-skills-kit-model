@@ -34,7 +34,7 @@ final class AudioItem implements JsonSerializable
 
     public static function builder(): AudioItemBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($stream, $metadata) use ($instance): AudioItem {
             $instance->stream = $stream;
             $instance->metadata = $metadata;
@@ -55,7 +55,7 @@ final class AudioItem implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->stream = isset($data['stream']) ? Stream::fromValue($data['stream']) : null;
         $instance->metadata = isset($data['metadata']) ? AudioItemMetadata::fromValue($data['metadata']) : null;
         return $instance;

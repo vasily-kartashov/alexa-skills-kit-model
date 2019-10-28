@@ -24,7 +24,7 @@ final class ViewportStateVideo implements JsonSerializable
 
     public static function builder(): ViewportStateVideoBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($codecs) use ($instance): ViewportStateVideo {
             $instance->codecs = $codecs;
             return $instance;
@@ -44,7 +44,7 @@ final class ViewportStateVideo implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->codecs = [];
         if (isset($data['codecs'])) {
             foreach ($data['codecs'] as $item) {

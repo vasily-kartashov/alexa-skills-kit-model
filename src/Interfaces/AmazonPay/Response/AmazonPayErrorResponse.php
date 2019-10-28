@@ -34,7 +34,7 @@ final class AmazonPayErrorResponse implements JsonSerializable
 
     public static function builder(): AmazonPayErrorResponseBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($errorCode, $errorMessage) use ($instance): AmazonPayErrorResponse {
             $instance->errorCode = $errorCode;
             $instance->errorMessage = $errorMessage;
@@ -55,7 +55,7 @@ final class AmazonPayErrorResponse implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->errorCode = isset($data['errorCode']) ? ((string) $data['errorCode']) : null;
         $instance->errorMessage = isset($data['errorMessage']) ? ((string) $data['errorMessage']) : null;
         return $instance;

@@ -34,7 +34,7 @@ final class RelevantAudience implements JsonSerializable
 
     public static function builder(): RelevantAudienceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($type, $payload) use ($instance): RelevantAudience {
             $instance->type = $type;
             $instance->payload = $payload;
@@ -55,7 +55,7 @@ final class RelevantAudience implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = isset($data['type']) ? RelevantAudienceType::fromValue($data['type']) : null;
         $instance->payload = $data['payload'];
         return $instance;

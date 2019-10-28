@@ -14,19 +14,9 @@ final class ClearFocusCommand extends Command implements JsonSerializable
         $this->type = self::TYPE;
     }
 
-    public static function builder(): ClearFocusCommandBuilder
+    public static function empty(): ClearFocusCommand
     {
-        $instance = new self();
-        $constructor = function () use ($instance): ClearFocusCommand {
-            return $instance;
-        };
-        return new class($constructor) extends ClearFocusCommandBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -35,7 +25,7 @@ final class ClearFocusCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

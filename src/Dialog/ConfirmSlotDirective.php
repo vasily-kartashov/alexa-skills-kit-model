@@ -40,7 +40,7 @@ final class ConfirmSlotDirective extends Directive implements JsonSerializable
 
     public static function builder(): ConfirmSlotDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($updatedIntent, $slotToConfirm) use ($instance): ConfirmSlotDirective {
             $instance->updatedIntent = $updatedIntent;
             $instance->slotToConfirm = $slotToConfirm;
@@ -61,7 +61,7 @@ final class ConfirmSlotDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->updatedIntent = isset($data['updatedIntent']) ? Intent::fromValue($data['updatedIntent']) : null;
         $instance->slotToConfirm = isset($data['slotToConfirm']) ? ((string) $data['slotToConfirm']) : null;

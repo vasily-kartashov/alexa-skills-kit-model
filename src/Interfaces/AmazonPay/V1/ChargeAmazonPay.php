@@ -93,7 +93,7 @@ final class ChargeAmazonPay implements JsonSerializable
 
     public static function builder(): ChargeAmazonPayBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($consentToken, $sellerId, $billingAgreementId, $paymentAction, $authorizeAttributes, $sellerOrderAttributes, $providerAttributes) use ($instance): ChargeAmazonPay {
             $instance->consentToken = $consentToken;
             $instance->sellerId = $sellerId;
@@ -119,7 +119,7 @@ final class ChargeAmazonPay implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->consentToken = isset($data['consentToken']) ? ((string) $data['consentToken']) : null;
         $instance->sellerId = isset($data['sellerId']) ? ((string) $data['sellerId']) : null;
         $instance->billingAgreementId = isset($data['billingAgreementId']) ? ((string) $data['billingAgreementId']) : null;

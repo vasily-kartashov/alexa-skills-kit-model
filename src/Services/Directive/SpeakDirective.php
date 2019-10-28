@@ -27,7 +27,7 @@ final class SpeakDirective extends Directive implements JsonSerializable
 
     public static function builder(): SpeakDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($speech) use ($instance): SpeakDirective {
             $instance->speech = $speech;
             return $instance;
@@ -47,7 +47,7 @@ final class SpeakDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->speech = isset($data['speech']) ? ((string) $data['speech']) : null;
         return $instance;

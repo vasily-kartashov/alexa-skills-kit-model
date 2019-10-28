@@ -40,7 +40,7 @@ final class CompleteTaskDirective extends Directive implements JsonSerializable
 
     public static function builder(): CompleteTaskDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($status, $result) use ($instance): CompleteTaskDirective {
             $instance->status = $status;
             $instance->result = $result;
@@ -61,7 +61,7 @@ final class CompleteTaskDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->status = isset($data['status']) ? Status::fromValue($data['status']) : null;
         $instance->result = [];

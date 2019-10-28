@@ -78,7 +78,7 @@ final class Event implements JsonSerializable
 
     public static function builder(): EventBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($shouldEndInputHandler, $meets, $fails, $reports, $maximumInvocations, $triggerTimeMilliseconds) use ($instance): Event {
             $instance->shouldEndInputHandler = $shouldEndInputHandler;
             $instance->meets = $meets;
@@ -103,7 +103,7 @@ final class Event implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->shouldEndInputHandler = isset($data['shouldEndInputHandler']) ? ((bool) $data['shouldEndInputHandler']) : null;
         $instance->meets = [];
         if (isset($data['meets'])) {

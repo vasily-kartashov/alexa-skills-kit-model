@@ -14,19 +14,9 @@ final class IdleCommand extends Command implements JsonSerializable
         $this->type = self::TYPE;
     }
 
-    public static function builder(): IdleCommandBuilder
+    public static function empty(): IdleCommand
     {
-        $instance = new self();
-        $constructor = function () use ($instance): IdleCommand {
-            return $instance;
-        };
-        return new class($constructor) extends IdleCommandBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -35,7 +25,7 @@ final class IdleCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

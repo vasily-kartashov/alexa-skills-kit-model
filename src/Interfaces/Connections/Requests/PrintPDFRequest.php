@@ -49,7 +49,7 @@ final class PrintPDFRequest extends BaseRequest implements JsonSerializable
 
     public static function builder(): PrintPDFRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($title, $url, $description) use ($instance): PrintPDFRequest {
             $instance->title = $title;
             $instance->url = $url;
@@ -71,7 +71,7 @@ final class PrintPDFRequest extends BaseRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;

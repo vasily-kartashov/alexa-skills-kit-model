@@ -10,19 +10,9 @@ final class AudioPlayerInterface implements JsonSerializable
     {
     }
 
-    public static function builder(): AudioPlayerInterfaceBuilder
+    public static function empty(): AudioPlayerInterface
     {
-        $instance = new self();
-        $constructor = function () use ($instance): AudioPlayerInterface {
-            return $instance;
-        };
-        return new class($constructor) extends AudioPlayerInterfaceBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -31,7 +21,7 @@ final class AudioPlayerInterface implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         return $instance;
     }
 

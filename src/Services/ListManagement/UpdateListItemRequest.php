@@ -45,7 +45,7 @@ final class UpdateListItemRequest implements JsonSerializable
 
     public static function builder(): UpdateListItemRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($value, $status, $version) use ($instance): UpdateListItemRequest {
             $instance->value = $value;
             $instance->status = $status;
@@ -67,7 +67,7 @@ final class UpdateListItemRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->value = isset($data['value']) ? ((string) $data['value']) : null;
         $instance->status = isset($data['status']) ? ListItemState::fromValue($data['status']) : null;
         $instance->version = isset($data['version']) ? ((int) $data['version']) : null;

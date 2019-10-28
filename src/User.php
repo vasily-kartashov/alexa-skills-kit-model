@@ -45,7 +45,7 @@ final class User implements JsonSerializable
 
     public static function builder(): UserBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($userId, $accessToken, $permissions) use ($instance): User {
             $instance->userId = $userId;
             $instance->accessToken = $accessToken;
@@ -67,7 +67,7 @@ final class User implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->userId = isset($data['userId']) ? ((string) $data['userId']) : null;
         $instance->accessToken = isset($data['accessToken']) ? ((string) $data['accessToken']) : null;
         $instance->permissions = isset($data['permissions']) ? Permissions::fromValue($data['permissions']) : null;

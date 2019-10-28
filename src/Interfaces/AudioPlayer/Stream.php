@@ -56,7 +56,7 @@ final class Stream implements JsonSerializable
 
     public static function builder(): StreamBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($expectedPreviousToken, $token, $url, $offsetInMilliseconds) use ($instance): Stream {
             $instance->expectedPreviousToken = $expectedPreviousToken;
             $instance->token = $token;
@@ -79,7 +79,7 @@ final class Stream implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->expectedPreviousToken = isset($data['expectedPreviousToken']) ? ((string) $data['expectedPreviousToken']) : null;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->url = isset($data['url']) ? ((string) $data['url']) : null;

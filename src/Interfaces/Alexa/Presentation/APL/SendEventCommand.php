@@ -38,7 +38,7 @@ final class SendEventCommand extends Command implements JsonSerializable
 
     public static function builder(): SendEventCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($arguments, $components) use ($instance): SendEventCommand {
             $instance->arguments = $arguments;
             $instance->components = $components;
@@ -59,7 +59,7 @@ final class SendEventCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->arguments = [];
         if (isset($data['arguments'])) {

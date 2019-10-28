@@ -23,7 +23,7 @@ final class Runtime implements JsonSerializable
 
     public static function builder(): RuntimeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($maxVersion) use ($instance): Runtime {
             $instance->maxVersion = $maxVersion;
             return $instance;
@@ -43,7 +43,7 @@ final class Runtime implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->maxVersion = isset($data['maxVersion']) ? ((string) $data['maxVersion']) : null;
         return $instance;
     }

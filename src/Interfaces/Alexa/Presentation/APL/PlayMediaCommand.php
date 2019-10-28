@@ -49,7 +49,7 @@ final class PlayMediaCommand extends Command implements JsonSerializable
 
     public static function builder(): PlayMediaCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($audioTrack, $componentId, $source) use ($instance): PlayMediaCommand {
             $instance->audioTrack = $audioTrack;
             $instance->componentId = $componentId;
@@ -71,7 +71,7 @@ final class PlayMediaCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->audioTrack = isset($data['audioTrack']) ? AudioTrack::fromValue($data['audioTrack']) : null;
         $instance->componentId = isset($data['componentId']) ? ((string) $data['componentId']) : null;

@@ -15,19 +15,9 @@ final class PreviousCommandIssuedRequest extends Request implements JsonSerializ
         $this->type = self::TYPE;
     }
 
-    public static function builder(): PreviousCommandIssuedRequestBuilder
+    public static function empty(): PreviousCommandIssuedRequest
     {
-        $instance = new self();
-        $constructor = function () use ($instance): PreviousCommandIssuedRequest {
-            return $instance;
-        };
-        return new class($constructor) extends PreviousCommandIssuedRequestBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -36,7 +26,7 @@ final class PreviousCommandIssuedRequest extends Request implements JsonSerializ
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

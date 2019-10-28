@@ -34,7 +34,7 @@ final class CanFulfillIntent implements JsonSerializable
 
     public static function builder(): CanFulfillIntentBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($canFulfill, $slots) use ($instance): CanFulfillIntent {
             $instance->canFulfill = $canFulfill;
             $instance->slots = $slots;
@@ -55,7 +55,7 @@ final class CanFulfillIntent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->canFulfill = isset($data['canFulfill']) ? CanFulfillIntentValues::fromValue($data['canFulfill']) : null;
         $instance->slots = [];
         if (isset($data['slots'])) {

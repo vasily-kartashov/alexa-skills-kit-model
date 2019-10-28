@@ -28,7 +28,7 @@ final class LaunchDirective extends Directive implements JsonSerializable
 
     public static function builder(): LaunchDirectiveBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($videoItem) use ($instance): LaunchDirective {
             $instance->videoItem = $videoItem;
             return $instance;
@@ -48,7 +48,7 @@ final class LaunchDirective extends Directive implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->videoItem = isset($data['videoItem']) ? VideoItem::fromValue($data['videoItem']) : null;
         return $instance;

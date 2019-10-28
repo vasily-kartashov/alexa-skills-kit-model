@@ -34,7 +34,7 @@ final class EventFilter implements JsonSerializable
 
     public static function builder(): EventFilterBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($filterExpression, $filterMatchAction) use ($instance): EventFilter {
             $instance->filterExpression = $filterExpression;
             $instance->filterMatchAction = $filterMatchAction;
@@ -55,7 +55,7 @@ final class EventFilter implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->filterExpression = $data['filterExpression'];
         $instance->filterMatchAction = isset($data['filterMatchAction']) ? FilterMatchAction::fromValue($data['filterMatchAction']) : null;
         return $instance;

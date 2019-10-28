@@ -45,7 +45,7 @@ final class ListItem implements JsonSerializable
 
     public static function builder(): ListItemBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($token, $image, $textContent) use ($instance): ListItem {
             $instance->token = $token;
             $instance->image = $image;
@@ -67,7 +67,7 @@ final class ListItem implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->token = isset($data['token']) ? ((string) $data['token']) : null;
         $instance->image = isset($data['image']) ? Image::fromValue($data['image']) : null;
         $instance->textContent = isset($data['textContent']) ? TextContent::fromValue($data['textContent']) : null;

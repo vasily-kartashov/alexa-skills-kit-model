@@ -40,7 +40,7 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
 
     public static function builder(): InputHandlerEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($originatingRequestId, $events) use ($instance): InputHandlerEventRequest {
             $instance->originatingRequestId = $originatingRequestId;
             $instance->events = $events;
@@ -61,7 +61,7 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->originatingRequestId = isset($data['originatingRequestId']) ? ((string) $data['originatingRequestId']) : null;
         $instance->events = [];

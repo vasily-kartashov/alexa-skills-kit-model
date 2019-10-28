@@ -15,19 +15,9 @@ final class PlayCommandIssuedRequest extends Request implements JsonSerializable
         $this->type = self::TYPE;
     }
 
-    public static function builder(): PlayCommandIssuedRequestBuilder
+    public static function empty(): PlayCommandIssuedRequest
     {
-        $instance = new self();
-        $constructor = function () use ($instance): PlayCommandIssuedRequest {
-            return $instance;
-        };
-        return new class($constructor) extends PlayCommandIssuedRequestBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -36,7 +26,7 @@ final class PlayCommandIssuedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         return $instance;
     }

@@ -45,7 +45,7 @@ final class TextContent implements JsonSerializable
 
     public static function builder(): TextContentBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($primaryText, $secondaryText, $tertiaryText) use ($instance): TextContent {
             $instance->primaryText = $primaryText;
             $instance->secondaryText = $secondaryText;
@@ -67,7 +67,7 @@ final class TextContent implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->primaryText = isset($data['primaryText']) ? TextField::fromValue($data['primaryText']) : null;
         $instance->secondaryText = isset($data['secondaryText']) ? TextField::fromValue($data['secondaryText']) : null;
         $instance->tertiaryText = isset($data['tertiaryText']) ? TextField::fromValue($data['tertiaryText']) : null;

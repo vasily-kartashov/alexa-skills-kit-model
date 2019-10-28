@@ -23,7 +23,7 @@ final class Metadata implements JsonSerializable
 
     public static function builder(): MetadataBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($resultSet) use ($instance): Metadata {
             $instance->resultSet = $resultSet;
             return $instance;
@@ -43,7 +43,7 @@ final class Metadata implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->resultSet = isset($data['resultSet']) ? ResultSet::fromValue($data['resultSet']) : null;
         return $instance;
     }

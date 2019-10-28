@@ -10,19 +10,9 @@ final class AutomotiveState implements JsonSerializable
     {
     }
 
-    public static function builder(): AutomotiveStateBuilder
+    public static function empty(): AutomotiveState
     {
-        $instance = new self();
-        $constructor = function () use ($instance): AutomotiveState {
-            return $instance;
-        };
-        return new class($constructor) extends AutomotiveStateBuilder
-        {
-            public function __construct(callable $constructor)
-            {
-                parent::__construct($constructor);
-            }
-        };
+        return new self;
     }
 
     /**
@@ -31,7 +21,7 @@ final class AutomotiveState implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         return $instance;
     }
 

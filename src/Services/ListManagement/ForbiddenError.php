@@ -23,7 +23,7 @@ final class ForbiddenError implements JsonSerializable
 
     public static function builder(): ForbiddenErrorBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($message) use ($instance): ForbiddenError {
             $instance->message = $message;
             return $instance;
@@ -43,7 +43,7 @@ final class ForbiddenError implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->message = isset($data['Message']) ? ((string) $data['Message']) : null;
         return $instance;
     }

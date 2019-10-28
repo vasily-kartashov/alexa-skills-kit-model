@@ -38,7 +38,7 @@ final class Price extends BaseAmazonPayEntity implements JsonSerializable
 
     public static function builder(): PriceBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($amount, $currencyCode) use ($instance): Price {
             $instance->amount = $amount;
             $instance->currencyCode = $currencyCode;
@@ -59,7 +59,7 @@ final class Price extends BaseAmazonPayEntity implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->amount = isset($data['amount']) ? ((string) $data['amount']) : null;
         $instance->currencyCode = isset($data['currencyCode']) ? ((string) $data['currencyCode']) : null;

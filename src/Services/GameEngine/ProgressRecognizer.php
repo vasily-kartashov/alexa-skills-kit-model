@@ -38,7 +38,7 @@ final class ProgressRecognizer extends Recognizer implements JsonSerializable
 
     public static function builder(): ProgressRecognizerBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($recognizer, $completion) use ($instance): ProgressRecognizer {
             $instance->recognizer = $recognizer;
             $instance->completion = $completion;
@@ -59,7 +59,7 @@ final class ProgressRecognizer extends Recognizer implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->recognizer = isset($data['recognizer']) ? ((string) $data['recognizer']) : null;
         $instance->completion = isset($data['completion']) ? ((float) $data['completion']) : null;

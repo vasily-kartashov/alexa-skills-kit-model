@@ -45,7 +45,7 @@ final class ScaleTransformProperty extends TransformProperty implements JsonSeri
 
     public static function builder(): ScaleTransformPropertyBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($scale, $scaleX, $scaleY) use ($instance): ScaleTransformProperty {
             $instance->scale = $scale;
             $instance->scaleX = $scaleX;
@@ -67,7 +67,7 @@ final class ScaleTransformProperty extends TransformProperty implements JsonSeri
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->scale = isset($data['scale']) ? ((string) $data['scale']) : null;
         $instance->scaleX = isset($data['scaleX']) ? ((string) $data['scaleX']) : null;
         $instance->scaleY = isset($data['scaleY']) ? ((string) $data['scaleY']) : null;

@@ -28,7 +28,7 @@ final class ReminderDeletedEventRequest extends Request implements JsonSerializa
 
     public static function builder(): ReminderDeletedEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body) use ($instance): ReminderDeletedEventRequest {
             $instance->body = $body;
             return $instance;
@@ -48,7 +48,7 @@ final class ReminderDeletedEventRequest extends Request implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? ReminderDeletedEvent::fromValue($data['body']) : null;
         return $instance;

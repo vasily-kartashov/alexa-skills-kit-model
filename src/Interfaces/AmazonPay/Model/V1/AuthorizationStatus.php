@@ -57,7 +57,7 @@ final class AuthorizationStatus implements JsonSerializable
 
     public static function builder(): AuthorizationStatusBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($state, $reasonCode, $reasonDescription, $lastUpdateTimestamp) use ($instance): AuthorizationStatus {
             $instance->state = $state;
             $instance->reasonCode = $reasonCode;
@@ -80,7 +80,7 @@ final class AuthorizationStatus implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->state = isset($data['state']) ? State::fromValue($data['state']) : null;
         $instance->reasonCode = isset($data['reasonCode']) ? ((string) $data['reasonCode']) : null;
         $instance->reasonDescription = isset($data['reasonDescription']) ? ((string) $data['reasonDescription']) : null;

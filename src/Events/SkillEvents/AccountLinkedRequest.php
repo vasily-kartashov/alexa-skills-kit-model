@@ -51,7 +51,7 @@ final class AccountLinkedRequest extends Request implements JsonSerializable
 
     public static function builder(): AccountLinkedRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($body, $eventCreationTime, $eventPublishingTime) use ($instance): AccountLinkedRequest {
             $instance->body = $body;
             $instance->eventCreationTime = $eventCreationTime;
@@ -73,7 +73,7 @@ final class AccountLinkedRequest extends Request implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->body = isset($data['body']) ? AccountLinkedBody::fromValue($data['body']) : null;
         $instance->eventCreationTime = isset($data['eventCreationTime']) ? new DateTime($data['eventCreationTime']) : null;

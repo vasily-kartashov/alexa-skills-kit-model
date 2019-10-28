@@ -56,7 +56,7 @@ final class RequestEnvelope implements JsonSerializable
 
     public static function builder(): RequestEnvelopeBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($version, $session, $context, $request) use ($instance): RequestEnvelope {
             $instance->version = $version;
             $instance->session = $session;
@@ -79,7 +79,7 @@ final class RequestEnvelope implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->version = isset($data['version']) ? ((string) $data['version']) : null;
         $instance->session = isset($data['session']) ? Session::fromValue($data['session']) : null;
         $instance->context = isset($data['context']) ? Context::fromValue($data['context']) : null;

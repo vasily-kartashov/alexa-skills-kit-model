@@ -27,7 +27,7 @@ final class ParallelCommand extends Command implements JsonSerializable
 
     public static function builder(): ParallelCommandBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($commands) use ($instance): ParallelCommand {
             $instance->commands = $commands;
             return $instance;
@@ -47,7 +47,7 @@ final class ParallelCommand extends Command implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->commands = [];
         if (isset($data['commands'])) {

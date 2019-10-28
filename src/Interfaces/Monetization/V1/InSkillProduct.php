@@ -23,7 +23,7 @@ final class InSkillProduct implements JsonSerializable
 
     public static function builder(): InSkillProductBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($productId) use ($instance): InSkillProduct {
             $instance->productId = $productId;
             return $instance;
@@ -43,7 +43,7 @@ final class InSkillProduct implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->productId = isset($data['productId']) ? ((string) $data['productId']) : null;
         return $instance;
     }

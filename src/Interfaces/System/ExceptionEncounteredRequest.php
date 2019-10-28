@@ -39,7 +39,7 @@ final class ExceptionEncounteredRequest extends Request implements JsonSerializa
 
     public static function builder(): ExceptionEncounteredRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($error, $cause) use ($instance): ExceptionEncounteredRequest {
             $instance->error = $error;
             $instance->cause = $cause;
@@ -60,7 +60,7 @@ final class ExceptionEncounteredRequest extends Request implements JsonSerializa
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->error = isset($data['error']) ? Error::fromValue($data['error']) : null;
         $instance->cause = isset($data['cause']) ? ErrorCause::fromValue($data['cause']) : null;

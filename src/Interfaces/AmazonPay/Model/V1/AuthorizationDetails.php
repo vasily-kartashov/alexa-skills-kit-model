@@ -156,7 +156,7 @@ final class AuthorizationDetails implements JsonSerializable
 
     public static function builder(): AuthorizationDetailsBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($amazonAuthorizationId, $authorizationReferenceId, $sellerAuthorizationNote, $authorizationAmount, $capturedAmount, $authorizationFee, $idList, $creationTimestamp, $expirationTimestamp, $authorizationStatus, $softDecline, $captureNow, $softDescriptor) use ($instance): AuthorizationDetails {
             $instance->amazonAuthorizationId = $amazonAuthorizationId;
             $instance->authorizationReferenceId = $authorizationReferenceId;
@@ -188,7 +188,7 @@ final class AuthorizationDetails implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->amazonAuthorizationId = isset($data['amazonAuthorizationId']) ? ((string) $data['amazonAuthorizationId']) : null;
         $instance->authorizationReferenceId = isset($data['authorizationReferenceId']) ? ((string) $data['authorizationReferenceId']) : null;
         $instance->sellerAuthorizationNote = isset($data['sellerAuthorizationNote']) ? ((string) $data['sellerAuthorizationNote']) : null;

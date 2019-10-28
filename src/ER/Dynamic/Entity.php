@@ -34,7 +34,7 @@ final class Entity implements JsonSerializable
 
     public static function builder(): EntityBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($id, $name) use ($instance): Entity {
             $instance->id = $id;
             $instance->name = $name;
@@ -55,7 +55,7 @@ final class Entity implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->id = isset($data['id']) ? ((string) $data['id']) : null;
         $instance->name = isset($data['name']) ? EntityValueAndSynonyms::fromValue($data['name']) : null;
         return $instance;

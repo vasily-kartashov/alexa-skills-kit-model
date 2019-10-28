@@ -34,7 +34,7 @@ final class Expiration implements JsonSerializable
 
     public static function builder(): ExpirationBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($durationInMilliseconds, $expirationPayload) use ($instance): Expiration {
             $instance->durationInMilliseconds = $durationInMilliseconds;
             $instance->expirationPayload = $expirationPayload;
@@ -55,7 +55,7 @@ final class Expiration implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->durationInMilliseconds = isset($data['durationInMilliseconds']) ? ((int) $data['durationInMilliseconds']) : null;
         $instance->expirationPayload = $data['expirationPayload'];
         return $instance;

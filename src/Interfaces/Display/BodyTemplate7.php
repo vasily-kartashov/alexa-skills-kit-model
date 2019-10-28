@@ -49,7 +49,7 @@ final class BodyTemplate7 extends Template implements JsonSerializable
 
     public static function builder(): BodyTemplate7Builder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($title, $image, $backgroundImage) use ($instance): BodyTemplate7 {
             $instance->title = $title;
             $instance->image = $image;
@@ -71,7 +71,7 @@ final class BodyTemplate7 extends Template implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->type = self::TYPE;
         $instance->title = isset($data['title']) ? ((string) $data['title']) : null;
         $instance->image = isset($data['image']) ? Image::fromValue($data['image']) : null;

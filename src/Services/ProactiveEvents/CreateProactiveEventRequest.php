@@ -79,7 +79,7 @@ final class CreateProactiveEventRequest implements JsonSerializable
 
     public static function builder(): CreateProactiveEventRequestBuilder
     {
-        $instance = new self();
+        $instance = new self;
         $constructor = function ($timestamp, $referenceId, $expiryTime, $event, $localizedAttributes, $relevantAudience) use ($instance): CreateProactiveEventRequest {
             $instance->timestamp = $timestamp;
             $instance->referenceId = $referenceId;
@@ -104,7 +104,7 @@ final class CreateProactiveEventRequest implements JsonSerializable
      */
     public static function fromValue(array $data)
     {
-        $instance = new self();
+        $instance = new self;
         $instance->timestamp = isset($data['timestamp']) ? new DateTime($data['timestamp']) : null;
         $instance->referenceId = isset($data['referenceId']) ? ((string) $data['referenceId']) : null;
         $instance->expiryTime = isset($data['expiryTime']) ? new DateTime($data['expiryTime']) : null;
