@@ -38,6 +38,17 @@ final class ErrorCause implements JsonSerializable
     }
 
     /**
+     * @param string $requestId
+     * @return self
+     */
+    public static function ofRequestId(string $requestId): ErrorCause
+    {
+        $instance = new self;
+        $instance->requestId = $requestId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -50,6 +50,17 @@ final class Price implements JsonSerializable
     }
 
     /**
+     * @param string $amount
+     * @return self
+     */
+    public static function ofAmount(string $amount): Price
+    {
+        $instance = new self;
+        $instance->amount = $amount;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

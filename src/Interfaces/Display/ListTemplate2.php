@@ -66,6 +66,17 @@ final class ListTemplate2 extends Template implements JsonSerializable
     }
 
     /**
+     * @param Image $backgroundImage
+     * @return self
+     */
+    public static function ofBackgroundImage(Image $backgroundImage): ListTemplate2
+    {
+        $instance = new self;
+        $instance->backgroundImage = $backgroundImage;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

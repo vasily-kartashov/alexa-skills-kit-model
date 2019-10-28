@@ -75,6 +75,17 @@ final class ReminderRequest implements JsonSerializable
     }
 
     /**
+     * @param DateTime $requestTime
+     * @return self
+     */
+    public static function ofRequestTime(DateTime $requestTime): ReminderRequest
+    {
+        $instance = new self;
+        $instance->requestTime = $requestTime;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

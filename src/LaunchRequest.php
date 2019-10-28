@@ -42,6 +42,17 @@ final class LaunchRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param Task $task
+     * @return self
+     */
+    public static function ofTask(Task $task): LaunchRequest
+    {
+        $instance = new self;
+        $instance->task = $task;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

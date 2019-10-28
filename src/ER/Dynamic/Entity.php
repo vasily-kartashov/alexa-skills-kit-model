@@ -50,6 +50,17 @@ final class Entity implements JsonSerializable
     }
 
     /**
+     * @param string $id
+     * @return self
+     */
+    public static function ofId(string $id): Entity
+    {
+        $instance = new self;
+        $instance->id = $id;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -38,6 +38,17 @@ final class Application implements JsonSerializable
     }
 
     /**
+     * @param string $applicationId
+     * @return self
+     */
+    public static function ofApplicationId(string $applicationId): Application
+    {
+        $instance = new self;
+        $instance->applicationId = $applicationId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

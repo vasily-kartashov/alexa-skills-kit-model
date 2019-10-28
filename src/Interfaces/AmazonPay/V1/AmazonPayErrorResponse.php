@@ -50,6 +50,17 @@ final class AmazonPayErrorResponse implements JsonSerializable
     }
 
     /**
+     * @param string $errorCode
+     * @return self
+     */
+    public static function ofErrorCode(string $errorCode): AmazonPayErrorResponse
+    {
+        $instance = new self;
+        $instance->errorCode = $errorCode;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

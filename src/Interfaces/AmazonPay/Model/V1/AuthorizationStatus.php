@@ -75,6 +75,17 @@ final class AuthorizationStatus implements JsonSerializable
     }
 
     /**
+     * @param State $state
+     * @return self
+     */
+    public static function ofState(State $state): AuthorizationStatus
+    {
+        $instance = new self;
+        $instance->state = $state;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

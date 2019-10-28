@@ -38,6 +38,17 @@ final class ForbiddenError implements JsonSerializable
     }
 
     /**
+     * @param string $message
+     * @return self
+     */
+    public static function ofMessage(string $message): ForbiddenError
+    {
+        $instance = new self;
+        $instance->message = $message;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -54,6 +54,17 @@ final class ScrollCommand extends Command implements JsonSerializable
     }
 
     /**
+     * @param string $distance
+     * @return self
+     */
+    public static function ofDistance(string $distance): ScrollCommand
+    {
+        $instance = new self;
+        $instance->distance = $distance;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

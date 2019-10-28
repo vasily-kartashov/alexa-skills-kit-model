@@ -90,6 +90,17 @@ final class PatternRecognizer extends Recognizer implements JsonSerializable
     }
 
     /**
+     * @param PatternRecognizerAnchorType $anchor
+     * @return self
+     */
+    public static function ofAnchor(PatternRecognizerAnchorType $anchor): PatternRecognizer
+    {
+        $instance = new self;
+        $instance->anchor = $anchor;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

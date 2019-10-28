@@ -43,6 +43,17 @@ final class StopInputHandlerDirective extends Directive implements JsonSerializa
     }
 
     /**
+     * @param string $originatingRequestId
+     * @return self
+     */
+    public static function ofOriginatingRequestId(string $originatingRequestId): StopInputHandlerDirective
+    {
+        $instance = new self;
+        $instance->originatingRequestId = $originatingRequestId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

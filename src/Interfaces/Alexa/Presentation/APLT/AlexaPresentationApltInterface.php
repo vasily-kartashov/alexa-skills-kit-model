@@ -38,6 +38,17 @@ final class AlexaPresentationApltInterface implements JsonSerializable
     }
 
     /**
+     * @param Runtime $runtime
+     * @return self
+     */
+    public static function ofRuntime(Runtime $runtime): AlexaPresentationApltInterface
+    {
+        $instance = new self;
+        $instance->runtime = $runtime;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

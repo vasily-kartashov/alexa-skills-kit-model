@@ -74,6 +74,17 @@ final class ResponseEnvelope implements JsonSerializable
     }
 
     /**
+     * @param string $version
+     * @return self
+     */
+    public static function ofVersion(string $version): ResponseEnvelope
+    {
+        $instance = new self;
+        $instance->version = $version;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

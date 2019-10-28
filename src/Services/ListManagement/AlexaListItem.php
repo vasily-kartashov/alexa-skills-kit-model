@@ -110,6 +110,17 @@ final class AlexaListItem implements JsonSerializable
     }
 
     /**
+     * @param string $id
+     * @return self
+     */
+    public static function ofId(string $id): AlexaListItem
+    {
+        $instance = new self;
+        $instance->id = $id;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

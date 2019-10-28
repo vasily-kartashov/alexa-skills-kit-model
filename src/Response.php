@@ -102,6 +102,17 @@ final class Response implements JsonSerializable
     }
 
     /**
+     * @param OutputSpeech $outputSpeech
+     * @return self
+     */
+    public static function ofOutputSpeech(OutputSpeech $outputSpeech): Response
+    {
+        $instance = new self;
+        $instance->outputSpeech = $outputSpeech;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

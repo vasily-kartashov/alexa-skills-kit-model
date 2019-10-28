@@ -38,6 +38,17 @@ final class Runtime implements JsonSerializable
     }
 
     /**
+     * @param string $maxVersion
+     * @return self
+     */
+    public static function ofMaxVersion(string $maxVersion): Runtime
+    {
+        $instance = new self;
+        $instance->maxVersion = $maxVersion;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -38,6 +38,17 @@ final class PermissionBody implements JsonSerializable
     }
 
     /**
+     * @param array $acceptedPermissions
+     * @return self
+     */
+    public static function ofAcceptedPermissions(array $acceptedPermissions): PermissionBody
+    {
+        $instance = new self;
+        $instance->acceptedPermissions = $acceptedPermissions;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

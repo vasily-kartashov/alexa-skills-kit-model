@@ -50,6 +50,17 @@ final class VideoItem implements JsonSerializable
     }
 
     /**
+     * @param string $source
+     * @return self
+     */
+    public static function ofSource(string $source): VideoItem
+    {
+        $instance = new self;
+        $instance->source = $source;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

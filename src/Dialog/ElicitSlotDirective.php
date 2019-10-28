@@ -56,6 +56,17 @@ final class ElicitSlotDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param Intent $updatedIntent
+     * @return self
+     */
+    public static function ofUpdatedIntent(Intent $updatedIntent): ElicitSlotDirective
+    {
+        $instance = new self;
+        $instance->updatedIntent = $updatedIntent;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

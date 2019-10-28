@@ -38,6 +38,17 @@ final class Links implements JsonSerializable
     }
 
     /**
+     * @param string $next
+     * @return self
+     */
+    public static function ofNext(string $next): Links
+    {
+        $instance = new self;
+        $instance->next = $next;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

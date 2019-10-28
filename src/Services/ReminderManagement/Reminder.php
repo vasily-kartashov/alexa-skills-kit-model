@@ -123,6 +123,17 @@ final class Reminder implements JsonSerializable
     }
 
     /**
+     * @param string $alertToken
+     * @return self
+     */
+    public static function ofAlertToken(string $alertToken): Reminder
+    {
+        $instance = new self;
+        $instance->alertToken = $alertToken;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

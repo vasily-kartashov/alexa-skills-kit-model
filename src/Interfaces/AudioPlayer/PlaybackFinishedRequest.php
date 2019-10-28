@@ -55,6 +55,17 @@ final class PlaybackFinishedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param int $offsetInMilliseconds
+     * @return self
+     */
+    public static function ofOffsetInMilliseconds(int $offsetInMilliseconds): PlaybackFinishedRequest
+    {
+        $instance = new self;
+        $instance->offsetInMilliseconds = $offsetInMilliseconds;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

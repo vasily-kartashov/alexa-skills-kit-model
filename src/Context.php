@@ -117,6 +117,17 @@ final class Context implements JsonSerializable
     }
 
     /**
+     * @param SystemState $system
+     * @return self
+     */
+    public static function ofSystem(SystemState $system): Context
+    {
+        $instance = new self;
+        $instance->system = $system;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

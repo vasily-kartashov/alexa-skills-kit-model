@@ -50,6 +50,17 @@ final class Status implements JsonSerializable
     }
 
     /**
+     * @param string $url
+     * @return self
+     */
+    public static function ofUrl(string $url): Status
+    {
+        $instance = new self;
+        $instance->url = $url;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

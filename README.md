@@ -22,9 +22,7 @@ Writing response envelope
 To create a json response use respective builders
 
 ```php
-$speech = PlainTextOutputSpeech::builder()
-    ->withText("Plain text string to speak")
-    ->build();
+$speech = PlainTextOutputSpeech::ofText("Plain text string to speak");
     
 $response = Response::builder()
     ->withOutputSpeech($speech)

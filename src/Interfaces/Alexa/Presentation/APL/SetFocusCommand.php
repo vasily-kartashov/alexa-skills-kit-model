@@ -42,6 +42,17 @@ final class SetFocusCommand extends Command implements JsonSerializable
     }
 
     /**
+     * @param string $componentId
+     * @return self
+     */
+    public static function ofComponentId(string $componentId): SetFocusCommand
+    {
+        $instance = new self;
+        $instance->componentId = $componentId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

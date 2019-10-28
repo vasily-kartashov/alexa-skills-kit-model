@@ -38,6 +38,17 @@ final class Permission implements JsonSerializable
     }
 
     /**
+     * @param string $scope
+     * @return self
+     */
+    public static function ofScope(string $scope): Permission
+    {
+        $instance = new self;
+        $instance->scope = $scope;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

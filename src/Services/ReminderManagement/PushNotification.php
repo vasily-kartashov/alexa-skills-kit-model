@@ -38,6 +38,17 @@ final class PushNotification implements JsonSerializable
     }
 
     /**
+     * @param PushNotificationStatus $status
+     * @return self
+     */
+    public static function ofStatus(PushNotificationStatus $status): PushNotification
+    {
+        $instance = new self;
+        $instance->status = $status;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

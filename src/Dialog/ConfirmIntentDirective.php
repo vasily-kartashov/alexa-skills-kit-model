@@ -44,6 +44,17 @@ final class ConfirmIntentDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param Intent $updatedIntent
+     * @return self
+     */
+    public static function ofUpdatedIntent(Intent $updatedIntent): ConfirmIntentDirective
+    {
+        $instance = new self;
+        $instance->updatedIntent = $updatedIntent;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

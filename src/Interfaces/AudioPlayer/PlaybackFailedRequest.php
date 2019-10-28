@@ -67,6 +67,17 @@ final class PlaybackFailedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param CurrentPlaybackState $currentPlaybackState
+     * @return self
+     */
+    public static function ofCurrentPlaybackState(CurrentPlaybackState $currentPlaybackState): PlaybackFailedRequest
+    {
+        $instance = new self;
+        $instance->currentPlaybackState = $currentPlaybackState;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

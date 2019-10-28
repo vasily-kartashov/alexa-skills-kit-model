@@ -38,6 +38,17 @@ final class Resolutions implements JsonSerializable
     }
 
     /**
+     * @param array $resolutionsPerAuthority
+     * @return self
+     */
+    public static function ofResolutionsPerAuthority(array $resolutionsPerAuthority): Resolutions
+    {
+        $instance = new self;
+        $instance->resolutionsPerAuthority = $resolutionsPerAuthority;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

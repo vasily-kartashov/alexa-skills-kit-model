@@ -38,6 +38,17 @@ final class Header implements JsonSerializable
     }
 
     /**
+     * @param string $requestId
+     * @return self
+     */
+    public static function ofRequestId(string $requestId): Header
+    {
+        $instance = new self;
+        $instance->requestId = $requestId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

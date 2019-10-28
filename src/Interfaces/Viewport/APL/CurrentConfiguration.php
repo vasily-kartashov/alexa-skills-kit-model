@@ -65,6 +65,17 @@ final class CurrentConfiguration implements JsonSerializable
     }
 
     /**
+     * @param Mode $mode
+     * @return self
+     */
+    public static function ofMode(Mode $mode): CurrentConfiguration
+    {
+        $instance = new self;
+        $instance->mode = $mode;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -43,6 +43,17 @@ final class ReminderStartedEventRequest extends Request implements JsonSerializa
     }
 
     /**
+     * @param Event $body
+     * @return self
+     */
+    public static function ofBody(Event $body): ReminderStartedEventRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -38,6 +38,17 @@ final class ViewportConfiguration implements JsonSerializable
     }
 
     /**
+     * @param CurrentConfiguration $current
+     * @return self
+     */
+    public static function ofCurrent(CurrentConfiguration $current): ViewportConfiguration
+    {
+        $instance = new self;
+        $instance->current = $current;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

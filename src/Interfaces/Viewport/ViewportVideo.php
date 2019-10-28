@@ -39,6 +39,17 @@ final class ViewportVideo implements JsonSerializable
     }
 
     /**
+     * @param array $codecs
+     * @return self
+     */
+    public static function ofCodecs(array $codecs): ViewportVideo
+    {
+        $instance = new self;
+        $instance->codecs = $codecs;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

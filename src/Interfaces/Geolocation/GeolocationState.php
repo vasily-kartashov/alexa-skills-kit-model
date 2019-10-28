@@ -98,6 +98,17 @@ final class GeolocationState implements JsonSerializable
     }
 
     /**
+     * @param string $timestamp
+     * @return self
+     */
+    public static function ofTimestamp(string $timestamp): GeolocationState
+    {
+        $instance = new self;
+        $instance->timestamp = $timestamp;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

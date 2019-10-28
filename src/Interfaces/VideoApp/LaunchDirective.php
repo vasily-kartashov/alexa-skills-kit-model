@@ -43,6 +43,17 @@ final class LaunchDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param VideoItem $videoItem
+     * @return self
+     */
+    public static function ofVideoItem(VideoItem $videoItem): LaunchDirective
+    {
+        $instance = new self;
+        $instance->videoItem = $videoItem;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

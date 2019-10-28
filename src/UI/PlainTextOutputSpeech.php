@@ -42,6 +42,17 @@ final class PlainTextOutputSpeech extends OutputSpeech implements JsonSerializab
     }
 
     /**
+     * @param string $text
+     * @return self
+     */
+    public static function ofText(string $text): PlainTextOutputSpeech
+    {
+        $instance = new self;
+        $instance->text = $text;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

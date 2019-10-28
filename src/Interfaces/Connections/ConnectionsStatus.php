@@ -50,6 +50,17 @@ final class ConnectionsStatus implements JsonSerializable
     }
 
     /**
+     * @param string $code
+     * @return self
+     */
+    public static function ofCode(string $code): ConnectionsStatus
+    {
+        $instance = new self;
+        $instance->code = $code;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

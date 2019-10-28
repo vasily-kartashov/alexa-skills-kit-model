@@ -38,6 +38,17 @@ final class AccountLinkedBody implements JsonSerializable
     }
 
     /**
+     * @param string $accessToken
+     * @return self
+     */
+    public static function ofAccessToken(string $accessToken): AccountLinkedBody
+    {
+        $instance = new self;
+        $instance->accessToken = $accessToken;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

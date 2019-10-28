@@ -43,6 +43,17 @@ final class MessageReceivedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param array $message
+     * @return self
+     */
+    public static function ofMessage(array $message): MessageReceivedRequest
+    {
+        $instance = new self;
+        $instance->message = $message;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

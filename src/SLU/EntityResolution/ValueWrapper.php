@@ -38,6 +38,17 @@ final class ValueWrapper implements JsonSerializable
     }
 
     /**
+     * @param Value $value
+     * @return self
+     */
+    public static function ofValue(Value $value): ValueWrapper
+    {
+        $instance = new self;
+        $instance->value = $value;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -38,6 +38,17 @@ final class Reprompt implements JsonSerializable
     }
 
     /**
+     * @param OutputSpeech $outputSpeech
+     * @return self
+     */
+    public static function ofOutputSpeech(OutputSpeech $outputSpeech): Reprompt
+    {
+        $instance = new self;
+        $instance->outputSpeech = $outputSpeech;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

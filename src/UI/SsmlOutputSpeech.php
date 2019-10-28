@@ -42,6 +42,17 @@ final class SsmlOutputSpeech extends OutputSpeech implements JsonSerializable
     }
 
     /**
+     * @param string $ssml
+     * @return self
+     */
+    public static function ofSsml(string $ssml): SsmlOutputSpeech
+    {
+        $instance = new self;
+        $instance->ssml = $ssml;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

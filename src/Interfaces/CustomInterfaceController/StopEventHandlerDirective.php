@@ -43,6 +43,17 @@ final class StopEventHandlerDirective extends Directive implements JsonSerializa
     }
 
     /**
+     * @param string $token
+     * @return self
+     */
+    public static function ofToken(string $token): StopEventHandlerDirective
+    {
+        $instance = new self;
+        $instance->token = $token;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

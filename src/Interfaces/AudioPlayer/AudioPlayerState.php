@@ -62,6 +62,17 @@ final class AudioPlayerState implements JsonSerializable
     }
 
     /**
+     * @param int $offsetInMilliseconds
+     * @return self
+     */
+    public static function ofOffsetInMilliseconds(int $offsetInMilliseconds): AudioPlayerState
+    {
+        $instance = new self;
+        $instance->offsetInMilliseconds = $offsetInMilliseconds;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

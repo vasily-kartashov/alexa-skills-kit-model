@@ -86,6 +86,17 @@ final class VideoSource implements JsonSerializable
     }
 
     /**
+     * @param string $description
+     * @return self
+     */
+    public static function ofDescription(string $description): VideoSource
+    {
+        $instance = new self;
+        $instance->description = $description;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

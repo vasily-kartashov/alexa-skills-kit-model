@@ -38,6 +38,17 @@ final class RotateTransformProperty extends TransformProperty implements JsonSer
     }
 
     /**
+     * @param string $rotate
+     * @return self
+     */
+    public static function ofRotate(string $rotate): RotateTransformProperty
+    {
+        $instance = new self;
+        $instance->rotate = $rotate;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

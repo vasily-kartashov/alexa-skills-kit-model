@@ -43,6 +43,17 @@ final class ClearQueueDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param ClearBehavior $clearBehavior
+     * @return self
+     */
+    public static function ofClearBehavior(ClearBehavior $clearBehavior): ClearQueueDirective
+    {
+        $instance = new self;
+        $instance->clearBehavior = $clearBehavior;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

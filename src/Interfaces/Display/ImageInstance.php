@@ -74,6 +74,17 @@ final class ImageInstance implements JsonSerializable
     }
 
     /**
+     * @param string $url
+     * @return self
+     */
+    public static function ofUrl(string $url): ImageInstance
+    {
+        $instance = new self;
+        $instance->url = $url;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

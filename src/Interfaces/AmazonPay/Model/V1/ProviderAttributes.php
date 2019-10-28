@@ -50,6 +50,17 @@ final class ProviderAttributes implements JsonSerializable
     }
 
     /**
+     * @param string $providerId
+     * @return self
+     */
+    public static function ofProviderId(string $providerId): ProviderAttributes
+    {
+        $instance = new self;
+        $instance->providerId = $providerId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -50,6 +50,17 @@ final class EventFilter implements JsonSerializable
     }
 
     /**
+     * @param mixed $filterExpression
+     * @return self
+     */
+    public static function ofFilterExpression($filterExpression): EventFilter
+    {
+        $instance = new self;
+        $instance->filterExpression = $filterExpression;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

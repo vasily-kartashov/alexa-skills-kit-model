@@ -42,6 +42,17 @@ final class AskForPermissionsConsentCard extends Card implements JsonSerializabl
     }
 
     /**
+     * @param array $permissions
+     * @return self
+     */
+    public static function ofPermissions(array $permissions): AskForPermissionsConsentCard
+    {
+        $instance = new self;
+        $instance->permissions = $permissions;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

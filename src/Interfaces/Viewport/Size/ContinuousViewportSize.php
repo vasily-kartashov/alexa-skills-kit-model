@@ -78,6 +78,17 @@ final class ContinuousViewportSize extends ViewportSize implements JsonSerializa
     }
 
     /**
+     * @param int $minPixelWidth
+     * @return self
+     */
+    public static function ofMinPixelWidth(int $minPixelWidth): ContinuousViewportSize
+    {
+        $instance = new self;
+        $instance->minPixelWidth = $minPixelWidth;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

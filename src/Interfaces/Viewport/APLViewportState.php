@@ -91,6 +91,17 @@ final class APLViewportState extends TypedViewportState implements JsonSerializa
     }
 
     /**
+     * @param Shape $shape
+     * @return self
+     */
+    public static function ofShape(Shape $shape): APLViewportState
+    {
+        $instance = new self;
+        $instance->shape = $shape;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

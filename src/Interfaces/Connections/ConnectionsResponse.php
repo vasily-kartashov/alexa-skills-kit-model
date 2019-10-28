@@ -79,6 +79,17 @@ final class ConnectionsResponse extends Request implements JsonSerializable
     }
 
     /**
+     * @param ConnectionsStatus $status
+     * @return self
+     */
+    public static function ofStatus(ConnectionsStatus $status): ConnectionsResponse
+    {
+        $instance = new self;
+        $instance->status = $status;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

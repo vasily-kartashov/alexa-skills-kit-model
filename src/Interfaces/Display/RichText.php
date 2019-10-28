@@ -42,6 +42,17 @@ final class RichText extends TextField implements JsonSerializable
     }
 
     /**
+     * @param string $text
+     * @return self
+     */
+    public static function ofText(string $text): RichText
+    {
+        $instance = new self;
+        $instance->text = $text;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

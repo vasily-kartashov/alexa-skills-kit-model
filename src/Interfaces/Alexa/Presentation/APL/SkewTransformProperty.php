@@ -50,6 +50,17 @@ final class SkewTransformProperty extends TransformProperty implements JsonSeria
     }
 
     /**
+     * @param string $skewX
+     * @return self
+     */
+    public static function ofSkewX(string $skewX): SkewTransformProperty
+    {
+        $instance = new self;
+        $instance->skewX = $skewX;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

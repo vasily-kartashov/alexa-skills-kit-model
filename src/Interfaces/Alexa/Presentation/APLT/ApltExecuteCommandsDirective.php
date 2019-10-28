@@ -55,6 +55,17 @@ final class ApltExecuteCommandsDirective extends Directive implements JsonSerial
     }
 
     /**
+     * @param array $commands
+     * @return self
+     */
+    public static function ofCommands(array $commands): ApltExecuteCommandsDirective
+    {
+        $instance = new self;
+        $instance->commands = $commands;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

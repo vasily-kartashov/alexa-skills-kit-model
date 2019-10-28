@@ -50,6 +50,17 @@ final class PhoneNumber implements JsonSerializable
     }
 
     /**
+     * @param string $countryCode
+     * @return self
+     */
+    public static function ofCountryCode(string $countryCode): PhoneNumber
+    {
+        $instance = new self;
+        $instance->countryCode = $countryCode;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

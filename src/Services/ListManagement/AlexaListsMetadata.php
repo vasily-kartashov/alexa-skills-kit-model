@@ -38,6 +38,17 @@ final class AlexaListsMetadata implements JsonSerializable
     }
 
     /**
+     * @param array $lists
+     * @return self
+     */
+    public static function ofLists(array $lists): AlexaListsMetadata
+    {
+        $instance = new self;
+        $instance->lists = $lists;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -42,6 +42,17 @@ final class ParallelCommand extends Command implements JsonSerializable
     }
 
     /**
+     * @param array $commands
+     * @return self
+     */
+    public static function ofCommands(array $commands): ParallelCommand
+    {
+        $instance = new self;
+        $instance->commands = $commands;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -38,6 +38,17 @@ final class AlertInfo implements JsonSerializable
     }
 
     /**
+     * @param AlertInfoSpokenInfo $spokenInfo
+     * @return self
+     */
+    public static function ofSpokenInfo(AlertInfoSpokenInfo $spokenInfo): AlertInfo
+    {
+        $instance = new self;
+        $instance->spokenInfo = $spokenInfo;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

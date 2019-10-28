@@ -56,6 +56,17 @@ final class InputHandlerEventRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param string $originatingRequestId
+     * @return self
+     */
+    public static function ofOriginatingRequestId(string $originatingRequestId): InputHandlerEventRequest
+    {
+        $instance = new self;
+        $instance->originatingRequestId = $originatingRequestId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

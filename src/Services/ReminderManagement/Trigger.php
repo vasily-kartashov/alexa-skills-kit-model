@@ -86,6 +86,17 @@ final class Trigger implements JsonSerializable
     }
 
     /**
+     * @param TriggerType $type
+     * @return self
+     */
+    public static function ofType(TriggerType $type): Trigger
+    {
+        $instance = new self;
+        $instance->type = $type;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

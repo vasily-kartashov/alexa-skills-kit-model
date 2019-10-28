@@ -50,6 +50,17 @@ final class Expiration implements JsonSerializable
     }
 
     /**
+     * @param int $durationInMilliseconds
+     * @return self
+     */
+    public static function ofDurationInMilliseconds(int $durationInMilliseconds): Expiration
+    {
+        $instance = new self;
+        $instance->durationInMilliseconds = $durationInMilliseconds;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

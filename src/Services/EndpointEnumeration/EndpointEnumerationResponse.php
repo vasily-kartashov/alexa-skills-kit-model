@@ -38,6 +38,17 @@ final class EndpointEnumerationResponse implements JsonSerializable
     }
 
     /**
+     * @param array $endpoints
+     * @return self
+     */
+    public static function ofEndpoints(array $endpoints): EndpointEnumerationResponse
+    {
+        $instance = new self;
+        $instance->endpoints = $endpoints;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -50,6 +50,17 @@ final class Device implements JsonSerializable
     }
 
     /**
+     * @param string $deviceId
+     * @return self
+     */
+    public static function ofDeviceId(string $deviceId): Device
+    {
+        $instance = new self;
+        $instance->deviceId = $deviceId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

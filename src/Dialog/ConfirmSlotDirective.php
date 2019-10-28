@@ -56,6 +56,17 @@ final class ConfirmSlotDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param Intent $updatedIntent
+     * @return self
+     */
+    public static function ofUpdatedIntent(Intent $updatedIntent): ConfirmSlotDirective
+    {
+        $instance = new self;
+        $instance->updatedIntent = $updatedIntent;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

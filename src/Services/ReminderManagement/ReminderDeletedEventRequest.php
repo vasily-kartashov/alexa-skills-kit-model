@@ -43,6 +43,17 @@ final class ReminderDeletedEventRequest extends Request implements JsonSerializa
     }
 
     /**
+     * @param ReminderDeletedEvent $body
+     * @return self
+     */
+    public static function ofBody(ReminderDeletedEvent $body): ReminderDeletedEventRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -42,6 +42,17 @@ final class DeviationRecognizer extends Recognizer implements JsonSerializable
     }
 
     /**
+     * @param string $recognizer
+     * @return self
+     */
+    public static function ofRecognizer(string $recognizer): DeviationRecognizer
+    {
+        $instance = new self;
+        $instance->recognizer = $recognizer;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

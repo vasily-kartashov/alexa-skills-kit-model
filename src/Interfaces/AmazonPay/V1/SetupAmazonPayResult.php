@@ -39,6 +39,17 @@ final class SetupAmazonPayResult implements JsonSerializable
     }
 
     /**
+     * @param BillingAgreementDetails $billingAgreementDetails
+     * @return self
+     */
+    public static function ofBillingAgreementDetails(BillingAgreementDetails $billingAgreementDetails): SetupAmazonPayResult
+    {
+        $instance = new self;
+        $instance->billingAgreementDetails = $billingAgreementDetails;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

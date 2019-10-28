@@ -43,6 +43,17 @@ final class RenderTemplateDirective extends Directive implements JsonSerializabl
     }
 
     /**
+     * @param Template $template
+     * @return self
+     */
+    public static function ofTemplate(Template $template): RenderTemplateDirective
+    {
+        $instance = new self;
+        $instance->template = $template;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

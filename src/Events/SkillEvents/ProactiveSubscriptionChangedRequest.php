@@ -43,6 +43,17 @@ final class ProactiveSubscriptionChangedRequest extends Request implements JsonS
     }
 
     /**
+     * @param ProactiveSubscriptionChangedBody $body
+     * @return self
+     */
+    public static function ofBody(ProactiveSubscriptionChangedBody $body): ProactiveSubscriptionChangedRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

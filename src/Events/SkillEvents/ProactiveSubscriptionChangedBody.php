@@ -38,6 +38,17 @@ final class ProactiveSubscriptionChangedBody implements JsonSerializable
     }
 
     /**
+     * @param array $subscriptions
+     * @return self
+     */
+    public static function ofSubscriptions(array $subscriptions): ProactiveSubscriptionChangedBody
+    {
+        $instance = new self;
+        $instance->subscriptions = $subscriptions;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

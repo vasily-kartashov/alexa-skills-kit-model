@@ -38,6 +38,17 @@ final class Scope implements JsonSerializable
     }
 
     /**
+     * @param PermissionStatus $status
+     * @return self
+     */
+    public static function ofStatus(PermissionStatus $status): Scope
+    {
+        $instance = new self;
+        $instance->status = $status;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

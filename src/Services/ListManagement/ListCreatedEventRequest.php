@@ -68,6 +68,17 @@ final class ListCreatedEventRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param ListBody $body
+     * @return self
+     */
+    public static function ofBody(ListBody $body): ListCreatedEventRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -78,6 +78,17 @@ final class PrintImageRequest extends BaseRequest implements JsonSerializable
     }
 
     /**
+     * @param string $title
+     * @return self
+     */
+    public static function ofTitle(string $title): PrintImageRequest
+    {
+        $instance = new self;
+        $instance->title = $title;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

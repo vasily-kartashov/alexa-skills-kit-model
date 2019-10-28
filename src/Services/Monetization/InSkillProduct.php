@@ -146,6 +146,17 @@ final class InSkillProduct implements JsonSerializable
     }
 
     /**
+     * @param string $productId
+     * @return self
+     */
+    public static function ofProductId(string $productId): InSkillProduct
+    {
+        $instance = new self;
+        $instance->productId = $productId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

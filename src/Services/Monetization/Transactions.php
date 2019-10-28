@@ -75,6 +75,17 @@ final class Transactions implements JsonSerializable
     }
 
     /**
+     * @param Status $status
+     * @return self
+     */
+    public static function ofStatus(Status $status): Transactions
+    {
+        $instance = new self;
+        $instance->status = $status;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

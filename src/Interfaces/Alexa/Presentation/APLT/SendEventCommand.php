@@ -54,6 +54,17 @@ final class SendEventCommand extends Command implements JsonSerializable
     }
 
     /**
+     * @param array $arguments
+     * @return self
+     */
+    public static function ofArguments(array $arguments): SendEventCommand
+    {
+        $instance = new self;
+        $instance->arguments = $arguments;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

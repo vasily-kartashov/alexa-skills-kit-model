@@ -50,6 +50,17 @@ final class Speed implements JsonSerializable
     }
 
     /**
+     * @param float $speedInMetersPerSecond
+     * @return self
+     */
+    public static function ofSpeedInMetersPerSecond(float $speedInMetersPerSecond): Speed
+    {
+        $instance = new self;
+        $instance->speedInMetersPerSecond = $speedInMetersPerSecond;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

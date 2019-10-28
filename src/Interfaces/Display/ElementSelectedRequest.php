@@ -43,6 +43,17 @@ final class ElementSelectedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param string $token
+     * @return self
+     */
+    public static function ofToken(string $token): ElementSelectedRequest
+    {
+        $instance = new self;
+        $instance->token = $token;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

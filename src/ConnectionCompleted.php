@@ -66,6 +66,17 @@ final class ConnectionCompleted extends Cause implements JsonSerializable
     }
 
     /**
+     * @param string $token
+     * @return self
+     */
+    public static function ofToken(string $token): ConnectionCompleted
+    {
+        $instance = new self;
+        $instance->token = $token;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

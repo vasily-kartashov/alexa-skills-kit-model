@@ -50,6 +50,17 @@ final class DisplayInterface implements JsonSerializable
     }
 
     /**
+     * @param string $templateVersion
+     * @return self
+     */
+    public static function ofTemplateVersion(string $templateVersion): DisplayInterface
+    {
+        $instance = new self;
+        $instance->templateVersion = $templateVersion;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

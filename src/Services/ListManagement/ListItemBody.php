@@ -50,6 +50,17 @@ final class ListItemBody implements JsonSerializable
     }
 
     /**
+     * @param string $listId
+     * @return self
+     */
+    public static function ofListId(string $listId): ListItemBody
+    {
+        $instance = new self;
+        $instance->listId = $listId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

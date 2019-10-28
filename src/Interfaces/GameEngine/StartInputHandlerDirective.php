@@ -81,6 +81,17 @@ final class StartInputHandlerDirective extends Directive implements JsonSerializ
     }
 
     /**
+     * @param int $timeout
+     * @return self
+     */
+    public static function ofTimeout(int $timeout): StartInputHandlerDirective
+    {
+        $instance = new self;
+        $instance->timeout = $timeout;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -50,6 +50,17 @@ final class RelevantAudience implements JsonSerializable
     }
 
     /**
+     * @param RelevantAudienceType $type
+     * @return self
+     */
+    public static function ofType(RelevantAudienceType $type): RelevantAudience
+    {
+        $instance = new self;
+        $instance->type = $type;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

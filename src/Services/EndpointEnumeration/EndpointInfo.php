@@ -62,6 +62,17 @@ final class EndpointInfo implements JsonSerializable
     }
 
     /**
+     * @param string $endpointId
+     * @return self
+     */
+    public static function ofEndpointId(string $endpointId): EndpointInfo
+    {
+        $instance = new self;
+        $instance->endpointId = $endpointId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

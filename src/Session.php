@@ -86,6 +86,17 @@ final class Session implements JsonSerializable
     }
 
     /**
+     * @param bool $new
+     * @return self
+     */
+    public static function ofNew(bool $new): Session
+    {
+        $instance = new self;
+        $instance->new = $new;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

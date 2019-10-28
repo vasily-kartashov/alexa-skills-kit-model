@@ -62,6 +62,17 @@ final class EndpointCapability implements JsonSerializable
     }
 
     /**
+     * @param string $interface
+     * @return self
+     */
+    public static function ofInterface(string $interface): EndpointCapability
+    {
+        $instance = new self;
+        $instance->interface = $interface;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -68,6 +68,17 @@ final class AccountLinkedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param AccountLinkedBody $body
+     * @return self
+     */
+    public static function ofBody(AccountLinkedBody $body): AccountLinkedRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

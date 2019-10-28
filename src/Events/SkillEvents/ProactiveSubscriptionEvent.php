@@ -38,6 +38,17 @@ final class ProactiveSubscriptionEvent implements JsonSerializable
     }
 
     /**
+     * @param string $eventName
+     * @return self
+     */
+    public static function ofEventName(string $eventName): ProactiveSubscriptionEvent
+    {
+        $instance = new self;
+        $instance->eventName = $eventName;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

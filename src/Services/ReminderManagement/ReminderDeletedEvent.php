@@ -38,6 +38,17 @@ final class ReminderDeletedEvent implements JsonSerializable
     }
 
     /**
+     * @param array $alertTokens
+     * @return self
+     */
+    public static function ofAlertTokens(array $alertTokens): ReminderDeletedEvent
+    {
+        $instance = new self;
+        $instance->alertTokens = $alertTokens;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

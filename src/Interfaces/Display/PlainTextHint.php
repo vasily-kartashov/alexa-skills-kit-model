@@ -42,6 +42,17 @@ final class PlainTextHint extends Hint implements JsonSerializable
     }
 
     /**
+     * @param string $text
+     * @return self
+     */
+    public static function ofText(string $text): PlainTextHint
+    {
+        $instance = new self;
+        $instance->text = $text;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

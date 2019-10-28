@@ -62,6 +62,17 @@ final class Recurrence implements JsonSerializable
     }
 
     /**
+     * @param RecurrenceFreq $freq
+     * @return self
+     */
+    public static function ofFreq(RecurrenceFreq $freq): Recurrence
+    {
+        $instance = new self;
+        $instance->freq = $freq;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

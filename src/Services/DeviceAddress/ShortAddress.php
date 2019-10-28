@@ -50,6 +50,17 @@ final class ShortAddress implements JsonSerializable
     }
 
     /**
+     * @param string $countryCode
+     * @return self
+     */
+    public static function ofCountryCode(string $countryCode): ShortAddress
+    {
+        $instance = new self;
+        $instance->countryCode = $countryCode;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

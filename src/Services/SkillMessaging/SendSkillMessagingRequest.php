@@ -50,6 +50,17 @@ final class SendSkillMessagingRequest implements JsonSerializable
     }
 
     /**
+     * @param mixed $data
+     * @return self
+     */
+    public static function ofData($data): SendSkillMessagingRequest
+    {
+        $instance = new self;
+        $instance->data = $data;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

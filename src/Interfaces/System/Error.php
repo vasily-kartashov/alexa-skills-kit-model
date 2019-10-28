@@ -50,6 +50,17 @@ final class Error implements JsonSerializable
     }
 
     /**
+     * @param ErrorType $type
+     * @return self
+     */
+    public static function ofType(ErrorType $type): Error
+    {
+        $instance = new self;
+        $instance->type = $type;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

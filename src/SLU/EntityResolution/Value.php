@@ -50,6 +50,17 @@ final class Value implements JsonSerializable
     }
 
     /**
+     * @param string $name
+     * @return self
+     */
+    public static function ofName(string $name): Value
+    {
+        $instance = new self;
+        $instance->name = $name;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

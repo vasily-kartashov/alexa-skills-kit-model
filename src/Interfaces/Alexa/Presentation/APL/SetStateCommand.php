@@ -66,6 +66,17 @@ final class SetStateCommand extends Command implements JsonSerializable
     }
 
     /**
+     * @param string $componentId
+     * @return self
+     */
+    public static function ofComponentId(string $componentId): SetStateCommand
+    {
+        $instance = new self;
+        $instance->componentId = $componentId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

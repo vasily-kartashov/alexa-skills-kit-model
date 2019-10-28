@@ -89,6 +89,17 @@ final class SystemState implements JsonSerializable
     }
 
     /**
+     * @param Application $application
+     * @return self
+     */
+    public static function ofApplication(Application $application): SystemState
+    {
+        $instance = new self;
+        $instance->application = $application;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

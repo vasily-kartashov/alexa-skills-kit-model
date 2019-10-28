@@ -50,6 +50,17 @@ final class Error implements JsonSerializable
     }
 
     /**
+     * @param int $code
+     * @return self
+     */
+    public static function ofCode(int $code): Error
+    {
+        $instance = new self;
+        $instance->code = $code;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -99,6 +99,17 @@ final class CreateProactiveEventRequest implements JsonSerializable
     }
 
     /**
+     * @param DateTime $timestamp
+     * @return self
+     */
+    public static function ofTimestamp(DateTime $timestamp): CreateProactiveEventRequest
+    {
+        $instance = new self;
+        $instance->timestamp = $timestamp;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

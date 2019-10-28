@@ -50,6 +50,17 @@ final class Image implements JsonSerializable
     }
 
     /**
+     * @param string $smallImageUrl
+     * @return self
+     */
+    public static function ofSmallImageUrl(string $smallImageUrl): Image
+    {
+        $instance = new self;
+        $instance->smallImageUrl = $smallImageUrl;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

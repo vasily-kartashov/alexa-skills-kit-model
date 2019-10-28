@@ -114,6 +114,17 @@ final class ChargeAmazonPay implements JsonSerializable
     }
 
     /**
+     * @param string $consentToken
+     * @return self
+     */
+    public static function ofConsentToken(string $consentToken): ChargeAmazonPay
+    {
+        $instance = new self;
+        $instance->consentToken = $consentToken;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

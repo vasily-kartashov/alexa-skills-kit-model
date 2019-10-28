@@ -90,6 +90,17 @@ final class AuthorizeAttributes extends BaseAmazonPayEntity implements JsonSeria
     }
 
     /**
+     * @param string $authorizationReferenceId
+     * @return self
+     */
+    public static function ofAuthorizationReferenceId(string $authorizationReferenceId): AuthorizeAttributes
+    {
+        $instance = new self;
+        $instance->authorizationReferenceId = $authorizationReferenceId;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

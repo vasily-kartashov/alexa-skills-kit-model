@@ -79,6 +79,17 @@ final class AplRenderDocumentDirective extends Directive implements JsonSerializ
     }
 
     /**
+     * @param string $token
+     * @return self
+     */
+    public static function ofToken(string $token): AplRenderDocumentDirective
+    {
+        $instance = new self;
+        $instance->token = $token;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -68,6 +68,17 @@ final class SetLightDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param int $version
+     * @return self
+     */
+    public static function ofVersion(int $version): SetLightDirective
+    {
+        $instance = new self;
+        $instance->version = $version;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

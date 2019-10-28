@@ -42,6 +42,17 @@ final class SessionResumedRequest extends Request implements JsonSerializable
     }
 
     /**
+     * @param Cause $cause
+     * @return self
+     */
+    public static function ofCause(Cause $cause): SessionResumedRequest
+    {
+        $instance = new self;
+        $instance->cause = $cause;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

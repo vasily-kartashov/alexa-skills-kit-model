@@ -98,6 +98,17 @@ final class Event implements JsonSerializable
     }
 
     /**
+     * @param bool $shouldEndInputHandler
+     * @return self
+     */
+    public static function ofShouldEndInputHandler(bool $shouldEndInputHandler): Event
+    {
+        $instance = new self;
+        $instance->shouldEndInputHandler = $shouldEndInputHandler;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

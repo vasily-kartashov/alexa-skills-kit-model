@@ -42,6 +42,17 @@ final class SpeakDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param string $speech
+     * @return self
+     */
+    public static function ofSpeech(string $speech): SpeakDirective
+    {
+        $instance = new self;
+        $instance->speech = $speech;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

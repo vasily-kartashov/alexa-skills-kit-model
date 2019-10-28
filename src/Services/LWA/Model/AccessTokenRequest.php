@@ -62,6 +62,17 @@ final class AccessTokenRequest implements JsonSerializable
     }
 
     /**
+     * @param string $client_id
+     * @return self
+     */
+    public static function ofClient_id(string $client_id): AccessTokenRequest
+    {
+        $instance = new self;
+        $instance->client_id = $client_id;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -62,6 +62,17 @@ final class TextContent implements JsonSerializable
     }
 
     /**
+     * @param TextField $primaryText
+     * @return self
+     */
+    public static function ofPrimaryText(TextField $primaryText): TextContent
+    {
+        $instance = new self;
+        $instance->primaryText = $primaryText;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

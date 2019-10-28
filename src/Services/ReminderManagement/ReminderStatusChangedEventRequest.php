@@ -43,6 +43,17 @@ final class ReminderStatusChangedEventRequest extends Request implements JsonSer
     }
 
     /**
+     * @param Event $body
+     * @return self
+     */
+    public static function ofBody(Event $body): ReminderStatusChangedEventRequest
+    {
+        $instance = new self;
+        $instance->body = $body;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

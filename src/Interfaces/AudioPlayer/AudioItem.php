@@ -50,6 +50,17 @@ final class AudioItem implements JsonSerializable
     }
 
     /**
+     * @param Stream $stream
+     * @return self
+     */
+    public static function ofStream(Stream $stream): AudioItem
+    {
+        $instance = new self;
+        $instance->stream = $stream;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

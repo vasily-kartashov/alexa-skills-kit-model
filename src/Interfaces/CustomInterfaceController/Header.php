@@ -50,6 +50,17 @@ final class Header implements JsonSerializable
     }
 
     /**
+     * @param string $namespace
+     * @return self
+     */
+    public static function ofNamespace(string $namespace): Header
+    {
+        $instance = new self;
+        $instance->namespace = $namespace;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

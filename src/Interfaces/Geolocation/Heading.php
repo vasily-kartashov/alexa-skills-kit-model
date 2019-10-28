@@ -50,6 +50,17 @@ final class Heading implements JsonSerializable
     }
 
     /**
+     * @param float $directionInDegrees
+     * @return self
+     */
+    public static function ofDirectionInDegrees(float $directionInDegrees): Heading
+    {
+        $instance = new self;
+        $instance->directionInDegrees = $directionInDegrees;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

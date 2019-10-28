@@ -50,6 +50,17 @@ final class InSkillProductTransactionsResponse implements JsonSerializable
     }
 
     /**
+     * @param array $results
+     * @return self
+     */
+    public static function ofResults(array $results): InSkillProductTransactionsResponse
+    {
+        $instance = new self;
+        $instance->results = $results;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -62,6 +62,17 @@ final class Coordinate implements JsonSerializable
     }
 
     /**
+     * @param float $latitudeInDegrees
+     * @return self
+     */
+    public static function ofLatitudeInDegrees(float $latitudeInDegrees): Coordinate
+    {
+        $instance = new self;
+        $instance->latitudeInDegrees = $latitudeInDegrees;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

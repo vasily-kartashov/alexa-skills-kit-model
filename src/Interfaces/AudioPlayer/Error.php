@@ -50,6 +50,17 @@ final class Error implements JsonSerializable
     }
 
     /**
+     * @param string $message
+     * @return self
+     */
+    public static function ofMessage(string $message): Error
+    {
+        $instance = new self;
+        $instance->message = $message;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

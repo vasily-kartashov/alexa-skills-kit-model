@@ -38,6 +38,17 @@ final class ResultSet implements JsonSerializable
     }
 
     /**
+     * @param string $nextToken
+     * @return self
+     */
+    public static function ofNextToken(string $nextToken): ResultSet
+    {
+        $instance = new self;
+        $instance->nextToken = $nextToken;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

@@ -43,6 +43,17 @@ final class HintDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param Hint $hint
+     * @return self
+     */
+    public static function ofHint(Hint $hint): HintDirective
+    {
+        $instance = new self;
+        $instance->hint = $hint;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

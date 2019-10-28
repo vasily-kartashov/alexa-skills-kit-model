@@ -56,6 +56,17 @@ final class CompleteTaskDirective extends Directive implements JsonSerializable
     }
 
     /**
+     * @param Status $status
+     * @return self
+     */
+    public static function ofStatus(Status $status): CompleteTaskDirective
+    {
+        $instance = new self;
+        $instance->status = $status;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

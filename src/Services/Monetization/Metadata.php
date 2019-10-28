@@ -38,6 +38,17 @@ final class Metadata implements JsonSerializable
     }
 
     /**
+     * @param ResultSet $resultSet
+     * @return self
+     */
+    public static function ofResultSet(ResultSet $resultSet): Metadata
+    {
+        $instance = new self;
+        $instance->resultSet = $resultSet;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

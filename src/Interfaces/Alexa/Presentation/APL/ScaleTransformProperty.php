@@ -62,6 +62,17 @@ final class ScaleTransformProperty extends TransformProperty implements JsonSeri
     }
 
     /**
+     * @param string $scale
+     * @return self
+     */
+    public static function ofScale(string $scale): ScaleTransformProperty
+    {
+        $instance = new self;
+        $instance->scale = $scale;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */

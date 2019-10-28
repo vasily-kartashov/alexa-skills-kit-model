@@ -79,6 +79,17 @@ final class RenderDocumentDirective extends Directive implements JsonSerializabl
     }
 
     /**
+     * @param string $token
+     * @return self
+     */
+    public static function ofToken(string $token): RenderDocumentDirective
+    {
+        $instance = new self;
+        $instance->token = $token;
+        return $instance;
+    }
+
+    /**
      * @param array $data
      * @return self
      */
