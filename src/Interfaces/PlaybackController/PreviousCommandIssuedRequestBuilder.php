@@ -14,8 +14,6 @@ abstract class PreviousCommandIssuedRequestBuilder
 
     public function build(): PreviousCommandIssuedRequest
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

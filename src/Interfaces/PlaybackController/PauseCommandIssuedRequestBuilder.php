@@ -14,8 +14,6 @@ abstract class PauseCommandIssuedRequestBuilder
 
     public function build(): PauseCommandIssuedRequest
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

@@ -2,7 +2,8 @@
 
 namespace Alexa\Model;
 
-use Alexa\Model\Interfaces\Alexa\Presentation\Apl\AlexaPresentationAplInterface;
+use Alexa\Model\Interfaces\Alexa\Presentation\APLT\AlexaPresentationApltInterface;
+use Alexa\Model\Interfaces\Alexa\Presentation\APL\AlexaPresentationAplInterface;
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerInterface;
 use Alexa\Model\Interfaces\Display\DisplayInterface;
 use Alexa\Model\Interfaces\Geolocation\GeolocationInterface;
@@ -13,6 +14,9 @@ final class SupportedInterfaces implements JsonSerializable
 {
     /** @var AlexaPresentationAplInterface|null */
     private $alexaPresentationAPL = null;
+
+    /** @var AlexaPresentationApltInterface|null */
+    private $alexaPresentationAPLT = null;
 
     /** @var AudioPlayerInterface|null */
     private $audioPlayer = null;
@@ -36,6 +40,14 @@ final class SupportedInterfaces implements JsonSerializable
     public function alexaPresentationAPL()
     {
         return $this->alexaPresentationAPL;
+    }
+
+    /**
+     * @return AlexaPresentationApltInterface|null
+     */
+    public function alexaPresentationAPLT()
+    {
+        return $this->alexaPresentationAPLT;
     }
 
     /**
@@ -73,8 +85,9 @@ final class SupportedInterfaces implements JsonSerializable
     public static function builder(): SupportedInterfacesBuilder
     {
         $instance = new self();
-        $constructor = function ($alexaPresentationAPL, $audioPlayer, $display, $videoApp, $geolocation) use ($instance): SupportedInterfaces {
+        $constructor = function ($alexaPresentationAPL, $alexaPresentationAPLT, $audioPlayer, $display, $videoApp, $geolocation) use ($instance): SupportedInterfaces {
             $instance->alexaPresentationAPL = $alexaPresentationAPL;
+            $instance->alexaPresentationAPLT = $alexaPresentationAPLT;
             $instance->audioPlayer = $audioPlayer;
             $instance->display = $display;
             $instance->videoApp = $videoApp;
@@ -98,6 +111,7 @@ final class SupportedInterfaces implements JsonSerializable
     {
         $instance = new self();
         $instance->alexaPresentationAPL = isset($data['Alexa.Presentation.APL']) ? AlexaPresentationAplInterface::fromValue($data['Alexa.Presentation.APL']) : null;
+        $instance->alexaPresentationAPLT = isset($data['Alexa.Presentation.APLT']) ? AlexaPresentationApltInterface::fromValue($data['Alexa.Presentation.APLT']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerInterface::fromValue($data['AudioPlayer']) : null;
         $instance->display = isset($data['Display']) ? DisplayInterface::fromValue($data['Display']) : null;
         $instance->videoApp = isset($data['VideoApp']) ? VideoAppInterface::fromValue($data['VideoApp']) : null;
@@ -109,6 +123,7 @@ final class SupportedInterfaces implements JsonSerializable
     {
         return array_filter([
             'Alexa.Presentation.APL' => $this->alexaPresentationAPL,
+            'Alexa.Presentation.APLT' => $this->alexaPresentationAPLT,
             'AudioPlayer' => $this->audioPlayer,
             'Display' => $this->display,
             'VideoApp' => $this->videoApp,

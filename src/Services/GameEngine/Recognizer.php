@@ -32,14 +32,14 @@ abstract class Recognizer implements JsonSerializable
         }
         $instance = null;
         switch ($data['type']) {
-            case ProgressRecognizer::TYPE:
-                $instance = ProgressRecognizer::fromValue($data);
-                break;
             case PatternRecognizer::TYPE:
                 $instance = PatternRecognizer::fromValue($data);
                 break;
             case DeviationRecognizer::TYPE:
                 $instance = DeviationRecognizer::fromValue($data);
+                break;
+            case ProgressRecognizer::TYPE:
+                $instance = ProgressRecognizer::fromValue($data);
                 break;
         }
         if ($instance !== null) {

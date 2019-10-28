@@ -17,6 +17,12 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
     /** @var SellerBillingAgreementAttributes|null */
     private $sellerBillingAgreementAttributes = null;
 
+    /** @var BillingAgreementType|null */
+    private $billingAgreementType = null;
+
+    /** @var Price|null */
+    private $subscriptionAmount = null;
+
     protected function __construct()
     {
         parent::__construct();
@@ -47,13 +53,31 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
         return $this->sellerBillingAgreementAttributes;
     }
 
+    /**
+     * @return BillingAgreementType|null
+     */
+    public function billingAgreementType()
+    {
+        return $this->billingAgreementType;
+    }
+
+    /**
+     * @return Price|null
+     */
+    public function subscriptionAmount()
+    {
+        return $this->subscriptionAmount;
+    }
+
     public static function builder(): BillingAgreementAttributesBuilder
     {
         $instance = new self();
-        $constructor = function ($platformId, $sellerNote, $sellerBillingAgreementAttributes) use ($instance): BillingAgreementAttributes {
+        $constructor = function ($platformId, $sellerNote, $sellerBillingAgreementAttributes, $billingAgreementType, $subscriptionAmount) use ($instance): BillingAgreementAttributes {
             $instance->platformId = $platformId;
             $instance->sellerNote = $sellerNote;
             $instance->sellerBillingAgreementAttributes = $sellerBillingAgreementAttributes;
+            $instance->billingAgreementType = $billingAgreementType;
+            $instance->subscriptionAmount = $subscriptionAmount;
             return $instance;
         };
         return new class($constructor) extends BillingAgreementAttributesBuilder
@@ -76,6 +100,8 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
         $instance->platformId = isset($data['platformId']) ? ((string) $data['platformId']) : null;
         $instance->sellerNote = isset($data['sellerNote']) ? ((string) $data['sellerNote']) : null;
         $instance->sellerBillingAgreementAttributes = isset($data['sellerBillingAgreementAttributes']) ? SellerBillingAgreementAttributes::fromValue($data['sellerBillingAgreementAttributes']) : null;
+        $instance->billingAgreementType = isset($data['billingAgreementType']) ? BillingAgreementType::fromValue($data['billingAgreementType']) : null;
+        $instance->subscriptionAmount = isset($data['subscriptionAmount']) ? Price::fromValue($data['subscriptionAmount']) : null;
         return $instance;
     }
 
@@ -85,7 +111,9 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
             'type' => self::TYPE,
             'platformId' => $this->platformId,
             'sellerNote' => $this->sellerNote,
-            'sellerBillingAgreementAttributes' => $this->sellerBillingAgreementAttributes
+            'sellerBillingAgreementAttributes' => $this->sellerBillingAgreementAttributes,
+            'billingAgreementType' => $this->billingAgreementType,
+            'subscriptionAmount' => $this->subscriptionAmount
         ]);
     }
 }

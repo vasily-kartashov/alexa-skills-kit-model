@@ -14,8 +14,6 @@ abstract class StopDirectiveBuilder
 
     public function build(): StopDirective
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

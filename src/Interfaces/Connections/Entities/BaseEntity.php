@@ -43,11 +43,11 @@ abstract class BaseEntity implements JsonSerializable
         }
         $instance = null;
         switch ($data['@type']) {
-            case Restaurant::TYPE:
-                $instance = Restaurant::fromValue($data);
-                break;
             case PostalAddress::TYPE:
                 $instance = PostalAddress::fromValue($data);
+                break;
+            case Restaurant::TYPE:
+                $instance = Restaurant::fromValue($data);
                 break;
         }
         if ($instance !== null) {

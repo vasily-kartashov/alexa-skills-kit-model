@@ -14,8 +14,6 @@ abstract class GeolocationInterfaceBuilder
 
     public function build(): GeolocationInterface
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

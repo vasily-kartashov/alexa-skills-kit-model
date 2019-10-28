@@ -14,8 +14,6 @@ abstract class LinkAccountCardBuilder
 
     public function build(): LinkAccountCard
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

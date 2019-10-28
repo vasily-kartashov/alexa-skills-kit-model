@@ -16,6 +16,12 @@ abstract class BillingAgreementAttributesBuilder
     /** @var SellerBillingAgreementAttributes|null */
     private $sellerBillingAgreementAttributes = null;
 
+    /** @var BillingAgreementType|null */
+    private $billingAgreementType = null;
+
+    /** @var Price|null */
+    private $subscriptionAmount = null;
+
     protected function __construct(callable $constructor)
     {
         $this->constructor = $constructor;
@@ -51,12 +57,34 @@ abstract class BillingAgreementAttributesBuilder
         return $this;
     }
 
+    /**
+     * @param BillingAgreementType $billingAgreementType
+     * @return self
+     */
+    public function withBillingAgreementType(BillingAgreementType $billingAgreementType): self
+    {
+        $this->billingAgreementType = $billingAgreementType;
+        return $this;
+    }
+
+    /**
+     * @param Price $subscriptionAmount
+     * @return self
+     */
+    public function withSubscriptionAmount(Price $subscriptionAmount): self
+    {
+        $this->subscriptionAmount = $subscriptionAmount;
+        return $this;
+    }
+
     public function build(): BillingAgreementAttributes
     {
         return ($this->constructor)(
             $this->platformId,
             $this->sellerNote,
-            $this->sellerBillingAgreementAttributes
+            $this->sellerBillingAgreementAttributes,
+            $this->billingAgreementType,
+            $this->subscriptionAmount
         );
     }
 }

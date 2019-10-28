@@ -14,8 +14,6 @@ abstract class VideoAppInterfaceBuilder
 
     public function build(): VideoAppInterface
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

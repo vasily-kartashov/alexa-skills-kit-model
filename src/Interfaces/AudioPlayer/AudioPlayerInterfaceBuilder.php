@@ -14,8 +14,6 @@ abstract class AudioPlayerInterfaceBuilder
 
     public function build(): AudioPlayerInterface
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

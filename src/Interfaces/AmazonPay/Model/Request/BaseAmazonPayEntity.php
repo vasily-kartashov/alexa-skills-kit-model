@@ -45,17 +45,8 @@ abstract class BaseAmazonPayEntity implements JsonSerializable
         }
         $instance = null;
         switch ($data['@type']) {
-            case AuthorizeAttributes::TYPE:
-                $instance = AuthorizeAttributes::fromValue($data);
-                break;
             case SellerBillingAgreementAttributes::TYPE:
                 $instance = SellerBillingAgreementAttributes::fromValue($data);
-                break;
-            case SetupAmazonPayRequest::TYPE:
-                $instance = SetupAmazonPayRequest::fromValue($data);
-                break;
-            case ProviderCredit::TYPE:
-                $instance = ProviderCredit::fromValue($data);
                 break;
             case Price::TYPE:
                 $instance = Price::fromValue($data);
@@ -71,6 +62,15 @@ abstract class BaseAmazonPayEntity implements JsonSerializable
                 break;
             case ProviderAttributes::TYPE:
                 $instance = ProviderAttributes::fromValue($data);
+                break;
+            case AuthorizeAttributes::TYPE:
+                $instance = AuthorizeAttributes::fromValue($data);
+                break;
+            case SetupAmazonPayRequest::TYPE:
+                $instance = SetupAmazonPayRequest::fromValue($data);
+                break;
+            case ProviderCredit::TYPE:
+                $instance = ProviderCredit::fromValue($data);
                 break;
         }
         if ($instance !== null) {

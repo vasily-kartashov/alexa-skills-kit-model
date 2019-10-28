@@ -2,7 +2,8 @@
 
 namespace Alexa\Model;
 
-use Alexa\Model\Interfaces\Alexa\Presentation\Apl\AlexaPresentationAplInterface;
+use Alexa\Model\Interfaces\Alexa\Presentation\APLT\AlexaPresentationApltInterface;
+use Alexa\Model\Interfaces\Alexa\Presentation\APL\AlexaPresentationAplInterface;
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerInterface;
 use Alexa\Model\Interfaces\Display\DisplayInterface;
 use Alexa\Model\Interfaces\Geolocation\GeolocationInterface;
@@ -15,6 +16,9 @@ abstract class SupportedInterfacesBuilder
 
     /** @var AlexaPresentationAplInterface|null */
     private $alexaPresentationAPL = null;
+
+    /** @var AlexaPresentationApltInterface|null */
+    private $alexaPresentationAPLT = null;
 
     /** @var AudioPlayerInterface|null */
     private $audioPlayer = null;
@@ -40,6 +44,16 @@ abstract class SupportedInterfacesBuilder
     public function withAlexaPresentationAPL(AlexaPresentationAplInterface $alexaPresentationAPL): self
     {
         $this->alexaPresentationAPL = $alexaPresentationAPL;
+        return $this;
+    }
+
+    /**
+     * @param AlexaPresentationApltInterface $alexaPresentationAPLT
+     * @return self
+     */
+    public function withAlexaPresentationAPLT(AlexaPresentationApltInterface $alexaPresentationAPLT): self
+    {
+        $this->alexaPresentationAPLT = $alexaPresentationAPLT;
         return $this;
     }
 
@@ -87,6 +101,7 @@ abstract class SupportedInterfacesBuilder
     {
         return ($this->constructor)(
             $this->alexaPresentationAPL,
+            $this->alexaPresentationAPLT,
             $this->audioPlayer,
             $this->display,
             $this->videoApp,

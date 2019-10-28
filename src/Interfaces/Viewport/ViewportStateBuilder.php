@@ -10,6 +10,9 @@ abstract class ViewportStateBuilder
     /** @var Experience[] */
     private $experiences = [];
 
+    /** @var Mode|null */
+    private $mode = null;
+
     /** @var Shape|null */
     private $shape = null;
 
@@ -34,6 +37,9 @@ abstract class ViewportStateBuilder
     /** @var Keyboard[] */
     private $keyboard = [];
 
+    /** @var ViewportStateVideo|null */
+    private $video = null;
+
     protected function __construct(callable $constructor)
     {
         $this->constructor = $constructor;
@@ -49,6 +55,16 @@ abstract class ViewportStateBuilder
             assert($element instanceof Experience);
         }
         $this->experiences = $experiences;
+        return $this;
+    }
+
+    /**
+     * @param Mode $mode
+     * @return self
+     */
+    public function withMode(Mode $mode): self
+    {
+        $this->mode = $mode;
         return $this;
     }
 
@@ -138,10 +154,21 @@ abstract class ViewportStateBuilder
         return $this;
     }
 
+    /**
+     * @param ViewportStateVideo $video
+     * @return self
+     */
+    public function withVideo(ViewportStateVideo $video): self
+    {
+        $this->video = $video;
+        return $this;
+    }
+
     public function build(): ViewportState
     {
         return ($this->constructor)(
             $this->experiences,
+            $this->mode,
             $this->shape,
             $this->pixelWidth,
             $this->pixelHeight,
@@ -149,7 +176,8 @@ abstract class ViewportStateBuilder
             $this->currentPixelWidth,
             $this->currentPixelHeight,
             $this->touch,
-            $this->keyboard
+            $this->keyboard,
+            $this->video
         );
     }
 }

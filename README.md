@@ -43,3 +43,10 @@ Composer
 ---
 
 Use `"vasily-kartashov/alexa-skills-kit-model"`
+
+
+ToDo
+---
+
+Move to `hamlet-framework/alexa-skill-kit-model`
+Rebuild repository by retrospectively generating all previous versions as well

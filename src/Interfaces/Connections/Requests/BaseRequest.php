@@ -46,17 +46,17 @@ abstract class BaseRequest implements JsonSerializable
             case ScheduleFoodEstablishmentReservationRequest::TYPE:
                 $instance = ScheduleFoodEstablishmentReservationRequest::fromValue($data);
                 break;
-            case PrintPDFRequest::TYPE:
-                $instance = PrintPDFRequest::fromValue($data);
-                break;
             case PrintImageRequest::TYPE:
                 $instance = PrintImageRequest::fromValue($data);
                 break;
-            case ScheduleTaxiReservationRequest::TYPE:
-                $instance = ScheduleTaxiReservationRequest::fromValue($data);
-                break;
             case PrintWebPageRequest::TYPE:
                 $instance = PrintWebPageRequest::fromValue($data);
+                break;
+            case PrintPDFRequest::TYPE:
+                $instance = PrintPDFRequest::fromValue($data);
+                break;
+            case ScheduleTaxiReservationRequest::TYPE:
+                $instance = ScheduleTaxiReservationRequest::fromValue($data);
                 break;
         }
         if ($instance !== null) {

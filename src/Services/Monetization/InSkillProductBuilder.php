@@ -28,6 +28,9 @@ abstract class InSkillProductBuilder
     /** @var EntitledState|null */
     private $entitled = null;
 
+    /** @var EntitlementReason|null */
+    private $entitlementReason = null;
+
     /** @var int|null */
     private $activeEntitlementCount = null;
 
@@ -110,6 +113,16 @@ abstract class InSkillProductBuilder
     }
 
     /**
+     * @param EntitlementReason $entitlementReason
+     * @return self
+     */
+    public function withEntitlementReason(EntitlementReason $entitlementReason): self
+    {
+        $this->entitlementReason = $entitlementReason;
+        return $this;
+    }
+
+    /**
      * @param int $activeEntitlementCount
      * @return self
      */
@@ -139,6 +152,7 @@ abstract class InSkillProductBuilder
             $this->summary,
             $this->purchasable,
             $this->entitled,
+            $this->entitlementReason,
             $this->activeEntitlementCount,
             $this->purchaseMode
         );

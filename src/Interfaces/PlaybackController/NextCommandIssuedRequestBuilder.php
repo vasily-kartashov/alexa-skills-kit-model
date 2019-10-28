@@ -14,8 +14,6 @@ abstract class NextCommandIssuedRequestBuilder
 
     public function build(): NextCommandIssuedRequest
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

@@ -27,6 +27,9 @@ final class InSkillProduct implements JsonSerializable
     /** @var EntitledState|null */
     private $entitled = null;
 
+    /** @var EntitlementReason|null */
+    private $entitlementReason = null;
+
     /** @var int|null */
     private $activeEntitlementCount = null;
 
@@ -94,6 +97,14 @@ final class InSkillProduct implements JsonSerializable
     }
 
     /**
+     * @return EntitlementReason|null
+     */
+    public function entitlementReason()
+    {
+        return $this->entitlementReason;
+    }
+
+    /**
      * @return int|null
      */
     public function activeEntitlementCount()
@@ -112,7 +123,7 @@ final class InSkillProduct implements JsonSerializable
     public static function builder(): InSkillProductBuilder
     {
         $instance = new self();
-        $constructor = function ($productId, $referenceName, $name, $type, $summary, $purchasable, $entitled, $activeEntitlementCount, $purchaseMode) use ($instance): InSkillProduct {
+        $constructor = function ($productId, $referenceName, $name, $type, $summary, $purchasable, $entitled, $entitlementReason, $activeEntitlementCount, $purchaseMode) use ($instance): InSkillProduct {
             $instance->productId = $productId;
             $instance->referenceName = $referenceName;
             $instance->name = $name;
@@ -120,6 +131,7 @@ final class InSkillProduct implements JsonSerializable
             $instance->summary = $summary;
             $instance->purchasable = $purchasable;
             $instance->entitled = $entitled;
+            $instance->entitlementReason = $entitlementReason;
             $instance->activeEntitlementCount = $activeEntitlementCount;
             $instance->purchaseMode = $purchaseMode;
             return $instance;
@@ -147,6 +159,7 @@ final class InSkillProduct implements JsonSerializable
         $instance->summary = isset($data['summary']) ? ((string) $data['summary']) : null;
         $instance->purchasable = isset($data['purchasable']) ? PurchasableState::fromValue($data['purchasable']) : null;
         $instance->entitled = isset($data['entitled']) ? EntitledState::fromValue($data['entitled']) : null;
+        $instance->entitlementReason = isset($data['entitlementReason']) ? EntitlementReason::fromValue($data['entitlementReason']) : null;
         $instance->activeEntitlementCount = isset($data['activeEntitlementCount']) ? ((int) $data['activeEntitlementCount']) : null;
         $instance->purchaseMode = isset($data['purchaseMode']) ? PurchaseMode::fromValue($data['purchaseMode']) : null;
         return $instance;
@@ -162,6 +175,7 @@ final class InSkillProduct implements JsonSerializable
             'summary' => $this->summary,
             'purchasable' => $this->purchasable,
             'entitled' => $this->entitled,
+            'entitlementReason' => $this->entitlementReason,
             'activeEntitlementCount' => $this->activeEntitlementCount,
             'purchaseMode' => $this->purchaseMode
         ]);

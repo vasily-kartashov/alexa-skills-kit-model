@@ -9,7 +9,8 @@ use Alexa\Model\Events\SkillEvents\PermissionChangedRequest;
 use Alexa\Model\Events\SkillEvents\ProactiveSubscriptionChangedRequest;
 use Alexa\Model\Events\SkillEvents\SkillDisabledRequest;
 use Alexa\Model\Events\SkillEvents\SkillEnabledRequest;
-use Alexa\Model\Interfaces\Alexa\Presentation\Apl\UserEvent;
+use Alexa\Model\Interfaces\Alexa\Presentation\APLT\ApltUserEvent;
+use Alexa\Model\Interfaces\Alexa\Presentation\APL\AplUserEvent;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackFailedRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackFinishedRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackNearlyFinishedRequest;
@@ -17,6 +18,8 @@ use Alexa\Model\Interfaces\AudioPlayer\PlaybackStartedRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackStoppedRequest;
 use Alexa\Model\Interfaces\Connections\ConnectionsRequest;
 use Alexa\Model\Interfaces\Connections\ConnectionsResponse;
+use Alexa\Model\Interfaces\CustomInterfaceController\EventsReceivedRequest;
+use Alexa\Model\Interfaces\CustomInterfaceController\ExpiredRequest;
 use Alexa\Model\Interfaces\Display\ElementSelectedRequest;
 use Alexa\Model\Interfaces\GameEngine\InputHandlerEventRequest;
 use Alexa\Model\Interfaces\Messaging\MessageReceivedRequest;
@@ -100,41 +103,26 @@ abstract class Request implements JsonSerializable
         }
         $instance = null;
         switch ($data['type']) {
-            case PlaybackFinishedRequest::TYPE:
-                $instance = PlaybackFinishedRequest::fromValue($data);
-                break;
             case SkillEnabledRequest::TYPE:
                 $instance = SkillEnabledRequest::fromValue($data);
                 break;
             case ListUpdatedEventRequest::TYPE:
                 $instance = ListUpdatedEventRequest::fromValue($data);
                 break;
-            case ProactiveSubscriptionChangedRequest::TYPE:
-                $instance = ProactiveSubscriptionChangedRequest::fromValue($data);
-                break;
-            case UserEvent::TYPE:
-                $instance = UserEvent::fromValue($data);
+            case AplUserEvent::TYPE:
+                $instance = AplUserEvent::fromValue($data);
                 break;
             case SkillDisabledRequest::TYPE:
                 $instance = SkillDisabledRequest::fromValue($data);
                 break;
-            case ElementSelectedRequest::TYPE:
-                $instance = ElementSelectedRequest::fromValue($data);
-                break;
-            case PermissionChangedRequest::TYPE:
-                $instance = PermissionChangedRequest::fromValue($data);
-                break;
             case ListItemsCreatedEventRequest::TYPE:
                 $instance = ListItemsCreatedEventRequest::fromValue($data);
                 break;
-            case ReminderUpdatedEventRequest::TYPE:
-                $instance = ReminderUpdatedEventRequest::fromValue($data);
+            case SessionResumedRequest::TYPE:
+                $instance = SessionResumedRequest::fromValue($data);
                 break;
             case SessionEndedRequest::TYPE:
                 $instance = SessionEndedRequest::fromValue($data);
-                break;
-            case IntentRequest::TYPE:
-                $instance = IntentRequest::fromValue($data);
                 break;
             case PlaybackFailedRequest::TYPE:
                 $instance = PlaybackFailedRequest::fromValue($data);
@@ -142,8 +130,8 @@ abstract class Request implements JsonSerializable
             case CanFulfillIntentRequest::TYPE:
                 $instance = CanFulfillIntentRequest::fromValue($data);
                 break;
-            case ReminderStartedEventRequest::TYPE:
-                $instance = ReminderStartedEventRequest::fromValue($data);
+            case ExpiredRequest::TYPE:
+                $instance = ExpiredRequest::fromValue($data);
                 break;
             case LaunchRequest::TYPE:
                 $instance = LaunchRequest::fromValue($data);
@@ -151,17 +139,11 @@ abstract class Request implements JsonSerializable
             case ReminderCreatedEventRequest::TYPE:
                 $instance = ReminderCreatedEventRequest::fromValue($data);
                 break;
-            case PlaybackStoppedRequest::TYPE:
-                $instance = PlaybackStoppedRequest::fromValue($data);
-                break;
-            case PreviousCommandIssuedRequest::TYPE:
-                $instance = PreviousCommandIssuedRequest::fromValue($data);
+            case ApltUserEvent::TYPE:
+                $instance = ApltUserEvent::fromValue($data);
                 break;
             case ListItemsUpdatedEventRequest::TYPE:
                 $instance = ListItemsUpdatedEventRequest::fromValue($data);
-                break;
-            case AccountLinkedRequest::TYPE:
-                $instance = AccountLinkedRequest::fromValue($data);
                 break;
             case ListCreatedEventRequest::TYPE:
                 $instance = ListCreatedEventRequest::fromValue($data);
@@ -171,6 +153,9 @@ abstract class Request implements JsonSerializable
                 break;
             case PlaybackNearlyFinishedRequest::TYPE:
                 $instance = PlaybackNearlyFinishedRequest::fromValue($data);
+                break;
+            case EventsReceivedRequest::TYPE:
+                $instance = EventsReceivedRequest::fromValue($data);
                 break;
             case ReminderStatusChangedEventRequest::TYPE:
                 $instance = ReminderStatusChangedEventRequest::fromValue($data);
@@ -184,6 +169,48 @@ abstract class Request implements JsonSerializable
             case ConnectionsResponse::TYPE:
                 $instance = ConnectionsResponse::fromValue($data);
                 break;
+            case ListDeletedEventRequest::TYPE:
+                $instance = ListDeletedEventRequest::fromValue($data);
+                break;
+            case InputHandlerEventRequest::TYPE:
+                $instance = InputHandlerEventRequest::fromValue($data);
+                break;
+            case PauseCommandIssuedRequest::TYPE:
+                $instance = PauseCommandIssuedRequest::fromValue($data);
+                break;
+            case PlayCommandIssuedRequest::TYPE:
+                $instance = PlayCommandIssuedRequest::fromValue($data);
+                break;
+            case PlaybackFinishedRequest::TYPE:
+                $instance = PlaybackFinishedRequest::fromValue($data);
+                break;
+            case ProactiveSubscriptionChangedRequest::TYPE:
+                $instance = ProactiveSubscriptionChangedRequest::fromValue($data);
+                break;
+            case ElementSelectedRequest::TYPE:
+                $instance = ElementSelectedRequest::fromValue($data);
+                break;
+            case PermissionChangedRequest::TYPE:
+                $instance = PermissionChangedRequest::fromValue($data);
+                break;
+            case ReminderUpdatedEventRequest::TYPE:
+                $instance = ReminderUpdatedEventRequest::fromValue($data);
+                break;
+            case IntentRequest::TYPE:
+                $instance = IntentRequest::fromValue($data);
+                break;
+            case ReminderStartedEventRequest::TYPE:
+                $instance = ReminderStartedEventRequest::fromValue($data);
+                break;
+            case PlaybackStoppedRequest::TYPE:
+                $instance = PlaybackStoppedRequest::fromValue($data);
+                break;
+            case PreviousCommandIssuedRequest::TYPE:
+                $instance = PreviousCommandIssuedRequest::fromValue($data);
+                break;
+            case AccountLinkedRequest::TYPE:
+                $instance = AccountLinkedRequest::fromValue($data);
+                break;
             case MessageReceivedRequest::TYPE:
                 $instance = MessageReceivedRequest::fromValue($data);
                 break;
@@ -196,20 +223,8 @@ abstract class Request implements JsonSerializable
             case PermissionAcceptedRequest::TYPE:
                 $instance = PermissionAcceptedRequest::fromValue($data);
                 break;
-            case ListDeletedEventRequest::TYPE:
-                $instance = ListDeletedEventRequest::fromValue($data);
-                break;
-            case InputHandlerEventRequest::TYPE:
-                $instance = InputHandlerEventRequest::fromValue($data);
-                break;
             case NextCommandIssuedRequest::TYPE:
                 $instance = NextCommandIssuedRequest::fromValue($data);
-                break;
-            case PauseCommandIssuedRequest::TYPE:
-                $instance = PauseCommandIssuedRequest::fromValue($data);
-                break;
-            case PlayCommandIssuedRequest::TYPE:
-                $instance = PlayCommandIssuedRequest::fromValue($data);
                 break;
         }
         if ($instance !== null) {

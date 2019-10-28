@@ -14,8 +14,6 @@ abstract class PlayCommandIssuedRequestBuilder
 
     public function build(): PlayCommandIssuedRequest
     {
-        return ($this->constructor)(
-            
-        );
+        return ($this->constructor)();
     }
 }

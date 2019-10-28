@@ -3,9 +3,11 @@
 namespace Alexa\Model;
 
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerState;
+use Alexa\Model\Interfaces\Automotive\AutomotiveState;
 use Alexa\Model\Interfaces\Display\DisplayState;
 use Alexa\Model\Interfaces\Geolocation\GeolocationState;
 use Alexa\Model\Interfaces\System\SystemState;
+use Alexa\Model\Interfaces\Viewport\TypedViewportState;
 use Alexa\Model\Interfaces\Viewport\ViewportState;
 
 abstract class ContextBuilder
@@ -19,6 +21,9 @@ abstract class ContextBuilder
     /** @var AudioPlayerState|null */
     private $audioPlayer = null;
 
+    /** @var AutomotiveState|null */
+    private $automotive = null;
+
     /** @var DisplayState|null */
     private $display = null;
 
@@ -27,6 +32,9 @@ abstract class ContextBuilder
 
     /** @var ViewportState|null */
     private $viewport = null;
+
+    /** @var TypedViewportState[] */
+    private $viewports = [];
 
     protected function __construct(callable $constructor)
     {
@@ -50,6 +58,16 @@ abstract class ContextBuilder
     public function withAudioPlayer(AudioPlayerState $audioPlayer): self
     {
         $this->audioPlayer = $audioPlayer;
+        return $this;
+    }
+
+    /**
+     * @param AutomotiveState $automotive
+     * @return self
+     */
+    public function withAutomotive(AutomotiveState $automotive): self
+    {
+        $this->automotive = $automotive;
         return $this;
     }
 
@@ -83,14 +101,29 @@ abstract class ContextBuilder
         return $this;
     }
 
+    /**
+     * @param array $viewports
+     * @return self
+     */
+    public function withViewports(array $viewports): self
+    {
+        foreach ($viewports as $element) {
+            assert($element instanceof TypedViewportState);
+        }
+        $this->viewports = $viewports;
+        return $this;
+    }
+
     public function build(): Context
     {
         return ($this->constructor)(
             $this->system,
             $this->audioPlayer,
+            $this->automotive,
             $this->display,
             $this->geolocation,
-            $this->viewport
+            $this->viewport,
+            $this->viewports
         );
     }
 }
