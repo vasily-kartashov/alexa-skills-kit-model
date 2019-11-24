@@ -14,6 +14,9 @@ abstract class AccessTokenRequestBuilder
     private $client_secret = null;
 
     /** @var string|null */
+    private $refresh_token = null;
+
+    /** @var string|null */
     private $scope = null;
 
     protected function __construct(callable $constructor)
@@ -42,6 +45,16 @@ abstract class AccessTokenRequestBuilder
     }
 
     /**
+     * @param string $refresh_token
+     * @return self
+     */
+    public function withRefresh_token(string $refresh_token): self
+    {
+        $this->refresh_token = $refresh_token;
+        return $this;
+    }
+
+    /**
      * @param string $scope
      * @return self
      */
@@ -56,6 +69,7 @@ abstract class AccessTokenRequestBuilder
         return ($this->constructor)(
             $this->client_id,
             $this->client_secret,
+            $this->refresh_token,
             $this->scope
         );
     }

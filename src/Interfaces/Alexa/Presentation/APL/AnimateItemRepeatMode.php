@@ -15,7 +15,8 @@ final class AnimateItemRepeatMode implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'restart' => new static('restart'),
-                'reverse' => new static('reverse')
+                'reverse' => new static('reverse'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class AnimateItemRepeatMode implements JsonSerializable
     public static function REVERSE(): self
     {
         return static::instances()['reverse'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

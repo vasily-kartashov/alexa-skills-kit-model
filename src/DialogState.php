@@ -16,7 +16,8 @@ final class DialogState implements JsonSerializable
             $instances = [
                 'STARTED' => new static('STARTED'),
                 'IN_PROGRESS' => new static('IN_PROGRESS'),
-                'COMPLETED' => new static('COMPLETED')
+                'COMPLETED' => new static('COMPLETED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class DialogState implements JsonSerializable
     public static function COMPLETED(): self
     {
         return static::instances()['COMPLETED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

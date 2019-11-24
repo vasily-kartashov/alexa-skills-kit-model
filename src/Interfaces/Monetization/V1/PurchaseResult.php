@@ -18,7 +18,8 @@ final class PurchaseResult implements JsonSerializable
                 'DECLINED' => new static('DECLINED'),
                 'NOT_ENTITLED' => new static('NOT_ENTITLED'),
                 'ERROR' => new static('ERROR'),
-                'ALREADY_PURCHASED' => new static('ALREADY_PURCHASED')
+                'ALREADY_PURCHASED' => new static('ALREADY_PURCHASED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class PurchaseResult implements JsonSerializable
     public static function ALREADY_PURCHASED(): self
     {
         return static::instances()['ALREADY_PURCHASED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

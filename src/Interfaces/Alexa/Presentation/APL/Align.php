@@ -17,7 +17,8 @@ final class Align implements JsonSerializable
                 'center' => new static('center'),
                 'first' => new static('first'),
                 'last' => new static('last'),
-                'visible' => new static('visible')
+                'visible' => new static('visible'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -46,6 +47,11 @@ final class Align implements JsonSerializable
     public static function VISIBLE(): self
     {
         return static::instances()['visible'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

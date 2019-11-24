@@ -15,7 +15,8 @@ final class EventReportingType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'history' => new static('history'),
-                'matches' => new static('matches')
+                'matches' => new static('matches'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class EventReportingType implements JsonSerializable
     public static function MATCHES(): self
     {
         return static::instances()['matches'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

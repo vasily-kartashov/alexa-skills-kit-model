@@ -16,7 +16,8 @@ final class EntitlementReason implements JsonSerializable
             $instances = [
                 'PURCHASED' => new static('PURCHASED'),
                 'NOT_PURCHASED' => new static('NOT_PURCHASED'),
-                'AUTO_ENTITLED' => new static('AUTO_ENTITLED')
+                'AUTO_ENTITLED' => new static('AUTO_ENTITLED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class EntitlementReason implements JsonSerializable
     public static function AUTO_ENTITLED(): self
     {
         return static::instances()['AUTO_ENTITLED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

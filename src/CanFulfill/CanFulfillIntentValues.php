@@ -16,7 +16,8 @@ final class CanFulfillIntentValues implements JsonSerializable
             $instances = [
                 'YES' => new static('YES'),
                 'NO' => new static('NO'),
-                'MAYBE' => new static('MAYBE')
+                'MAYBE' => new static('MAYBE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class CanFulfillIntentValues implements JsonSerializable
     public static function MAYBE(): self
     {
         return static::instances()['MAYBE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

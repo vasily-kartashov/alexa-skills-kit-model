@@ -11,6 +11,7 @@ use Alexa\Model\Events\SkillEvents\SkillDisabledRequest;
 use Alexa\Model\Events\SkillEvents\SkillEnabledRequest;
 use Alexa\Model\Interfaces\Alexa\Presentation\APLT\ApltUserEvent;
 use Alexa\Model\Interfaces\Alexa\Presentation\APL\AplUserEvent;
+use Alexa\Model\Interfaces\Alexa\Presentation\Html\MessageRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackFailedRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackFinishedRequest;
 use Alexa\Model\Interfaces\AudioPlayer\PlaybackNearlyFinishedRequest;
@@ -132,6 +133,9 @@ abstract class Request implements JsonSerializable
                 break;
             case ExpiredRequest::TYPE:
                 $instance = ExpiredRequest::fromValue($data);
+                break;
+            case MessageRequest::TYPE:
+                $instance = MessageRequest::fromValue($data);
                 break;
             case LaunchRequest::TYPE:
                 $instance = LaunchRequest::fromValue($data);

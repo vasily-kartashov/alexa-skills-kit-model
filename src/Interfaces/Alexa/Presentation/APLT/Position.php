@@ -15,7 +15,8 @@ final class Position implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'absolute' => new static('absolute'),
-                'relative' => new static('relative')
+                'relative' => new static('relative'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class Position implements JsonSerializable
     public static function RELATIVE(): self
     {
         return static::instances()['relative'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

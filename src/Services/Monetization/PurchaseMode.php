@@ -15,7 +15,8 @@ final class PurchaseMode implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'TEST' => new static('TEST'),
-                'LIVE' => new static('LIVE')
+                'LIVE' => new static('LIVE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PurchaseMode implements JsonSerializable
     public static function LIVE(): self
     {
         return static::instances()['LIVE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

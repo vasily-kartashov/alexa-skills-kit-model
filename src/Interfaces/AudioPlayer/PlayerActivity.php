@@ -19,7 +19,8 @@ final class PlayerActivity implements JsonSerializable
                 'FINISHED' => new static('FINISHED'),
                 'BUFFER_UNDERRUN' => new static('BUFFER_UNDERRUN'),
                 'IDLE' => new static('IDLE'),
-                'STOPPED' => new static('STOPPED')
+                'STOPPED' => new static('STOPPED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -58,6 +59,11 @@ final class PlayerActivity implements JsonSerializable
     public static function STOPPED(): self
     {
         return static::instances()['STOPPED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -15,7 +15,8 @@ final class PermissionStatus implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'GRANTED' => new static('GRANTED'),
-                'DENIED' => new static('DENIED')
+                'DENIED' => new static('DENIED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PermissionStatus implements JsonSerializable
     public static function DENIED(): self
     {
         return static::instances()['DENIED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

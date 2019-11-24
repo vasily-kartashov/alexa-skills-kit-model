@@ -16,7 +16,8 @@ final class Access implements JsonSerializable
             $instances = [
                 'ENABLED' => new static('ENABLED'),
                 'DISABLED' => new static('DISABLED'),
-                'UNKNOWN' => new static('UNKNOWN')
+                'UNKNOWN' => new static('UNKNOWN'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class Access implements JsonSerializable
     public static function UNKNOWN(): self
     {
         return static::instances()['UNKNOWN'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

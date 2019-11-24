@@ -15,7 +15,8 @@ final class HighlightMode implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'block' => new static('block'),
-                'line' => new static('line')
+                'line' => new static('line'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class HighlightMode implements JsonSerializable
     public static function LINE(): self
     {
         return static::instances()['line'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

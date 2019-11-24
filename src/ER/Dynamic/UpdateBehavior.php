@@ -15,7 +15,8 @@ final class UpdateBehavior implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'REPLACE' => new static('REPLACE'),
-                'CLEAR' => new static('CLEAR')
+                'CLEAR' => new static('CLEAR'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class UpdateBehavior implements JsonSerializable
     public static function CLEAR(): self
     {
         return static::instances()['CLEAR'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

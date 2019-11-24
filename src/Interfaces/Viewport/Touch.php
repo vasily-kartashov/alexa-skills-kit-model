@@ -14,7 +14,8 @@ final class Touch implements JsonSerializable
         static $instances;
         if (!$instances) {
             $instances = [
-                'SINGLE' => new static('SINGLE')
+                'SINGLE' => new static('SINGLE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -28,6 +29,11 @@ final class Touch implements JsonSerializable
     public static function SINGLE(): self
     {
         return static::instances()['SINGLE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

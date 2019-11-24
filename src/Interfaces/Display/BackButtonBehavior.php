@@ -15,7 +15,8 @@ final class BackButtonBehavior implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'HIDDEN' => new static('HIDDEN'),
-                'VISIBLE' => new static('VISIBLE')
+                'VISIBLE' => new static('VISIBLE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class BackButtonBehavior implements JsonSerializable
     public static function VISIBLE(): self
     {
         return static::instances()['VISIBLE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

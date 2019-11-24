@@ -18,7 +18,8 @@ final class ErrorType implements JsonSerializable
                 'MEDIA_ERROR_INTERNAL_SERVER_ERROR' => new static('MEDIA_ERROR_INTERNAL_SERVER_ERROR'),
                 'MEDIA_ERROR_INVALID_REQUEST' => new static('MEDIA_ERROR_INVALID_REQUEST'),
                 'MEDIA_ERROR_SERVICE_UNAVAILABLE' => new static('MEDIA_ERROR_SERVICE_UNAVAILABLE'),
-                'MEDIA_ERROR_UNKNOWN' => new static('MEDIA_ERROR_UNKNOWN')
+                'MEDIA_ERROR_UNKNOWN' => new static('MEDIA_ERROR_UNKNOWN'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class ErrorType implements JsonSerializable
     public static function MEDIA_ERROR_UNKNOWN(): self
     {
         return static::instances()['MEDIA_ERROR_UNKNOWN'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

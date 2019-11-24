@@ -15,7 +15,8 @@ final class Codecs implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'H_264_41' => new static('H_264_41'),
-                'H_264_42' => new static('H_264_42')
+                'H_264_42' => new static('H_264_42'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class Codecs implements JsonSerializable
     public static function H_264_42(): self
     {
         return static::instances()['H_264_42'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

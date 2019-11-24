@@ -14,7 +14,8 @@ final class Keyboard implements JsonSerializable
         static $instances;
         if (!$instances) {
             $instances = [
-                'DIRECTION' => new static('DIRECTION')
+                'DIRECTION' => new static('DIRECTION'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -28,6 +29,11 @@ final class Keyboard implements JsonSerializable
     public static function DIRECTION(): self
     {
         return static::instances()['DIRECTION'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

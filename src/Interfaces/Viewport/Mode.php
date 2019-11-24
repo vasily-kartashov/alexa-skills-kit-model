@@ -18,7 +18,8 @@ final class Mode implements JsonSerializable
                 'HUB' => new static('HUB'),
                 'MOBILE' => new static('MOBILE'),
                 'PC' => new static('PC'),
-                'TV' => new static('TV')
+                'TV' => new static('TV'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class Mode implements JsonSerializable
     public static function TV(): self
     {
         return static::instances()['TV'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

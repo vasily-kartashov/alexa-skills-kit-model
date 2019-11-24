@@ -17,7 +17,8 @@ final class StatusCode implements JsonSerializable
                 'ER_SUCCESS_MATCH' => new static('ER_SUCCESS_MATCH'),
                 'ER_SUCCESS_NO_MATCH' => new static('ER_SUCCESS_NO_MATCH'),
                 'ER_ERROR_TIMEOUT' => new static('ER_ERROR_TIMEOUT'),
-                'ER_ERROR_EXCEPTION' => new static('ER_ERROR_EXCEPTION')
+                'ER_ERROR_EXCEPTION' => new static('ER_ERROR_EXCEPTION'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -46,6 +47,11 @@ final class StatusCode implements JsonSerializable
     public static function ER_ERROR_EXCEPTION(): self
     {
         return static::instances()['ER_ERROR_EXCEPTION'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

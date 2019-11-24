@@ -15,7 +15,8 @@ final class PushNotificationStatus implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'ENABLED' => new static('ENABLED'),
-                'DISABLED' => new static('DISABLED')
+                'DISABLED' => new static('DISABLED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PushNotificationStatus implements JsonSerializable
     public static function DISABLED(): self
     {
         return static::instances()['DISABLED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -11,6 +11,8 @@ use Alexa\Model\Interfaces\Alexa\Presentation\APLT\ApltExecuteCommandsDirective;
 use Alexa\Model\Interfaces\Alexa\Presentation\APLT\RenderDocumentDirective;
 use Alexa\Model\Interfaces\Alexa\Presentation\APL\AplExecuteCommandsDirective;
 use Alexa\Model\Interfaces\Alexa\Presentation\APL\AplRenderDocumentDirective;
+use Alexa\Model\Interfaces\Alexa\Presentation\Html\HandleMessageDirective;
+use Alexa\Model\Interfaces\Alexa\Presentation\Html\StartDirective;
 use Alexa\Model\Interfaces\AudioPlayer\ClearQueueDirective;
 use Alexa\Model\Interfaces\AudioPlayer\PlayDirective;
 use Alexa\Model\Interfaces\AudioPlayer\StopDirective;
@@ -25,6 +27,7 @@ use Alexa\Model\Interfaces\Display\RenderTemplateDirective;
 use Alexa\Model\Interfaces\GadgetController\SetLightDirective;
 use Alexa\Model\Interfaces\GameEngine\StartInputHandlerDirective;
 use Alexa\Model\Interfaces\GameEngine\StopInputHandlerDirective;
+use Alexa\Model\Interfaces\Navigation\Assistance\AnnounceRoadRegulation;
 use Alexa\Model\Interfaces\Tasks\CompleteTaskDirective;
 use Alexa\Model\Interfaces\VideoApp\LaunchDirective;
 use \JsonSerializable;
@@ -60,6 +63,9 @@ abstract class Directive implements JsonSerializable
             case StopEventHandlerDirective::TYPE:
                 $instance = StopEventHandlerDirective::fromValue($data);
                 break;
+            case AnnounceRoadRegulation::TYPE:
+                $instance = AnnounceRoadRegulation::fromValue($data);
+                break;
             case SendRequestDirective::TYPE:
                 $instance = SendRequestDirective::fromValue($data);
                 break;
@@ -81,8 +87,14 @@ abstract class Directive implements JsonSerializable
             case SendDirectiveDirective::TYPE:
                 $instance = SendDirectiveDirective::fromValue($data);
                 break;
+            case HandleMessageDirective::TYPE:
+                $instance = HandleMessageDirective::fromValue($data);
+                break;
             case ElicitSlotDirective::TYPE:
                 $instance = ElicitSlotDirective::fromValue($data);
+                break;
+            case StartDirective::TYPE:
+                $instance = StartDirective::fromValue($data);
                 break;
             case StopDirective::TYPE:
                 $instance = StopDirective::fromValue($data);

@@ -15,7 +15,8 @@ final class ListItemState implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'active' => new static('active'),
-                'completed' => new static('completed')
+                'completed' => new static('completed'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class ListItemState implements JsonSerializable
     public static function COMPLETED(): self
     {
         return static::instances()['completed'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

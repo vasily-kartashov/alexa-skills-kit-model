@@ -46,5 +46,6 @@ Use `"vasily-kartashov/alexa-skills-kit-model"`
 ToDo
 ---
 
-Move to `hamlet-framework/alexa-skill-kit-model`
-Rebuild repository by retrospectively generating all previous versions as well
+- Move to `hamlet-framework/alexa-skill-kit-model`
+- Rebuild repository by retrospectively generating all previous versions as well
+- Add doc parser https://stackoverflow.com/questions/8504013/how-to-read-javadoc-comments-by-reflection to copy paths

@@ -15,7 +15,8 @@ final class DistanceUnits implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'METRIC' => new static('METRIC'),
-                'IMPERIAL' => new static('IMPERIAL')
+                'IMPERIAL' => new static('IMPERIAL'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class DistanceUnits implements JsonSerializable
     public static function IMPERIAL(): self
     {
         return static::instances()['IMPERIAL'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

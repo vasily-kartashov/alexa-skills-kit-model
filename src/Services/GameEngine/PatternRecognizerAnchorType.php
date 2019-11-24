@@ -16,7 +16,8 @@ final class PatternRecognizerAnchorType implements JsonSerializable
             $instances = [
                 'start' => new static('start'),
                 'end' => new static('end'),
-                'anywhere' => new static('anywhere')
+                'anywhere' => new static('anywhere'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class PatternRecognizerAnchorType implements JsonSerializable
     public static function ANYWHERE(): self
     {
         return static::instances()['anywhere'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

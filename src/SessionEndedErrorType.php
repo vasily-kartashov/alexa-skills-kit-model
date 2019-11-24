@@ -17,7 +17,8 @@ final class SessionEndedErrorType implements JsonSerializable
                 'INVALID_RESPONSE' => new static('INVALID_RESPONSE'),
                 'DEVICE_COMMUNICATION_ERROR' => new static('DEVICE_COMMUNICATION_ERROR'),
                 'INTERNAL_SERVICE_ERROR' => new static('INTERNAL_SERVICE_ERROR'),
-                'ENDPOINT_TIMEOUT' => new static('ENDPOINT_TIMEOUT')
+                'ENDPOINT_TIMEOUT' => new static('ENDPOINT_TIMEOUT'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -46,6 +47,11 @@ final class SessionEndedErrorType implements JsonSerializable
     public static function ENDPOINT_TIMEOUT(): self
     {
         return static::instances()['ENDPOINT_TIMEOUT'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

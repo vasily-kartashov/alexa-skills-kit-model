@@ -16,7 +16,8 @@ final class TriggerEventType implements JsonSerializable
             $instances = [
                 'buttonDown' => new static('buttonDown'),
                 'buttonUp' => new static('buttonUp'),
-                'none' => new static('none')
+                'none' => new static('none'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class TriggerEventType implements JsonSerializable
     public static function NONE(): self
     {
         return static::instances()['none'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

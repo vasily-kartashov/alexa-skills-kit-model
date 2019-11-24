@@ -15,7 +15,8 @@ final class RelevantAudienceType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'Unicast' => new static('Unicast'),
-                'Multicast' => new static('Multicast')
+                'Multicast' => new static('Multicast'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class RelevantAudienceType implements JsonSerializable
     public static function MULTICAST(): self
     {
         return static::instances()['Multicast'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -19,7 +19,8 @@ final class ErrorCode implements JsonSerializable
                 'INVALID_TOKEN' => new static('INVALID_TOKEN'),
                 'INVALID_URI' => new static('INVALID_URI'),
                 'DEVICE_UNREACHABLE' => new static('DEVICE_UNREACHABLE'),
-                'UNKNOWN_ERROR' => new static('UNKNOWN_ERROR')
+                'UNKNOWN_ERROR' => new static('UNKNOWN_ERROR'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -58,6 +59,11 @@ final class ErrorCode implements JsonSerializable
     public static function UNKNOWN_ERROR(): self
     {
         return static::instances()['UNKNOWN_ERROR'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

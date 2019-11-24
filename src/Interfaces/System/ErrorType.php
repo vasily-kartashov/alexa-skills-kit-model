@@ -16,7 +16,8 @@ final class ErrorType implements JsonSerializable
             $instances = [
                 'INVALID_RESPONSE' => new static('INVALID_RESPONSE'),
                 'DEVICE_COMMUNICATION_ERROR' => new static('DEVICE_COMMUNICATION_ERROR'),
-                'INTERNAL_SERVICE_ERROR' => new static('INTERNAL_SERVICE_ERROR')
+                'INTERNAL_SERVICE_ERROR' => new static('INTERNAL_SERVICE_ERROR'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class ErrorType implements JsonSerializable
     public static function INTERNAL_SERVICE_ERROR(): self
     {
         return static::instances()['INTERNAL_SERVICE_ERROR'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -15,7 +15,8 @@ final class Shape implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'RECTANGLE' => new static('RECTANGLE'),
-                'ROUND' => new static('ROUND')
+                'ROUND' => new static('ROUND'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class Shape implements JsonSerializable
     public static function ROUND(): self
     {
         return static::instances()['ROUND'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

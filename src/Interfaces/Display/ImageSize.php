@@ -18,7 +18,8 @@ final class ImageSize implements JsonSerializable
                 'SMALL' => new static('SMALL'),
                 'MEDIUM' => new static('MEDIUM'),
                 'LARGE' => new static('LARGE'),
-                'X_LARGE' => new static('X_LARGE')
+                'X_LARGE' => new static('X_LARGE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class ImageSize implements JsonSerializable
     public static function X_LARGE(): self
     {
         return static::instances()['X_LARGE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

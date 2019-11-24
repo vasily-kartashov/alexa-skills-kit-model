@@ -14,7 +14,8 @@ final class ViewportProfile implements JsonSerializable
         static $instances;
         if (!$instances) {
             $instances = [
-                'FOUR_CHARACTER_CLOCK' => new static('FOUR_CHARACTER_CLOCK')
+                'FOUR_CHARACTER_CLOCK' => new static('FOUR_CHARACTER_CLOCK'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -28,6 +29,11 @@ final class ViewportProfile implements JsonSerializable
     public static function FOUR_CHARACTER_CLOCK(): self
     {
         return static::instances()['FOUR_CHARACTER_CLOCK'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

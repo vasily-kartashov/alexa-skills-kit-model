@@ -20,7 +20,8 @@ final class MediaCommandType implements JsonSerializable
                 'previous' => new static('previous'),
                 'rewind' => new static('rewind'),
                 'seek' => new static('seek'),
-                'setTrack' => new static('setTrack')
+                'setTrack' => new static('setTrack'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -64,6 +65,11 @@ final class MediaCommandType implements JsonSerializable
     public static function SET_TRACK(): self
     {
         return static::instances()['setTrack'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

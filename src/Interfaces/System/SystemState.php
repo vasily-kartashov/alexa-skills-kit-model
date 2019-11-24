@@ -4,6 +4,7 @@ namespace Alexa\Model\Interfaces\System;
 
 use Alexa\Model\Application;
 use Alexa\Model\Device;
+use Alexa\Model\Person;
 use Alexa\Model\User;
 use \JsonSerializable;
 
@@ -17,6 +18,9 @@ final class SystemState implements JsonSerializable
 
     /** @var Device|null */
     private $device = null;
+
+    /** @var Person|null */
+    private $person = null;
 
     /** @var string|null */
     private $apiEndpoint = null;
@@ -53,6 +57,14 @@ final class SystemState implements JsonSerializable
     }
 
     /**
+     * @return Person|null
+     */
+    public function person()
+    {
+        return $this->person;
+    }
+
+    /**
      * @return string|null
      */
     public function apiEndpoint()
@@ -71,10 +83,11 @@ final class SystemState implements JsonSerializable
     public static function builder(): SystemStateBuilder
     {
         $instance = new self;
-        $constructor = function ($application, $user, $device, $apiEndpoint, $apiAccessToken) use ($instance): SystemState {
+        $constructor = function ($application, $user, $device, $person, $apiEndpoint, $apiAccessToken) use ($instance): SystemState {
             $instance->application = $application;
             $instance->user = $user;
             $instance->device = $device;
+            $instance->person = $person;
             $instance->apiEndpoint = $apiEndpoint;
             $instance->apiAccessToken = $apiAccessToken;
             return $instance;
@@ -109,6 +122,7 @@ final class SystemState implements JsonSerializable
         $instance->application = isset($data['application']) ? Application::fromValue($data['application']) : null;
         $instance->user = isset($data['user']) ? User::fromValue($data['user']) : null;
         $instance->device = isset($data['device']) ? Device::fromValue($data['device']) : null;
+        $instance->person = isset($data['person']) ? Person::fromValue($data['person']) : null;
         $instance->apiEndpoint = isset($data['apiEndpoint']) ? ((string) $data['apiEndpoint']) : null;
         $instance->apiAccessToken = isset($data['apiAccessToken']) ? ((string) $data['apiAccessToken']) : null;
         return $instance;
@@ -120,6 +134,7 @@ final class SystemState implements JsonSerializable
             'application' => $this->application,
             'user' => $this->user,
             'device' => $this->device,
+            'person' => $this->person,
             'apiEndpoint' => $this->apiEndpoint,
             'apiAccessToken' => $this->apiAccessToken
         ]);

@@ -15,7 +15,8 @@ final class EntitledState implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'ENTITLED' => new static('ENTITLED'),
-                'NOT_ENTITLED' => new static('NOT_ENTITLED')
+                'NOT_ENTITLED' => new static('NOT_ENTITLED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class EntitledState implements JsonSerializable
     public static function NOT_ENTITLED(): self
     {
         return static::instances()['NOT_ENTITLED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

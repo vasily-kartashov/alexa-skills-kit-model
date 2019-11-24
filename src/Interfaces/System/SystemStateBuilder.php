@@ -4,6 +4,7 @@ namespace Alexa\Model\Interfaces\System;
 
 use Alexa\Model\Application;
 use Alexa\Model\Device;
+use Alexa\Model\Person;
 use Alexa\Model\User;
 
 abstract class SystemStateBuilder
@@ -19,6 +20,9 @@ abstract class SystemStateBuilder
 
     /** @var Device|null */
     private $device = null;
+
+    /** @var Person|null */
+    private $person = null;
 
     /** @var string|null */
     private $apiEndpoint = null;
@@ -62,6 +66,16 @@ abstract class SystemStateBuilder
     }
 
     /**
+     * @param Person $person
+     * @return self
+     */
+    public function withPerson(Person $person): self
+    {
+        $this->person = $person;
+        return $this;
+    }
+
+    /**
      * @param string $apiEndpoint
      * @return self
      */
@@ -87,6 +101,7 @@ abstract class SystemStateBuilder
             $this->application,
             $this->user,
             $this->device,
+            $this->person,
             $this->apiEndpoint,
             $this->apiAccessToken
         );

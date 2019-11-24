@@ -15,7 +15,8 @@ final class PaymentAction implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'Authorize' => new static('Authorize'),
-                'AuthorizeAndCapture' => new static('AuthorizeAndCapture')
+                'AuthorizeAndCapture' => new static('AuthorizeAndCapture'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PaymentAction implements JsonSerializable
     public static function AUTHORIZE_AND_CAPTURE(): self
     {
         return static::instances()['AuthorizeAndCapture'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

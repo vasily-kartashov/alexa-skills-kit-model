@@ -15,7 +15,8 @@ final class BillingAgreementType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'CustomerInitiatedTransaction' => new static('CustomerInitiatedTransaction'),
-                'MerchantInitiatedTransaction' => new static('MerchantInitiatedTransaction')
+                'MerchantInitiatedTransaction' => new static('MerchantInitiatedTransaction'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class BillingAgreementType implements JsonSerializable
     public static function MERCHANT_INITIATED_TRANSACTION(): self
     {
         return static::instances()['MerchantInitiatedTransaction'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

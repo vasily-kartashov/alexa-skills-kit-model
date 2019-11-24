@@ -18,7 +18,8 @@ final class State implements JsonSerializable
                 'Open' => new static('Open'),
                 'Declined' => new static('Declined'),
                 'Closed' => new static('Closed'),
-                'Completed' => new static('Completed')
+                'Completed' => new static('Completed'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class State implements JsonSerializable
     public static function COMPLETED(): self
     {
         return static::instances()['Completed'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -15,7 +15,8 @@ final class InputEventActionType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'down' => new static('down'),
-                'up' => new static('up')
+                'up' => new static('up'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class InputEventActionType implements JsonSerializable
     public static function UP(): self
     {
         return static::instances()['up'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

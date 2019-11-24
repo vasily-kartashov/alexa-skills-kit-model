@@ -15,7 +15,8 @@ final class FilterMatchAction implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'SEND_AND_TERMINATE' => new static('SEND_AND_TERMINATE'),
-                'SEND' => new static('SEND')
+                'SEND' => new static('SEND'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class FilterMatchAction implements JsonSerializable
     public static function SEND(): self
     {
         return static::instances()['SEND'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

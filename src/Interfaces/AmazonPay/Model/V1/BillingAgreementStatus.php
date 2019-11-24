@@ -18,7 +18,8 @@ final class BillingAgreementStatus implements JsonSerializable
                 'CLOSED' => new static('CLOSED'),
                 'DRAFT' => new static('DRAFT'),
                 'OPEN' => new static('OPEN'),
-                'SUSPENDED' => new static('SUSPENDED')
+                'SUSPENDED' => new static('SUSPENDED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class BillingAgreementStatus implements JsonSerializable
     public static function SUSPENDED(): self
     {
         return static::instances()['SUSPENDED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

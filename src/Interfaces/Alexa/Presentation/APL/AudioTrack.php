@@ -14,7 +14,8 @@ final class AudioTrack implements JsonSerializable
         static $instances;
         if (!$instances) {
             $instances = [
-                'foreground' => new static('foreground')
+                'foreground' => new static('foreground'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -28,6 +29,11 @@ final class AudioTrack implements JsonSerializable
     public static function FOREGROUND(): self
     {
         return static::instances()['foreground'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

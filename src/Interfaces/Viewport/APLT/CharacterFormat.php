@@ -14,7 +14,8 @@ final class CharacterFormat implements JsonSerializable
         static $instances;
         if (!$instances) {
             $instances = [
-                'SEVEN_SEGMENT' => new static('SEVEN_SEGMENT')
+                'SEVEN_SEGMENT' => new static('SEVEN_SEGMENT'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -28,6 +29,11 @@ final class CharacterFormat implements JsonSerializable
     public static function SEVEN_SEGMENT(): self
     {
         return static::instances()['SEVEN_SEGMENT'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

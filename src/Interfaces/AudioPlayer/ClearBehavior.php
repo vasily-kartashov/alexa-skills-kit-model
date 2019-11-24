@@ -15,7 +15,8 @@ final class ClearBehavior implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'CLEAR_ALL' => new static('CLEAR_ALL'),
-                'CLEAR_ENQUEUED' => new static('CLEAR_ENQUEUED')
+                'CLEAR_ENQUEUED' => new static('CLEAR_ENQUEUED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class ClearBehavior implements JsonSerializable
     public static function CLEAR_ENQUEUED(): self
     {
         return static::instances()['CLEAR_ENQUEUED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

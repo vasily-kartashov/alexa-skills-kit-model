@@ -13,6 +13,9 @@ final class AccessTokenRequest implements JsonSerializable
     private $client_secret = null;
 
     /** @var string|null */
+    private $refresh_token = null;
+
+    /** @var string|null */
     private $scope = null;
 
     protected function __construct()
@@ -38,6 +41,14 @@ final class AccessTokenRequest implements JsonSerializable
     /**
      * @return string|null
      */
+    public function refresh_token()
+    {
+        return $this->refresh_token;
+    }
+
+    /**
+     * @return string|null
+     */
     public function scope()
     {
         return $this->scope;
@@ -46,9 +57,10 @@ final class AccessTokenRequest implements JsonSerializable
     public static function builder(): AccessTokenRequestBuilder
     {
         $instance = new self;
-        $constructor = function ($client_id, $client_secret, $scope) use ($instance): AccessTokenRequest {
+        $constructor = function ($client_id, $client_secret, $refresh_token, $scope) use ($instance): AccessTokenRequest {
             $instance->client_id = $client_id;
             $instance->client_secret = $client_secret;
+            $instance->refresh_token = $refresh_token;
             $instance->scope = $scope;
             return $instance;
         };
@@ -81,6 +93,7 @@ final class AccessTokenRequest implements JsonSerializable
         $instance = new self;
         $instance->client_id = isset($data['client_id']) ? ((string) $data['client_id']) : null;
         $instance->client_secret = isset($data['client_secret']) ? ((string) $data['client_secret']) : null;
+        $instance->refresh_token = isset($data['refresh_token']) ? ((string) $data['refresh_token']) : null;
         $instance->scope = isset($data['scope']) ? ((string) $data['scope']) : null;
         return $instance;
     }
@@ -90,6 +103,7 @@ final class AccessTokenRequest implements JsonSerializable
         return array_filter([
             'client_id' => $this->client_id,
             'client_secret' => $this->client_secret,
+            'refresh_token' => $this->refresh_token,
             'scope' => $this->scope
         ]);
     }

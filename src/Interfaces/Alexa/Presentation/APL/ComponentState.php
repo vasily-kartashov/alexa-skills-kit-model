@@ -16,7 +16,8 @@ final class ComponentState implements JsonSerializable
             $instances = [
                 'checked' => new static('checked'),
                 'disabled' => new static('disabled'),
-                'focused' => new static('focused')
+                'focused' => new static('focused'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class ComponentState implements JsonSerializable
     public static function FOCUSED(): self
     {
         return static::instances()['focused'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

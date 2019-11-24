@@ -15,7 +15,8 @@ final class TargetProfile implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'FOUR_CHARACTER_CLOCK' => new static('FOUR_CHARACTER_CLOCK'),
-                'NONE' => new static('NONE')
+                'NONE' => new static('NONE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class TargetProfile implements JsonSerializable
     public static function NONE(): self
     {
         return static::instances()['NONE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

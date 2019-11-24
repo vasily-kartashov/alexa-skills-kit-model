@@ -18,7 +18,8 @@ final class Status implements JsonSerializable
                 'APPROVED_BY_PARENT' => new static('APPROVED_BY_PARENT'),
                 'DENIED_BY_PARENT' => new static('DENIED_BY_PARENT'),
                 'EXPIRED_NO_ACTION_BY_PARENT' => new static('EXPIRED_NO_ACTION_BY_PARENT'),
-                'ERROR' => new static('ERROR')
+                'ERROR' => new static('ERROR'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -52,6 +53,11 @@ final class Status implements JsonSerializable
     public static function ERROR(): self
     {
         return static::instances()['ERROR'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

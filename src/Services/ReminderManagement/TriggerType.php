@@ -15,7 +15,8 @@ final class TriggerType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'SCHEDULED_ABSOLUTE' => new static('SCHEDULED_ABSOLUTE'),
-                'SCHEDULED_RELATIVE' => new static('SCHEDULED_RELATIVE')
+                'SCHEDULED_RELATIVE' => new static('SCHEDULED_RELATIVE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class TriggerType implements JsonSerializable
     public static function SCHEDULED_RELATIVE(): self
     {
         return static::instances()['SCHEDULED_RELATIVE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

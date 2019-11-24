@@ -16,7 +16,8 @@ final class PlayBehavior implements JsonSerializable
             $instances = [
                 'ENQUEUE' => new static('ENQUEUE'),
                 'REPLACE_ALL' => new static('REPLACE_ALL'),
-                'REPLACE_ENQUEUED' => new static('REPLACE_ENQUEUED')
+                'REPLACE_ENQUEUED' => new static('REPLACE_ENQUEUED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class PlayBehavior implements JsonSerializable
     public static function REPLACE_ENQUEUED(): self
     {
         return static::instances()['REPLACE_ENQUEUED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Alexa\Model;
 
+use Alexa\Model\Interfaces\Alexa\Presentation\APL\RenderedDocumentState;
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerState;
 use Alexa\Model\Interfaces\Automotive\AutomotiveState;
 use Alexa\Model\Interfaces\Display\DisplayState;
@@ -15,6 +16,9 @@ final class Context implements JsonSerializable
 {
     /** @var SystemState|null */
     private $system = null;
+
+    /** @var RenderedDocumentState|null */
+    private $alexaPresentationAPL = null;
 
     /** @var AudioPlayerState|null */
     private $audioPlayer = null;
@@ -44,6 +48,14 @@ final class Context implements JsonSerializable
     public function system()
     {
         return $this->system;
+    }
+
+    /**
+     * @return RenderedDocumentState|null
+     */
+    public function alexaPresentationAPL()
+    {
+        return $this->alexaPresentationAPL;
     }
 
     /**
@@ -97,8 +109,9 @@ final class Context implements JsonSerializable
     public static function builder(): ContextBuilder
     {
         $instance = new self;
-        $constructor = function ($system, $audioPlayer, $automotive, $display, $geolocation, $viewport, $viewports) use ($instance): Context {
+        $constructor = function ($system, $alexaPresentationAPL, $audioPlayer, $automotive, $display, $geolocation, $viewport, $viewports) use ($instance): Context {
             $instance->system = $system;
+            $instance->alexaPresentationAPL = $alexaPresentationAPL;
             $instance->audioPlayer = $audioPlayer;
             $instance->automotive = $automotive;
             $instance->display = $display;
@@ -135,6 +148,7 @@ final class Context implements JsonSerializable
     {
         $instance = new self;
         $instance->system = isset($data['System']) ? SystemState::fromValue($data['System']) : null;
+        $instance->alexaPresentationAPL = isset($data['Alexa.Presentation.APL']) ? RenderedDocumentState::fromValue($data['Alexa.Presentation.APL']) : null;
         $instance->audioPlayer = isset($data['AudioPlayer']) ? AudioPlayerState::fromValue($data['AudioPlayer']) : null;
         $instance->automotive = isset($data['Automotive']) ? AutomotiveState::fromValue($data['Automotive']) : null;
         $instance->display = isset($data['Display']) ? DisplayState::fromValue($data['Display']) : null;
@@ -156,6 +170,7 @@ final class Context implements JsonSerializable
     {
         return array_filter([
             'System' => $this->system,
+            'Alexa.Presentation.APL' => $this->alexaPresentationAPL,
             'AudioPlayer' => $this->audioPlayer,
             'Automotive' => $this->automotive,
             'Display' => $this->display,

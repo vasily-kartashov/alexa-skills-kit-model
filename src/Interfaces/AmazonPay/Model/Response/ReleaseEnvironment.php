@@ -15,7 +15,8 @@ final class ReleaseEnvironment implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'LIVE' => new static('LIVE'),
-                'SANDBOX' => new static('SANDBOX')
+                'SANDBOX' => new static('SANDBOX'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class ReleaseEnvironment implements JsonSerializable
     public static function SANDBOX(): self
     {
         return static::instances()['SANDBOX'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

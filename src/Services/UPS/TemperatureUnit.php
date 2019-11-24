@@ -15,7 +15,8 @@ final class TemperatureUnit implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'CELSIUS' => new static('CELSIUS'),
-                'FAHRENHEIT' => new static('FAHRENHEIT')
+                'FAHRENHEIT' => new static('FAHRENHEIT'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class TemperatureUnit implements JsonSerializable
     public static function FAHRENHEIT(): self
     {
         return static::instances()['FAHRENHEIT'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

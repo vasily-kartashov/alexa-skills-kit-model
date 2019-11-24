@@ -15,7 +15,8 @@ final class RecurrenceFreq implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'WEEKLY' => new static('WEEKLY'),
-                'DAILY' => new static('DAILY')
+                'DAILY' => new static('DAILY'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class RecurrenceFreq implements JsonSerializable
     public static function DAILY(): self
     {
         return static::instances()['DAILY'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

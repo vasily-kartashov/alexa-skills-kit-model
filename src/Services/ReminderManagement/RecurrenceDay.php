@@ -20,7 +20,8 @@ final class RecurrenceDay implements JsonSerializable
                 'WE' => new static('WE'),
                 'TH' => new static('TH'),
                 'FR' => new static('FR'),
-                'SA' => new static('SA')
+                'SA' => new static('SA'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -64,6 +65,11 @@ final class RecurrenceDay implements JsonSerializable
     public static function SA(): self
     {
         return static::instances()['SA'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

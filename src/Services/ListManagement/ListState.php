@@ -15,7 +15,8 @@ final class ListState implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'active' => new static('active'),
-                'archived' => new static('archived')
+                'archived' => new static('archived'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class ListState implements JsonSerializable
     public static function ARCHIVED(): self
     {
         return static::instances()['archived'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

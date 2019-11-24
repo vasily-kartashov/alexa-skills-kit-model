@@ -15,7 +15,8 @@ final class PresentationType implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'STANDARD' => new static('STANDARD'),
-                'OVERLAY' => new static('OVERLAY')
+                'OVERLAY' => new static('OVERLAY'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PresentationType implements JsonSerializable
     public static function OVERLAY(): self
     {
         return static::instances()['OVERLAY'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

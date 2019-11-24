@@ -15,7 +15,8 @@ final class Status implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'ON' => new static('ON'),
-                'COMPLETED' => new static('COMPLETED')
+                'COMPLETED' => new static('COMPLETED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class Status implements JsonSerializable
     public static function COMPLETED(): self
     {
         return static::instances()['COMPLETED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

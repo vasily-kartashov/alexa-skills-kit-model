@@ -16,7 +16,8 @@ final class SlotConfirmationStatus implements JsonSerializable
             $instances = [
                 'NONE' => new static('NONE'),
                 'DENIED' => new static('DENIED'),
-                'CONFIRMED' => new static('CONFIRMED')
+                'CONFIRMED' => new static('CONFIRMED'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class SlotConfirmationStatus implements JsonSerializable
     public static function CONFIRMED(): self
     {
         return static::instances()['CONFIRMED'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

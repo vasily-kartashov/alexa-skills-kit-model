@@ -15,7 +15,8 @@ final class PurchasableState implements JsonSerializable
         if (!$instances) {
             $instances = [
                 'PURCHASABLE' => new static('PURCHASABLE'),
-                'NOT_PURCHASABLE' => new static('NOT_PURCHASABLE')
+                'NOT_PURCHASABLE' => new static('NOT_PURCHASABLE'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -34,6 +35,11 @@ final class PurchasableState implements JsonSerializable
     public static function NOT_PURCHASABLE(): self
     {
         return static::instances()['NOT_PURCHASABLE'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**

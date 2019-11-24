@@ -2,6 +2,7 @@
 
 namespace Alexa\Model;
 
+use Alexa\Model\Interfaces\Alexa\Presentation\APL\RenderedDocumentState;
 use Alexa\Model\Interfaces\AudioPlayer\AudioPlayerState;
 use Alexa\Model\Interfaces\Automotive\AutomotiveState;
 use Alexa\Model\Interfaces\Display\DisplayState;
@@ -17,6 +18,9 @@ abstract class ContextBuilder
 
     /** @var SystemState|null */
     private $system = null;
+
+    /** @var RenderedDocumentState|null */
+    private $alexaPresentationAPL = null;
 
     /** @var AudioPlayerState|null */
     private $audioPlayer = null;
@@ -48,6 +52,16 @@ abstract class ContextBuilder
     public function withSystem(SystemState $system): self
     {
         $this->system = $system;
+        return $this;
+    }
+
+    /**
+     * @param RenderedDocumentState $alexaPresentationAPL
+     * @return self
+     */
+    public function withAlexaPresentationAPL(RenderedDocumentState $alexaPresentationAPL): self
+    {
+        $this->alexaPresentationAPL = $alexaPresentationAPL;
         return $this;
     }
 
@@ -118,6 +132,7 @@ abstract class ContextBuilder
     {
         return ($this->constructor)(
             $this->system,
+            $this->alexaPresentationAPL,
             $this->audioPlayer,
             $this->automotive,
             $this->display,

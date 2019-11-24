@@ -16,7 +16,8 @@ final class SessionEndedReason implements JsonSerializable
             $instances = [
                 'USER_INITIATED' => new static('USER_INITIATED'),
                 'ERROR' => new static('ERROR'),
-                'EXCEEDED_MAX_REPROMPTS' => new static('EXCEEDED_MAX_REPROMPTS')
+                'EXCEEDED_MAX_REPROMPTS' => new static('EXCEEDED_MAX_REPROMPTS'),
+                'null' => new static('null')
             ];
         }
         return $instances;
@@ -40,6 +41,11 @@ final class SessionEndedReason implements JsonSerializable
     public static function EXCEEDED_MAX_REPROMPTS(): self
     {
         return static::instances()['EXCEEDED_MAX_REPROMPTS'];
+    }
+
+    public static function NULL(): self
+    {
+        return static::instances()['null'];
     }
 
     /**
