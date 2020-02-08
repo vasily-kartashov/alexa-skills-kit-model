@@ -9,18 +9,17 @@ final class ErrorCode implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'INVALID_KEY' => new static('INVALID_KEY'),
-                'INVALID_VALUE' => new static('INVALID_VALUE'),
-                'INVALID_TOKEN' => new static('INVALID_TOKEN'),
-                'INVALID_URI' => new static('INVALID_URI'),
+                'INVALID_KEY'        => new static('INVALID_KEY'),
+                'INVALID_VALUE'      => new static('INVALID_VALUE'),
+                'INVALID_TOKEN'      => new static('INVALID_TOKEN'),
+                'INVALID_URI'        => new static('INVALID_URI'),
                 'DEVICE_UNREACHABLE' => new static('DEVICE_UNREACHABLE'),
-                'UNKNOWN_ERROR' => new static('UNKNOWN_ERROR'),
-                'null' => new static('null')
+                'UNKNOWN_ERROR'      => new static('UNKNOWN_ERROR')
             ];
         }
         return $instances;
@@ -33,37 +32,32 @@ final class ErrorCode implements JsonSerializable
 
     public static function INVALID_KEY(): self
     {
-        return static::instances()['INVALID_KEY'];
+        return static::values()['INVALID_KEY'];
     }
 
     public static function INVALID_VALUE(): self
     {
-        return static::instances()['INVALID_VALUE'];
+        return static::values()['INVALID_VALUE'];
     }
 
     public static function INVALID_TOKEN(): self
     {
-        return static::instances()['INVALID_TOKEN'];
+        return static::values()['INVALID_TOKEN'];
     }
 
     public static function INVALID_URI(): self
     {
-        return static::instances()['INVALID_URI'];
+        return static::values()['INVALID_URI'];
     }
 
     public static function DEVICE_UNREACHABLE(): self
     {
-        return static::instances()['DEVICE_UNREACHABLE'];
+        return static::values()['DEVICE_UNREACHABLE'];
     }
 
     public static function UNKNOWN_ERROR(): self
     {
-        return static::instances()['UNKNOWN_ERROR'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['UNKNOWN_ERROR'];
     }
 
     /**
@@ -72,15 +66,7 @@ final class ErrorCode implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

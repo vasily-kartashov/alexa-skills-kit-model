@@ -79,17 +79,6 @@ final class InputEvent implements JsonSerializable
     }
 
     /**
-     * @param string $gadgetId
-     * @return self
-     */
-    public static function ofGadgetId(string $gadgetId): InputEvent
-    {
-        $instance = new self;
-        $instance->gadgetId = $gadgetId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

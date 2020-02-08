@@ -9,14 +9,13 @@ final class HighlightMode implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'block' => new static('block'),
-                'line' => new static('line'),
-                'null' => new static('null')
+                'line'  => new static('line')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class HighlightMode implements JsonSerializable
 
     public static function BLOCK(): self
     {
-        return static::instances()['block'];
+        return static::values()['block'];
     }
 
     public static function LINE(): self
     {
-        return static::instances()['line'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['line'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class HighlightMode implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

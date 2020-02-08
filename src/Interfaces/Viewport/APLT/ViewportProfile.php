@@ -9,13 +9,12 @@ final class ViewportProfile implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'FOUR_CHARACTER_CLOCK' => new static('FOUR_CHARACTER_CLOCK'),
-                'null' => new static('null')
+                'FOUR_CHARACTER_CLOCK' => new static('FOUR_CHARACTER_CLOCK')
             ];
         }
         return $instances;
@@ -28,12 +27,7 @@ final class ViewportProfile implements JsonSerializable
 
     public static function FOUR_CHARACTER_CLOCK(): self
     {
-        return static::instances()['FOUR_CHARACTER_CLOCK'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['FOUR_CHARACTER_CLOCK'];
     }
 
     /**
@@ -42,15 +36,7 @@ final class ViewportProfile implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

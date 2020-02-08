@@ -59,17 +59,6 @@ final class ControlMediaCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param MediaCommandType $command
-     * @return self
-     */
-    public static function ofCommand(MediaCommandType $command): ControlMediaCommand
-    {
-        $instance = new self;
-        $instance->command = $command;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -43,17 +43,6 @@ final class SessionEndedError implements JsonSerializable
     }
 
     /**
-     * @param SessionEndedErrorType $type
-     * @return self
-     */
-    public static function ofType(SessionEndedErrorType $type): SessionEndedError
-    {
-        $instance = new self;
-        $instance->type = $type;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

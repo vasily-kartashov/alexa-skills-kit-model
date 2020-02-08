@@ -47,17 +47,6 @@ final class IntentRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param DialogState $dialogState
-     * @return self
-     */
-    public static function ofDialogState(DialogState $dialogState): IntentRequest
-    {
-        $instance = new self;
-        $instance->dialogState = $dialogState;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

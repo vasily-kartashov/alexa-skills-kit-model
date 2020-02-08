@@ -47,17 +47,6 @@ final class DiscreteViewportSize extends ViewportSize implements JsonSerializabl
     }
 
     /**
-     * @param int $pixelWidth
-     * @return self
-     */
-    public static function ofPixelWidth(int $pixelWidth): DiscreteViewportSize
-    {
-        $instance = new self;
-        $instance->pixelWidth = $pixelWidth;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

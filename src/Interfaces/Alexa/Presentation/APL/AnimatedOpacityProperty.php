@@ -47,17 +47,6 @@ final class AnimatedOpacityProperty extends AnimatedProperty implements JsonSeri
     }
 
     /**
-     * @param string $from
-     * @return self
-     */
-    public static function ofFrom(string $from): AnimatedOpacityProperty
-    {
-        $instance = new self;
-        $instance->from = $from;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

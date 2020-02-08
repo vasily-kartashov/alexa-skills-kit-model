@@ -9,14 +9,13 @@ final class PushNotificationStatus implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ENABLED' => new static('ENABLED'),
-                'DISABLED' => new static('DISABLED'),
-                'null' => new static('null')
+                'ENABLED'  => new static('ENABLED'),
+                'DISABLED' => new static('DISABLED')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class PushNotificationStatus implements JsonSerializable
 
     public static function ENABLED(): self
     {
-        return static::instances()['ENABLED'];
+        return static::values()['ENABLED'];
     }
 
     public static function DISABLED(): self
     {
-        return static::instances()['DISABLED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['DISABLED'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class PushNotificationStatus implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

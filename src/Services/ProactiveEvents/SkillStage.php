@@ -9,13 +9,13 @@ final class SkillStage implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'DEVELOPMENT' => new static('DEVELOPMENT'),
-                'LIVE' => new static('LIVE')
+                'LIVE'        => new static('LIVE')
             ];
         }
         return $instances;
@@ -28,12 +28,12 @@ final class SkillStage implements JsonSerializable
 
     public static function DEVELOPMENT(): self
     {
-        return static::instances()['DEVELOPMENT'];
+        return static::values()['DEVELOPMENT'];
     }
 
     public static function LIVE(): self
     {
-        return static::instances()['LIVE'];
+        return static::values()['LIVE'];
     }
 
     /**
@@ -42,15 +42,7 @@ final class SkillStage implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

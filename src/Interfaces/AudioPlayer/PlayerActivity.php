@@ -9,18 +9,17 @@ final class PlayerActivity implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'PLAYING' => new static('PLAYING'),
-                'PAUSED' => new static('PAUSED'),
-                'FINISHED' => new static('FINISHED'),
+                'PLAYING'         => new static('PLAYING'),
+                'PAUSED'          => new static('PAUSED'),
+                'FINISHED'        => new static('FINISHED'),
                 'BUFFER_UNDERRUN' => new static('BUFFER_UNDERRUN'),
-                'IDLE' => new static('IDLE'),
-                'STOPPED' => new static('STOPPED'),
-                'null' => new static('null')
+                'IDLE'            => new static('IDLE'),
+                'STOPPED'         => new static('STOPPED')
             ];
         }
         return $instances;
@@ -33,37 +32,32 @@ final class PlayerActivity implements JsonSerializable
 
     public static function PLAYING(): self
     {
-        return static::instances()['PLAYING'];
+        return static::values()['PLAYING'];
     }
 
     public static function PAUSED(): self
     {
-        return static::instances()['PAUSED'];
+        return static::values()['PAUSED'];
     }
 
     public static function FINISHED(): self
     {
-        return static::instances()['FINISHED'];
+        return static::values()['FINISHED'];
     }
 
     public static function BUFFER_UNDERRUN(): self
     {
-        return static::instances()['BUFFER_UNDERRUN'];
+        return static::values()['BUFFER_UNDERRUN'];
     }
 
     public static function IDLE(): self
     {
-        return static::instances()['IDLE'];
+        return static::values()['IDLE'];
     }
 
     public static function STOPPED(): self
     {
-        return static::instances()['STOPPED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['STOPPED'];
     }
 
     /**
@@ -72,15 +66,7 @@ final class PlayerActivity implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

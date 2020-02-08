@@ -9,15 +9,14 @@ final class PlayBehavior implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ENQUEUE' => new static('ENQUEUE'),
-                'REPLACE_ALL' => new static('REPLACE_ALL'),
-                'REPLACE_ENQUEUED' => new static('REPLACE_ENQUEUED'),
-                'null' => new static('null')
+                'ENQUEUE'          => new static('ENQUEUE'),
+                'REPLACE_ALL'      => new static('REPLACE_ALL'),
+                'REPLACE_ENQUEUED' => new static('REPLACE_ENQUEUED')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class PlayBehavior implements JsonSerializable
 
     public static function ENQUEUE(): self
     {
-        return static::instances()['ENQUEUE'];
+        return static::values()['ENQUEUE'];
     }
 
     public static function REPLACE_ALL(): self
     {
-        return static::instances()['REPLACE_ALL'];
+        return static::values()['REPLACE_ALL'];
     }
 
     public static function REPLACE_ENQUEUED(): self
     {
-        return static::instances()['REPLACE_ENQUEUED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['REPLACE_ENQUEUED'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class PlayBehavior implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

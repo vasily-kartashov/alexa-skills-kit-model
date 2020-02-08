@@ -72,17 +72,6 @@ final class StartDirective extends Directive implements JsonSerializable
     }
 
     /**
-     * @param mixed $data
-     * @return self
-     */
-    public static function ofData($data): StartDirective
-    {
-        $instance = new self;
-        $instance->data = $data;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

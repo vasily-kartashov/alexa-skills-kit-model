@@ -71,17 +71,6 @@ final class SellerOrderAttributes extends BaseAmazonPayEntity implements JsonSer
     }
 
     /**
-     * @param string $sellerOrderId
-     * @return self
-     */
-    public static function ofSellerOrderId(string $sellerOrderId): SellerOrderAttributes
-    {
-        $instance = new self;
-        $instance->sellerOrderId = $sellerOrderId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -9,14 +9,13 @@ final class ComponentVisibleOnScreenScrollableTagDirectionEnum implements JsonSe
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'horizontal' => new static('horizontal'),
-                'vertical' => new static('vertical'),
-                'null' => new static('null')
+                'vertical'   => new static('vertical')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class ComponentVisibleOnScreenScrollableTagDirectionEnum implements JsonSe
 
     public static function HORIZONTAL(): self
     {
-        return static::instances()['horizontal'];
+        return static::values()['horizontal'];
     }
 
     public static function VERTICAL(): self
     {
-        return static::instances()['vertical'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['vertical'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class ComponentVisibleOnScreenScrollableTagDirectionEnum implements JsonSe
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

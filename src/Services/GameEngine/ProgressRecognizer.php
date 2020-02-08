@@ -47,17 +47,6 @@ final class ProgressRecognizer extends Recognizer implements JsonSerializable
     }
 
     /**
-     * @param string $recognizer
-     * @return self
-     */
-    public static function ofRecognizer(string $recognizer): ProgressRecognizer
-    {
-        $instance = new self;
-        $instance->recognizer = $recognizer;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

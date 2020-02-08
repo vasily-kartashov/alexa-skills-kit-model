@@ -43,17 +43,6 @@ final class Image implements JsonSerializable
     }
 
     /**
-     * @param string $contentDescription
-     * @return self
-     */
-    public static function ofContentDescription(string $contentDescription): Image
-    {
-        $instance = new self;
-        $instance->contentDescription = $contentDescription;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

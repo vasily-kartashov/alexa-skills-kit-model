@@ -60,17 +60,6 @@ final class SendDirectiveDirective extends Directive implements JsonSerializable
     }
 
     /**
-     * @param Header $header
-     * @return self
-     */
-    public static function ofHeader(Header $header): SendDirectiveDirective
-    {
-        $instance = new self;
-        $instance->header = $header;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

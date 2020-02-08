@@ -71,17 +71,6 @@ final class BodyTemplate3 extends Template implements JsonSerializable
     }
 
     /**
-     * @param Image $backgroundImage
-     * @return self
-     */
-    public static function ofBackgroundImage(Image $backgroundImage): BodyTemplate3
-    {
-        $instance = new self;
-        $instance->backgroundImage = $backgroundImage;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

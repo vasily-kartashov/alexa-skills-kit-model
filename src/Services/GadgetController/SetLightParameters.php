@@ -55,17 +55,6 @@ final class SetLightParameters implements JsonSerializable
     }
 
     /**
-     * @param TriggerEventType $triggerEvent
-     * @return self
-     */
-    public static function ofTriggerEvent(TriggerEventType $triggerEvent): SetLightParameters
-    {
-        $instance = new self;
-        $instance->triggerEvent = $triggerEvent;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

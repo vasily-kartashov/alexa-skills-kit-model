@@ -9,14 +9,13 @@ final class TriggerType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'SCHEDULED_ABSOLUTE' => new static('SCHEDULED_ABSOLUTE'),
-                'SCHEDULED_RELATIVE' => new static('SCHEDULED_RELATIVE'),
-                'null' => new static('null')
+                'SCHEDULED_RELATIVE' => new static('SCHEDULED_RELATIVE')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class TriggerType implements JsonSerializable
 
     public static function SCHEDULED_ABSOLUTE(): self
     {
-        return static::instances()['SCHEDULED_ABSOLUTE'];
+        return static::values()['SCHEDULED_ABSOLUTE'];
     }
 
     public static function SCHEDULED_RELATIVE(): self
     {
-        return static::instances()['SCHEDULED_RELATIVE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['SCHEDULED_RELATIVE'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class TriggerType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

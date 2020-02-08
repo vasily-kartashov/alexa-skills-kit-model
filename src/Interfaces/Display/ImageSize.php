@@ -9,17 +9,16 @@ final class ImageSize implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'X_SMALL' => new static('X_SMALL'),
-                'SMALL' => new static('SMALL'),
-                'MEDIUM' => new static('MEDIUM'),
-                'LARGE' => new static('LARGE'),
-                'X_LARGE' => new static('X_LARGE'),
-                'null' => new static('null')
+                'SMALL'   => new static('SMALL'),
+                'MEDIUM'  => new static('MEDIUM'),
+                'LARGE'   => new static('LARGE'),
+                'X_LARGE' => new static('X_LARGE')
             ];
         }
         return $instances;
@@ -32,32 +31,27 @@ final class ImageSize implements JsonSerializable
 
     public static function X_SMALL(): self
     {
-        return static::instances()['X_SMALL'];
+        return static::values()['X_SMALL'];
     }
 
     public static function SMALL(): self
     {
-        return static::instances()['SMALL'];
+        return static::values()['SMALL'];
     }
 
     public static function MEDIUM(): self
     {
-        return static::instances()['MEDIUM'];
+        return static::values()['MEDIUM'];
     }
 
     public static function LARGE(): self
     {
-        return static::instances()['LARGE'];
+        return static::values()['LARGE'];
     }
 
     public static function X_LARGE(): self
     {
-        return static::instances()['X_LARGE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['X_LARGE'];
     }
 
     /**
@@ -66,15 +60,7 @@ final class ImageSize implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

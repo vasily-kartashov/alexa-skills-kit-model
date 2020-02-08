@@ -59,17 +59,6 @@ final class ScrollToIndexCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param Align $align
-     * @return self
-     */
-    public static function ofAlign(Align $align): ScrollToIndexCommand
-    {
-        $instance = new self;
-        $instance->align = $align;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

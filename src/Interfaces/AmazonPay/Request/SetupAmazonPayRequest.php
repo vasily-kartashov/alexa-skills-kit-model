@@ -121,17 +121,6 @@ final class SetupAmazonPayRequest extends BaseAmazonPayEntity implements JsonSer
     }
 
     /**
-     * @param string $sellerId
-     * @return self
-     */
-    public static function ofSellerId(string $sellerId): SetupAmazonPayRequest
-    {
-        $instance = new self;
-        $instance->sellerId = $sellerId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

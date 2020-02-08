@@ -43,17 +43,6 @@ final class EntityValueAndSynonyms implements JsonSerializable
     }
 
     /**
-     * @param string $value
-     * @return self
-     */
-    public static function ofValue(string $value): EntityValueAndSynonyms
-    {
-        $instance = new self;
-        $instance->value = $value;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

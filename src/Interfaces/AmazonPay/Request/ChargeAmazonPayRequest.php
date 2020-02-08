@@ -100,17 +100,6 @@ final class ChargeAmazonPayRequest extends BaseAmazonPayEntity implements JsonSe
     }
 
     /**
-     * @param string $sellerId
-     * @return self
-     */
-    public static function ofSellerId(string $sellerId): ChargeAmazonPayRequest
-    {
-        $instance = new self;
-        $instance->sellerId = $sellerId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

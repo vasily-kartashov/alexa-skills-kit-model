@@ -79,17 +79,6 @@ final class BillingAgreementAttributes implements JsonSerializable
     }
 
     /**
-     * @param string $platformId
-     * @return self
-     */
-    public static function ofPlatformId(string $platformId): BillingAgreementAttributes
-    {
-        $instance = new self;
-        $instance->platformId = $platformId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

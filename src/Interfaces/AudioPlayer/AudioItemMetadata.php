@@ -68,17 +68,6 @@ final class AudioItemMetadata implements JsonSerializable
     }
 
     /**
-     * @param string $title
-     * @return self
-     */
-    public static function ofTitle(string $title): AudioItemMetadata
-    {
-        $instance = new self;
-        $instance->title = $title;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

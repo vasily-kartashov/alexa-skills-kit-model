@@ -67,17 +67,6 @@ final class AccessTokenResponse implements JsonSerializable
     }
 
     /**
-     * @param string $access_token
-     * @return self
-     */
-    public static function ofAccess_token(string $access_token): AccessTokenResponse
-    {
-        $instance = new self;
-        $instance->access_token = $access_token;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

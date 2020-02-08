@@ -60,17 +60,6 @@ final class StartEventHandlerDirective extends Directive implements JsonSerializ
     }
 
     /**
-     * @param string $token
-     * @return self
-     */
-    public static function ofToken(string $token): StartEventHandlerDirective
-    {
-        $instance = new self;
-        $instance->token = $token;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

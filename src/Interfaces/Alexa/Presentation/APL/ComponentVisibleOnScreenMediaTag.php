@@ -115,17 +115,6 @@ final class ComponentVisibleOnScreenMediaTag implements JsonSerializable
     }
 
     /**
-     * @param int $positionInMilliseconds
-     * @return self
-     */
-    public static function ofPositionInMilliseconds(int $positionInMilliseconds): ComponentVisibleOnScreenMediaTag
-    {
-        $instance = new self;
-        $instance->positionInMilliseconds = $positionInMilliseconds;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -55,17 +55,6 @@ final class ComponentVisibleOnScreenScrollableTag implements JsonSerializable
     }
 
     /**
-     * @param ComponentVisibleOnScreenScrollableTagDirectionEnum $direction
-     * @return self
-     */
-    public static function ofDirection(ComponentVisibleOnScreenScrollableTagDirectionEnum $direction): ComponentVisibleOnScreenScrollableTag
-    {
-        $instance = new self;
-        $instance->direction = $direction;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

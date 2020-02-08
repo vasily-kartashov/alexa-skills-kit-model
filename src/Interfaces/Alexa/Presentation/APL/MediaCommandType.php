@@ -9,19 +9,18 @@ final class MediaCommandType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'play' => new static('play'),
-                'pause' => new static('pause'),
-                'next' => new static('next'),
+                'play'     => new static('play'),
+                'pause'    => new static('pause'),
+                'next'     => new static('next'),
                 'previous' => new static('previous'),
-                'rewind' => new static('rewind'),
-                'seek' => new static('seek'),
-                'setTrack' => new static('setTrack'),
-                'null' => new static('null')
+                'rewind'   => new static('rewind'),
+                'seek'     => new static('seek'),
+                'setTrack' => new static('setTrack')
             ];
         }
         return $instances;
@@ -34,42 +33,37 @@ final class MediaCommandType implements JsonSerializable
 
     public static function PLAY(): self
     {
-        return static::instances()['play'];
+        return static::values()['play'];
     }
 
     public static function PAUSE(): self
     {
-        return static::instances()['pause'];
+        return static::values()['pause'];
     }
 
     public static function NEXT(): self
     {
-        return static::instances()['next'];
+        return static::values()['next'];
     }
 
     public static function PREVIOUS(): self
     {
-        return static::instances()['previous'];
+        return static::values()['previous'];
     }
 
     public static function REWIND(): self
     {
-        return static::instances()['rewind'];
+        return static::values()['rewind'];
     }
 
     public static function SEEK(): self
     {
-        return static::instances()['seek'];
+        return static::values()['seek'];
     }
 
     public static function SET_TRACK(): self
     {
-        return static::instances()['setTrack'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['setTrack'];
     }
 
     /**
@@ -78,15 +72,7 @@ final class MediaCommandType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

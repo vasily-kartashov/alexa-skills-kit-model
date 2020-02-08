@@ -9,14 +9,13 @@ final class Codecs implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'H_264_41' => new static('H_264_41'),
-                'H_264_42' => new static('H_264_42'),
-                'null' => new static('null')
+                'H_264_42' => new static('H_264_42')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class Codecs implements JsonSerializable
 
     public static function H_264_41(): self
     {
-        return static::instances()['H_264_41'];
+        return static::values()['H_264_41'];
     }
 
     public static function H_264_42(): self
     {
-        return static::instances()['H_264_42'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['H_264_42'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class Codecs implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

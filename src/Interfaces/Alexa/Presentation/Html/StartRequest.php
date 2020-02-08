@@ -55,17 +55,6 @@ final class StartRequest implements JsonSerializable
     }
 
     /**
-     * @param StartRequestMethod $method
-     * @return self
-     */
-    public static function ofMethod(StartRequestMethod $method): StartRequest
-    {
-        $instance = new self;
-        $instance->method = $method;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

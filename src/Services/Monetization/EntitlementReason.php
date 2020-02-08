@@ -9,15 +9,14 @@ final class EntitlementReason implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'PURCHASED' => new static('PURCHASED'),
+                'PURCHASED'     => new static('PURCHASED'),
                 'NOT_PURCHASED' => new static('NOT_PURCHASED'),
-                'AUTO_ENTITLED' => new static('AUTO_ENTITLED'),
-                'null' => new static('null')
+                'AUTO_ENTITLED' => new static('AUTO_ENTITLED')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class EntitlementReason implements JsonSerializable
 
     public static function PURCHASED(): self
     {
-        return static::instances()['PURCHASED'];
+        return static::values()['PURCHASED'];
     }
 
     public static function NOT_PURCHASED(): self
     {
-        return static::instances()['NOT_PURCHASED'];
+        return static::values()['NOT_PURCHASED'];
     }
 
     public static function AUTO_ENTITLED(): self
     {
-        return static::instances()['AUTO_ENTITLED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['AUTO_ENTITLED'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class EntitlementReason implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

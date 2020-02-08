@@ -9,15 +9,14 @@ final class Access implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ENABLED' => new static('ENABLED'),
+                'ENABLED'  => new static('ENABLED'),
                 'DISABLED' => new static('DISABLED'),
-                'UNKNOWN' => new static('UNKNOWN'),
-                'null' => new static('null')
+                'UNKNOWN'  => new static('UNKNOWN')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class Access implements JsonSerializable
 
     public static function ENABLED(): self
     {
-        return static::instances()['ENABLED'];
+        return static::values()['ENABLED'];
     }
 
     public static function DISABLED(): self
     {
-        return static::instances()['DISABLED'];
+        return static::values()['DISABLED'];
     }
 
     public static function UNKNOWN(): self
     {
-        return static::instances()['UNKNOWN'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['UNKNOWN'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class Access implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

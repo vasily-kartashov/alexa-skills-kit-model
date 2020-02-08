@@ -55,17 +55,6 @@ final class ComponentEntity implements JsonSerializable
     }
 
     /**
-     * @param string $type
-     * @return self
-     */
-    public static function ofType(string $type): ComponentEntity
-    {
-        $instance = new self;
-        $instance->type = $type;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -67,17 +67,6 @@ final class RequestEnvelope implements JsonSerializable
     }
 
     /**
-     * @param string $version
-     * @return self
-     */
-    public static function ofVersion(string $version): RequestEnvelope
-    {
-        $instance = new self;
-        $instance->version = $version;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

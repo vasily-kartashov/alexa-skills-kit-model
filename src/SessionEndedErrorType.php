@@ -9,16 +9,15 @@ final class SessionEndedErrorType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'INVALID_RESPONSE' => new static('INVALID_RESPONSE'),
+                'INVALID_RESPONSE'           => new static('INVALID_RESPONSE'),
                 'DEVICE_COMMUNICATION_ERROR' => new static('DEVICE_COMMUNICATION_ERROR'),
-                'INTERNAL_SERVICE_ERROR' => new static('INTERNAL_SERVICE_ERROR'),
-                'ENDPOINT_TIMEOUT' => new static('ENDPOINT_TIMEOUT'),
-                'null' => new static('null')
+                'INTERNAL_SERVICE_ERROR'     => new static('INTERNAL_SERVICE_ERROR'),
+                'ENDPOINT_TIMEOUT'           => new static('ENDPOINT_TIMEOUT')
             ];
         }
         return $instances;
@@ -31,27 +30,22 @@ final class SessionEndedErrorType implements JsonSerializable
 
     public static function INVALID_RESPONSE(): self
     {
-        return static::instances()['INVALID_RESPONSE'];
+        return static::values()['INVALID_RESPONSE'];
     }
 
     public static function DEVICE_COMMUNICATION_ERROR(): self
     {
-        return static::instances()['DEVICE_COMMUNICATION_ERROR'];
+        return static::values()['DEVICE_COMMUNICATION_ERROR'];
     }
 
     public static function INTERNAL_SERVICE_ERROR(): self
     {
-        return static::instances()['INTERNAL_SERVICE_ERROR'];
+        return static::values()['INTERNAL_SERVICE_ERROR'];
     }
 
     public static function ENDPOINT_TIMEOUT(): self
     {
-        return static::instances()['ENDPOINT_TIMEOUT'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['ENDPOINT_TIMEOUT'];
     }
 
     /**
@@ -60,15 +54,7 @@ final class SessionEndedErrorType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

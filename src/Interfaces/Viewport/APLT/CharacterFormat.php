@@ -9,13 +9,12 @@ final class CharacterFormat implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'SEVEN_SEGMENT' => new static('SEVEN_SEGMENT'),
-                'null' => new static('null')
+                'SEVEN_SEGMENT' => new static('SEVEN_SEGMENT')
             ];
         }
         return $instances;
@@ -28,12 +27,7 @@ final class CharacterFormat implements JsonSerializable
 
     public static function SEVEN_SEGMENT(): self
     {
-        return static::instances()['SEVEN_SEGMENT'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['SEVEN_SEGMENT'];
     }
 
     /**
@@ -42,15 +36,7 @@ final class CharacterFormat implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -50,17 +50,6 @@ final class DynamicEntitiesDirective extends Directive implements JsonSerializab
     }
 
     /**
-     * @param UpdateBehavior $updateBehavior
-     * @return self
-     */
-    public static function ofUpdateBehavior(UpdateBehavior $updateBehavior): DynamicEntitiesDirective
-    {
-        $instance = new self;
-        $instance->updateBehavior = $updateBehavior;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

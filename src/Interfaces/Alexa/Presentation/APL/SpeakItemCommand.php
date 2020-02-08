@@ -71,17 +71,6 @@ final class SpeakItemCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param Align $align
-     * @return self
-     */
-    public static function ofAlign(Align $align): SpeakItemCommand
-    {
-        $instance = new self;
-        $instance->align = $align;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

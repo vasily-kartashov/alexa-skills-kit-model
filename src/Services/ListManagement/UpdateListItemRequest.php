@@ -55,17 +55,6 @@ final class UpdateListItemRequest implements JsonSerializable
     }
 
     /**
-     * @param string $value
-     * @return self
-     */
-    public static function ofValue(string $value): UpdateListItemRequest
-    {
-        $instance = new self;
-        $instance->value = $value;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

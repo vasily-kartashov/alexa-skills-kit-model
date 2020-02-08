@@ -47,17 +47,6 @@ final class ProviderCredit extends BaseAmazonPayEntity implements JsonSerializab
     }
 
     /**
-     * @param string $providerId
-     * @return self
-     */
-    public static function ofProviderId(string $providerId): ProviderCredit
-    {
-        $instance = new self;
-        $instance->providerId = $providerId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

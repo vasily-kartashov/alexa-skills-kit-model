@@ -43,17 +43,6 @@ final class Permissions implements JsonSerializable
     }
 
     /**
-     * @param string $consentToken
-     * @return self
-     */
-    public static function ofConsentToken(string $consentToken): Permissions
-    {
-        $instance = new self;
-        $instance->consentToken = $consentToken;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

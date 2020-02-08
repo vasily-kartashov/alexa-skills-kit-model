@@ -55,17 +55,6 @@ final class InterSegment implements JsonSerializable
     }
 
     /**
-     * @param int $x
-     * @return self
-     */
-    public static function ofX(int $x): InterSegment
-    {
-        $instance = new self;
-        $instance->x = $x;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

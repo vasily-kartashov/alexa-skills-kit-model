@@ -72,17 +72,6 @@ final class ScheduleTaxiReservationRequest extends BaseRequest implements JsonSe
     }
 
     /**
-     * @param string $pickupTime
-     * @return self
-     */
-    public static function ofPickupTime(string $pickupTime): ScheduleTaxiReservationRequest
-    {
-        $instance = new self;
-        $instance->pickupTime = $pickupTime;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

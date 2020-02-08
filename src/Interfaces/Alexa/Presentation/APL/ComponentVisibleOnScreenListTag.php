@@ -79,17 +79,6 @@ final class ComponentVisibleOnScreenListTag implements JsonSerializable
     }
 
     /**
-     * @param int $itemCount
-     * @return self
-     */
-    public static function ofItemCount(int $itemCount): ComponentVisibleOnScreenListTag
-    {
-        $instance = new self;
-        $instance->itemCount = $itemCount;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

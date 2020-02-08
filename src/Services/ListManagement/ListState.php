@@ -9,14 +9,13 @@ final class ListState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'active' => new static('active'),
-                'archived' => new static('archived'),
-                'null' => new static('null')
+                'active'   => new static('active'),
+                'archived' => new static('archived')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class ListState implements JsonSerializable
 
     public static function ACTIVE(): self
     {
-        return static::instances()['active'];
+        return static::values()['active'];
     }
 
     public static function ARCHIVED(): self
     {
-        return static::instances()['archived'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['archived'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class ListState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

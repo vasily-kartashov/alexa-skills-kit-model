@@ -9,17 +9,16 @@ final class PurchaseResult implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ACCEPTED' => new static('ACCEPTED'),
-                'DECLINED' => new static('DECLINED'),
-                'NOT_ENTITLED' => new static('NOT_ENTITLED'),
-                'ERROR' => new static('ERROR'),
-                'ALREADY_PURCHASED' => new static('ALREADY_PURCHASED'),
-                'null' => new static('null')
+                'ACCEPTED'          => new static('ACCEPTED'),
+                'DECLINED'          => new static('DECLINED'),
+                'NOT_ENTITLED'      => new static('NOT_ENTITLED'),
+                'ERROR'             => new static('ERROR'),
+                'ALREADY_PURCHASED' => new static('ALREADY_PURCHASED')
             ];
         }
         return $instances;
@@ -32,32 +31,27 @@ final class PurchaseResult implements JsonSerializable
 
     public static function ACCEPTED(): self
     {
-        return static::instances()['ACCEPTED'];
+        return static::values()['ACCEPTED'];
     }
 
     public static function DECLINED(): self
     {
-        return static::instances()['DECLINED'];
+        return static::values()['DECLINED'];
     }
 
     public static function NOT_ENTITLED(): self
     {
-        return static::instances()['NOT_ENTITLED'];
+        return static::values()['NOT_ENTITLED'];
     }
 
     public static function ERROR(): self
     {
-        return static::instances()['ERROR'];
+        return static::values()['ERROR'];
     }
 
     public static function ALREADY_PURCHASED(): self
     {
-        return static::instances()['ALREADY_PURCHASED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['ALREADY_PURCHASED'];
     }
 
     /**
@@ -66,15 +60,7 @@ final class PurchaseResult implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -9,14 +9,13 @@ final class InputEventActionType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'down' => new static('down'),
-                'up' => new static('up'),
-                'null' => new static('null')
+                'up'   => new static('up')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class InputEventActionType implements JsonSerializable
 
     public static function DOWN(): self
     {
-        return static::instances()['down'];
+        return static::values()['down'];
     }
 
     public static function UP(): self
     {
-        return static::instances()['up'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['up'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class InputEventActionType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

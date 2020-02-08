@@ -43,17 +43,6 @@ final class LocationServices implements JsonSerializable
     }
 
     /**
-     * @param Status $status
-     * @return self
-     */
-    public static function ofStatus(Status $status): LocationServices
-    {
-        $instance = new self;
-        $instance->status = $status;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

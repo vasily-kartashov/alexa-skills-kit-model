@@ -9,14 +9,13 @@ final class EntitledState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ENTITLED' => new static('ENTITLED'),
-                'NOT_ENTITLED' => new static('NOT_ENTITLED'),
-                'null' => new static('null')
+                'ENTITLED'     => new static('ENTITLED'),
+                'NOT_ENTITLED' => new static('NOT_ENTITLED')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class EntitledState implements JsonSerializable
 
     public static function ENTITLED(): self
     {
-        return static::instances()['ENTITLED'];
+        return static::values()['ENTITLED'];
     }
 
     public static function NOT_ENTITLED(): self
     {
-        return static::instances()['NOT_ENTITLED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['NOT_ENTITLED'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class EntitledState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

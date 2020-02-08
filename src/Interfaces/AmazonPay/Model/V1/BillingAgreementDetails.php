@@ -92,17 +92,6 @@ final class BillingAgreementDetails implements JsonSerializable
     }
 
     /**
-     * @param string $billingAgreementId
-     * @return self
-     */
-    public static function ofBillingAgreementId(string $billingAgreementId): BillingAgreementDetails
-    {
-        $instance = new self;
-        $instance->billingAgreementId = $billingAgreementId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

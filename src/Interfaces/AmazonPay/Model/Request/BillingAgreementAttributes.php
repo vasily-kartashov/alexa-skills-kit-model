@@ -83,17 +83,6 @@ final class BillingAgreementAttributes extends BaseAmazonPayEntity implements Js
     }
 
     /**
-     * @param string $platformId
-     * @return self
-     */
-    public static function ofPlatformId(string $platformId): BillingAgreementAttributes
-    {
-        $instance = new self;
-        $instance->platformId = $platformId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

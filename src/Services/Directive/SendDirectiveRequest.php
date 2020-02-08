@@ -43,17 +43,6 @@ final class SendDirectiveRequest implements JsonSerializable
     }
 
     /**
-     * @param Header $header
-     * @return self
-     */
-    public static function ofHeader(Header $header): SendDirectiveRequest
-    {
-        $instance = new self;
-        $instance->header = $header;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

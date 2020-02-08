@@ -9,15 +9,14 @@ final class ProductType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'SUBSCRIPTION' => new static('SUBSCRIPTION'),
-                'ENTITLEMENT' => new static('ENTITLEMENT'),
-                'CONSUMABLE' => new static('CONSUMABLE'),
-                'null' => new static('null')
+                'ENTITLEMENT'  => new static('ENTITLEMENT'),
+                'CONSUMABLE'   => new static('CONSUMABLE')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class ProductType implements JsonSerializable
 
     public static function SUBSCRIPTION(): self
     {
-        return static::instances()['SUBSCRIPTION'];
+        return static::values()['SUBSCRIPTION'];
     }
 
     public static function ENTITLEMENT(): self
     {
-        return static::instances()['ENTITLEMENT'];
+        return static::values()['ENTITLEMENT'];
     }
 
     public static function CONSUMABLE(): self
     {
-        return static::instances()['CONSUMABLE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['CONSUMABLE'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class ProductType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -59,17 +59,6 @@ final class SellerBillingAgreementAttributes extends BaseAmazonPayEntity impleme
     }
 
     /**
-     * @param string $sellerBillingAgreementId
-     * @return self
-     */
-    public static function ofSellerBillingAgreementId(string $sellerBillingAgreementId): SellerBillingAgreementAttributes
-    {
-        $instance = new self;
-        $instance->sellerBillingAgreementId = $sellerBillingAgreementId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -115,17 +115,6 @@ final class Address implements JsonSerializable
     }
 
     /**
-     * @param string $addressLine1
-     * @return self
-     */
-    public static function ofAddressLine1(string $addressLine1): Address
-    {
-        $instance = new self;
-        $instance->addressLine1 = $addressLine1;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

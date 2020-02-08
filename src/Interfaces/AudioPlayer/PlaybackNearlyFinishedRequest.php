@@ -48,17 +48,6 @@ final class PlaybackNearlyFinishedRequest extends Request implements JsonSeriali
     }
 
     /**
-     * @param int $offsetInMilliseconds
-     * @return self
-     */
-    public static function ofOffsetInMilliseconds(int $offsetInMilliseconds): PlaybackNearlyFinishedRequest
-    {
-        $instance = new self;
-        $instance->offsetInMilliseconds = $offsetInMilliseconds;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

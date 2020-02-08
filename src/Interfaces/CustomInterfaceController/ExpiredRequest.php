@@ -48,17 +48,6 @@ final class ExpiredRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param string $token
-     * @return self
-     */
-    public static function ofToken(string $token): ExpiredRequest
-    {
-        $instance = new self;
-        $instance->token = $token;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

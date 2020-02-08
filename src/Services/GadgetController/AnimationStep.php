@@ -55,17 +55,6 @@ final class AnimationStep implements JsonSerializable
     }
 
     /**
-     * @param int $durationMs
-     * @return self
-     */
-    public static function ofDurationMs(int $durationMs): AnimationStep
-    {
-        $instance = new self;
-        $instance->durationMs = $durationMs;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

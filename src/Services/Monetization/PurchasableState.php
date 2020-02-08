@@ -9,14 +9,13 @@ final class PurchasableState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'PURCHASABLE' => new static('PURCHASABLE'),
-                'NOT_PURCHASABLE' => new static('NOT_PURCHASABLE'),
-                'null' => new static('null')
+                'PURCHASABLE'     => new static('PURCHASABLE'),
+                'NOT_PURCHASABLE' => new static('NOT_PURCHASABLE')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class PurchasableState implements JsonSerializable
 
     public static function PURCHASABLE(): self
     {
-        return static::instances()['PURCHASABLE'];
+        return static::values()['PURCHASABLE'];
     }
 
     public static function NOT_PURCHASABLE(): self
     {
-        return static::instances()['NOT_PURCHASABLE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['NOT_PURCHASABLE'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class PurchasableState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

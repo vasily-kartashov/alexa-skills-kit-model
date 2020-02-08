@@ -61,17 +61,6 @@ final class ListUpdatedEventRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param ListBody $body
-     * @return self
-     */
-    public static function ofBody(ListBody $body): ListUpdatedEventRequest
-    {
-        $instance = new self;
-        $instance->body = $body;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

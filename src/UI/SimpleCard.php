@@ -47,17 +47,6 @@ final class SimpleCard extends Card implements JsonSerializable
     }
 
     /**
-     * @param string $title
-     * @return self
-     */
-    public static function ofTitle(string $title): SimpleCard
-    {
-        $instance = new self;
-        $instance->title = $title;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

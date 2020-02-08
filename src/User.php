@@ -55,17 +55,6 @@ final class User implements JsonSerializable
     }
 
     /**
-     * @param string $userId
-     * @return self
-     */
-    public static function ofUserId(string $userId): User
-    {
-        $instance = new self;
-        $instance->userId = $userId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

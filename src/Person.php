@@ -43,17 +43,6 @@ final class Person implements JsonSerializable
     }
 
     /**
-     * @param string $personId
-     * @return self
-     */
-    public static function ofPersonId(string $personId): Person
-    {
-        $instance = new self;
-        $instance->personId = $personId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

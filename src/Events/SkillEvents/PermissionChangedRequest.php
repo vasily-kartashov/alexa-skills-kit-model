@@ -61,17 +61,6 @@ final class PermissionChangedRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param PermissionBody $body
-     * @return self
-     */
-    public static function ofBody(PermissionBody $body): PermissionChangedRequest
-    {
-        $instance = new self;
-        $instance->body = $body;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

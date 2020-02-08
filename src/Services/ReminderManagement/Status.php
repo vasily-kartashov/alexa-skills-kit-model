@@ -9,14 +9,13 @@ final class Status implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ON' => new static('ON'),
-                'COMPLETED' => new static('COMPLETED'),
-                'null' => new static('null')
+                'ON'        => new static('ON'),
+                'COMPLETED' => new static('COMPLETED')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class Status implements JsonSerializable
 
     public static function ON(): self
     {
-        return static::instances()['ON'];
+        return static::values()['ON'];
     }
 
     public static function COMPLETED(): self
     {
-        return static::instances()['COMPLETED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['COMPLETED'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class Status implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

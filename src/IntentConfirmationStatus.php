@@ -9,15 +9,14 @@ final class IntentConfirmationStatus implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'NONE' => new static('NONE'),
-                'DENIED' => new static('DENIED'),
-                'CONFIRMED' => new static('CONFIRMED'),
-                'null' => new static('null')
+                'NONE'      => new static('NONE'),
+                'DENIED'    => new static('DENIED'),
+                'CONFIRMED' => new static('CONFIRMED')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class IntentConfirmationStatus implements JsonSerializable
 
     public static function NONE(): self
     {
-        return static::instances()['NONE'];
+        return static::values()['NONE'];
     }
 
     public static function DENIED(): self
     {
-        return static::instances()['DENIED'];
+        return static::values()['DENIED'];
     }
 
     public static function CONFIRMED(): self
     {
-        return static::instances()['CONFIRMED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['CONFIRMED'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class IntentConfirmationStatus implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -47,17 +47,6 @@ final class OpenUrlCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param string $source
-     * @return self
-     */
-    public static function ofSource(string $source): OpenUrlCommand
-    {
-        $instance = new self;
-        $instance->source = $source;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

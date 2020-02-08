@@ -67,17 +67,6 @@ final class Stream implements JsonSerializable
     }
 
     /**
-     * @param string $expectedPreviousToken
-     * @return self
-     */
-    public static function ofExpectedPreviousToken(string $expectedPreviousToken): Stream
-    {
-        $instance = new self;
-        $instance->expectedPreviousToken = $expectedPreviousToken;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

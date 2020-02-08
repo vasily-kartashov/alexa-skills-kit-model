@@ -9,15 +9,14 @@ final class SessionEndedReason implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'USER_INITIATED' => new static('USER_INITIATED'),
-                'ERROR' => new static('ERROR'),
-                'EXCEEDED_MAX_REPROMPTS' => new static('EXCEEDED_MAX_REPROMPTS'),
-                'null' => new static('null')
+                'USER_INITIATED'         => new static('USER_INITIATED'),
+                'ERROR'                  => new static('ERROR'),
+                'EXCEEDED_MAX_REPROMPTS' => new static('EXCEEDED_MAX_REPROMPTS')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class SessionEndedReason implements JsonSerializable
 
     public static function USER_INITIATED(): self
     {
-        return static::instances()['USER_INITIATED'];
+        return static::values()['USER_INITIATED'];
     }
 
     public static function ERROR(): self
     {
-        return static::instances()['ERROR'];
+        return static::values()['ERROR'];
     }
 
     public static function EXCEEDED_MAX_REPROMPTS(): self
     {
-        return static::instances()['EXCEEDED_MAX_REPROMPTS'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['EXCEEDED_MAX_REPROMPTS'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class SessionEndedReason implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

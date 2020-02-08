@@ -123,17 +123,6 @@ final class SupportedInterfaces implements JsonSerializable
     }
 
     /**
-     * @param AlexaPresentationAplInterface $alexaPresentationAPL
-     * @return self
-     */
-    public static function ofAlexaPresentationAPL(AlexaPresentationAplInterface $alexaPresentationAPL): SupportedInterfaces
-    {
-        $instance = new self;
-        $instance->alexaPresentationAPL = $alexaPresentationAPL;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

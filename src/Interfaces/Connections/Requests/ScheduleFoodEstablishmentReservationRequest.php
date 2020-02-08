@@ -60,17 +60,6 @@ final class ScheduleFoodEstablishmentReservationRequest extends BaseRequest impl
     }
 
     /**
-     * @param string $startTime
-     * @return self
-     */
-    public static function ofStartTime(string $startTime): ScheduleFoodEstablishmentReservationRequest
-    {
-        $instance = new self;
-        $instance->startTime = $startTime;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

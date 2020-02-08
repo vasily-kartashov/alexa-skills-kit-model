@@ -9,14 +9,13 @@ final class CanFulfillSlotValues implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'YES' => new static('YES'),
-                'NO' => new static('NO'),
-                'null' => new static('null')
+                'NO'  => new static('NO')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class CanFulfillSlotValues implements JsonSerializable
 
     public static function YES(): self
     {
-        return static::instances()['YES'];
+        return static::values()['YES'];
     }
 
     public static function NO(): self
     {
-        return static::instances()['NO'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['NO'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class CanFulfillSlotValues implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

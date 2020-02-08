@@ -67,17 +67,6 @@ final class Experience implements JsonSerializable
     }
 
     /**
-     * @param mixed $arcMinuteWidth
-     * @return self
-     */
-    public static function ofArcMinuteWidth($arcMinuteWidth): Experience
-    {
-        $instance = new self;
-        $instance->arcMinuteWidth = $arcMinuteWidth;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

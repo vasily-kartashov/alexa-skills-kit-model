@@ -9,13 +9,12 @@ final class Touch implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'SINGLE' => new static('SINGLE'),
-                'null' => new static('null')
+                'SINGLE' => new static('SINGLE')
             ];
         }
         return $instances;
@@ -28,12 +27,7 @@ final class Touch implements JsonSerializable
 
     public static function SINGLE(): self
     {
-        return static::instances()['SINGLE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['SINGLE'];
     }
 
     /**
@@ -42,15 +36,7 @@ final class Touch implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

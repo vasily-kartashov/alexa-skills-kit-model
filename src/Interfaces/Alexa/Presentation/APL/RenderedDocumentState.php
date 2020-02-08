@@ -55,17 +55,6 @@ final class RenderedDocumentState implements JsonSerializable
     }
 
     /**
-     * @param string $token
-     * @return self
-     */
-    public static function ofToken(string $token): RenderedDocumentState
-    {
-        $instance = new self;
-        $instance->token = $token;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

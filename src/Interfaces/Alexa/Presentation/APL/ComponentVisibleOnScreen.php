@@ -127,17 +127,6 @@ final class ComponentVisibleOnScreen implements JsonSerializable
     }
 
     /**
-     * @param array $children
-     * @return self
-     */
-    public static function ofChildren(array $children): ComponentVisibleOnScreen
-    {
-        $instance = new self;
-        $instance->children = $children;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

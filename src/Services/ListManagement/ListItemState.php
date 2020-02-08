@@ -9,14 +9,13 @@ final class ListItemState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'active' => new static('active'),
-                'completed' => new static('completed'),
-                'null' => new static('null')
+                'active'    => new static('active'),
+                'completed' => new static('completed')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class ListItemState implements JsonSerializable
 
     public static function ACTIVE(): self
     {
-        return static::instances()['active'];
+        return static::values()['active'];
     }
 
     public static function COMPLETED(): self
     {
-        return static::instances()['completed'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['completed'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class ListItemState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

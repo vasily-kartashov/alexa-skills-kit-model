@@ -43,17 +43,6 @@ final class CanFulfillIntent implements JsonSerializable
     }
 
     /**
-     * @param CanFulfillIntentValues $canFulfill
-     * @return self
-     */
-    public static function ofCanFulfill(CanFulfillIntentValues $canFulfill): CanFulfillIntent
-    {
-        $instance = new self;
-        $instance->canFulfill = $canFulfill;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

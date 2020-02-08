@@ -9,14 +9,13 @@ final class PaymentAction implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'Authorize' => new static('Authorize'),
-                'AuthorizeAndCapture' => new static('AuthorizeAndCapture'),
-                'null' => new static('null')
+                'Authorize'           => new static('Authorize'),
+                'AuthorizeAndCapture' => new static('AuthorizeAndCapture')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class PaymentAction implements JsonSerializable
 
     public static function AUTHORIZE(): self
     {
-        return static::instances()['Authorize'];
+        return static::values()['Authorize'];
     }
 
     public static function AUTHORIZE_AND_CAPTURE(): self
     {
-        return static::instances()['AuthorizeAndCapture'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['AuthorizeAndCapture'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class PaymentAction implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

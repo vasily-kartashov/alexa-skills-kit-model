@@ -43,17 +43,6 @@ final class Altitude implements JsonSerializable
     }
 
     /**
-     * @param float $altitudeInMeters
-     * @return self
-     */
-    public static function ofAltitudeInMeters(float $altitudeInMeters): Altitude
-    {
-        $instance = new self;
-        $instance->altitudeInMeters = $altitudeInMeters;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

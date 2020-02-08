@@ -9,13 +9,12 @@ final class Keyboard implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'DIRECTION' => new static('DIRECTION'),
-                'null' => new static('null')
+                'DIRECTION' => new static('DIRECTION')
             ];
         }
         return $instances;
@@ -28,12 +27,7 @@ final class Keyboard implements JsonSerializable
 
     public static function DIRECTION(): self
     {
-        return static::instances()['DIRECTION'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['DIRECTION'];
     }
 
     /**
@@ -42,15 +36,7 @@ final class Keyboard implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

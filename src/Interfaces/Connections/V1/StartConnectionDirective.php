@@ -60,17 +60,6 @@ final class StartConnectionDirective extends Directive implements JsonSerializab
     }
 
     /**
-     * @param string $uri
-     * @return self
-     */
-    public static function ofUri(string $uri): StartConnectionDirective
-    {
-        $instance = new self;
-        $instance->uri = $uri;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -9,13 +9,13 @@ final class GrantType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'CLIENT_CREDENTIALS' => new static('CLIENT_CREDENTIALS'),
-                'REFRESH_TOKEN' => new static('REFRESH_TOKEN')
+                'REFRESH_TOKEN'      => new static('REFRESH_TOKEN')
             ];
         }
         return $instances;
@@ -28,12 +28,12 @@ final class GrantType implements JsonSerializable
 
     public static function CLIENT_CREDENTIALS(): self
     {
-        return static::instances()['CLIENT_CREDENTIALS'];
+        return static::values()['CLIENT_CREDENTIALS'];
     }
 
     public static function REFRESH_TOKEN(): self
     {
-        return static::instances()['REFRESH_TOKEN'];
+        return static::values()['REFRESH_TOKEN'];
     }
 
     /**
@@ -42,15 +42,7 @@ final class GrantType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

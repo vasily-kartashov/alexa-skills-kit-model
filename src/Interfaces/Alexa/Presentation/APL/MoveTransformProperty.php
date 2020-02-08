@@ -43,17 +43,6 @@ final class MoveTransformProperty extends TransformProperty implements JsonSeria
     }
 
     /**
-     * @param string $translateX
-     * @return self
-     */
-    public static function ofTranslateX(string $translateX): MoveTransformProperty
-    {
-        $instance = new self;
-        $instance->translateX = $translateX;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

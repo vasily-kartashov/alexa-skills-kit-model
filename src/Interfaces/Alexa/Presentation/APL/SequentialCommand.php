@@ -71,17 +71,6 @@ final class SequentialCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param array $catch
-     * @return self
-     */
-    public static function ofCatch(array $catch): SequentialCommand
-    {
-        $instance = new self;
-        $instance->catch = $catch;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -43,17 +43,6 @@ final class CanFulfillSlot implements JsonSerializable
     }
 
     /**
-     * @param CanUnderstandSlotValues $canUnderstand
-     * @return self
-     */
-    public static function ofCanUnderstand(CanUnderstandSlotValues $canUnderstand): CanFulfillSlot
-    {
-        $instance = new self;
-        $instance->canUnderstand = $canUnderstand;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

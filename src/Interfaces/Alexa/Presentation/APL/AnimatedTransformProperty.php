@@ -46,17 +46,6 @@ final class AnimatedTransformProperty extends AnimatedProperty implements JsonSe
         }) extends AnimatedTransformPropertyBuilder {};
     }
 
-    /**
-     * @param array $from
-     * @return self
-     */
-    public static function ofFrom(array $from): AnimatedTransformProperty
-    {
-        $instance = new self;
-        $instance->from = $from;
-        return $instance;
-    }
-
 
     public function jsonSerialize(): array
     {

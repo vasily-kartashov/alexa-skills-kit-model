@@ -9,14 +9,13 @@ final class TemperatureUnit implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'CELSIUS' => new static('CELSIUS'),
-                'FAHRENHEIT' => new static('FAHRENHEIT'),
-                'null' => new static('null')
+                'CELSIUS'    => new static('CELSIUS'),
+                'FAHRENHEIT' => new static('FAHRENHEIT')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class TemperatureUnit implements JsonSerializable
 
     public static function CELSIUS(): self
     {
-        return static::instances()['CELSIUS'];
+        return static::values()['CELSIUS'];
     }
 
     public static function FAHRENHEIT(): self
     {
-        return static::instances()['FAHRENHEIT'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['FAHRENHEIT'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class TemperatureUnit implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

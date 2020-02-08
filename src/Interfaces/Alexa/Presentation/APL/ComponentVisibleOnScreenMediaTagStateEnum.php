@@ -9,15 +9,14 @@ final class ComponentVisibleOnScreenMediaTagStateEnum implements JsonSerializabl
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'idle' => new static('idle'),
+                'idle'    => new static('idle'),
                 'playing' => new static('playing'),
-                'paused' => new static('paused'),
-                'null' => new static('null')
+                'paused'  => new static('paused')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class ComponentVisibleOnScreenMediaTagStateEnum implements JsonSerializabl
 
     public static function IDLE(): self
     {
-        return static::instances()['idle'];
+        return static::values()['idle'];
     }
 
     public static function PLAYING(): self
     {
-        return static::instances()['playing'];
+        return static::values()['playing'];
     }
 
     public static function PAUSED(): self
     {
-        return static::instances()['paused'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['paused'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class ComponentVisibleOnScreenMediaTagStateEnum implements JsonSerializabl
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

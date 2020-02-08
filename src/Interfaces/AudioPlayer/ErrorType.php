@@ -9,17 +9,16 @@ final class ErrorType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'MEDIA_ERROR_INTERNAL_DEVICE_ERROR' => new static('MEDIA_ERROR_INTERNAL_DEVICE_ERROR'),
                 'MEDIA_ERROR_INTERNAL_SERVER_ERROR' => new static('MEDIA_ERROR_INTERNAL_SERVER_ERROR'),
-                'MEDIA_ERROR_INVALID_REQUEST' => new static('MEDIA_ERROR_INVALID_REQUEST'),
-                'MEDIA_ERROR_SERVICE_UNAVAILABLE' => new static('MEDIA_ERROR_SERVICE_UNAVAILABLE'),
-                'MEDIA_ERROR_UNKNOWN' => new static('MEDIA_ERROR_UNKNOWN'),
-                'null' => new static('null')
+                'MEDIA_ERROR_INVALID_REQUEST'       => new static('MEDIA_ERROR_INVALID_REQUEST'),
+                'MEDIA_ERROR_SERVICE_UNAVAILABLE'   => new static('MEDIA_ERROR_SERVICE_UNAVAILABLE'),
+                'MEDIA_ERROR_UNKNOWN'               => new static('MEDIA_ERROR_UNKNOWN')
             ];
         }
         return $instances;
@@ -32,32 +31,27 @@ final class ErrorType implements JsonSerializable
 
     public static function MEDIA_ERROR_INTERNAL_DEVICE_ERROR(): self
     {
-        return static::instances()['MEDIA_ERROR_INTERNAL_DEVICE_ERROR'];
+        return static::values()['MEDIA_ERROR_INTERNAL_DEVICE_ERROR'];
     }
 
     public static function MEDIA_ERROR_INTERNAL_SERVER_ERROR(): self
     {
-        return static::instances()['MEDIA_ERROR_INTERNAL_SERVER_ERROR'];
+        return static::values()['MEDIA_ERROR_INTERNAL_SERVER_ERROR'];
     }
 
     public static function MEDIA_ERROR_INVALID_REQUEST(): self
     {
-        return static::instances()['MEDIA_ERROR_INVALID_REQUEST'];
+        return static::values()['MEDIA_ERROR_INVALID_REQUEST'];
     }
 
     public static function MEDIA_ERROR_SERVICE_UNAVAILABLE(): self
     {
-        return static::instances()['MEDIA_ERROR_SERVICE_UNAVAILABLE'];
+        return static::values()['MEDIA_ERROR_SERVICE_UNAVAILABLE'];
     }
 
     public static function MEDIA_ERROR_UNKNOWN(): self
     {
-        return static::instances()['MEDIA_ERROR_UNKNOWN'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['MEDIA_ERROR_UNKNOWN'];
     }
 
     /**
@@ -66,15 +60,7 @@ final class ErrorType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

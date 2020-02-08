@@ -9,14 +9,13 @@ final class UpdateBehavior implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'REPLACE' => new static('REPLACE'),
-                'CLEAR' => new static('CLEAR'),
-                'null' => new static('null')
+                'CLEAR'   => new static('CLEAR')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class UpdateBehavior implements JsonSerializable
 
     public static function REPLACE(): self
     {
-        return static::instances()['REPLACE'];
+        return static::values()['REPLACE'];
     }
 
     public static function CLEAR(): self
     {
-        return static::instances()['CLEAR'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['CLEAR'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class UpdateBehavior implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

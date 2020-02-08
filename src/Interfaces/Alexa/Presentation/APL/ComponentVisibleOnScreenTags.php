@@ -163,17 +163,6 @@ final class ComponentVisibleOnScreenTags implements JsonSerializable
     }
 
     /**
-     * @param bool $checked
-     * @return self
-     */
-    public static function ofChecked(bool $checked): ComponentVisibleOnScreenTags
-    {
-        $instance = new self;
-        $instance->checked = $checked;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

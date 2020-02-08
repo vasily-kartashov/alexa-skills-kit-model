@@ -49,17 +49,6 @@ final class SkillDisabledRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param DateTime $eventCreationTime
-     * @return self
-     */
-    public static function ofEventCreationTime(DateTime $eventCreationTime): SkillDisabledRequest
-    {
-        $instance = new self;
-        $instance->eventCreationTime = $eventCreationTime;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

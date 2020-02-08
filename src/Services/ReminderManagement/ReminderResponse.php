@@ -91,17 +91,6 @@ final class ReminderResponse implements JsonSerializable
     }
 
     /**
-     * @param string $alertToken
-     * @return self
-     */
-    public static function ofAlertToken(string $alertToken): ReminderResponse
-    {
-        $instance = new self;
-        $instance->alertToken = $alertToken;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

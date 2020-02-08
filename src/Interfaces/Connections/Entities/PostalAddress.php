@@ -83,17 +83,6 @@ final class PostalAddress extends BaseEntity implements JsonSerializable
     }
 
     /**
-     * @param string $streetAddress
-     * @return self
-     */
-    public static function ofStreetAddress(string $streetAddress): PostalAddress
-    {
-        $instance = new self;
-        $instance->streetAddress = $streetAddress;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

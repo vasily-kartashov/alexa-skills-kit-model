@@ -67,17 +67,6 @@ final class Pattern implements JsonSerializable
     }
 
     /**
-     * @param array $gadgetIds
-     * @return self
-     */
-    public static function ofGadgetIds(array $gadgetIds): Pattern
-    {
-        $instance = new self;
-        $instance->gadgetIds = $gadgetIds;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

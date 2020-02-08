@@ -48,17 +48,6 @@ final class HandleMessageDirective extends Directive implements JsonSerializable
     }
 
     /**
-     * @param mixed $message
-     * @return self
-     */
-    public static function ofMessage($message): HandleMessageDirective
-    {
-        $instance = new self;
-        $instance->message = $message;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

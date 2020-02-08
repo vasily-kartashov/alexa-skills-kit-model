@@ -9,17 +9,16 @@ final class BillingAgreementStatus implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'CANCELED' => new static('CANCELED'),
-                'CLOSED' => new static('CLOSED'),
-                'DRAFT' => new static('DRAFT'),
-                'OPEN' => new static('OPEN'),
-                'SUSPENDED' => new static('SUSPENDED'),
-                'null' => new static('null')
+                'CANCELED'  => new static('CANCELED'),
+                'CLOSED'    => new static('CLOSED'),
+                'DRAFT'     => new static('DRAFT'),
+                'OPEN'      => new static('OPEN'),
+                'SUSPENDED' => new static('SUSPENDED')
             ];
         }
         return $instances;
@@ -32,32 +31,27 @@ final class BillingAgreementStatus implements JsonSerializable
 
     public static function CANCELED(): self
     {
-        return static::instances()['CANCELED'];
+        return static::values()['CANCELED'];
     }
 
     public static function CLOSED(): self
     {
-        return static::instances()['CLOSED'];
+        return static::values()['CLOSED'];
     }
 
     public static function DRAFT(): self
     {
-        return static::instances()['DRAFT'];
+        return static::values()['DRAFT'];
     }
 
     public static function OPEN(): self
     {
-        return static::instances()['OPEN'];
+        return static::values()['OPEN'];
     }
 
     public static function SUSPENDED(): self
     {
-        return static::instances()['SUSPENDED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['SUSPENDED'];
     }
 
     /**
@@ -66,15 +60,7 @@ final class BillingAgreementStatus implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

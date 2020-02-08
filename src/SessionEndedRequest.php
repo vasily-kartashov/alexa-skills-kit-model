@@ -47,17 +47,6 @@ final class SessionEndedRequest extends Request implements JsonSerializable
     }
 
     /**
-     * @param SessionEndedReason $reason
-     * @return self
-     */
-    public static function ofReason(SessionEndedReason $reason): SessionEndedRequest
-    {
-        $instance = new self;
-        $instance->reason = $reason;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

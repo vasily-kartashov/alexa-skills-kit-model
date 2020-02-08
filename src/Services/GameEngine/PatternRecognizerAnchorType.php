@@ -9,15 +9,14 @@ final class PatternRecognizerAnchorType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'start' => new static('start'),
-                'end' => new static('end'),
-                'anywhere' => new static('anywhere'),
-                'null' => new static('null')
+                'start'    => new static('start'),
+                'end'      => new static('end'),
+                'anywhere' => new static('anywhere')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class PatternRecognizerAnchorType implements JsonSerializable
 
     public static function START(): self
     {
-        return static::instances()['start'];
+        return static::values()['start'];
     }
 
     public static function END(): self
     {
-        return static::instances()['end'];
+        return static::values()['end'];
     }
 
     public static function ANYWHERE(): self
     {
-        return static::instances()['anywhere'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['anywhere'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class PatternRecognizerAnchorType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

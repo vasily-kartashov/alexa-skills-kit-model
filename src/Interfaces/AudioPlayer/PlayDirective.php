@@ -48,17 +48,6 @@ final class PlayDirective extends Directive implements JsonSerializable
     }
 
     /**
-     * @param PlayBehavior $playBehavior
-     * @return self
-     */
-    public static function ofPlayBehavior(PlayBehavior $playBehavior): PlayDirective
-    {
-        $instance = new self;
-        $instance->playBehavior = $playBehavior;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

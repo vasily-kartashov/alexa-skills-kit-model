@@ -9,17 +9,16 @@ final class Mode implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'AUTO' => new static('AUTO'),
-                'HUB' => new static('HUB'),
+                'AUTO'   => new static('AUTO'),
+                'HUB'    => new static('HUB'),
                 'MOBILE' => new static('MOBILE'),
-                'PC' => new static('PC'),
-                'TV' => new static('TV'),
-                'null' => new static('null')
+                'PC'     => new static('PC'),
+                'TV'     => new static('TV')
             ];
         }
         return $instances;
@@ -32,32 +31,27 @@ final class Mode implements JsonSerializable
 
     public static function AUTO(): self
     {
-        return static::instances()['AUTO'];
+        return static::values()['AUTO'];
     }
 
     public static function HUB(): self
     {
-        return static::instances()['HUB'];
+        return static::values()['HUB'];
     }
 
     public static function MOBILE(): self
     {
-        return static::instances()['MOBILE'];
+        return static::values()['MOBILE'];
     }
 
     public static function PC(): self
     {
-        return static::instances()['PC'];
+        return static::values()['PC'];
     }
 
     public static function TV(): self
     {
-        return static::instances()['TV'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['TV'];
     }
 
     /**
@@ -66,15 +60,7 @@ final class Mode implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

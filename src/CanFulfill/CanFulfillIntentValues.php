@@ -9,15 +9,14 @@ final class CanFulfillIntentValues implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'YES' => new static('YES'),
-                'NO' => new static('NO'),
-                'MAYBE' => new static('MAYBE'),
-                'null' => new static('null')
+                'YES'   => new static('YES'),
+                'NO'    => new static('NO'),
+                'MAYBE' => new static('MAYBE')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class CanFulfillIntentValues implements JsonSerializable
 
     public static function YES(): self
     {
-        return static::instances()['YES'];
+        return static::values()['YES'];
     }
 
     public static function NO(): self
     {
-        return static::instances()['NO'];
+        return static::values()['NO'];
     }
 
     public static function MAYBE(): self
     {
-        return static::instances()['MAYBE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['MAYBE'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class CanFulfillIntentValues implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

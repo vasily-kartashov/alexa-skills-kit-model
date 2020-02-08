@@ -55,17 +55,6 @@ final class GetRemindersResponse implements JsonSerializable
     }
 
     /**
-     * @param string $totalCount
-     * @return self
-     */
-    public static function ofTotalCount(string $totalCount): GetRemindersResponse
-    {
-        $instance = new self;
-        $instance->totalCount = $totalCount;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

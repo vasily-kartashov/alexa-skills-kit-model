@@ -9,15 +9,14 @@ final class ComponentState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'checked' => new static('checked'),
+                'checked'  => new static('checked'),
                 'disabled' => new static('disabled'),
-                'focused' => new static('focused'),
-                'null' => new static('null')
+                'focused'  => new static('focused')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class ComponentState implements JsonSerializable
 
     public static function CHECKED(): self
     {
-        return static::instances()['checked'];
+        return static::values()['checked'];
     }
 
     public static function DISABLED(): self
     {
-        return static::instances()['disabled'];
+        return static::values()['disabled'];
     }
 
     public static function FOCUSED(): self
     {
-        return static::instances()['focused'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['focused'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class ComponentState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -67,17 +67,6 @@ final class ComponentVisibleOnScreenPagerTag implements JsonSerializable
     }
 
     /**
-     * @param int $index
-     * @return self
-     */
-    public static function ofIndex(int $index): ComponentVisibleOnScreenPagerTag
-    {
-        $instance = new self;
-        $instance->index = $index;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

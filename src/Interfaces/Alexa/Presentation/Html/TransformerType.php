@@ -9,16 +9,15 @@ final class TransformerType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'ssmlToSpeech' => new static('ssmlToSpeech'),
                 'textToSpeech' => new static('textToSpeech'),
-                'textToHint' => new static('textToHint'),
-                'ssmlToText' => new static('ssmlToText'),
-                'null' => new static('null')
+                'textToHint'   => new static('textToHint'),
+                'ssmlToText'   => new static('ssmlToText')
             ];
         }
         return $instances;
@@ -31,27 +30,22 @@ final class TransformerType implements JsonSerializable
 
     public static function SSML_TO_SPEECH(): self
     {
-        return static::instances()['ssmlToSpeech'];
+        return static::values()['ssmlToSpeech'];
     }
 
     public static function TEXT_TO_SPEECH(): self
     {
-        return static::instances()['textToSpeech'];
+        return static::values()['textToSpeech'];
     }
 
     public static function TEXT_TO_HINT(): self
     {
-        return static::instances()['textToHint'];
+        return static::values()['textToHint'];
     }
 
     public static function SSML_TO_TEXT(): self
     {
-        return static::instances()['ssmlToText'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['ssmlToText'];
     }
 
     /**
@@ -60,15 +54,7 @@ final class TransformerType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

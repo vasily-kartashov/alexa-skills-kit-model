@@ -55,17 +55,6 @@ final class LightAnimation implements JsonSerializable
     }
 
     /**
-     * @param int $repeat
-     * @return self
-     */
-    public static function ofRepeat(int $repeat): LightAnimation
-    {
-        $instance = new self;
-        $instance->repeat = $repeat;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

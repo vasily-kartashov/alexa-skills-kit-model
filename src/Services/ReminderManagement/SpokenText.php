@@ -55,17 +55,6 @@ final class SpokenText implements JsonSerializable
     }
 
     /**
-     * @param string $locale
-     * @return self
-     */
-    public static function ofLocale(string $locale): SpokenText
-    {
-        $instance = new self;
-        $instance->locale = $locale;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

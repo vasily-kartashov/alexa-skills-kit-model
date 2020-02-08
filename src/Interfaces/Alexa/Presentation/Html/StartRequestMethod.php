@@ -9,13 +9,12 @@ final class StartRequestMethod implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'GET' => new static('GET'),
-                'null' => new static('null')
+                'GET' => new static('GET')
             ];
         }
         return $instances;
@@ -28,12 +27,7 @@ final class StartRequestMethod implements JsonSerializable
 
     public static function GET(): self
     {
-        return static::instances()['GET'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['GET'];
     }
 
     /**
@@ -42,15 +36,7 @@ final class StartRequestMethod implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

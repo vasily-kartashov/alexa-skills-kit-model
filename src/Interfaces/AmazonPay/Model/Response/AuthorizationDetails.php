@@ -188,17 +188,6 @@ final class AuthorizationDetails implements JsonSerializable
     }
 
     /**
-     * @param string $amazonAuthorizationId
-     * @return self
-     */
-    public static function ofAmazonAuthorizationId(string $amazonAuthorizationId): AuthorizationDetails
-    {
-        $instance = new self;
-        $instance->amazonAuthorizationId = $amazonAuthorizationId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

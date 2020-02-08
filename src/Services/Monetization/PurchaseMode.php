@@ -9,14 +9,13 @@ final class PurchaseMode implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'TEST' => new static('TEST'),
-                'LIVE' => new static('LIVE'),
-                'null' => new static('null')
+                'LIVE' => new static('LIVE')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class PurchaseMode implements JsonSerializable
 
     public static function TEST(): self
     {
-        return static::instances()['TEST'];
+        return static::values()['TEST'];
     }
 
     public static function LIVE(): self
     {
-        return static::instances()['LIVE'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['LIVE'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class PurchaseMode implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

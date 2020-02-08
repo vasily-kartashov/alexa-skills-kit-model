@@ -9,14 +9,13 @@ final class EventReportingType implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
                 'history' => new static('history'),
-                'matches' => new static('matches'),
-                'null' => new static('null')
+                'matches' => new static('matches')
             ];
         }
         return $instances;
@@ -29,17 +28,12 @@ final class EventReportingType implements JsonSerializable
 
     public static function HISTORY(): self
     {
-        return static::instances()['history'];
+        return static::values()['history'];
     }
 
     public static function MATCHES(): self
     {
-        return static::instances()['matches'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['matches'];
     }
 
     /**
@@ -48,15 +42,7 @@ final class EventReportingType implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

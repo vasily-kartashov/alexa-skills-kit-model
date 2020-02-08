@@ -83,17 +83,6 @@ final class SpeakListCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param Align $align
-     * @return self
-     */
-    public static function ofAlign(Align $align): SpeakListCommand
-    {
-        $instance = new self;
-        $instance->align = $align;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

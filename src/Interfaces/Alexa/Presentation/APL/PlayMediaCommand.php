@@ -59,17 +59,6 @@ final class PlayMediaCommand extends Command implements JsonSerializable
     }
 
     /**
-     * @param AudioTrack $audioTrack
-     * @return self
-     */
-    public static function ofAudioTrack(AudioTrack $audioTrack): PlayMediaCommand
-    {
-        $instance = new self;
-        $instance->audioTrack = $audioTrack;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

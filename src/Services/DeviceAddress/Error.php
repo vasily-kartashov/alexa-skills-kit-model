@@ -43,17 +43,6 @@ final class Error implements JsonSerializable
     }
 
     /**
-     * @param string $type
-     * @return self
-     */
-    public static function ofType(string $type): Error
-    {
-        $instance = new self;
-        $instance->type = $type;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

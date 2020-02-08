@@ -9,16 +9,15 @@ final class StatusCode implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'ER_SUCCESS_MATCH' => new static('ER_SUCCESS_MATCH'),
+                'ER_SUCCESS_MATCH'    => new static('ER_SUCCESS_MATCH'),
                 'ER_SUCCESS_NO_MATCH' => new static('ER_SUCCESS_NO_MATCH'),
-                'ER_ERROR_TIMEOUT' => new static('ER_ERROR_TIMEOUT'),
-                'ER_ERROR_EXCEPTION' => new static('ER_ERROR_EXCEPTION'),
-                'null' => new static('null')
+                'ER_ERROR_TIMEOUT'    => new static('ER_ERROR_TIMEOUT'),
+                'ER_ERROR_EXCEPTION'  => new static('ER_ERROR_EXCEPTION')
             ];
         }
         return $instances;
@@ -31,27 +30,22 @@ final class StatusCode implements JsonSerializable
 
     public static function ER_SUCCESS_MATCH(): self
     {
-        return static::instances()['ER_SUCCESS_MATCH'];
+        return static::values()['ER_SUCCESS_MATCH'];
     }
 
     public static function ER_SUCCESS_NO_MATCH(): self
     {
-        return static::instances()['ER_SUCCESS_NO_MATCH'];
+        return static::values()['ER_SUCCESS_NO_MATCH'];
     }
 
     public static function ER_ERROR_TIMEOUT(): self
     {
-        return static::instances()['ER_ERROR_TIMEOUT'];
+        return static::values()['ER_ERROR_TIMEOUT'];
     }
 
     public static function ER_ERROR_EXCEPTION(): self
     {
-        return static::instances()['ER_ERROR_EXCEPTION'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['ER_ERROR_EXCEPTION'];
     }
 
     /**
@@ -60,15 +54,7 @@ final class StatusCode implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

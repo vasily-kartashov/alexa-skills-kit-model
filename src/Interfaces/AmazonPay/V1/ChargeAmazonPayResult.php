@@ -44,17 +44,6 @@ final class ChargeAmazonPayResult implements JsonSerializable
     }
 
     /**
-     * @param string $amazonOrderReferenceId
-     * @return self
-     */
-    public static function ofAmazonOrderReferenceId(string $amazonOrderReferenceId): ChargeAmazonPayResult
-    {
-        $instance = new self;
-        $instance->amazonOrderReferenceId = $amazonOrderReferenceId;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

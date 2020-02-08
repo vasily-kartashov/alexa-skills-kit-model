@@ -48,17 +48,6 @@ final class ExceptionEncounteredRequest extends Request implements JsonSerializa
     }
 
     /**
-     * @param Error $error
-     * @return self
-     */
-    public static function ofError(Error $error): ExceptionEncounteredRequest
-    {
-        $instance = new self;
-        $instance->error = $error;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

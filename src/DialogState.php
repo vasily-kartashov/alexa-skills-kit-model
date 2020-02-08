@@ -9,15 +9,14 @@ final class DialogState implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'STARTED' => new static('STARTED'),
+                'STARTED'     => new static('STARTED'),
                 'IN_PROGRESS' => new static('IN_PROGRESS'),
-                'COMPLETED' => new static('COMPLETED'),
-                'null' => new static('null')
+                'COMPLETED'   => new static('COMPLETED')
             ];
         }
         return $instances;
@@ -30,22 +29,17 @@ final class DialogState implements JsonSerializable
 
     public static function STARTED(): self
     {
-        return static::instances()['STARTED'];
+        return static::values()['STARTED'];
     }
 
     public static function IN_PROGRESS(): self
     {
-        return static::instances()['IN_PROGRESS'];
+        return static::values()['IN_PROGRESS'];
     }
 
     public static function COMPLETED(): self
     {
-        return static::instances()['COMPLETED'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['COMPLETED'];
     }
 
     /**
@@ -54,15 +48,7 @@ final class DialogState implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

@@ -151,17 +151,6 @@ final class ViewportState implements JsonSerializable
     }
 
     /**
-     * @param array $experiences
-     * @return self
-     */
-    public static function ofExperiences(array $experiences): ViewportState
-    {
-        $instance = new self;
-        $instance->experiences = $experiences;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

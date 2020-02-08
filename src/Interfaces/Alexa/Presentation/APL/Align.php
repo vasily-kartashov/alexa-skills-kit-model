@@ -9,16 +9,15 @@ final class Align implements JsonSerializable
     /** @var string */
     private $value;
 
-    private static function instances(): array
+    public static function values(): array
     {
         static $instances;
-        if (!$instances) {
+        if (!isset($instances)) {
             $instances = [
-                'center' => new static('center'),
-                'first' => new static('first'),
-                'last' => new static('last'),
-                'visible' => new static('visible'),
-                'null' => new static('null')
+                'center'  => new static('center'),
+                'first'   => new static('first'),
+                'last'    => new static('last'),
+                'visible' => new static('visible')
             ];
         }
         return $instances;
@@ -31,27 +30,22 @@ final class Align implements JsonSerializable
 
     public static function CENTER(): self
     {
-        return static::instances()['center'];
+        return static::values()['center'];
     }
 
     public static function FIRST(): self
     {
-        return static::instances()['first'];
+        return static::values()['first'];
     }
 
     public static function LAST(): self
     {
-        return static::instances()['last'];
+        return static::values()['last'];
     }
 
     public static function VISIBLE(): self
     {
-        return static::instances()['visible'];
-    }
-
-    public static function NULL(): self
-    {
-        return static::instances()['null'];
+        return static::values()['visible'];
     }
 
     /**
@@ -60,15 +54,7 @@ final class Align implements JsonSerializable
      */
     public static function fromValue(string $text)
     {
-        return static::instances()[$text] ?? null;
-    }
-
-    /**
-     * @return self[]
-     */
-    public static function values()
-    {
-        return static::instances();
+        return static::values()[$text] ?? null;
     }
 
     public function __toString(): string

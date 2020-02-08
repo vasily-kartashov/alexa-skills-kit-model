@@ -86,17 +86,6 @@ final class APLTViewportState extends TypedViewportState implements JsonSerializ
     }
 
     /**
-     * @param array $supportedProfiles
-     * @return self
-     */
-    public static function ofSupportedProfiles(array $supportedProfiles): APLTViewportState
-    {
-        $instance = new self;
-        $instance->supportedProfiles = $supportedProfiles;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

@@ -55,17 +55,6 @@ final class Transformer implements JsonSerializable
     }
 
     /**
-     * @param TransformerType $transformer
-     * @return self
-     */
-    public static function ofTransformer(TransformerType $transformer): Transformer
-    {
-        $instance = new self;
-        $instance->transformer = $transformer;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */

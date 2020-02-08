@@ -59,17 +59,6 @@ final class BodyTemplate7 extends Template implements JsonSerializable
     }
 
     /**
-     * @param string $title
-     * @return self
-     */
-    public static function ofTitle(string $title): BodyTemplate7
-    {
-        $instance = new self;
-        $instance->title = $title;
-        return $instance;
-    }
-
-    /**
      * @param array $data
      * @return self
      */
